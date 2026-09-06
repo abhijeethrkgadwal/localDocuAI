@@ -1,0 +1,34 @@
+{
+  "name": "@localdoc/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "echo \"lint: deferred\""
+  },
+  "dependencies": {
+    "@localdoc/core": "workspace:*",
+    "@localdoc/docx": "workspace:*",
+    "@localdoc/filesystem": "workspace:*",
+    "@localdoc/orchestration": "workspace:*",
+    "@localdoc/pdf": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.14",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.14",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vitest": "^3.0.9"
+  }
+}
