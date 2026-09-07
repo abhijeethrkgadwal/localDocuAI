@@ -61,3 +61,8 @@ See [docs/privacy/privacy-model.md](docs/privacy/privacy-model.md).
 ## Roadmap
 
 See [docs/product/roadmap.md](docs/product/roadmap.md). Next: Step 11 — AI command interpreter.
+
+## License
+
+Licensed under the [Apache License, Version 2.0](LICENSE).
+
