@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+:root {
+  --bg-base: #f3f0e8;
+  --bg-panel: #fffdf8;
+  --ink: #1c1914;
+  --ink-muted: #5c564c;
+  --accent: #0f6b5c;
+  --accent-soft: #d7ebe6;
+  --border: #d9d2c4;
+  --warn: #8a5a12;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, #e4efe9 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, #efe6d4 0%, transparent 50%),
+    var(--bg-base);
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
