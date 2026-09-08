@@ -55,6 +55,19 @@ export function TrustStatusStrip({ filesOnDevice }: TrustStatusStripProps) {
         </button>
       </div>
 
+      {!online ? (
+        <p
+          className="rounded-[var(--radius-surface)] border border-[var(--border)] bg-[var(--surface-subtle)] px-4 py-3 text-sm text-[var(--text-secondary)]"
+          role="status"
+          aria-live="polite"
+        >
+          <span className="font-medium text-[var(--text-primary)]">Offline.</span>{' '}
+          Local document tools continue to work on this page. Avoid refreshing — it can clear
+          documents in this session. Prefer a normal reload over hard refresh (Shift+Reload):
+          hard refresh bypasses the service worker and usually fails while offline.
+        </p>
+      ) : null}
+
       <div
         id={detailsId}
         hidden={!detailsOpen}
@@ -68,7 +81,7 @@ export function TrustStatusStrip({ filesOnDevice }: TrustStatusStripProps) {
             <p className="mt-1">
               {online
                 ? 'Network available. Local document processing still happens on this device.'
-                : 'Offline. Local document tools continue to work.'}
+                : 'Offline. Local document tools continue to work. Going offline does not stop an in-progress local operation — refreshing or closing the tab can. Soft reload uses the cached app shell; hard refresh usually cannot while offline.'}
             </p>
             <ul className="mt-3 grid gap-1 sm:grid-cols-2">
               <li>Files in session: {filesOnDevice}</li>

@@ -171,6 +171,15 @@ export const PUBLIC_PAGE_BLOCKS: Record<PublicPageId, Block[]> = {
         'Informational pages that are part of the cached client app',
       ],
     },
+    { type: 'h2', text: 'Refresh while offline' },
+    {
+      type: 'ul',
+      items: [
+        'A normal reload can still open LocalDocu from the service worker cache after the first visit',
+        'Hard refresh (Shift+Reload / Ctrl+Shift+R) bypasses the service worker and usually fails while offline',
+        'Refreshing always clears in-memory documents and in-progress work in this browser session',
+      ],
+    },
     { type: 'h2', text: 'What may vary' },
     {
       type: 'ul',

@@ -43,6 +43,11 @@ import { PublicJsonLd } from './components/PublicJsonLd';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
 import { TrustStatusStrip } from './components/TrustStatusStrip';
+import { useOnlineStatus } from './hooks/useOnlineStatus';
+import {
+  buildRefreshGuardMessage,
+  useRefreshGuard,
+} from './hooks/useRefreshGuard';
 import { useTheme } from './hooks/useTheme';
 import { createBusyLock } from './lib/busyLock';
 import { createThrottledProgress } from './lib/progressThrottle';
@@ -64,6 +69,7 @@ const AI_SELECTABLE_COUNT = listAiSelectableCommands().length;
 export function WorkspacePage() {
   const fs = useMemo(() => createBrowserFilesystemAdapter(), []);
   const { preference, setPreference } = useTheme();
+  const online = useOnlineStatus();
   const homeMeta = getRouteMeta(SITE_PATHS.home);
 
   useEffect(() => {
@@ -148,6 +154,12 @@ export function WorkspacePage() {
   const deferredPreviewFile = useDeferredValue(selectedFile);
   const canCreateFolder = Boolean(directoryId) && fs.capabilities.supportsCreateFolder;
   const workspaceBusy = running || picking || fileManageBusy !== null;
+  const refreshGuardEnabled = !online || workspaceBusy;
+  const refreshGuardMessage = useMemo(
+    () => buildRefreshGuardMessage({ offline: !online, busy: workspaceBusy }),
+    [online, workspaceBusy],
+  );
+  useRefreshGuard({ enabled: refreshGuardEnabled, confirmMessage: refreshGuardMessage });
 
   // Warm heavy engines in the background once the user has documents — keeps Run snappy
   // without paying pdf-lib / jszip cost on first paint.
