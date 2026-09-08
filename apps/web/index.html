@@ -3,14 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LocalDoc AI</title>
+    <title>%META_TITLE%</title>
+    <meta name="description" content="%META_DESCRIPTION%" />
     <meta
-      name="description"
-      content="Privacy-first document automation. Your files stay on your device."
+      name="keywords"
+      content="LocalDocu, local PDF merge, privacy PDF tool, offline PDF, split PDF locally, compress PDF browser, Word to PDF local, no upload documents"
     />
+    <meta name="author" content="Abhijeeth Gadwal" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <link rel="canonical" href="%CANONICAL_URL%" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LocalDocu" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="%CANONICAL_URL%" />
+    <meta property="og:title" content="%META_TITLE%" />
+    <meta property="og:description" content="%META_DESCRIPTION%" />
+    <meta property="og:image" content="%OG_IMAGE_URL%" />
+    <meta property="og:image:alt" content="LocalDocu — Tell it what to do. Your files stay on your device." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%META_TITLE%" />
+    <meta name="twitter:description" content="%META_DESCRIPTION%" />
+    <meta name="twitter:image" content="%OG_IMAGE_URL%" />
+    <meta name="twitter:image:alt" content="LocalDocu — privacy-first local document tools" />
+
+    <meta name="theme-color" content="#0F766E" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="application-name" content="LocalDocu" />
+    <meta name="apple-mobile-web-app-title" content="LocalDocu" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="alternate" type="text/plain" title="LLM brief" href="%SITE_URL%/llms.txt" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="%SITE_URL%/sitemap.xml" />
+
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem('localdocu-theme') || 'system';
+          var dark =
+            pref === 'dark' ||
+            (pref !== 'light' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.dataset.theme = pref;
+          if (dark) document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', dark ? '#0D1110' : '#0F766E');
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" href="/pwa-192.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/pwa-192.svg" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="root"></div>
+
+    <!-- Crawlable fallback for agents/browsers without JS (same facts as in-app FAQ). -->
+    <noscript>
+      <main style="max-width: 42rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif">
+        <h1>LocalDocu</h1>
+        <p>Tell it what to do. Your files stay on your device.</p>
+        <p>
+          LocalDocu is privacy-first, local-first document automation for PDF and Word files.
+          Merge, split, compress, rotate, and convert in your browser — document contents are not
+          uploaded for processing in the current release. Enable JavaScript to use the interactive workspace.
+        </p>
+        <h2>Privacy</h2>
+        <p>No authentication. No document-upload backend. Cloud processing: Off. LocalDocu AI: Off.</p>
+        <h2>How it works</h2>
+        <ol>
+          <li>Select PDF, DOC, or DOCX files or a folder (or drag and drop).</li>
+          <li>Choose an operation such as merge, split, compress, or convert.</li>
+          <li>Run locally and save or download the result on your device.</li>
+        </ol>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="%SITE_URL%/merge-pdf">Merge PDF</a></li>
+          <li><a href="%SITE_URL%/pdf-tools">PDF tools</a></li>
+          <li><a href="%SITE_URL%/privacy">Privacy</a></li>
+          <li><a href="%SITE_URL%/faq">FAQ</a></li>
+          <li><a href="%SITE_URL%/how-it-works">How it works</a></li>
+          <li><a href="%SITE_URL%/open-source">Open source</a></li>
+          <li><a href="%SITE_URL%/contribute">Contribute</a></li>
+          <li><a href="%SITE_URL%/roadmap">Roadmap</a></li>
+        </ul>
+        <p>
+          <a href="%SITE_URL%/llms.txt">LLM brief</a> ·
+          <a href="%SITE_URL%/sitemap.xml">Sitemap</a> ·
+          <a href="%SITE_URL%/robots.txt">Robots</a>
+        </p>
+      </main>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

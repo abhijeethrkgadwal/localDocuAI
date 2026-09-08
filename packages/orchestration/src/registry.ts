@@ -10,6 +10,9 @@ import {
   type Result,
 } from '@localdoc/core';
 import {
+  convertToPdfCommand,
+} from '@localdoc/docx';
+import {
   copyFilesCommand,
   createFolderCommand,
   filterFilesCommand,
@@ -24,6 +27,7 @@ import {
   reorderPagesCommand,
   rotatePagesCommand,
   splitFileCommand,
+  compressPdfCommand,
 } from '@localdoc/pdf';
 import { COMMAND_CATALOG, isAiSelectableCommand } from './catalog.js';
 
@@ -44,6 +48,8 @@ export function createAppCommandRegistry(): CommandRegistry {
     deletePagesCommand as CommandDefinition<unknown, unknown>,
     rotatePagesCommand as CommandDefinition<unknown, unknown>,
     reorderPagesCommand as CommandDefinition<unknown, unknown>,
+    compressPdfCommand as CommandDefinition<unknown, unknown>,
+    convertToPdfCommand as CommandDefinition<unknown, unknown>,
     sortFilesCommand as CommandDefinition<unknown, unknown>,
     filterFilesCommand as CommandDefinition<unknown, unknown>,
     renameFilesCommand as CommandDefinition<unknown, unknown>,

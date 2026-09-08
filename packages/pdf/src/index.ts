@@ -66,8 +66,40 @@ export {
   type ReorderPagesOutput,
 } from './reorder.js';
 
-export { parsePageSpec, ensurePdfFilename } from './shared.js';
+export {
+  loadPdfDocument,
+  classifyPdfLoadError,
+  parsePageSpec,
+  checkAbort,
+} from './shared.js';
+
+export {
+  compressPdfCommand,
+  COMPRESS_PDF,
+  compressPdfInputSchema,
+  compressPdfOutputSchema,
+  validateCompressPdfInput,
+  executeCompressPdf,
+  buildPdfFromRasterPages,
+  WEB_COMPRESS_HARD_MAX_BYTES,
+  WEB_COMPRESS_MAX_RASTER_COST,
+  type CompressPdfInput,
+  type CompressPdfOutput,
+  type CompressPdfDeps,
+  type CompressPdfRasterizer,
+  type RasterPageImage,
+} from './compress.js';
+
+/** Lightweight constants — import these without pulling pdf-lib / compress logic. */
+export {
+  CompressMode,
+  CompressQuality,
+  COMPRESS_PRESETS,
+  type CompressPreset,
+} from './compress-presets.js';
+
+export { ensurePdfFilename } from './shared.js';
 
 export { pdfCommandRegistry, phase1CommandRegistry } from './registry.js';
 
-export { createTestPdf, createTestPdfs } from './test-utils.js';
+export { createTestPdf, createTestPdfs, createTestPdfWithJpeg } from './test-utils.js';

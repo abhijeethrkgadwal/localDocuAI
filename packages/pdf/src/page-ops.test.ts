@@ -29,6 +29,7 @@ describe('pdfCommandRegistry', () => {
   it('registers all Step 7 PDF commands', () => {
     const names = pdfCommandRegistry.list().map((c) => c.name).sort();
     expect(names).toEqual([
+      'COMPRESS_PDF',
       'DELETE_PAGES',
       'EXTRACT_PAGES',
       'MERGE_FILES',

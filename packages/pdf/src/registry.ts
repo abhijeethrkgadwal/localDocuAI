@@ -1,4 +1,5 @@
 import { createCommandRegistry, type CommandDefinition } from '@localdoc/core';
+import { compressPdfCommand } from './compress.js';
 import { deletePagesCommand } from './delete-pages.js';
 import { extractPagesCommand } from './extract.js';
 import { mergeFilesCommand } from './merge.js';
@@ -13,6 +14,7 @@ const commands = [
   deletePagesCommand,
   rotatePagesCommand,
   reorderPagesCommand,
+  compressPdfCommand,
 ] as CommandDefinition<unknown, unknown>[];
 
 /** PDF command registry (Phase 1–2 surface). */

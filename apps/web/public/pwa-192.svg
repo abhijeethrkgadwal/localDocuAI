@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="LocalDoc AI">
+  <rect width="192" height="192" rx="36" fill="#0f6b5c"/>
+  <rect x="48" y="36" width="96" height="120" rx="12" fill="#fffdf8"/>
+  <rect x="64" y="60" width="64" height="10" rx="4" fill="#0f6b5c" opacity="0.85"/>
+  <rect x="64" y="82" width="64" height="10" rx="4" fill="#0f6b5c" opacity="0.55"/>
+  <rect x="64" y="104" width="44" height="10" rx="4" fill="#0f6b5c" opacity="0.35"/>
+</svg>

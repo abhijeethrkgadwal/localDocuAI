@@ -3,16 +3,16 @@ import {
   createTestDocx,
   createTestDocxs,
   docxCommandRegistry,
-  executeDocxToPdf,
   executeExtractDocxText,
   executeMergeDocx,
 } from '../src/index.js';
 import { loadDocxZip, readDocumentXml, extractPlainTextFromDocumentXml } from '../src/shared.js';
 
 describe('@localdoc/docx registry', () => {
-  it('registers DOCX merge handler', () => {
-    expect(docxCommandRegistry.list().length).toBe(1);
+  it('registers DOCX merge and convert handlers', () => {
+    expect(docxCommandRegistry.list().length).toBe(2);
     expect(docxCommandRegistry.has('MERGE_FILES')).toBe(true);
+    expect(docxCommandRegistry.has('CONVERT_TO_PDF')).toBe(true);
   });
 });
 
@@ -74,12 +74,5 @@ describe('@localdoc/docx extract / convert', () => {
     expect(result.ok).toBe(true);
     if (!result.ok) return;
     expect(result.value.text).toContain('PreviewDoc');
-  });
-
-  it('marks DOCX to PDF as unsupported for now', async () => {
-    const result = await executeDocxToPdf();
-    expect(result.ok).toBe(false);
-    if (result.ok) return;
-    expect(result.error.category).toBe('unsupported');
   });
 });

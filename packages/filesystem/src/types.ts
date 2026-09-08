@@ -89,7 +89,12 @@ export const DOCX_ACCEPT: Record<string, string[]> = {
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'],
 };
 
+export const DOC_ACCEPT: Record<string, string[]> = {
+  'application/msword': ['.doc'],
+};
+
 export const DOCUMENT_ACCEPT: Record<string, string[]> = {
   ...PDF_ACCEPT,
   ...DOCX_ACCEPT,
+  ...DOC_ACCEPT,
 };

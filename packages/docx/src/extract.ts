@@ -2,7 +2,6 @@ import {
   err,
   ok,
   parseWithSchema,
-  unsupportedError,
   validationError,
   type CommandContext,
   type CommandFilePayload,
@@ -63,16 +62,6 @@ export async function executeExtractDocxText(
     fidelityNote:
       'Plain-text preview extracted from document.xml — not a full Word layout preview.',
   });
-}
-
-/** DOCX → PDF is deferred until a reliable local conversion path is proven. */
-export async function executeDocxToPdf(): Promise<Result<never>> {
-  return err(
-    unsupportedError(
-      'DOCX to PDF conversion is not available yet.',
-      'Merge or preview DOCX locally for now. Conversion will ship when fidelity tests pass.',
-    ),
-  );
 }
 
 export function validateDocxOnlyFiles(files: { name: string }[]): Result<void> {

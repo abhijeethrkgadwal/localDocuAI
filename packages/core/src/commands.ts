@@ -13,6 +13,7 @@ export type Permission = (typeof Permission)[keyof typeof Permission];
 export const SupportedFileType = {
   PDF: 'pdf',
   DOCX: 'docx',
+  DOC: 'doc',
   /** Any file type (file-management commands). */
   ANY: '*',
 } as const;
@@ -27,6 +28,8 @@ export const CommandName = {
   DELETE_PAGES: 'DELETE_PAGES',
   REORDER_PAGES: 'REORDER_PAGES',
   ROTATE_PAGES: 'ROTATE_PAGES',
+  COMPRESS_PDF: 'COMPRESS_PDF',
+  CONVERT_TO_PDF: 'CONVERT_TO_PDF',
   RENAME_FILES: 'RENAME_FILES',
   MOVE_FILES: 'MOVE_FILES',
   COPY_FILES: 'COPY_FILES',

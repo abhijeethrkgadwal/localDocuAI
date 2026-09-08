@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import type { LocalFileRef } from '@localdoc/core';
+import { formatAppErrorLine, type LocalFileRef } from '@localdoc/core';
 import type { FilesystemAdapter } from '@localdoc/filesystem';
+import { looksLikePdf } from '../lib/pdfMagic';
 
 interface PdfPreviewProps {
   file: LocalFileRef | null;
@@ -19,14 +20,23 @@ export function PdfPreview({ file, fs }: PdfPreviewProps) {
     async function load() {
       setError(null);
       setUrl(null);
-      if (!file) return;
+      if (!file) {
+        setLoading(false);
+        return;
+      }
 
       setLoading(true);
       const result = await fs.readBytes(file);
       if (cancelled) return;
 
       if (!result.ok) {
-        setError(result.error.message);
+        setError(formatAppErrorLine(result.error));
+        setLoading(false);
+        return;
+      }
+
+      if (!looksLikePdf(result.value)) {
+        setError(`${file.name} could not be read as a PDF.`);
         setLoading(false);
         return;
       }
@@ -49,24 +59,35 @@ export function PdfPreview({ file, fs }: PdfPreviewProps) {
 
   if (!file) {
     return (
-      <div className="rounded-xl border border-dashed border-[var(--border)] px-4 py-12 text-center text-sm text-[var(--ink-muted)]">
-        Select a file in the list to preview it locally.
+      <div className="rounded-[var(--radius-surface)] border border-dashed border-[var(--border)] bg-[var(--surface-subtle)] px-4 py-12 text-center">
+        <p className="text-sm font-medium text-[var(--text-primary)]">
+          Select a document to preview it here.
+        </p>
+        <p className="mt-1 text-sm text-[var(--text-secondary)]">Preview stays on this device.</p>
       </div>
     );
   }
 
   return (
     <div className="space-y-2">
-      <p className="text-sm text-[var(--ink-muted)]">
-        Preview: <span className="font-medium text-[var(--ink)]">{file.name}</span> (local only)
+      <p className="text-sm text-[var(--text-secondary)]">
+        Preview: <span className="font-medium text-[var(--text-primary)]">{file.name}</span>
       </p>
-      {loading ? <p className="text-sm text-[var(--ink-muted)]">Loading preview…</p> : null}
-      {error ? <p className="text-sm text-[var(--warn)]">{error}</p> : null}
+      {loading ? (
+        <p className="text-sm text-[var(--text-secondary)]" role="status">
+          Loading preview…
+        </p>
+      ) : null}
+      {error ? (
+        <p className="text-sm text-[var(--danger)]" role="alert">
+          {error}
+        </p>
+      ) : null}
       {url ? (
         <iframe
           title={`Preview of ${file.name}`}
           src={url}
-          className="h-80 w-full rounded-xl border border-[var(--border)] bg-white"
+          className="h-80 w-full rounded-[var(--radius-surface)] border border-[var(--border)] bg-[var(--surface)]"
         />
       ) : null}
     </div>

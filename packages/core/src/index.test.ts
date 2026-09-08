@@ -5,7 +5,10 @@ import {
   compareNaturalFilename,
   createCommandRegistry,
   err,
+  isDocFile,
+  isDocxFile,
   isPdfFile,
+  isWordFile,
   ok,
   parseWithSchema,
   sortFiles,
@@ -39,6 +42,15 @@ describe('@localdoc/core', () => {
     expect(isPdfFile({ name: 'doc.pdf' })).toBe(true);
     expect(isPdfFile({ name: 'doc.txt', mimeType: 'application/pdf' })).toBe(true);
     expect(isPdfFile({ name: 'doc.txt' })).toBe(false);
+  });
+
+  it('detects Word DOC and DOCX files', () => {
+    expect(isDocxFile({ name: 'a.docx' })).toBe(true);
+    expect(isDocFile({ name: 'a.doc' })).toBe(true);
+    expect(isDocFile({ name: 'a.docx' })).toBe(false);
+    expect(isWordFile({ name: 'a.doc' })).toBe(true);
+    expect(isWordFile({ name: 'a.docx' })).toBe(true);
+    expect(isWordFile({ name: 'a.pdf' })).toBe(false);
   });
 
   it('parseWithSchema returns validation errors', () => {

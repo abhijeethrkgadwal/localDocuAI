@@ -2,6 +2,7 @@ import JSZip from 'jszip';
 import {
   cancelledError,
   corruptError,
+  encryptedError,
   err,
   ok,
   type Result,
@@ -10,9 +11,37 @@ import {
 const BODY_OPEN = /<w:body[^>]*>/i;
 const SECT_PR = /<w:sectPr[\s\S]*?<\/w:sectPr>/i;
 
+function looksEncryptedDocx(bytes: Uint8Array, errorText: string): boolean {
+  const lower = errorText.toLowerCase();
+  if (
+    lower.includes('encrypted') ||
+    lower.includes('password') ||
+    lower.includes('encrypt')
+  ) {
+    return true;
+  }
+  // OOXML ECMA-376 encrypted packages often start with the OLE compound header
+  // rather than a ZIP local file header (PK).
+  if (bytes.length >= 8) {
+    const ole =
+      bytes[0] === 0xd0 &&
+      bytes[1] === 0xcf &&
+      bytes[2] === 0x11 &&
+      bytes[3] === 0xe0;
+    const zip = bytes[0] === 0x50 && bytes[1] === 0x4b;
+    if (ole && !zip) return true;
+  }
+  return false;
+}
+
 export async function loadDocxZip(bytes: Uint8Array, name: string): Promise<Result<JSZip>> {
   try {
     const zip = await JSZip.loadAsync(bytes);
+    if (zip.file('EncryptedPackage') || zip.file('EncryptionInfo')) {
+      return err(
+        encryptedError(`${name} is password protected.`, { affectedFiles: [name] }, 'Remove the password locally, then convert again.'),
+      );
+    }
     const doc = zip.file('word/document.xml');
     if (!doc) {
       return err(
@@ -23,10 +52,16 @@ export async function loadDocxZip(bytes: Uint8Array, name: string): Promise<Resu
     }
     return ok(zip);
   } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    if (looksEncryptedDocx(bytes, reason)) {
+      return err(
+        encryptedError(`${name} is password protected.`, { affectedFiles: [name] }, 'Remove the password locally, then convert again.'),
+      );
+    }
     return err(
       corruptError(`${name} could not be read as a DOCX.`, {
         affectedFiles: [name],
-        reason: error instanceof Error ? error.message : String(error),
+        reason,
       }),
     );
   }
@@ -72,8 +107,15 @@ export function insertBodyContent(baseDocumentXml: string, extraContent: string)
 
 /** Very rough text extraction from document.xml for preview — not Word-faithful. */
 export function extractPlainTextFromDocumentXml(documentXml: string): string {
-  const texts = [...documentXml.matchAll(/<w:t[^>]*>([^<]*)<\/w:t>/g)].map((m) => m[1] ?? '');
-  return texts.join('').replace(/\s+/g, ' ').trim();
+  const paragraphs = documentXml.split(/<\/w:p>/i);
+  const lines = paragraphs.map((paragraph) => {
+    const texts = [...paragraph.matchAll(/<w:t[^>]*>([^<]*)<\/w:t>/g)].map((m) => m[1] ?? '');
+    return texts.join('');
+  });
+  return lines
+    .map((line) => line.replace(/\s+/g, ' ').trim())
+    .filter((line) => line.length > 0)
+    .join('\n');
 }
 
 export async function readDocumentXml(zip: JSZip): Promise<Result<string>> {

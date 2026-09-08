@@ -12,7 +12,7 @@ Users need local DOCX merge and preview. Full Microsoft Word fidelity (styles, h
 
 - Ship a **practical body-append DOCX merge** (JSZip + `word/document.xml` body concatenation).
 - Provide **plain-text preview** extracted from `document.xml`.
-- Defer **DOCX → PDF** until a local conversion path is proven with fixtures.
+- Defer **high-fidelity Word layout** PDF export until desktop; ship **capacity-gated simple text PDF** on web for DOC/DOCX.
 - Document limitations in UI and ADR; never claim “Word-perfect” unless automated fixtures prove it.
 
 ## Fixtures covered in tests

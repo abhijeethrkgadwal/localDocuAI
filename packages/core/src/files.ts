@@ -27,6 +27,7 @@ export function inferFileType(filename: string): SupportedFileType | undefined {
   const ext = filename.split('.').pop()?.toLowerCase();
   if (ext === 'pdf') return SupportedFileType.PDF;
   if (ext === 'docx') return SupportedFileType.DOCX;
+  if (ext === 'doc') return SupportedFileType.DOC;
   return undefined;
 }
 
@@ -43,4 +44,16 @@ export function isDocxFile(file: Pick<LocalFileRef, 'name' | 'mimeType'>): boole
     return true;
   }
   return file.name.toLowerCase().endsWith('.docx');
+}
+
+export function isDocFile(file: Pick<LocalFileRef, 'name' | 'mimeType'>): boolean {
+  if (file.mimeType === 'application/msword') return true;
+  const lower = file.name.toLowerCase();
+  // Avoid matching .docx
+  return lower.endsWith('.doc') && !lower.endsWith('.docx');
+}
+
+/** DOC or DOCX — candidates for simple Word → PDF conversion. */
+export function isWordFile(file: Pick<LocalFileRef, 'name' | 'mimeType'>): boolean {
+  return isDocxFile(file) || isDocFile(file);
 }
