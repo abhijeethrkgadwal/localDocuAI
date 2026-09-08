@@ -4,7 +4,11 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "allowImportingTsExtensions": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "paths": {
+      "@localdoc/orchestration/catalog": ["../../packages/orchestration/src/catalog.ts"],
+      "@localdoc/pdf/compress-presets": ["../../packages/pdf/src/compress-presets.ts"]
+    }
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"]

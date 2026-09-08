@@ -10,7 +10,7 @@ export type {
   WriteBytesOptions,
 } from './types.js';
 
-export { PDF_ACCEPT, DOCX_ACCEPT, DOCUMENT_ACCEPT } from './types.js';
+export { PDF_ACCEPT, DOCX_ACCEPT, DOC_ACCEPT, DOCUMENT_ACCEPT } from './types.js';
 
 export {
   checkAborted,

@@ -70,11 +70,16 @@ export function internalError(message: string, details?: Record<string, unknown>
   };
 }
 
-export function unsupportedError(message: string, recovery?: string): AppError {
+export function unsupportedError(
+  message: string,
+  recovery?: string,
+  details?: Record<string, unknown>,
+): AppError {
   return {
     message,
     category: ErrorCategory.UNSUPPORTED,
     recovery: recovery ?? 'This operation is not available yet.',
+    details,
   };
 }
 

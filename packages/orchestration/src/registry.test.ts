@@ -15,8 +15,10 @@ describe('@localdoc/orchestration registry', () => {
     const names = listRegisteredCommandNames().sort();
     expect(names).toEqual(
       [
+        'COMPRESS_PDF',
         'COPY_FILES',
         'CREATE_FOLDER',
+        'CONVERT_TO_PDF',
         'DELETE_PAGES',
         'EXTRACT_PAGES',
         'FILTER_FILES',

@@ -18,8 +18,8 @@
 
 We do **not** claim “zero data collection” for future releases if telemetry is added. Phase 1 has no analytics sink.
 
-When AI lands (Phase 4), requests should receive instructions and metadata only — not PDF contents — unless the user explicitly enables a cloud document-processing feature.
+When LocalDocu AI lands (desktop / Phase 4), requests should receive instructions and **document metadata only** — not PDF/Word contents — unless the user explicitly enables a different mode. The model interprets intent and LocalDocu capabilities, then drives validated local document-management commands.
 
 ## UI
 
-The web shell shows a privacy status strip: files on device, processing location, cloud document processing state, AI processing state.
+The web shell shows a privacy status strip: files on device, processing location, cloud document processing state, LocalDocu AI state.

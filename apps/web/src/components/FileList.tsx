@@ -1,99 +1,177 @@
+import { memo } from 'react';
 import type { LocalFileRef } from '@localdoc/core';
+import { isPdfFile, isWordFile } from '@localdoc/core';
 
 interface FileListProps {
   files: LocalFileRef[];
   selectedId: string | null;
   disabled?: boolean;
+  directoryName?: string | null;
   onSelect: (id: string) => void;
   onMoveUp: (index: number) => void;
   onMoveDown: (index: number) => void;
   onRemove: (id: string) => void;
 }
 
+function formatSize(size: number): string {
+  if (size < 1024) return `${size} B`;
+  if (size < 1024 * 1024) return `${Math.round(size / 1024)} KB`;
+  return `${(size / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function fileTypeLabel(file: LocalFileRef): string {
+  if (isPdfFile(file)) return 'PDF';
+  if (isWordFile(file)) {
+    const lower = file.name.toLowerCase();
+    return lower.endsWith('.doc') && !lower.endsWith('.docx') ? 'DOC' : 'DOCX';
+  }
+  return 'File';
+}
+
+interface FileRowProps {
+  file: LocalFileRef;
+  index: number;
+  selected: boolean;
+  disabled?: boolean;
+  isLast: boolean;
+  onSelect: (id: string) => void;
+  onMoveUp: (index: number) => void;
+  onMoveDown: (index: number) => void;
+  onRemove: (id: string) => void;
+}
+
+const FileRow = memo(function FileRow({
+  file,
+  index,
+  selected,
+  disabled,
+  isLast,
+  onSelect,
+  onMoveUp,
+  onMoveDown,
+  onRemove,
+}: FileRowProps) {
+  return (
+    <li>
+      <div
+        className={`flex items-stretch gap-2 rounded-[var(--radius-surface)] border px-3 py-2.5 transition-colors duration-[var(--duration-fast)] ${
+          selected
+            ? 'border-[var(--border-strong)] bg-[var(--accent-soft)] ring-1 ring-[var(--accent)]'
+            : 'border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-strong)] hover:bg-[var(--surface-subtle)]'
+        }`}
+      >
+        <button
+          type="button"
+          className="min-w-0 flex-1 rounded-[6px] text-left"
+          onClick={() => onSelect(file.id)}
+          disabled={disabled}
+          aria-pressed={selected}
+          aria-label={`Select ${file.name} for preview`}
+        >
+          <div className="flex items-start gap-2.5">
+            <span
+              className="mt-0.5 w-5 shrink-0 text-xs tabular-nums text-[var(--text-tertiary)]"
+              aria-hidden
+            >
+              {index + 1}
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-sm font-medium text-[var(--text-primary)]">
+                {file.name}
+              </p>
+              {file.path && file.path !== file.name ? (
+                <p className="mt-0.5 truncate text-xs text-[var(--text-tertiary)]">
+                  {file.path}
+                </p>
+              ) : null}
+              <p className="mt-1 text-xs text-[var(--text-secondary)]">
+                {fileTypeLabel(file)} · {formatSize(file.size)}
+              </p>
+            </div>
+          </div>
+        </button>
+
+        <div className="flex shrink-0 items-center gap-1 self-center">
+          <button
+            type="button"
+            aria-label="Move document up"
+            title="Move up"
+            disabled={disabled || index === 0}
+            onClick={() => onMoveUp(index)}
+            className="btn btn-secondary btn-sm btn-icon"
+          >
+            <span aria-hidden>↑</span>
+          </button>
+          <button
+            type="button"
+            aria-label="Move document down"
+            title="Move down"
+            disabled={disabled || isLast}
+            onClick={() => onMoveDown(index)}
+            className="btn btn-secondary btn-sm btn-icon"
+          >
+            <span aria-hidden>↓</span>
+          </button>
+          <button
+            type="button"
+            aria-label="Remove document"
+            title="Remove"
+            disabled={disabled}
+            onClick={() => onRemove(file.id)}
+            className="btn btn-ghost btn-sm text-[var(--danger)]"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </li>
+  );
+});
+
 export function FileList({
   files,
   selectedId,
   disabled,
+  directoryName,
   onSelect,
   onMoveUp,
   onMoveDown,
   onRemove,
 }: FileListProps) {
   if (files.length === 0) {
-    return (
-      <p className="mt-6 border border-dashed border-[var(--border)] px-4 py-10 text-center text-sm text-[var(--ink-muted)]">
-        Drop PDF or DOCX here, or use the buttons above.
-      </p>
-    );
+    return null;
   }
 
+  const countLabel = files.length === 1 ? '1 document' : `${files.length} documents`;
+  const sourceLabel = directoryName
+    ? `From ${directoryName} · local only`
+    : 'Local only';
+
   return (
-    <ol className="mt-4 max-h-72 space-y-2 overflow-auto">
-      {files.map((file, index) => {
-        const selected = file.id === selectedId;
-        return (
-          <li
+    <div className="mt-6">
+      <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+        <h3 className="text-base font-semibold tracking-tight text-[var(--text-primary)]">
+          {countLabel}
+        </h3>
+        <p className="text-xs text-[var(--text-tertiary)]">{sourceLabel}</p>
+      </div>
+
+      <ol className="max-h-80 space-y-2 overflow-auto pr-0.5">
+        {files.map((file, index) => (
+          <FileRow
             key={file.id}
-            className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
-              selected
-                ? 'border-[var(--accent)] bg-[var(--accent-soft)]/50'
-                : 'border-[var(--border)] bg-white'
-            }`}
-          >
-            <button
-              type="button"
-              className="min-w-0 flex-1 text-left"
-              onClick={() => onSelect(file.id)}
-              disabled={disabled}
-            >
-              <span className="mr-2 text-[var(--ink-muted)]">{index + 1}.</span>
-              <span className="font-medium">{file.name}</span>
-              {file.path && file.path !== file.name ? (
-                <span className="mt-0.5 block truncate text-xs text-[var(--ink-muted)]">
-                  {file.path}
-                </span>
-              ) : null}
-              <span className="text-[var(--ink-muted)]">
-                {' '}
-                (
-                {file.size < 1024
-                  ? `${file.size} B`
-                  : `${Math.round(file.size / 1024)} KB`}
-                )
-              </span>
-            </button>
-            <div className="flex shrink-0 gap-1">
-              <button
-                type="button"
-                aria-label={`Move ${file.name} up`}
-                disabled={disabled || index === 0}
-                onClick={() => onMoveUp(index)}
-                className="rounded border border-[var(--border)] px-2 py-1 text-xs disabled:opacity-40"
-              >
-                ↑
-              </button>
-              <button
-                type="button"
-                aria-label={`Move ${file.name} down`}
-                disabled={disabled || index === files.length - 1}
-                onClick={() => onMoveDown(index)}
-                className="rounded border border-[var(--border)] px-2 py-1 text-xs disabled:opacity-40"
-              >
-                ↓
-              </button>
-              <button
-                type="button"
-                aria-label={`Remove ${file.name}`}
-                disabled={disabled}
-                onClick={() => onRemove(file.id)}
-                className="rounded border border-[var(--border)] px-2 py-1 text-xs text-[var(--warn)] disabled:opacity-40"
-              >
-                Remove
-              </button>
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+            file={file}
+            index={index}
+            selected={file.id === selectedId}
+            disabled={disabled}
+            isLast={index === files.length - 1}
+            onSelect={onSelect}
+            onMoveUp={onMoveUp}
+            onMoveDown={onMoveDown}
+            onRemove={onRemove}
+          />
+        ))}
+      </ol>
+    </div>
   );
 }

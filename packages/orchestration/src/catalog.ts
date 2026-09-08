@@ -82,6 +82,30 @@ export const COMMAND_CATALOG: readonly CommandCatalogEntry[] = [
     status: 'available',
   },
   {
+    name: CommandName.COMPRESS_PDF,
+    description:
+      'Compress a PDF locally by recompressing embedded images or rasterizing pages.',
+    requiredPermissions: [Permission.READ_FILES, Permission.WRITE_FILES],
+    supportedFileTypes: [SupportedFileType.PDF],
+    engines: ['pdf'],
+    aiSelectable: true,
+    status: 'partial',
+    notes:
+      'Web: balanced image recompression + optional maximum page rasterization (pdf.js). Deeper engines planned for desktop.',
+  },
+  {
+    name: CommandName.CONVERT_TO_PDF,
+    description:
+      'Convert a DOC or DOCX file to a simple local PDF when device capacity allows.',
+    requiredPermissions: [Permission.READ_FILES, Permission.WRITE_FILES],
+    supportedFileTypes: [SupportedFileType.DOCX, SupportedFileType.DOC],
+    engines: ['docx'],
+    aiSelectable: true,
+    status: 'partial',
+    notes:
+      'Web: capacity-gated simple text PDF. Layout fidelity is limited; heavy jobs deferred to desktop (coming soon).',
+  },
+  {
     name: CommandName.SORT_FILES,
     description: 'Sort files by natural name, alphabetical order, or modified time.',
     requiredPermissions: [Permission.READ_FILES],

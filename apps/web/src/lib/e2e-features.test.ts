@@ -24,11 +24,13 @@ import {
   listRegisteredCommandNames,
 } from '@localdoc/orchestration';
 import { createTestDocx, executeExtractDocxText } from '@localdoc/docx';
-import { createTestPdf } from './test-imports.js';
+import { createTestPdf, createTestPdfWithJpeg } from './test-imports.js';
 import { runLocalDocumentMerge } from './mergeWorkflow.js';
 import { runSinglePdfOp } from './pdfOpsWorkflow.js';
 
 const ALL_COMMANDS = [
+  'COMPRESS_PDF',
+  'CONVERT_TO_PDF',
   'COPY_FILES',
   'CREATE_FOLDER',
   'DELETE_PAGES',
@@ -53,9 +55,9 @@ async function seedPdfs(
 }
 
 describe('E2E: all shipped features', () => {
-  it('registry exposes all 12 commands and rejects invented ones', () => {
+  it('registry exposes all 14 commands and rejects invented ones', () => {
     expect(listRegisteredCommandNames().sort()).toEqual([...ALL_COMMANDS].sort());
-    expect(listAiSelectableCommands().length).toBe(12);
+    expect(listAiSelectableCommands().length).toBe(14);
     expect(assertCommandAllowed('MERGE_FILES').ok).toBe(true);
     expect(assertCommandAllowed('HACK_DEVICE').ok).toBe(false);
     for (const name of ALL_COMMANDS) {
@@ -125,6 +127,22 @@ describe('E2E: all shipped features', () => {
     expect(result.error.message).toMatch(/same type/i);
   });
 
+  it('CONVERT_TO_PDF: DOCX → PDF after capacity check', async () => {
+    const docx = await createTestDocx('Convert Me');
+    const adapter = createMemoryFilesystemAdapter({
+      pickFilesResult: [{ name: 'letter.docx', bytes: docx }],
+    });
+    const picked = await adapter.pickFiles();
+    expect(picked.ok).toBe(true);
+    if (!picked.ok) return;
+
+    const { runLocalWordToPdf } = await import('./convertWorkflow.js');
+    const result = await runLocalWordToPdf(adapter, picked.value[0]!);
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.value.filename).toBe('letter.pdf');
+  });
+
   it('SPLIT_FILE: multi-page PDF → one file per page', async () => {
     const bytes = await createTestPdf('Multi', { pageCount: 3 });
     const { adapter, files } = await seedPdfs([{ name: 'multi.pdf', bytes }]);
@@ -179,6 +197,23 @@ describe('E2E: all shipped features', () => {
     expect(result.ok).toBe(true);
     if (!result.ok) return;
     expect(result.value.message).toMatch(/3, 1, 2/);
+  });
+
+  it('COMPRESS_PDF: shrinks image-heavy PDF in balanced mode', async () => {
+    const bytes = await createTestPdfWithJpeg('Scan', {
+      width: 800,
+      height: 600,
+      jpegQuality: 98,
+    });
+    const { adapter, files } = await seedPdfs([{ name: 'scan.pdf', bytes }]);
+    const result = await runSinglePdfOp(adapter, files[0]!, 'compress', {
+      compressMode: 'balanced',
+      compressQuality: 'low',
+    });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.value.message).toMatch(/Compressed PDF|left size unchanged/);
+    expect(result.value.savedCount).toBe(1);
   });
 
   it('SORT_FILES + FILTER_FILES (session organize)', async () => {

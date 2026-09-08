@@ -6,14 +6,19 @@ import {
 } from '@localdoc/core';
 import type { FilesystemAdapter } from '@localdoc/filesystem';
 import {
+  CompressMode,
+  CompressQuality,
+  executeCompressPdf,
   executeDeletePages,
   executeExtractPages,
   executeReorderPages,
   executeRotatePages,
   executeSplitFile,
+  type CompressMode as CompressModeType,
+  type CompressQuality as CompressQualityType,
 } from '@localdoc/pdf';
 
-export type PdfOpKind = 'split' | 'extract' | 'delete' | 'rotate' | 'reorder';
+export type PdfOpKind = 'split' | 'extract' | 'delete' | 'rotate' | 'reorder' | 'compress';
 
 export interface PdfOpSuccess {
   message: string;
@@ -38,6 +43,8 @@ export interface PdfOpOptions {
   rotation?: 90 | 180 | 270;
   /** Comma-separated 1-based order, e.g. "3,1,2" */
   orderSpec?: string;
+  compressQuality?: CompressQualityType;
+  compressMode?: CompressModeType;
 }
 
 async function readOne(
@@ -57,6 +64,12 @@ function parseOrderSpec(spec: string): number[] | null {
   const nums = parts.map((p) => Number(p));
   if (nums.some((n) => !Number.isInteger(n) || n < 1)) return null;
   return nums;
+}
+
+function formatBytes(n: number): string {
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(2)} MB`;
 }
 
 export async function runSinglePdfOp(
@@ -131,6 +144,30 @@ export async function runSinglePdfOp(
     if (!result.ok) return { ok: false, error: formatAppError(result.error) };
     outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
     summary = `Reordered pages to ${result.value.order.join(', ')}.`;
+  } else if (kind === 'compress') {
+    const quality = options.compressQuality ?? CompressQuality.MEDIUM;
+    const mode = options.compressMode ?? CompressMode.BALANCED;
+    const deps =
+      mode === CompressMode.MAXIMUM
+        ? {
+            rasterize: (await import('./pdfPageRasterizer.js')).browserPdfRasterizer,
+          }
+        : undefined;
+
+    const result = await executeCompressPdf(
+      { file: payload, quality, mode },
+      { signal: options.signal, onProgress: options.onProgress },
+      deps,
+    );
+    if (!result.ok) return { ok: false, error: formatAppError(result.error) };
+
+    outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
+    const sizeLine = `${formatBytes(result.value.originalBytes)} → ${formatBytes(result.value.compressedBytes)}`;
+    if (result.value.strategy === 'unchanged' || result.value.savedBytes <= 0) {
+      summary = `Compression left size unchanged (${sizeLine}). ${result.value.note}`;
+    } else {
+      summary = `Compressed PDF by ${result.value.reductionPercent}% (${sizeLine}). ${result.value.note}`;
+    }
   }
 
   let saved = 0;

@@ -30,6 +30,8 @@ export {
   inferFileType,
   isPdfFile,
   isDocxFile,
+  isDocFile,
+  isWordFile,
 } from './files.js';
 
 export {

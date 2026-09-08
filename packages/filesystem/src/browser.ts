@@ -301,6 +301,8 @@ export function createBrowserFilesystemAdapter(
         );
       }
       const buffer = await stored.arrayBuffer();
+      const abortedAfter = checkAborted(readOptions?.signal);
+      if (!abortedAfter.ok) return abortedAfter;
       return ok(new Uint8Array(buffer));
     },
 
@@ -310,7 +312,6 @@ export function createBrowserFilesystemAdapter(
     ): Promise<Result<{ uri: string; method: 'handle' | 'download'; note?: string }>> {
       const aborted = checkAborted(writeOptions?.signal);
       if (!aborted.ok) return aborted;
-
       const suggestedName = writeOptions?.suggestedName ?? 'merged.pdf';
       const payload = toArrayBuffer(data);
       const isDocx = suggestedName.toLowerCase().endsWith('.docx');
@@ -335,7 +336,11 @@ export function createBrowserFilesystemAdapter(
             suggestedName,
             types: [{ description, accept }],
           });
+          const abortedAfterPicker = checkAborted(writeOptions?.signal);
+          if (!abortedAfterPicker.ok) return abortedAfterPicker;
           writable = await handle.createWritable();
+          const abortedBeforeWrite = checkAborted(writeOptions?.signal);
+          if (!abortedBeforeWrite.ok) return abortedBeforeWrite;
           await writable.write(payload);
           await writable.close();
           writable = undefined;
@@ -345,8 +350,7 @@ export function createBrowserFilesystemAdapter(
             return err(cancelledError('Save was cancelled.'));
           }
           savePickerFailed = true;
-        } finally {
-          if (writable) {
+        } finally {          if (writable) {
             try {
               await writable.abort();
             } catch {
@@ -365,8 +369,10 @@ export function createBrowserFilesystemAdapter(
         );
       }
 
-      const blob = new Blob([payload], { type: mime });
-      const url = URL.createObjectURL(blob);
+      const abortedBeforeDownload = checkAborted(writeOptions?.signal);
+      if (!abortedBeforeDownload.ok) return abortedBeforeDownload;
+
+      const blob = new Blob([payload], { type: mime });      const url = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
       anchor.href = url;
       anchor.download = suggestedName;

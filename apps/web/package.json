@@ -17,8 +17,11 @@
     "@localdoc/filesystem": "workspace:*",
     "@localdoc/orchestration": "workspace:*",
     "@localdoc/pdf": "workspace:*",
+    "pdfjs-dist": "^6.3.289",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7",
+    "workbox-window": "^7.4.1",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
@@ -29,6 +32,7 @@
     "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
+    "vite-plugin-pwa": "^1.3.0",
     "vitest": "^3.0.9"
   }
 }
