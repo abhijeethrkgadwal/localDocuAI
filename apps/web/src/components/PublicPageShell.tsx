@@ -1,4 +1,9 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useMemo, type ReactNode } from 'react';
+import { useOnlineStatus } from '../hooks/useOnlineStatus';
+import {
+  buildRefreshGuardMessage,
+  useRefreshGuard,
+} from '../hooks/useRefreshGuard';
 import { useTheme } from '../hooks/useTheme';
 import { applyDocumentMeta, type RouteMeta } from '../lib/routeMeta';
 import { Breadcrumbs } from './Breadcrumbs';
@@ -15,6 +20,12 @@ interface PublicPageShellProps {
 
 export function PublicPageShell({ meta, children, showCta = true }: PublicPageShellProps) {
   const { preference, setPreference } = useTheme();
+  const online = useOnlineStatus();
+  const refreshGuardMessage = useMemo(
+    () => buildRefreshGuardMessage({ offline: true, busy: false }),
+    [],
+  );
+  useRefreshGuard({ enabled: !online, confirmMessage: refreshGuardMessage });
 
   useEffect(() => {
     applyDocumentMeta(meta);
