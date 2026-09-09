@@ -77,14 +77,14 @@
   },
   "desktop": {
     "title": "LocalDocu Bureau | Automatisation documentaire locale avancée",
-    "description": "Future application de bureau pour les charges locales plus lourdes et LocalDocu AI. Positionnement uniquement — pas encore disponible ; le web reste le produit.",
+    "description": "Nous construisons une application de bureau pour les charges locales plus lourdes et LocalDocu AI. Travail en cours — nous visons une publication bientôt avec la communauté open source. Le web reste le produit aujourd'hui.",
     "h1": "Bureau : plus de capacité locale à venir",
     "breadcrumb": "Bureau"
   },
   "localAi": {
     "title": "LocalDocu AI | Automatisation documentaire locale pilotée par l’intention",
-    "description": "LocalDocu AI s’exécute dans l’application de bureau : un modèle à poids ouverts, sur l’appareil, qui lit les métadonnées des documents et l’intention de l’utilisateur, puis pilote la gestion documentaire LocalDocu — sans envoyer le contenu des documents dans le cloud. Pas active dans la version web actuelle.",
-    "h1": "LocalDocu AI : prévue pour l’application de bureau",
+    "description": "LocalDocu AI s'exécute dans l'application de bureau : un modèle à poids ouverts sur l'appareil qui lit les métadonnées des documents et l'intention de l'utilisateur, puis pilote la gestion documentaire LocalDocu — sans envoyer le contenu vers le cloud. Travail en cours ; pas active dans la version web actuelle. Les contributions de la communauté sont les bienvenues.",
+    "h1": "LocalDocu AI : en cours pour l’application de bureau",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {

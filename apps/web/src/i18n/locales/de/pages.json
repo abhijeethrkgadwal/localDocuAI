@@ -78,7 +78,7 @@
       },
       "whatIsLocaldocuAi": {
         "question": "Was ist LocalDocu AI?",
-        "answer": "LocalDocu AI ist eine geplante Funktion für die LocalDocu Desktop-App. Sie nutzt ein Open-Weight-Modell, das für lokale Geräte geeignet ist, um deine Absicht und die Dokumentverwaltungs-Funktionen von LocalDocu zu verstehen, und führt komplexe Aufgaben dann über diese lokalen Engines aus. Sie ist darauf ausgelegt, mit Dokument-Metadaten und deiner Anfrage zu arbeiten — nicht damit, Dokumentinhalte in die Cloud zu senden. LocalDocu AI ist im aktuellen Web-Release aus."
+        "answer": "LocalDocu AI ist in aktiver Entwicklung für die LocalDocu Desktop-App. Es nutzt ein Open-Weight-Modell, das für lokale Geräte geeignet ist, um deine Absicht und die Dokumentverwaltungs-Funktionen von LocalDocu zu verstehen und komplexe Aufgaben über diese lokalen Engines auszuführen. Es ist so ausgelegt, dass es mit Dokumentmetadaten und deiner Anfrage arbeitet — nicht indem Dokumentinhalte in die Cloud gesendet werden. LocalDocu AI ist im aktuellen Web-Release aus. Wir streben eine baldige Veröffentlichung an und begrüßen Beiträge der Open-Source-Community."
       }
     }
   },
@@ -282,7 +282,7 @@
       "Smartphones & Tablets (Android Chrome, iOS Safari): Dateien auswählen → Tool ausführen → herunterladen",
       "Desktop-Chrome / Edge: vollster Web-Funktionsumfang (Ordnerauswahl, natives Speichern unter, Ordner erstellen)",
       "Desktop-Firefox / Safari: Kernfunktionen über Dateiauswahl + Download; Ordner / Speichern unter eingeschränkt",
-      "Künftige Desktop-App: größere Workloads + LocalDocu AI (noch nicht veröffentlicht)"
+      "Desktop-App (WIP): größere Workloads + LocalDocu AI — Community-Beiträge willkommen"
     ],
     "matrixHeading": "Funktionsmatrix",
     "tableCaption": "Matrix der Browser- und Gerätefunktionen",
@@ -416,7 +416,7 @@
     }
   },
   "roadmap": {
-    "intro": "Der Web-Arbeitsbereich ist heute das Produkt: lokale PDF- und Word-Tools im Browser. Spätere Phasen ergänzen eine LocalDocu Desktop-App und LocalDocu AI für absichtsgesteuerte Abläufe auf dem Gerät.",
+    "intro": "Der Web-Arbeitsbereich ist heute das Produkt: lokale PDF- und Word-Tools im Browser. Wir entwickeln aktiv eine LocalDocu Desktop-App und LocalDocu AI für absichtsgesteuerte Abläufe auf dem Gerät — Arbeit in Arbeit, mit dem Ziel, sie bald gemeinsam mit der Open-Source-Community zu veröffentlichen.",
     "shippedHeading": "Veröffentlicht (Web)",
     "shipped": [
       "Dateien / Ordner auswählen / Ziehen und Ablegen",
@@ -428,8 +428,8 @@
     ],
     "nextHeading": "Nächste Richtungen",
     "next": [
-      "Desktop-App für größere lokale Workloads (Positionierungsseite verfügbar)",
-      "LocalDocu AI (Desktop): Open-Weight-Modell auf dem Gerät → Metadaten + Absicht → Dokumentverwaltungs-Befehle von LocalDocu (noch nicht aktiv)",
+      "Desktop-App für größere lokale Workloads (WIP — Community-Beiträge willkommen)",
+      "LocalDocu AI (Desktop): Open-Weight-Modell auf dem Gerät → Metadaten + Absicht → Dokumentverwaltungs-Befehle von LocalDocu (in Arbeit)",
       "Arabische Locale und RTL-Layout",
       "Weitere Härtung von Tests, Barrierefreiheit und Auffindbarkeit"
     ],
@@ -440,15 +440,15 @@
     }
   },
   "desktop": {
-    "intro": "Eine LocalDocu Desktop-Anwendung ist für fortgeschrittene lokale Dokumentautomatisierung geplant — besonders für Workloads, die komfortable Browsergrenzen überschreiten — und als Zuhause für LocalDocu AI. Diese Seite dient nur der Positionierung; die Desktop-App wird noch nicht ausgeliefert.",
-    "directionHeading": "Geplante Richtung",
+    "intro": "Wir entwickeln aktiv eine LocalDocu Desktop-Anwendung für fortgeschrittene lokale Dokumentautomatisierung — besonders für Workloads, die komfortable Browsergrenzen überschreiten — und als Zuhause für LocalDocu AI. Das ist Arbeit in Arbeit (WIP). Wir würden sie gerne bald mit Beiträgen der Open-Source-Community veröffentlichen.",
+    "directionHeading": "Was wir bauen",
     "direction": [
       "Stärkere lokale Ressourcen für große oder komplexe Aufgaben",
       "Dieselben Local-First-Datenschutzprinzipien wie in der Web-App",
       "LocalDocu AI: Absichtsverständnis, das die Dokumentverwaltungs-Funktionen von LocalDocu anhand von Dokument-Metadaten steuert",
       "Windows-zuerst-Ziele werden in der Produkt-Roadmap erwogen"
     ],
-    "note": "Nutze heute den Web-Arbeitsbereich. Erwarte im aktuellen Browser-Release keine reinen Desktop-Funktionen und kein LocalDocu AI.",
+    "note": "Nutze heute den Web-Arbeitsbereich, während wir auf den Launch hinarbeiten. Reine Desktop-Funktionen und LocalDocu AI sind im aktuellen Browser-Release noch nicht enthalten — Community-Beiträge sind willkommen.",
     "links": {
       "localAi": "LocalDocu AI",
       "roadmap": "Roadmap",
@@ -456,7 +456,7 @@
     }
   },
   "localAi": {
-    "intro": "LocalDocu AI ist eine geplante Desktop-Funktion: ein Open-Weight-Modell, das für lokale Geräte geeignet ist, die Absicht der Nutzenden und die Dokumentverwaltungs-Funktionen von LocalDocu versteht und komplexe mehrstufige Arbeit dann über diese lokalen Engines ausführt. LocalDocu AI ist im aktuellen Web-Release aus.",
+    "intro": "LocalDocu AI ist in aktiver Entwicklung für die Desktop-App: ein Open-Weight-Modell, das für lokale Geräte geeignet ist, die Absicht der Nutzenden und die Dokumentverwaltungs-Funktionen von LocalDocu versteht und komplexe mehrstufige Arbeit dann über diese lokalen Engines ausführt. LocalDocu AI ist im aktuellen Web-Release aus. Wir streben eine baldige Veröffentlichung an und begrüßen Beiträge der Open-Source-Community.",
     "designedHeading": "Wofür LocalDocu AI ausgelegt ist",
     "designed": [
       "Aus der LocalDocu Desktop-Anwendung heraus laufen (nicht als Cloud-KI-Pipeline für Dokumente)",
@@ -464,14 +464,14 @@
       "Die vorhandenen Dokumentverwaltungs- und PDF-/Word-Vorgänge von LocalDocu für komplexe Aufgaben ansteuern",
       "Ein Open-Weight-Modell nutzen, das zu leistungsfähigen lokalen Geräten passt und so gewählt ist, dass Qualität und Leistung erhalten bleiben, statt sie preiszugeben"
     ],
-    "modelHeading": "Geplantes Modell (künftig)",
+    "modelHeading": "Geplantes Modell (WIP)",
     "model": [
       "Du beschreibst in der Desktop-App in einfacher Sprache, was du möchtest",
       "LocalDocu AI deutet die Absicht anhand des Wissens über die LocalDocu-Funktionen sowie über Dokument-Metadaten (Namen, Typen, Anzahlen, Strukturhinweise — nicht Dateiinhalte)",
       "Gegenüber der LocalDocu-Befehlsregistrierung wird ein validierter Befehlsplan erzeugt",
       "Deterministische lokale Engines führen den Plan auf deinem Gerät aus"
     ],
-    "note": "Diese Architektur ist noch nicht umgesetzt. Der Web-Arbeitsbereich tut nicht so, als wäre LocalDocu AI aktiv. Dokumentinhalte werden im aktuellen Release nicht zur Verarbeitung an eine entfernte KI gesendet.",
+    "note": "LocalDocu AI ist Arbeit in Arbeit und im Web-Arbeitsbereich noch nicht aktiv. Dokumentinhalte werden im aktuellen Release nicht zur Verarbeitung an eine entfernte KI gesendet. Komm auf GitHub dazu, wenn du beim Launch helfen möchtest.",
     "links": {
       "desktop": "Desktop",
       "privacy": "Datenschutz",

@@ -57,7 +57,7 @@
     "future": "Future",
     "ariaFuture": "Future",
     "desktop": "Desktop",
-    "localAi": "Local AI",
+    "localAi": "LocalDocu AI",
     "support": "Support",
     "ariaSupport": "Support",
     "supportTheProject": "Support the project",
@@ -67,7 +67,7 @@
     "ariaLinkedIn": "Abhijeeth Gadwal on LinkedIn (opens in a new tab)",
     "ariaPortfolio": "Abhijeeth Gadwal portfolio (opens in a new tab)",
     "communityContributions": "with contributions from the community.",
-    "processingStatusLine": "Cloud document processing: Off · Local AI processing: Off"
+    "processingStatusLine": "Cloud document processing: Off · LocalDocu AI processing: Off"
   },
   "trust": {
     "ariaNetworkPrivacy": "Network and privacy status",

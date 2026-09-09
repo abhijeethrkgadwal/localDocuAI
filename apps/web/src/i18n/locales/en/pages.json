@@ -78,7 +78,7 @@
       },
       "whatIsLocaldocuAi": {
         "question": "What is LocalDocu AI?",
-        "answer": "LocalDocu AI is a planned capability for the LocalDocu desktop app. It uses an open-weight, local-device-friendly model to understand your intent and LocalDocu’s document-management capabilities, then runs complex tasks through those local engines. It is designed to work from document metadata and your request — not by sending document contents to the cloud. LocalDocu AI is Off in the current web release."
+        "answer": "LocalDocu AI is in active development for the LocalDocu desktop app. It uses an open-weight, local-device-friendly model to understand your intent and LocalDocu’s document-management capabilities, then runs complex tasks through those local engines. It is designed to work from document metadata and your request — not by sending document contents to the cloud. LocalDocu AI is Off in the current web release. We aim to release soon and welcome contributions from the open community."
       }
     }
   },
@@ -282,7 +282,7 @@
       "Phones & tablets (Android Chrome, iOS Safari): select files → run tool → download",
       "Desktop Chrome / Edge: fullest web experience (folder pick, native Save As, create folder)",
       "Desktop Firefox / Safari: core tools via file pick + download; folder / Save As limited",
-      "Future desktop app: heavier workloads + LocalDocu AI (not shipped)"
+      "Desktop app (WIP): heavier workloads + LocalDocu AI — community contributions welcome"
     ],
     "matrixHeading": "Feature matrix",
     "tableCaption": "Browser and device capability matrix",
@@ -416,7 +416,7 @@
     }
   },
   "roadmap": {
-    "intro": "The web workspace is the product today: local PDF and Word tools in the browser. Later phases add a LocalDocu desktop app and LocalDocu AI for intent-driven workflows on device.",
+    "intro": "The web workspace is the product today: local PDF and Word tools in the browser. We are actively building a LocalDocu desktop app and LocalDocu AI for intent-driven workflows on device — work in progress, aiming to release soon with the open community.",
     "shippedHeading": "Shipped (web)",
     "shipped": [
       "Select files / folder / drag-and-drop",
@@ -428,8 +428,8 @@
     ],
     "nextHeading": "Next directions",
     "next": [
-      "Desktop app for heavier local workloads (positioning page available)",
-      "LocalDocu AI (desktop): open-weight on-device model → metadata + intent → LocalDocu document-management commands (not active yet)",
+      "Desktop app for heavier local workloads (WIP — community contributions welcome)",
+      "LocalDocu AI (desktop): open-weight on-device model → metadata + intent → LocalDocu document-management commands (in progress)",
       "Arabic locale and RTL layout",
       "Continued hardening of tests, accessibility, and discoverability"
     ],
@@ -440,15 +440,15 @@
     }
   },
   "desktop": {
-    "intro": "A LocalDocu desktop application is planned for advanced local document automation — especially workloads that exceed comfortable browser limits — and as the home for LocalDocu AI. This page is positioning only; the desktop app is not shipping yet.",
-    "directionHeading": "Intended direction",
+    "intro": "We are actively building a LocalDocu desktop application for advanced local document automation — especially workloads that exceed comfortable browser limits — and as the home for LocalDocu AI. This is work in progress (WIP). We would love to release it soon with contributions from the open community.",
+    "directionHeading": "What we are building",
     "direction": [
       "Stronger local resources for large or complex jobs",
       "Same local-first privacy principles as the web app",
       "LocalDocu AI: intent understanding that drives LocalDocu document-management capabilities using document metadata",
       "Windows-first targets under consideration in the product roadmap"
     ],
-    "note": "Use the web workspace today. Do not expect desktop-only features or LocalDocu AI in the current browser release.",
+    "note": "Use the web workspace today while we build toward launch. Desktop-only features and LocalDocu AI are not in the current browser release yet — community contributions are welcome.",
     "links": {
       "localAi": "LocalDocu AI",
       "roadmap": "Roadmap",
@@ -456,7 +456,7 @@
     }
   },
   "localAi": {
-    "intro": "LocalDocu AI is a planned desktop capability: an open-weight, local-device-friendly model that understands user intent and LocalDocu’s document-management capabilities, then runs complex multi-step work through those local engines. LocalDocu AI is Off in the current web release.",
+    "intro": "LocalDocu AI is in active development for the desktop app: an open-weight, local-device-friendly model that understands user intent and LocalDocu’s document-management capabilities, then runs complex multi-step work through those local engines. LocalDocu AI is Off in the current web release. We aim to release soon and welcome contributions from the open community.",
     "designedHeading": "What LocalDocu AI is designed to do",
     "designed": [
       "Run from the LocalDocu desktop application (not as a cloud AI document pipeline)",
@@ -464,14 +464,14 @@
       "Drive LocalDocu’s existing document-management and PDF/Word operations for complex tasks",
       "Use an open-weight model suited to capable local devices, chosen to preserve quality and performance rather than trade them away"
     ],
-    "modelHeading": "Intended model (future)",
+    "modelHeading": "Intended model (WIP)",
     "model": [
       "You describe what you want in plain language in the desktop app",
       "LocalDocu AI interprets intent using LocalDocu capability knowledge plus document metadata (names, types, counts, structure signals — not file contents)",
       "A validated command plan is produced against the LocalDocu command registry",
       "Deterministic local engines execute the plan on your device"
     ],
-    "note": "This architecture is not implemented yet. The web workspace does not pretend LocalDocu AI is active. Document contents are not sent to a remote AI for processing in the current release.",
+    "note": "LocalDocu AI is work in progress and not active in the web workspace yet. Document contents are not sent to a remote AI for processing in the current release. Join us on GitHub if you want to help ship it.",
     "links": {
       "desktop": "Desktop",
       "privacy": "Privacy",

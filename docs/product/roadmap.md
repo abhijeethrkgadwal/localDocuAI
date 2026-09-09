@@ -22,7 +22,7 @@ Honest limits that still apply: browser memory / File System Access constraints;
 
 ## Next — Desktop app
 
-LocalDocu desktop (Tauri 2 direction, Windows first under consideration) for heavier local workloads beyond comfortable browser limits, and as the home for LocalDocu AI. Positioning pages exist (`/desktop`); the app is **not shipping yet**.
+LocalDocu desktop (Tauri 2 direction, Windows first under consideration) for heavier local workloads beyond comfortable browser limits, and as the home for LocalDocu AI. This is **work in progress** (`/desktop`); we aim to release soon with help from the open community. The app is **not shipping yet**.
 
 ## Then — LocalDocu AI (desktop)
 

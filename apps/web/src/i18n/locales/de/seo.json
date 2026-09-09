@@ -77,14 +77,14 @@
   },
   "desktop": {
     "title": "LocalDocu Desktop | Erweiterte lokale Dokumentautomatisierung",
-    "description": "Eine künftige Desktop-App für größere lokale Workloads und LocalDocu AI. Nur Positionierung — noch nicht verfügbar. Der Web-Arbeitsbereich bleibt heute das Produkt.",
+    "description": "Wir bauen eine Desktop-App für größere lokale Workloads und LocalDocu AI. Arbeit in Arbeit — wir streben eine baldige Veröffentlichung mit der Open-Source-Community an. Der Web-Arbeitsbereich bleibt heute das Produkt.",
     "h1": "Desktop: mehr lokale Kapazität in Sicht",
     "breadcrumb": "Desktop"
   },
   "localAi": {
     "title": "LocalDocu AI | Absichtsgesteuerte lokale Dokumentautomatisierung",
-    "description": "LocalDocu AI läuft in der Desktop-App: ein Open-Weight-Modell auf dem Gerät, das Dokument-Metadaten und Nutzerabsicht liest und dann die Dokumentverwaltung von LocalDocu steuert — ohne Dokumentinhalte in die Cloud zu senden. Im aktuellen Web-Release nicht aktiv.",
-    "h1": "LocalDocu AI: geplant für die Desktop-App",
+    "description": "LocalDocu AI läuft in der Desktop-App: ein Open-Weight-Modell auf dem Gerät, das Dokumentmetadaten und Nutzerabsicht liest und dann die LocalDocu-Dokumentverwaltung steuert — ohne Dokumentinhalte in die Cloud zu senden. Arbeit in Arbeit; im aktuellen Web-Release nicht aktiv. Community-Beiträge willkommen.",
+    "h1": "LocalDocu AI: in Arbeit für die Desktop-App",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {

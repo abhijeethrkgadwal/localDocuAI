@@ -77,14 +77,14 @@
   },
   "desktop": {
     "title": "LocalDocu 桌面版 | 高级本地文档自动化",
-    "description": "面向更繁重本地工作负载和 LocalDocu AI 的未来桌面应用。本页仅为定位说明，目前尚未发布，网页工作区仍然是今天的产品。",
+    "description": "我们正在构建面向更繁重本地工作负载和 LocalDocu AI 的桌面应用。工作正在进行中—希望与开放社区一起尽快发布。网页工作区仍然是今天的产品。",
     "h1": "桌面版：更强的本地容量即将到来",
     "breadcrumb": "桌面版"
   },
   "localAi": {
     "title": "LocalDocu AI | 意图驱动的本地文档自动化",
-    "description": "LocalDocu AI 在桌面应用中运行：一个在设备上运行的开放权重模型，读取文档元数据和用户意图，进而驱动 LocalDocu 的文档管理—不会把文档内容发送到云端。在当前的网页版中尚未启用。",
-    "h1": "LocalDocu AI：为桌面应用规划",
+    "description": "LocalDocu AI 在桌面应用中运行：一个开放权重、设备端模型，读取文档元数据与用户意图，然后驱动 LocalDocu 文档管理—不会把文档内容发送到云端。工作正在进行中；当前网页版尚未启用。欢迎社区贡献。",
+    "h1": "LocalDocu AI：桌面应用开发进行中",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {

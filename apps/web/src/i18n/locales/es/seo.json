@@ -77,14 +77,14 @@
   },
   "desktop": {
     "title": "LocalDocu para escritorio | Automatización local avanzada de documentos",
-    "description": "Una futura aplicación de escritorio para cargas locales más pesadas y LocalDocu AI. Solo posicionamiento — aún no disponible; la web sigue siendo el producto.",
+    "description": "Estamos construyendo una aplicación de escritorio para cargas locales más pesadas y LocalDocu AI. Trabajo en curso — queremos lanzarla pronto con la comunidad open source. El espacio de trabajo web sigue siendo el producto de hoy.",
     "h1": "Escritorio: más capacidad local por delante",
     "breadcrumb": "Escritorio"
   },
   "localAi": {
     "title": "LocalDocu AI | Automatización local de documentos guiada por la intención",
-    "description": "LocalDocu AI se ejecuta en la aplicación de escritorio: un modelo de pesos abiertos en el dispositivo que usa los metadatos de los documentos y la intención del usuario para impulsar la gestión de documentos de LocalDocu — sin enviar el contenido a la nube. No está activo en la versión web actual.",
-    "h1": "LocalDocu AI: previsto para la aplicación de escritorio",
+    "description": "LocalDocu AI se ejecuta en la aplicación de escritorio: un modelo de pesos abiertos en el dispositivo que usa los metadatos de los documentos y la intención del usuario para impulsar la gestión de documentos de LocalDocu — sin enviar el contenido a la nube. Trabajo en curso; no está activo en la versión web actual. Se agradecen las contribuciones de la comunidad.",
+    "h1": "LocalDocu AI: en progreso para la aplicación de escritorio",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {
