@@ -3,6 +3,8 @@ import { CommandName } from '@localdoc/core';
 import type { ProgressUpdate } from '@localdoc/core';
 import { getCatalogEntry } from '@localdoc/orchestration/catalog';
 import type { CompressMode, CompressQuality } from '@localdoc/pdf/compress-presets';
+import type { TranslateFn } from '../i18n';
+import { useT } from '../i18n';
 import type { PdfOpKind } from '../lib/pdfOpsWorkflow';
 import { ProgressBar } from './ProgressBar';
 
@@ -11,6 +13,14 @@ export type PdfAction = 'merge' | 'convertToPdf' | PdfOpKind;
 interface PdfOpsPanelProps {
   action: PdfAction;
   onActionChange: (action: PdfAction) => void;
+  /** When set, only these operations appear in the picker (or the locked action). */
+  allowedActions?: PdfAction[];
+  /** Hide the operation dropdown (single-purpose tool pages). */
+  showActionPicker?: boolean;
+  /** Hide the disabled LocalDocu AI placeholder input. */
+  showAiPlaceholder?: boolean;
+  panelTitle?: string;
+  panelDesc?: string;
   pageSpec: string;
   onPageSpecChange: (value: string) => void;
   rotation: 90 | 180 | 270;
@@ -49,32 +59,94 @@ const ACTION_TO_COMMAND: Record<PdfAction, string> = {
   compress: CommandName.COMPRESS_PDF,
 };
 
-const DOCUMENT_ACTIONS: { value: PdfAction; label: string }[] = [
-  { value: 'merge', label: 'Merge documents' },
-  { value: 'convertToPdf', label: 'Convert DOC/DOCX to PDF' },
-  { value: 'compress', label: 'Compress PDF' },
+const DOCUMENT_ACTION_VALUES: PdfAction[] = ['merge', 'convertToPdf', 'compress'];
+const PDF_PAGE_ACTION_VALUES: PdfAction[] = [
+  'split',
+  'extract',
+  'delete',
+  'rotate',
+  'reorder',
 ];
 
-const PDF_PAGE_ACTIONS: { value: PdfAction; label: string }[] = [
-  { value: 'split', label: 'Split into pages' },
-  { value: 'extract', label: 'Extract pages' },
-  { value: 'delete', label: 'Delete pages' },
-  { value: 'rotate', label: 'Rotate pages' },
-  { value: 'reorder', label: 'Reorder pages' },
-];
-
-function runButtonLabel(running: boolean, resultMessage: string | null, errorMessage: string | null) {
-  if (running) return 'Processing…';
-  if (errorMessage) return 'Try again';
-  if (resultMessage) {
-    return /cancell?ed/i.test(resultMessage) ? 'Run again' : 'Completed';
+function documentActionLabel(value: PdfAction, t: TranslateFn): string {
+  switch (value) {
+    case 'merge':
+      return t('workspace.ops.mergeDocuments');
+    case 'convertToPdf':
+      return t('workspace.ops.convertDocToPdf');
+    case 'compress':
+      return t('workspace.ops.compressPdf');
+    default:
+      return value;
   }
-  return 'Run';
+}
+
+function pdfPageActionLabel(value: PdfAction, t: TranslateFn): string {
+  switch (value) {
+    case 'split':
+      return t('workspace.ops.splitIntoPages');
+    case 'extract':
+      return t('workspace.ops.extractPages');
+    case 'delete':
+      return t('workspace.ops.deletePages');
+    case 'rotate':
+      return t('workspace.ops.rotatePages');
+    case 'reorder':
+      return t('workspace.ops.reorderPages');
+    default:
+      return value;
+  }
+}
+
+function idleRunLabel(action: PdfAction, t: TranslateFn): string {
+  switch (action) {
+    case 'merge':
+      return t('workspace.ops.merge');
+    case 'compress':
+      return t('workspace.ops.compress');
+    case 'convertToPdf':
+      return t('workspace.ops.convert');
+    case 'split':
+      return t('workspace.ops.split');
+    case 'extract':
+      return t('workspace.ops.extract');
+    case 'delete':
+      return t('workspace.ops.deletePagesAction');
+    case 'rotate':
+      return t('workspace.ops.rotate');
+    case 'reorder':
+      return t('workspace.ops.reorder');
+    default:
+      return t('workspace.ops.run');
+  }
+}
+
+function runButtonLabel(
+  running: boolean,
+  resultMessage: string | null,
+  errorMessage: string | null,
+  action: PdfAction,
+  showActionPicker: boolean,
+  t: TranslateFn,
+) {
+  if (running) return t('workspace.ops.processing');
+  if (errorMessage) return t('workspace.ops.tryAgain');
+  if (resultMessage) {
+    return /cancell?ed/i.test(resultMessage)
+      ? t('workspace.ops.runAgain')
+      : t('workspace.ops.completed');
+  }
+  return showActionPicker ? t('workspace.ops.run') : idleRunLabel(action, t);
 }
 
 export function PdfOpsPanel({
   action,
   onActionChange,
+  allowedActions,
+  showActionPicker = true,
+  showAiPlaceholder = true,
+  panelTitle,
+  panelDesc,
   pageSpec,
   onPageSpecChange,
   rotation,
@@ -99,12 +171,19 @@ export function PdfOpsPanel({
   onRun,
   onCancel,
 }: PdfOpsPanelProps) {
+  const t = useT();
+  const resolvedTitle = panelTitle ?? t('workspace.ops.defaultTitle');
+  const resolvedDesc = panelDesc ?? t('workspace.ops.defaultDesc');
   const needsPages = action === 'extract' || action === 'delete' || action === 'rotate';
   const needsOrder = action === 'reorder';
   const needsRotation = action === 'rotate';
   const isConvert = action === 'convertToPdf';
   const isCompress = action === 'compress';
   const controlsLocked = running || locked;
+  const allowed = useMemo(
+    () => (allowedActions && allowedActions.length > 0 ? new Set(allowedActions) : null),
+    [allowedActions],
+  );
 
   const catalogNote = useMemo(() => {
     const entry = getCatalogEntry(ACTION_TO_COMMAND[action] as never);
@@ -113,86 +192,97 @@ export function PdfOpsPanel({
 
   const documentOptions = useMemo(
     () =>
-      DOCUMENT_ACTIONS.filter((opt) => {
-        const entry = getCatalogEntry(ACTION_TO_COMMAND[opt.value] as never);
+      DOCUMENT_ACTION_VALUES.filter((value) => {
+        if (allowed && !allowed.has(value)) return false;
+        const entry = getCatalogEntry(ACTION_TO_COMMAND[value] as never);
         return entry != null;
-      }),
-    [],
+      }).map((value) => ({ value, label: documentActionLabel(value, t) })),
+    [allowed, t],
   );
 
   const pdfPageOptions = useMemo(
     () =>
-      PDF_PAGE_ACTIONS.filter((opt) => {
-        const entry = getCatalogEntry(ACTION_TO_COMMAND[opt.value] as never);
+      PDF_PAGE_ACTION_VALUES.filter((value) => {
+        if (allowed && !allowed.has(value)) return false;
+        const entry = getCatalogEntry(ACTION_TO_COMMAND[value] as never);
         return entry != null;
-      }),
-    [],
+      }).map((value) => ({ value, label: pdfPageActionLabel(value, t) })),
+    [allowed, t],
   );
 
   const progressLabel =
     progress && progress.totalFiles > 1
-      ? `Processing ${progress.filesProcessed} of ${progress.totalFiles} documents`
-      : (progress?.message ?? 'Processing…');
+      ? t('workspace.ops.progressMulti', {
+          processed: progress.filesProcessed,
+          total: progress.totalFiles,
+        })
+      : (progress?.message ?? t('workspace.ops.processing'));
 
   return (
     <section className="panel" aria-labelledby="ops-heading">
       <h2 id="ops-heading" className="panel-title">
-        What would you like to do?
+        {resolvedTitle}
       </h2>
-      <p className="panel-desc">
-        Choose an operation now. LocalDocu AI natural language arrives with the desktop app.
+      <p className="panel-desc">{resolvedDesc}</p>
+
+      {showActionPicker ? (
+        <label className="field mt-5">
+          <span className="field-label">{t('workspace.ops.selectOperation')}</span>
+          <select
+            className="select"
+            value={action}
+            disabled={controlsLocked}
+            onChange={(e) => onActionChange(e.target.value as PdfAction)}
+          >
+            {documentOptions.length > 0 ? (
+              <optgroup label={t('workspace.ops.optgroupDocument')}>
+                {documentOptions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </optgroup>
+            ) : null}
+            {pdfPageOptions.length > 0 ? (
+              <optgroup label={t('workspace.ops.optgroupPdfPages')}>
+                {pdfPageOptions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </optgroup>
+            ) : null}
+          </select>
+        </label>
+      ) : null}
+
+      {showAiPlaceholder ? (
+        <label className={`field ${showActionPicker ? 'mt-3' : 'mt-5'}`}>
+          <span className="field-label">{t('workspace.ops.tellLocalDocu')}</span>
+          <input
+            className="input"
+            type="text"
+            disabled
+            placeholder={t('workspace.ops.aiPlaceholder')}
+            aria-disabled="true"
+            title={t('workspace.ops.aiTitle')}
+          />
+        </label>
+      ) : null}
+
+      <p className={`${showActionPicker || showAiPlaceholder ? 'mt-2' : 'mt-5'} text-xs text-[var(--text-tertiary)]`}>
+        {hint}
       </p>
-
-      <label className="field mt-5">
-        <span className="field-label">Select an operation</span>
-        <select
-          className="select"
-          value={action}
-          disabled={controlsLocked}
-          onChange={(e) => onActionChange(e.target.value as PdfAction)}
-        >
-          <optgroup label="Document">
-            {documentOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </optgroup>
-          <optgroup label="PDF pages">
-            {pdfPageOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </optgroup>
-        </select>
-      </label>
-
-      {/* Reserved extension point for future natural-language / AI input */}
-      <label className="field mt-3">
-        <span className="field-label">Tell LocalDocu what you want</span>
-        <input
-          className="input"
-          type="text"
-          disabled
-          placeholder="LocalDocu AI arrives with the desktop app — choose an operation above for now"
-          aria-disabled="true"
-          title="LocalDocu AI natural-language commands are not available in this web release"
-        />
-      </label>
-
-      <p className="mt-2 text-xs text-[var(--text-tertiary)]">{hint}</p>
 
       {isConvert ? (
         <p
           className="mt-3 rounded-[var(--radius-control)] border border-[var(--border)] bg-[var(--surface-subtle)] px-3 py-2 text-sm text-[var(--text-secondary)]"
           role="note"
         >
-          Creates a locally generated PDF from the document&apos;s readable content. Complex Word
-          layouts may not be preserved exactly.
+          {t('workspace.ops.convertNote')}
           {catalogNote?.includes('desktop') ? (
             <span className="mt-1 block text-xs text-[var(--text-tertiary)]">
-              Some advanced file operations will be available in the LocalDocu desktop app.
+              {t('workspace.ops.desktopAdvancedNote')}
             </span>
           ) : null}
         </p>
@@ -204,35 +294,33 @@ export function PdfOpsPanel({
             className="mt-3 rounded-[var(--radius-control)] border border-[var(--border)] bg-[var(--surface-subtle)] px-3 py-2 text-sm text-[var(--text-secondary)]"
             role="note"
           >
-            Runs entirely on this device — nothing is uploaded. Balanced keeps selectable text.
-            Maximum re-encodes pages as images for stronger size reduction. Deeper engines land in
-            the desktop app.
+            {t('workspace.ops.compressNote')}
           </p>
 
           <label className="field mt-3">
-            <span className="field-label">Compression mode</span>
+            <span className="field-label">{t('workspace.ops.compressionMode')}</span>
             <select
               className="select"
               value={compressMode}
               disabled={controlsLocked}
               onChange={(e) => onCompressModeChange(e.target.value as CompressMode)}
             >
-              <option value="balanced">Balanced (keep text selectable)</option>
-              <option value="maximum">Maximum (pages as images)</option>
+              <option value="balanced">{t('workspace.ops.modeBalanced')}</option>
+              <option value="maximum">{t('workspace.ops.modeMaximum')}</option>
             </select>
           </label>
 
           <label className="field mt-3">
-            <span className="field-label">Quality target</span>
+            <span className="field-label">{t('workspace.ops.qualityTarget')}</span>
             <select
               className="select"
               value={compressQuality}
               disabled={controlsLocked}
               onChange={(e) => onCompressQualityChange(e.target.value as CompressQuality)}
             >
-              <option value="high">Higher quality (larger file)</option>
-              <option value="medium">Balanced size</option>
-              <option value="low">Smaller file (more compression)</option>
+              <option value="high">{t('workspace.ops.qualityHigh')}</option>
+              <option value="medium">{t('workspace.ops.qualityMedium')}</option>
+              <option value="low">{t('workspace.ops.qualityLow')}</option>
             </select>
           </label>
         </>
@@ -241,11 +329,17 @@ export function PdfOpsPanel({
       {needsPages ? (
         <label className="field mt-3">
           <span className="field-label">
-            Pages {action === 'rotate' ? '(optional — leave blank for all)' : '(required)'}
+            {action === 'rotate'
+              ? t('workspace.ops.pagesOptional')
+              : t('workspace.ops.pagesRequired')}
           </span>
           <input
             className="input"
-            placeholder={action === 'rotate' ? 'blank = all pages' : 'e.g. 1-3,5'}
+            placeholder={
+              action === 'rotate'
+                ? t('workspace.ops.pagesPlaceholderAll')
+                : t('workspace.ops.pagesPlaceholderExample')
+            }
             value={pageSpec}
             disabled={controlsLocked}
             onChange={(e) => onPageSpecChange(e.target.value)}
@@ -255,26 +349,26 @@ export function PdfOpsPanel({
 
       {needsRotation ? (
         <label className="field mt-3">
-          <span className="field-label">Rotation</span>
+          <span className="field-label">{t('workspace.ops.rotation')}</span>
           <select
             className="select"
             value={rotation}
             disabled={controlsLocked}
             onChange={(e) => onRotationChange(Number(e.target.value) as 90 | 180 | 270)}
           >
-            <option value={90}>90°</option>
-            <option value={180}>180°</option>
-            <option value={270}>270°</option>
+            <option value={90}>{t('workspace.ops.rotation90')}</option>
+            <option value={180}>{t('workspace.ops.rotation180')}</option>
+            <option value={270}>{t('workspace.ops.rotation270')}</option>
           </select>
         </label>
       ) : null}
 
       {needsOrder ? (
         <label className="field mt-3">
-          <span className="field-label">New page order</span>
+          <span className="field-label">{t('workspace.ops.newPageOrder')}</span>
           <input
             className="input"
-            placeholder="e.g. 3,1,2"
+            placeholder={t('workspace.ops.orderPlaceholder')}
             value={orderSpec}
             disabled={controlsLocked}
             onChange={(e) => onOrderSpecChange(e.target.value)}
@@ -290,16 +384,16 @@ export function PdfOpsPanel({
           className="btn btn-primary min-w-[7.5rem]"
           aria-describedby={!canRun && disabledReason ? 'run-disabled-reason' : undefined}
         >
-          {runButtonLabel(running, resultMessage, errorMessage)}
+          {runButtonLabel(running, resultMessage, errorMessage, action, showActionPicker, t)}
         </button>
         {running ? (
           <button
             type="button"
             onClick={onCancel}
             className="btn btn-secondary"
-            aria-label="Cancel the current document operation"
+            aria-label={t('workspace.ops.ariaCancelOp')}
           >
-            Cancel
+            {t('workspace.ops.cancel')}
           </button>
         ) : null}
       </div>
@@ -337,7 +431,9 @@ export function PdfOpsPanel({
           >
             {/cancell?ed/i.test(resultMessage) ? resultMessage : `✓ ${resultMessage}`}
           </p>
-          <p className="mt-1 text-xs text-[var(--text-secondary)]">Processed locally on your device.</p>
+          <p className="mt-1 text-xs text-[var(--text-secondary)]">
+            {t('workspace.ops.processedLocally')}
+          </p>
         </div>
       ) : null}
 
@@ -350,9 +446,13 @@ export function PdfOpsPanel({
           {recovery ? <p className="mt-1 text-[var(--text-secondary)]">{recovery}</p> : null}
           {errorCategory || affectedFiles.length > 0 ? (
             <details className="mt-2">
-              <summary className="cursor-pointer text-[var(--text-primary)]">View details</summary>
+              <summary className="cursor-pointer text-[var(--text-primary)]">
+                {t('workspace.ops.viewDetails')}
+              </summary>
               {errorCategory ? (
-                <p className="mt-1 text-xs text-[var(--text-tertiary)]">Category: {errorCategory}</p>
+                <p className="mt-1 text-xs text-[var(--text-tertiary)]">
+                  {t('workspace.ops.category', { category: errorCategory })}
+                </p>
               ) : null}
               {affectedFiles.length > 0 ? (
                 <ul className="mt-1 list-disc pl-5 text-[var(--text-secondary)]">

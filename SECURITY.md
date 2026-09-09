@@ -99,6 +99,10 @@ We will not pursue legal action against researchers who:
 * Do not access or exfiltrate other users’ data
 * Give us a reasonable time to remediate before public disclosure
 
+## Production hosting
+
+The live web app is a static SPA on **Vercel** at [https://www.localdocu.org](https://www.localdocu.org). Network/security response headers and SPA routing live in [`apps/web/vercel.json`](apps/web/vercel.json). There is no document-processing backend to harden today; reports that add unexpected document egress via the static shell, service worker, or future APIs remain in scope.
+
 ## Related documents
 
 * [Privacy model](docs/privacy/privacy-model.md)

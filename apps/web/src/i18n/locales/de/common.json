@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "Sag, was zu tun ist. Deine Dateien bleiben auf deinem Gerät.",
+    "supportingMessage": "Local-First-Dokumentautomatisierung für PDF- und Word-Dateien.",
+    "secondaryMessage": "Dokumente lokal im Browser verarbeiten, organisieren, zusammenführen, konvertieren und verwalten.",
+    "description": "LocalDocu ist ein Dokumenten-Tool nach dem Privacy-First- und Local-First-Prinzip. Führe PDF- und Word-Dateien im Browser zusammen, teile, komprimiere, drehe und konvertiere sie — Dokumentinhalte bleiben auf deinem Gerät.",
+    "shortDescription": "Privacy-First-Automatisierung für PDF und Word, lokal. Dateien bleiben auf deinem Gerät."
+  },
+  "loading": "Wird geladen…",
+  "nav": {
+    "ariaPrimary": "Hauptnavigation",
+    "faq": "FAQ",
+    "privacy": "Datenschutz",
+    "github": "GitHub",
+    "opensInNewTab": " (wird in einem neuen Tab geöffnet)"
+  },
+  "theme": {
+    "ariaColorTheme": "Farbschema",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System",
+    "useLight": "Helles Erscheinungsbild verwenden",
+    "useDark": "Dunkles Erscheinungsbild verwenden",
+    "matchSystem": "An Systemdarstellung anpassen"
+  },
+  "cta": {
+    "openLocalDocu": "LocalDocu öffnen"
+  },
+  "breadcrumbs": {
+    "aria": "Navigationspfad",
+    "home": "Startseite"
+  },
+  "footer": {
+    "tagline": "Local-First-Dokumentautomatisierung für PDF- und Word-Dateien.",
+    "controlLine": "Deine Dateien. Dein Gerät. Deine Kontrolle.",
+    "licensedUnder": "Lizenziert unter",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "Offen entwickelt.",
+    "product": "Produkt",
+    "ariaProduct": "Produkt",
+    "openLocalDocu": "LocalDocu öffnen",
+    "pdfTools": "PDF-Tools",
+    "mergePdf": "PDF zusammenführen",
+    "compressPdf": "PDF komprimieren",
+    "mergeDocx": "DOCX zusammenführen",
+    "docxToPdf": "DOCX zu PDF",
+    "howItWorks": "So funktioniert es",
+    "browserSupport": "Browser-Unterstützung",
+    "privacy": "Datenschutz",
+    "faq": "FAQ",
+    "openSource": "Open Source",
+    "ariaOpenSource": "Open Source",
+    "github": "GitHub",
+    "contribute": "Mitwirken",
+    "roadmap": "Roadmap",
+    "license": "Lizenz",
+    "future": "Zukunft",
+    "ariaFuture": "Zukunft",
+    "desktop": "Desktop",
+    "localAi": "Lokale KI",
+    "support": "Unterstützung",
+    "ariaSupport": "Unterstützung",
+    "supportTheProject": "Projekt unterstützen",
+    "sponsorLocalDocu": "LocalDocu sponsern",
+    "sponsorshipComingSoon": "Sponsoring folgt in Kürze.",
+    "createdBy": "Erstellt und gepflegt von Abhijeeth Gadwal",
+    "ariaLinkedIn": "Abhijeeth Gadwal auf LinkedIn (wird in einem neuen Tab geöffnet)",
+    "ariaPortfolio": "Portfolio von Abhijeeth Gadwal (wird in einem neuen Tab geöffnet)",
+    "communityContributions": "mit Beiträgen aus der Community.",
+    "processingStatusLine": "Cloud-Dokumentverarbeitung: Aus · Lokale KI-Verarbeitung: Aus"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "Netzwerk- und Datenschutzstatus",
+    "browserOnline": "Browser online",
+    "offline": "Offline",
+    "ariaNetworkOnline": "Netzwerk: Browser meldet online",
+    "ariaNetworkOffline": "Netzwerk: offline",
+    "localProcessing": "Lokale Verarbeitung",
+    "ariaLocalProcessing": "Dokumentverarbeitung: lokal",
+    "cloudProcessingOff": "Cloud-Verarbeitung aus",
+    "ariaCloudOff": "Cloud-Dokumentverarbeitung: aus",
+    "localDocuAiOff": "LocalDocu AI aus",
+    "ariaAiOff": "LocalDocu AI: aus",
+    "details": "Details",
+    "offlineBannerTitle": "Offline.",
+    "offlineBannerBody": "Lokale Dokument-Tools funktionieren auf dieser Seite weiter. Vermeide das Neuladen — es kann Dokumente in dieser Sitzung verwerfen. Nutze lieber ein normales Neuladen als einen harten Reload (Shift+Reload): Ein harter Reload umgeht den Service Worker und schlägt offline meist fehl.",
+    "detailsOnlineTitle": "Browser meldet eine Verbindung",
+    "detailsOfflineTitle": "Offline",
+    "detailsOnlineBody": "Netzwerk verfügbar. Die Dokumentverarbeitung findet weiterhin lokal auf diesem Gerät statt.",
+    "detailsOfflineBody": "Offline. Lokale Dokument-Tools funktionieren weiter. Offline zu gehen stoppt einen laufenden lokalen Vorgang nicht — Neuladen oder Schließen des Tabs schon. Ein weiches Neuladen nutzt die zwischengespeicherte App-Shell; ein harter Reload gelingt offline meist nicht.",
+    "filesInSession": "Dateien in dieser Sitzung: {count}",
+    "contentsProcessedLocally": "Dokumentinhalte werden auf diesem Gerät verarbeitet.",
+    "cloudDocumentProcessingOff": "Cloud-Dokumentverarbeitung: Aus",
+    "localDocuAiOffDetail": "LocalDocu AI: Aus (Desktop, Absicht nur aus Metadaten — nicht in diesem Web-Release)",
+    "notUploadedFootnote": "Dateien werden für die Dokumentverarbeitung nicht hochgeladen. Verarbeitung erfolgt lokal auf deinem Gerät."
+  },
+  "privacyStatus": {
+    "aria": "Datenschutzstatus",
+    "localProcessing": "Lokale Verarbeitung",
+    "cloudProcessing": "Cloud-Verarbeitung {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "{count} Dateien auf dem Gerät. Dokumentverarbeitung: {processingLocation}. Cloud-Dokumentverarbeitung: {cloudDocumentProcessing}. LocalDocu AI: {aiProcessing}. Dokumentinhalte werden auf diesem Gerät verarbeitet. Dateien werden für die Dokumentverarbeitung nicht hochgeladen."
+  },
+  "networkStatus": {
+    "ariaOnline": "Netzwerk: online",
+    "ariaOffline": "Netzwerk: offline",
+    "online": "Online",
+    "offline": "Offline",
+    "onlineSuffix": "· Möglicherweise verfügbar · Verarbeitung bleibt lokal",
+    "offlineSuffix": "· Lokale Dokument-Tools funktionieren weiter"
+  },
+  "notFound": {
+    "body": "Diese Adresse ist keine LocalDocu-Seite.",
+    "bodyFull": "Diese Adresse ist keine LocalDocu-Seite. Öffnen Sie den Arbeitsbereich oder eine der folgenden Seiten.",
+    "workspace": "Arbeitsbereich",
+    "faq": "FAQ",
+    "howItWorks": "So funktioniert es",
+    "browserSupport": "Browser-Unterstützung",
+    "privacy": "Datenschutz"
+  },
+  "language": {
+    "aria": "Sprache",
+    "label": "Sprache"
+  }
+}

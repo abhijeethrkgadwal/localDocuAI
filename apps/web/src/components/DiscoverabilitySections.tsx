@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import {
   FAQ_ITEMS,
   FAQ_SUBTITLE,
@@ -7,14 +6,18 @@ import {
   WHY_LOCAL_MATTERS,
 } from '../lib/seoContent';
 import { SITE_PATHS } from '../lib/siteConfig';
+import { useT } from '../i18n';
+import { LocalizedLink } from './LocalizedLink';
 
 /** Visible below-the-fold sections on the homepage workspace. */
 export function DiscoverabilitySections() {
+  const t = useT();
+
   return (
     <div className="flex flex-col gap-6 md:gap-8">
       <section id="how-it-works" className="panel" aria-labelledby="how-it-works-heading">
         <h2 id="how-it-works-heading" className="panel-title">
-          How LocalDocu works
+          {t('pages.discoverability.howItWorksHeading')}
         </h2>
         <p className="panel-desc">{PRODUCT_SUMMARY}</p>
         <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm text-[var(--text-secondary)]">
@@ -34,38 +37,40 @@ export function DiscoverabilitySections() {
           </ul>
         </div>
         <p className="mt-4 text-sm">
-          <Link
+          <LocalizedLink
             className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
             to={SITE_PATHS.howItWorks}
           >
-            Full how-it-works page
-          </Link>
+            {t('pages.discoverability.fullHowItWorksPage')}
+          </LocalizedLink>
+          {' · '}
+          <LocalizedLink
+            className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            to={SITE_PATHS.browserSupport}
+          >
+            {t('pages.discoverability.browserDeviceSupport')}
+          </LocalizedLink>
         </p>
       </section>
 
       <section id="privacy" className="panel" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading" className="panel-title">
-          Privacy by design
+          {t('pages.discoverability.privacyHeading')}
         </h2>
-        <p className="panel-desc">
-          Document contents are processed on this device. Document files are not uploaded to
-          LocalDocu for processing. The current release has no authentication, no document-upload
-          backend, and no LocalDocu AI pipeline. Status indicators show local processing, cloud
-          processing off, and LocalDocu AI off.
-        </p>
+        <p className="panel-desc">{t('pages.discoverability.privacyBody')}</p>
         <p className="mt-3 text-sm">
-          <Link
+          <LocalizedLink
             className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
             to={SITE_PATHS.privacy}
           >
-            Privacy details
-          </Link>
+            {t('pages.discoverability.privacyDetails')}
+          </LocalizedLink>
         </p>
       </section>
 
       <section id="faq" className="panel" aria-labelledby="faq-heading">
         <h2 id="faq-heading" className="panel-title">
-          Frequently asked questions
+          {t('pages.discoverability.faqHeading')}
         </h2>
         <p className="panel-desc mb-4">{FAQ_SUBTITLE}</p>
         <div className="space-y-3">
@@ -83,12 +88,12 @@ export function DiscoverabilitySections() {
           ))}
         </div>
         <p className="mt-4 text-sm">
-          <Link
+          <LocalizedLink
             className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
             to={SITE_PATHS.faq}
           >
-            Open FAQ page
-          </Link>
+            {t('pages.discoverability.openFaqPage')}
+          </LocalizedLink>
         </p>
       </section>
     </div>

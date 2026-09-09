@@ -17,7 +17,7 @@ otherwise process documents **on their own device**.
 Please keep contributions aligned with:
 
 1. **Local-first processing** — document contents stay on the user’s device for current workflows
-2. **Honest product claims** — do not overstate privacy, offline support, Word layout fidelity, or AI readiness
+2. **Honest product claims** — do not overstate privacy, offline support, Word layout fidelity, AI readiness, or **browser/device capabilities** (see [docs/product/browser-support.md](docs/product/browser-support.md))
 3. **Small, reviewable changes** — prefer focused PRs over large mixed patches
 4. **Accessibility** — keep keyboard use, labels, focus, and status messaging intact
 5. **Open roadmap discipline** — implement in phases; do not jump ahead of agreed scope
@@ -47,7 +47,7 @@ See [docs/product/roadmap.md](docs/product/roadmap.md) and
 
 * Bug reports and reproducible test cases
 * Accessibility and UX improvements
-* Documentation and discoverability (accurate SEO/AEO copy)
+* Documentation and discoverability (accurate SEO/AEO copy and locale catalogs)
 * Tests for merge, compress, convert, file-manage, and error paths
 * Performance and capacity hardening within browser limits
 * Design polish that preserves the existing visual language
@@ -82,11 +82,19 @@ pnpm --filter @localdoc/web preview
 | Path | Role |
 | ---- | ---- |
 | `apps/web` | React web app / PWA |
+| `apps/web/src/i18n` | UI locales (`en`, `hi`, `es`, `pt`, `de`, `fr`, `ja`, `zh`) |
 | `packages/core` | Shared types, errors, sorting/filter helpers |
 | `packages/filesystem` | Browser / memory filesystem adapters |
 | `packages/pdf` | PDF engines (merge, page ops, compress) |
 | `packages/docx` | DOCX merge, text extract, convert-to-PDF |
 | `packages/orchestration` | Unified command catalog / registry |
+
+### UI copy / locales
+
+- User-facing strings live in `apps/web/src/i18n/locales/{locale}/{common,workspace,pages,seo}.json`.
+- **English (`en`) is the source of truth.** When you add or change UI copy, update `en` first, then the other locale files (or leave them to fall back to English until translated).
+- Do not invent new locale URL prefixes without an explicit product decision. Arabic/RTL is not in scope yet.
+- Keep brand tokens (`LocalDocu`, `PDF`, `DOCX`, …) and `{interpolation}` placeholders intact.
 
 ## Pull request process
 
@@ -103,7 +111,8 @@ pnpm --filter @localdoc/web preview
 * [ ] `pnpm typecheck` passes
 * [ ] Web build succeeds if UI changed
 * [ ] No document-upload / auth / cloud processing unless explicitly scoped
-* [ ] Privacy, offline, and LocalDocu AI claims remain accurate
+* [ ] Privacy, offline, locale, and LocalDocu AI claims remain accurate
+* [ ] UI string changes update `apps/web/src/i18n/locales/en/*.json` (and other locales when translating)
 * [ ] UI changes preserve accessibility basics (labels, focus, live status where used)
 
 ## Issues

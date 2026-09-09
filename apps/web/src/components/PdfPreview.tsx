@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { formatAppErrorLine, type LocalFileRef } from '@localdoc/core';
 import type { FilesystemAdapter } from '@localdoc/filesystem';
+import { useT } from '../i18n';
 import { looksLikePdf } from '../lib/pdfMagic';
 
 interface PdfPreviewProps {
@@ -9,6 +10,7 @@ interface PdfPreviewProps {
 }
 
 export function PdfPreview({ file, fs }: PdfPreviewProps) {
+  const t = useT();
   const [url, setUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -36,7 +38,7 @@ export function PdfPreview({ file, fs }: PdfPreviewProps) {
       }
 
       if (!looksLikePdf(result.value)) {
-        setError(`${file.name} could not be read as a PDF.`);
+        setError(t('workspace.preview.couldNotReadPdf', { name: file.name }));
         setLoading(false);
         return;
       }
@@ -55,15 +57,17 @@ export function PdfPreview({ file, fs }: PdfPreviewProps) {
       cancelled = true;
       if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
-  }, [file, fs]);
+  }, [file, fs, t]);
 
   if (!file) {
     return (
       <div className="rounded-[var(--radius-surface)] border border-dashed border-[var(--border)] bg-[var(--surface-subtle)] px-4 py-12 text-center">
         <p className="text-sm font-medium text-[var(--text-primary)]">
-          Select a document to preview it here.
+          {t('workspace.preview.emptyTitle')}
         </p>
-        <p className="mt-1 text-sm text-[var(--text-secondary)]">Preview stays on this device.</p>
+        <p className="mt-1 text-sm text-[var(--text-secondary)]">
+          {t('workspace.preview.emptyBody')}
+        </p>
       </div>
     );
   }
@@ -71,11 +75,12 @@ export function PdfPreview({ file, fs }: PdfPreviewProps) {
   return (
     <div className="space-y-2">
       <p className="text-sm text-[var(--text-secondary)]">
-        Preview: <span className="font-medium text-[var(--text-primary)]">{file.name}</span>
+        {t('workspace.preview.label')}{' '}
+        <span className="font-medium text-[var(--text-primary)]">{file.name}</span>
       </p>
       {loading ? (
         <p className="text-sm text-[var(--text-secondary)]" role="status">
-          Loading preview…
+          {t('workspace.preview.loading')}
         </p>
       ) : null}
       {error ? (
@@ -85,7 +90,7 @@ export function PdfPreview({ file, fs }: PdfPreviewProps) {
       ) : null}
       {url ? (
         <iframe
-          title={`Preview of ${file.name}`}
+          title={t('workspace.preview.iframeTitle', { name: file.name })}
           src={url}
           className="h-80 w-full rounded-[var(--radius-surface)] border border-[var(--border)] bg-[var(--surface)]"
         />

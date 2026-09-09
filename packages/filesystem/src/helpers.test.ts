@@ -26,6 +26,7 @@ describe('@localdoc/filesystem helpers', () => {
   it('describes chromium capabilities', () => {
     const text = describeCapabilities({
       supportsDirectoryPicker: true,
+      supportsWebkitDirectory: true,
       supportsFilePicker: true,
       supportsWriteToHandle: true,
       supportsBlobDownload: true,
@@ -33,6 +34,20 @@ describe('@localdoc/filesystem helpers', () => {
       supportsCreateFolder: true,
     });
     expect(text.toLowerCase()).toContain('folder');
+  });
+
+  it('describes limited mobile-style capabilities without promising desktop folders', () => {
+    const text = describeCapabilities({
+      supportsDirectoryPicker: false,
+      supportsWebkitDirectory: false,
+      supportsFilePicker: false,
+      supportsWriteToHandle: false,
+      supportsBlobDownload: true,
+      supportsSessionMutation: true,
+      supportsCreateFolder: false,
+    });
+    expect(text.toLowerCase()).toContain('download');
+    expect(text.toLowerCase()).toContain('desktop chrome or edge');
   });
 });
 
@@ -121,7 +136,7 @@ describe('@localdoc/filesystem memory adapter', () => {
 
   it('reports unsupported folder pick when capability is off', async () => {
     const adapter = createMemoryFilesystemAdapter({
-      capabilities: { supportsDirectoryPicker: false },
+      capabilities: { supportsDirectoryPicker: false, supportsWebkitDirectory: false },
     });
     const result = await adapter.pickDirectory();
     expect(result.ok).toBe(false);

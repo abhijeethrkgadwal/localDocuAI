@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import type { LocalFileRef } from '@localdoc/core';
 import { isPdfFile, isWordFile } from '@localdoc/core';
+import { useT } from '../i18n';
 
 interface FileListProps {
   files: LocalFileRef[];
@@ -19,13 +20,18 @@ function formatSize(size: number): string {
   return `${(size / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-function fileTypeLabel(file: LocalFileRef): string {
-  if (isPdfFile(file)) return 'PDF';
+function fileTypeLabel(
+  file: LocalFileRef,
+  t: (key: string) => string,
+): string {
+  if (isPdfFile(file)) return t('workspace.fileList.typePdf');
   if (isWordFile(file)) {
     const lower = file.name.toLowerCase();
-    return lower.endsWith('.doc') && !lower.endsWith('.docx') ? 'DOC' : 'DOCX';
+    return lower.endsWith('.doc') && !lower.endsWith('.docx')
+      ? t('workspace.fileList.typeDoc')
+      : t('workspace.fileList.typeDocx');
   }
-  return 'File';
+  return t('workspace.fileList.typeFile');
 }
 
 interface FileRowProps {
@@ -51,6 +57,8 @@ const FileRow = memo(function FileRow({
   onMoveDown,
   onRemove,
 }: FileRowProps) {
+  const t = useT();
+
   return (
     <li>
       <div
@@ -66,7 +74,7 @@ const FileRow = memo(function FileRow({
           onClick={() => onSelect(file.id)}
           disabled={disabled}
           aria-pressed={selected}
-          aria-label={`Select ${file.name} for preview`}
+          aria-label={t('workspace.fileList.ariaSelectForPreview', { name: file.name })}
         >
           <div className="flex items-start gap-2.5">
             <span
@@ -85,7 +93,7 @@ const FileRow = memo(function FileRow({
                 </p>
               ) : null}
               <p className="mt-1 text-xs text-[var(--text-secondary)]">
-                {fileTypeLabel(file)} · {formatSize(file.size)}
+                {fileTypeLabel(file, t)} · {formatSize(file.size)}
               </p>
             </div>
           </div>
@@ -94,8 +102,8 @@ const FileRow = memo(function FileRow({
         <div className="flex shrink-0 items-center gap-1 self-center">
           <button
             type="button"
-            aria-label="Move document up"
-            title="Move up"
+            aria-label={t('workspace.fileList.ariaMoveUp')}
+            title={t('workspace.fileList.moveUp')}
             disabled={disabled || index === 0}
             onClick={() => onMoveUp(index)}
             className="btn btn-secondary btn-sm btn-icon"
@@ -104,8 +112,8 @@ const FileRow = memo(function FileRow({
           </button>
           <button
             type="button"
-            aria-label="Move document down"
-            title="Move down"
+            aria-label={t('workspace.fileList.ariaMoveDown')}
+            title={t('workspace.fileList.moveDown')}
             disabled={disabled || isLast}
             onClick={() => onMoveDown(index)}
             className="btn btn-secondary btn-sm btn-icon"
@@ -114,13 +122,13 @@ const FileRow = memo(function FileRow({
           </button>
           <button
             type="button"
-            aria-label="Remove document"
-            title="Remove"
+            aria-label={t('workspace.fileList.ariaRemove')}
+            title={t('workspace.fileList.remove')}
             disabled={disabled}
             onClick={() => onRemove(file.id)}
             className="btn btn-ghost btn-sm text-[var(--danger)]"
           >
-            Remove
+            {t('workspace.fileList.remove')}
           </button>
         </div>
       </div>
@@ -138,14 +146,19 @@ export function FileList({
   onMoveDown,
   onRemove,
 }: FileListProps) {
+  const t = useT();
+
   if (files.length === 0) {
     return null;
   }
 
-  const countLabel = files.length === 1 ? '1 document' : `${files.length} documents`;
+  const countLabel =
+    files.length === 1
+      ? t('workspace.fileList.oneDocument')
+      : t('workspace.fileList.nDocuments', { count: files.length });
   const sourceLabel = directoryName
-    ? `From ${directoryName} · local only`
-    : 'Local only';
+    ? t('workspace.fileList.fromDirectory', { name: directoryName })
+    : t('workspace.fileList.localOnly');
 
   return (
     <div className="mt-6">

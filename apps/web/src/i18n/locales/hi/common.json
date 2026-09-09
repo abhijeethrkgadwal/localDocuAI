@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "इसे बताइए क्या करना है। आपकी फ़ाइलें आपके डिवाइस पर ही रहती हैं।",
+    "supportingMessage": "PDF और Word फ़ाइलों के लिए लोकल-फ़र्स्ट दस्तावेज़ ऑटोमेशन।",
+    "secondaryMessage": "अपने ब्राउज़र में ही दस्तावेज़ों को लोकल रूप से प्रोसेस करें, व्यवस्थित करें, मर्ज करें, कन्वर्ट करें और मैनेज करें।",
+    "description": "LocalDocu एक प्राइवेसी-फ़र्स्ट, लोकल-फ़र्स्ट दस्तावेज़ टूल है। अपने ब्राउज़र में PDF और Word फ़ाइलें मर्ज करें, बाँटें, कंप्रेस करें, घुमाएँ और कन्वर्ट करें — दस्तावेज़ की सामग्री आपके डिवाइस पर ही रहती है।",
+    "shortDescription": "प्राइवेसी-फ़र्स्ट लोकल PDF और Word ऑटोमेशन। फ़ाइलें आपके डिवाइस पर ही रहती हैं।"
+  },
+  "loading": "लोड हो रहा है…",
+  "nav": {
+    "ariaPrimary": "मुख्य",
+    "faq": "FAQ",
+    "privacy": "प्राइवेसी",
+    "github": "GitHub",
+    "opensInNewTab": " (नए टैब में खुलता है)"
+  },
+  "theme": {
+    "ariaColorTheme": "रंग थीम",
+    "light": "लाइट",
+    "dark": "डार्क",
+    "system": "सिस्टम",
+    "useLight": "लाइट रूप इस्तेमाल करें",
+    "useDark": "डार्क रूप इस्तेमाल करें",
+    "matchSystem": "सिस्टम के रूप से मिलाएँ"
+  },
+  "cta": {
+    "openLocalDocu": "LocalDocu खोलें"
+  },
+  "breadcrumbs": {
+    "aria": "ब्रेडक्रम्ब",
+    "home": "होम"
+  },
+  "footer": {
+    "tagline": "PDF और Word फ़ाइलों के लिए लोकल-फ़र्स्ट दस्तावेज़ ऑटोमेशन।",
+    "controlLine": "आपकी फ़ाइलें। आपका डिवाइस। आपका नियंत्रण।",
+    "licensedUnder": "लाइसेंस:",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "खुले तौर पर विकसित।",
+    "product": "प्रोडक्ट",
+    "ariaProduct": "प्रोडक्ट",
+    "openLocalDocu": "LocalDocu खोलें",
+    "pdfTools": "PDF टूल",
+    "mergePdf": "PDF मर्ज करें",
+    "compressPdf": "PDF कंप्रेस करें",
+    "mergeDocx": "DOCX मर्ज करें",
+    "docxToPdf": "DOCX से PDF",
+    "howItWorks": "यह कैसे काम करता है",
+    "browserSupport": "ब्राउज़र सपोर्ट",
+    "privacy": "प्राइवेसी",
+    "faq": "FAQ",
+    "openSource": "ओपन सोर्स",
+    "ariaOpenSource": "ओपन सोर्स",
+    "github": "GitHub",
+    "contribute": "योगदान दें",
+    "roadmap": "रोडमैप",
+    "license": "लाइसेंस",
+    "future": "भविष्य",
+    "ariaFuture": "भविष्य",
+    "desktop": "डेस्कटॉप",
+    "localAi": "लोकल AI",
+    "support": "सहयोग",
+    "ariaSupport": "सहयोग",
+    "supportTheProject": "प्रोजेक्ट को सहयोग दें",
+    "sponsorLocalDocu": "LocalDocu को स्पॉन्सर करें",
+    "sponsorshipComingSoon": "स्पॉन्सरशिप जल्द आ रही है।",
+    "createdBy": "Abhijeeth Gadwal द्वारा बनाया और मेंटेन किया गया",
+    "ariaLinkedIn": "LinkedIn पर Abhijeeth Gadwal (नए टैब में खुलता है)",
+    "ariaPortfolio": "Abhijeeth Gadwal का पोर्टफ़ोलियो (नए टैब में खुलता है)",
+    "communityContributions": "कम्युनिटी के योगदान के साथ।",
+    "processingStatusLine": "क्लाउड दस्तावेज़ प्रोसेसिंग: बंद · लोकल AI प्रोसेसिंग: बंद"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "नेटवर्क और प्राइवेसी की स्थिति",
+    "browserOnline": "ब्राउज़र ऑनलाइन",
+    "offline": "ऑफ़लाइन",
+    "ariaNetworkOnline": "नेटवर्क: ब्राउज़र ऑनलाइन बता रहा है",
+    "ariaNetworkOffline": "नेटवर्क: ऑफ़लाइन",
+    "localProcessing": "लोकल प्रोसेसिंग",
+    "ariaLocalProcessing": "दस्तावेज़ प्रोसेसिंग: लोकल",
+    "cloudProcessingOff": "क्लाउड प्रोसेसिंग बंद",
+    "ariaCloudOff": "क्लाउड दस्तावेज़ प्रोसेसिंग: बंद",
+    "localDocuAiOff": "LocalDocu AI बंद",
+    "ariaAiOff": "LocalDocu AI: बंद",
+    "details": "विवरण",
+    "offlineBannerTitle": "ऑफ़लाइन।",
+    "offlineBannerBody": "इस पेज पर लोकल दस्तावेज़ टूल काम करते रहते हैं। रिफ़्रेश करने से बचें — इससे इस सेशन के दस्तावेज़ हट सकते हैं। हार्ड रिफ़्रेश (Shift+Reload) के बजाय सामान्य रीलोड बेहतर है: हार्ड रिफ़्रेश सर्विस वर्कर को बायपास कर देता है और ऑफ़लाइन में आम तौर पर विफल हो जाता है।",
+    "detailsOnlineTitle": "ब्राउज़र कनेक्शन बता रहा है",
+    "detailsOfflineTitle": "ऑफ़लाइन",
+    "detailsOnlineBody": "नेटवर्क उपलब्ध है। लोकल दस्तावेज़ प्रोसेसिंग फिर भी इसी डिवाइस पर होती है।",
+    "detailsOfflineBody": "ऑफ़लाइन। लोकल दस्तावेज़ टूल काम करते रहते हैं। ऑफ़लाइन होने से चल रही लोकल कार्रवाई नहीं रुकती — रिफ़्रेश करने या टैब बंद करने से रुक सकती है। सॉफ़्ट रीलोड कैश किए गए ऐप शेल का उपयोग करता है; हार्ड रिफ़्रेश ऑफ़लाइन में आम तौर पर नहीं चल पाता।",
+    "filesInSession": "सेशन में फ़ाइलें: {count}",
+    "contentsProcessedLocally": "दस्तावेज़ की सामग्री इसी डिवाइस पर प्रोसेस होती है।",
+    "cloudDocumentProcessingOff": "क्लाउड दस्तावेज़ प्रोसेसिंग: बंद",
+    "localDocuAiOffDetail": "LocalDocu AI: बंद (डेस्कटॉप, केवल-मेटाडेटा इंटेंट — इस वेब रिलीज़ में नहीं)",
+    "notUploadedFootnote": "दस्तावेज़ प्रोसेसिंग के लिए फ़ाइलें अपलोड नहीं की जातीं। आपके डिवाइस पर ही लोकल रूप से प्रोसेस होती हैं।"
+  },
+  "privacyStatus": {
+    "aria": "प्राइवेसी स्थिति",
+    "localProcessing": "लोकल प्रोसेसिंग",
+    "cloudProcessing": "क्लाउड प्रोसेसिंग {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "डिवाइस पर {count} फ़ाइलें। दस्तावेज़ प्रोसेसिंग: {processingLocation}। क्लाउड दस्तावेज़ प्रोसेसिंग: {cloudDocumentProcessing}। LocalDocu AI: {aiProcessing}। दस्तावेज़ की सामग्री इसी डिवाइस पर प्रोसेस होती है। दस्तावेज़ प्रोसेसिंग के लिए फ़ाइलें अपलोड नहीं की जातीं।"
+  },
+  "networkStatus": {
+    "ariaOnline": "नेटवर्क: ऑनलाइन",
+    "ariaOffline": "नेटवर्क: ऑफ़लाइन",
+    "online": "ऑनलाइन",
+    "offline": "ऑफ़लाइन",
+    "onlineSuffix": "· उपलब्ध हो सकता है · काम लोकल ही रहता है",
+    "offlineSuffix": "· लोकल दस्तावेज़ टूल काम करते रहते हैं"
+  },
+  "notFound": {
+    "body": "यह पता LocalDocu का कोई पेज नहीं है।",
+    "bodyFull": "यह पता LocalDocu का कोई पेज नहीं है। वर्कस्पेस या नीचे दिए गए पेज खोलें।",
+    "workspace": "वर्कस्पेस",
+    "faq": "FAQ",
+    "howItWorks": "यह कैसे काम करता है",
+    "browserSupport": "ब्राउज़र सपोर्ट",
+    "privacy": "प्राइवेसी"
+  },
+  "language": {
+    "aria": "भाषा",
+    "label": "भाषा"
+  }
+}

@@ -1,42 +1,64 @@
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { PublicPageShell } from '../components/PublicPageShell';
-import { NOT_FOUND_META, applyDocumentMeta } from '../lib/routeMeta';
+import { LocalizedLink } from '../components/LocalizedLink';
+import { applyDocumentMeta, getRouteMeta } from '../lib/routeMeta';
 import { SITE_PATHS } from '../lib/siteConfig';
+import { useLocale, useT } from '../i18n';
 
 export function NotFoundPage() {
+  const t = useT();
+  const { locale } = useLocale();
+  const meta = getRouteMeta('/404', locale, t);
+
   useEffect(() => {
-    applyDocumentMeta(NOT_FOUND_META);
-  }, []);
+    applyDocumentMeta(meta, locale);
+  }, [meta, locale]);
 
   return (
-    <PublicPageShell meta={NOT_FOUND_META} showCta>
-      <p>That address is not a LocalDocu page.</p>
-      <p>
-        Return to the{' '}
-        <Link className="font-medium text-[var(--accent)] underline-offset-2 hover:underline" to={SITE_PATHS.home}>
-          workspace
-        </Link>{' '}
-        or browse{' '}
-        <Link className="font-medium text-[var(--accent)] underline-offset-2 hover:underline" to={SITE_PATHS.faq}>
-          FAQ
-        </Link>
-        ,{' '}
-        <Link
-          className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
-          to={SITE_PATHS.howItWorks}
-        >
-          how it works
-        </Link>
-        , or{' '}
-        <Link
-          className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
-          to={SITE_PATHS.privacy}
-        >
-          privacy
-        </Link>
-        .
-      </p>
+    <PublicPageShell meta={meta} showCta>
+      <p>{t('common.notFound.bodyFull')}</p>
+      <ul className="flex flex-wrap gap-x-4 gap-y-2 pt-1">
+        <li>
+          <LocalizedLink
+            className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            to={SITE_PATHS.home}
+          >
+            {t('common.notFound.workspace')}
+          </LocalizedLink>
+        </li>
+        <li>
+          <LocalizedLink
+            className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            to={SITE_PATHS.faq}
+          >
+            {t('common.notFound.faq')}
+          </LocalizedLink>
+        </li>
+        <li>
+          <LocalizedLink
+            className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            to={SITE_PATHS.howItWorks}
+          >
+            {t('common.notFound.howItWorks')}
+          </LocalizedLink>
+        </li>
+        <li>
+          <LocalizedLink
+            className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            to={SITE_PATHS.browserSupport}
+          >
+            {t('common.notFound.browserSupport')}
+          </LocalizedLink>
+        </li>
+        <li>
+          <LocalizedLink
+            className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            to={SITE_PATHS.privacy}
+          >
+            {t('common.notFound.privacy')}
+          </LocalizedLink>
+        </li>
+      </ul>
     </PublicPageShell>
   );
 }

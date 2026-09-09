@@ -17,6 +17,7 @@ import {
   type CompressMode as CompressModeType,
   type CompressQuality as CompressQualityType,
 } from '@localdoc/pdf';
+import { getT } from '../i18n';
 
 export type PdfOpKind = 'split' | 'extract' | 'delete' | 'rotate' | 'reorder' | 'compress';
 
@@ -78,6 +79,7 @@ export async function runSinglePdfOp(
   kind: PdfOpKind,
   options: PdfOpOptions = {},
 ): Promise<PdfOpResult> {
+  const t = getT();
   const read = await readOne(adapter, file, options.signal);
   if (!read.ok) return { ok: false, error: formatAppError(read.error) };
 
@@ -94,7 +96,7 @@ export async function runSinglePdfOp(
     for (const f of result.value.files) {
       outputs.push({ filename: f.filename, bytes: f.bytes });
     }
-    summary = `Split into ${result.value.files.length} PDF(s).`;
+    summary = t('workspace.pdfOpsWorkflow.splitSummary', { count: result.value.files.length });
   } else if (kind === 'extract') {
     const result = await executeExtractPages(
       { file: payload, pageSpec: options.pageSpec },
@@ -102,7 +104,9 @@ export async function runSinglePdfOp(
     );
     if (!result.ok) return { ok: false, error: formatAppError(result.error) };
     outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
-    summary = `Extracted pages ${result.value.extractedPages.join(', ')}.`;
+    summary = t('workspace.pdfOpsWorkflow.extractSummary', {
+      pages: result.value.extractedPages.join(', '),
+    });
   } else if (kind === 'delete') {
     const result = await executeDeletePages(
       { file: payload, pageSpec: options.pageSpec },
@@ -110,7 +114,9 @@ export async function runSinglePdfOp(
     );
     if (!result.ok) return { ok: false, error: formatAppError(result.error) };
     outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
-    summary = `Deleted pages ${result.value.deletedPages.join(', ')}.`;
+    summary = t('workspace.pdfOpsWorkflow.deleteSummary', {
+      pages: result.value.deletedPages.join(', '),
+    });
   } else if (kind === 'rotate') {
     const rotation = options.rotation ?? 90;
     const result = await executeRotatePages(
@@ -123,7 +129,10 @@ export async function runSinglePdfOp(
     );
     if (!result.ok) return { ok: false, error: formatAppError(result.error) };
     outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
-    summary = `Rotated ${result.value.rotatedPages.length} page(s) by ${rotation}°.`;
+    summary = t('workspace.pdfOpsWorkflow.rotateSummary', {
+      count: result.value.rotatedPages.length,
+      degrees: rotation,
+    });
   } else if (kind === 'reorder') {
     const order = parseOrderSpec(options.orderSpec ?? '');
     if (!order) {
@@ -131,8 +140,8 @@ export async function runSinglePdfOp(
         ok: false,
         error: formatAppError(
           validationError(
-            'Enter a full page order like 3,1,2.',
-            'List every page number exactly once, separated by commas.',
+            t('workspace.pdfOpsWorkflow.reorderInvalid'),
+            t('workspace.pdfOpsWorkflow.reorderInvalidRecovery'),
           ),
         ),
       };
@@ -143,7 +152,9 @@ export async function runSinglePdfOp(
     );
     if (!result.ok) return { ok: false, error: formatAppError(result.error) };
     outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
-    summary = `Reordered pages to ${result.value.order.join(', ')}.`;
+    summary = t('workspace.pdfOpsWorkflow.reorderSummary', {
+      order: result.value.order.join(', '),
+    });
   } else if (kind === 'compress') {
     const quality = options.compressQuality ?? CompressQuality.MEDIUM;
     const mode = options.compressMode ?? CompressMode.BALANCED;
@@ -164,13 +175,21 @@ export async function runSinglePdfOp(
     outputs.push({ filename: result.value.filename, bytes: result.value.bytes });
     const sizeLine = `${formatBytes(result.value.originalBytes)} → ${formatBytes(result.value.compressedBytes)}`;
     if (result.value.strategy === 'unchanged' || result.value.savedBytes <= 0) {
-      summary = `Compression left size unchanged (${sizeLine}). ${result.value.note}`;
+      summary = t('workspace.pdfOpsWorkflow.compressUnchanged', {
+        sizeLine,
+        note: result.value.note,
+      });
     } else {
-      summary = `Compressed PDF by ${result.value.reductionPercent}% (${sizeLine}). ${result.value.note}`;
+      summary = t('workspace.pdfOpsWorkflow.compressSummary', {
+        percent: result.value.reductionPercent,
+        sizeLine,
+        note: result.value.note,
+      });
     }
   }
 
   let saved = 0;
+  let usedDownload = false;
   for (const out of outputs) {
     const written = await adapter.writeBytes(out.bytes, {
       suggestedName: out.filename,
@@ -183,22 +202,30 @@ export async function runSinglePdfOp(
           ok: false,
           error: {
             ...formatted,
-            message: `Saved ${saved} of ${outputs.length} file(s), then failed: ${formatted.message}`,
+            message: t('workspace.pdfOpsWorkflow.savedPartialFail', {
+              saved,
+              total: outputs.length,
+              message: formatted.message,
+            }),
             recovery:
-              formatted.recovery ??
-              'Keep the files already saved, then retry the remaining output.',
+              formatted.recovery ?? t('workspace.pdfOpsWorkflow.savedPartialRecovery'),
           },
         };
       }
       return { ok: false, error: formatted };
     }
+    if (written.value.method === 'download') usedDownload = true;
     saved += 1;
   }
+
+  const saveLine = usedDownload
+    ? t('workspace.pdfOpsWorkflow.downloadedFiles', { count: saved })
+    : t('workspace.pdfOpsWorkflow.savedFilesLocally', { count: saved });
 
   return {
     ok: true,
     value: {
-      message: `${summary} Saved ${saved} file(s) locally.`,
+      message: `${summary} ${saveLine}`,
       savedCount: saved,
     },
   };

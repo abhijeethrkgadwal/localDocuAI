@@ -1,3 +1,5 @@
+import { useT } from '../i18n';
+
 interface PrivacyStatusProps {
   filesOnDevice: number;
   processingLocation: string;
@@ -12,23 +14,31 @@ export function PrivacyStatus({
   cloudDocumentProcessing,
   aiProcessing,
 }: PrivacyStatusProps) {
+  const t = useT();
+
   return (
-    <aside className="flex flex-wrap gap-2" aria-label="Privacy status">
+    <aside className="flex flex-wrap gap-2" aria-label={t('common.privacyStatus.aria')}>
       <span className="status-pill">
         <span
           className="status-dot"
           style={{ backgroundColor: 'var(--accent)' }}
           aria-hidden
         />
-        Local processing
+        {t('common.privacyStatus.localProcessing')}
       </span>
-      <span className="status-pill">Cloud processing {cloudDocumentProcessing}</span>
-      <span className="status-pill">LocalDocu AI {aiProcessing.split(' ')[0]}</span>
+      <span className="status-pill">
+        {t('common.privacyStatus.cloudProcessing', { status: cloudDocumentProcessing })}
+      </span>
+      <span className="status-pill">
+        {t('common.privacyStatus.localDocuAi', { status: aiProcessing.split(' ')[0] ?? '' })}
+      </span>
       <span className="sr-only">
-        {filesOnDevice} files on device. Document processing: {processingLocation}. Cloud
-        document processing: {cloudDocumentProcessing}. LocalDocu AI: {aiProcessing}.
-        Document contents are processed on this device. Files are not uploaded for document
-        processing.
+        {t('common.privacyStatus.srOnly', {
+          count: filesOnDevice,
+          processingLocation,
+          cloudDocumentProcessing,
+          aiProcessing,
+        })}
       </span>
     </aside>
   );

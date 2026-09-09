@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { getT, type TranslateFn } from '../i18n';
 
 export interface RefreshGuardOptions {
   /** When true, refresh / leave attempts are intercepted. */
@@ -69,33 +70,19 @@ export function useRefreshGuard({ enabled, confirmMessage }: RefreshGuardOptions
 export function buildRefreshGuardMessage(input: {
   offline: boolean;
   busy: boolean;
+  t?: TranslateFn;
 }): string {
-  const hardRefreshNote = input.offline
-    ? ' Soft refresh keeps the offline app shell (service worker). Hard refresh (Shift+Reload) bypasses that cache and usually fails while offline.'
-    : '';
+  const t = input.t ?? getT();
+  const hardRefreshNote = input.offline ? t('workspace.refreshGuard.hardRefreshNote') : '';
 
   if (input.busy && input.offline) {
-    return (
-      'A document operation is still running, and you are offline. ' +
-      'Refreshing will interrupt processing and clear this LocalDocu session. ' +
-      'Local tools keep working if you stay on this page.' +
-      hardRefreshNote +
-      '\n\nReload with the offline app shell anyway?'
-    );
+    return t('workspace.refreshGuard.busyAndOffline', { hardRefreshNote });
   }
   if (input.busy) {
-    return (
-      'A document operation is still running. ' +
-      'Refreshing will interrupt processing and may clear progress in this session.\n\nRefresh anyway?'
-    );
+    return t('workspace.refreshGuard.busy');
   }
   if (input.offline) {
-    return (
-      'You are offline. Refreshing can clear documents and progress in this LocalDocu session. ' +
-      'Local document tools continue to work if you stay on this page.' +
-      hardRefreshNote +
-      '\n\nReload with the offline app shell anyway?'
-    );
+    return t('workspace.refreshGuard.offline', { hardRefreshNote });
   }
-  return 'Refreshing may clear progress in this LocalDocu session.\n\nRefresh anyway?';
+  return t('workspace.refreshGuard.default');
 }

@@ -1,0 +1,101 @@
+{
+  "home": {
+    "title": "LocalDocu — Local-First-Dokumentautomatisierung",
+    "description": "Sag, was zu tun ist. Deine Dateien bleiben auf deinem Gerät. PDF- und Word-Dateien lokal im Browser zusammenführen, aufteilen, komprimieren und konvertieren."
+  },
+  "mergePdf": {
+    "title": "PDF-Dateien lokal & privat zusammenführen | LocalDocu",
+    "description": "PDF-Dateien zusammenführen, ohne sie hochzuladen. Mit LocalDocu PDFs lokal im Browser auswählen, neu anordnen und kombinieren.",
+    "h1": "PDF-Dateien zusammenführen, ohne sie hochzuladen",
+    "breadcrumb": "PDF zusammenführen"
+  },
+  "mergeDocx": {
+    "title": "Word-Dokumente lokal zusammenführen | LocalDocu",
+    "description": "DOCX-Dokumente lokal auf deinem Gerät zusammenführen. Praktisches Zusammenführen mit klaren Grenzen — kein Dokument-Upload zu LocalDocu.",
+    "h1": "Word-Dokumente lokal zusammenführen",
+    "breadcrumb": "DOCX zusammenführen"
+  },
+  "compressPdf": {
+    "title": "PDF lokal & privat komprimieren | LocalDocu",
+    "description": "PDF-Dateien komprimieren, ohne sie hochzuladen. Größe mit den Modi Ausgewogen oder Maximum reduzieren — die Verarbeitung bleibt auf deinem Gerät.",
+    "h1": "PDF-Dateien komprimieren, ohne sie hochzuladen",
+    "breadcrumb": "PDF komprimieren"
+  },
+  "pdfTools": {
+    "title": "Lokale PDF-Tools — Zusammenführen, Aufteilen, Extrahieren & mehr | LocalDocu",
+    "description": "Lokale PDF-Tools zum Zusammenführen, Aufteilen, Extrahieren, Löschen, Drehen, Neuanordnen und Komprimieren — ohne unnötige Uploads.",
+    "h1": "Lokale PDF-Tools ohne unnötige Uploads",
+    "breadcrumb": "PDF-Tools"
+  },
+  "docxToPdf": {
+    "title": "DOCX lokal in PDF konvertieren | LocalDocu",
+    "description": "DOC und DOCX auf deinem Gerät in eine lesbare PDF konvertieren. Komplexe Word-Layouts bleiben möglicherweise nicht exakt erhalten.",
+    "h1": "Word-Dokumente lokal in PDF konvertieren",
+    "breadcrumb": "DOCX zu PDF"
+  },
+  "offline": {
+    "title": "Offline-Dokumentverarbeitung | LocalDocu",
+    "description": "Offline mit Dokumenten arbeiten, sobald die App-Shell von LocalDocu zwischengespeichert ist. Lokale Verarbeitung braucht für unterstützte Abläufe kein Netzwerk.",
+    "h1": "Offline mit Dokumenten arbeiten",
+    "breadcrumb": "Offline"
+  },
+  "privacy": {
+    "title": "LocalDocu Datenschutz — Local-First-Dokumentverarbeitung",
+    "description": "Datenschutz by Design: Dokumentinhalte werden auf deinem Gerät verarbeitet. Kein Upload-Backend und kein Konto im aktuellen Release nötig.",
+    "h1": "Datenschutz by Design",
+    "breadcrumb": "Datenschutz"
+  },
+  "howItWorks": {
+    "title": "So funktioniert LocalDocu | Local-First-Dokumentautomatisierung",
+    "description": "Dateien auswählen, Vorgang wählen und lokal ausführen. Erfahre, wie LocalDocu die Dokumentverarbeitung auf deinem Gerät hält.",
+    "h1": "So funktioniert LocalDocu",
+    "breadcrumb": "So funktioniert es"
+  },
+  "browserSupport": {
+    "title": "Browser- & Geräteunterstützung | LocalDocu",
+    "description": "Was LocalDocu in Android Chrome, iOS Safari und Desktop-Browsern unterstützt — Dateiauswahl, Ordner, Speichern unter, Download und PWA-Grenzen.",
+    "h1": "Browser- und Geräteunterstützung",
+    "breadcrumb": "Browser-Unterstützung"
+  },
+  "openSource": {
+    "title": "LocalDocu Open Source | Offen entwickelt",
+    "description": "LocalDocu ist Open Source unter Apache-2.0. Sieh dir den Code, die Roadmap und die offene Entwicklung des Projekts an.",
+    "h1": "Open Source by Design",
+    "breadcrumb": "Open Source"
+  },
+  "contribute": {
+    "title": "Zu LocalDocu beitragen | Open-Source-Dokumentautomatisierung",
+    "description": "Hilf beim Aufbau von LocalDocu mit Code, Tests, Doku, Barrierefreiheit und Design. Starte mit den Issues und dem Leitfaden zum Mitwirken.",
+    "h1": "Hilf beim Aufbau von LocalDocu",
+    "breadcrumb": "Mitwirken"
+  },
+  "roadmap": {
+    "title": "LocalDocu Roadmap | Web, Desktop & LocalDocu AI",
+    "description": "Sieh, was LocalDocu heute bietet und was geplant ist: mehr Desktop-Kapazität und LocalDocu AI für absichtsgesteuerte lokale Dokumentabläufe.",
+    "h1": "Roadmap",
+    "breadcrumb": "Roadmap"
+  },
+  "desktop": {
+    "title": "LocalDocu Desktop | Erweiterte lokale Dokumentautomatisierung",
+    "description": "Eine künftige Desktop-App für größere lokale Workloads und LocalDocu AI. Nur Positionierung — noch nicht verfügbar. Der Web-Arbeitsbereich bleibt heute das Produkt.",
+    "h1": "Desktop: mehr lokale Kapazität in Sicht",
+    "breadcrumb": "Desktop"
+  },
+  "localAi": {
+    "title": "LocalDocu AI | Absichtsgesteuerte lokale Dokumentautomatisierung",
+    "description": "LocalDocu AI läuft in der Desktop-App: ein Open-Weight-Modell auf dem Gerät, das Dokument-Metadaten und Nutzerabsicht liest und dann die Dokumentverwaltung von LocalDocu steuert — ohne Dokumentinhalte in die Cloud zu senden. Im aktuellen Web-Release nicht aktiv.",
+    "h1": "LocalDocu AI: geplant für die Desktop-App",
+    "breadcrumb": "LocalDocu AI"
+  },
+  "faq": {
+    "title": "LocalDocu FAQ — Datenschutz, Offline & Formate",
+    "description": "Häufige Fragen zu LocalDocu, Datenschutz, unterstützten Dateien, Offline-Nutzung, Open Source und Beiträgen.",
+    "h1": "Häufig gestellte Fragen",
+    "breadcrumb": "FAQ"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden | LocalDocu",
+    "description": "Diese Seite existiert nicht. Zurück zum LocalDocu-Arbeitsbereich.",
+    "h1": "Seite nicht gefunden"
+  }
+}

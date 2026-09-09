@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Users need local DOCX merge and preview. Full Microsoft Word fidelity (styles, headers/footers, images, fields, tracked changes) is a large engineering surface. Claiming perfect compatibility without tests would violate LocalDoc AI’s honesty principles.
+Users need local DOCX merge and preview. Full Microsoft Word fidelity (styles, headers/footers, images, fields, tracked changes) is a large engineering surface. Claiming perfect compatibility without tests would violate LocalDocu’s honesty principles.
 
 ## Decision
 

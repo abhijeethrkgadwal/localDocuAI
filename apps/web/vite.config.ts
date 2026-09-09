@@ -15,7 +15,7 @@ export default defineConfig({
     seoDiscoverabilityPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['pwa-192.svg', 'pwa-512.svg'],
+      includeAssets: ['pwa-192.svg', 'pwa-512.svg', 'apple-touch-icon.png', 'pwa-192.png'],
       manifest: {
         name: 'LocalDocu',
         short_name: 'LocalDocu',
@@ -33,6 +33,18 @@ export default defineConfig({
             src: 'pwa-192.svg',
             sizes: '192x192',
             type: 'image/svg+xml',
+            purpose: 'any',
+          },
+          {
+            src: 'pwa-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: 'apple-touch-icon.png',
+            sizes: '180x180',
+            type: 'image/png',
             purpose: 'any',
           },
           {

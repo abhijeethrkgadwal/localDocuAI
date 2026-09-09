@@ -1,13 +1,31 @@
-import { FAQ_ITEMS, HOW_IT_WORKS_STEPS, PRODUCT_SUMMARY } from '../lib/seoContent';
+import { useLocale, useT, withLocale, LOCALES, type LocaleCode } from '../i18n';
+import {
+  getFaqItems,
+  getHowItWorksSteps,
+} from '../lib/seoContent';
 import type { RouteMeta } from '../lib/routeMeta';
 import { LINKEDIN_URL, PORTFOLIO_URL, SITE, absoluteUrl } from '../lib/siteConfig';
 
 /** JSON-LD for public/info pages — only schemas appropriate to the page. */
-export function PublicJsonLd({ meta }: { meta: RouteMeta }) {
-  const home = absoluteUrl('/');
-  const pageUrl = absoluteUrl(meta.path === '/404' ? '/' : meta.path);
-  const orgId = `${home}#organization`;
-  const personId = `${home}#creator`;
+export function PublicJsonLd({
+  meta,
+  locale: localeProp,
+}: {
+  meta: RouteMeta;
+  locale?: LocaleCode;
+}) {
+  const t = useT();
+  const { locale, catalog } = useLocale();
+  const activeLocale = localeProp ?? locale;
+  const faqItems = getFaqItems(t);
+  const howItWorksSteps = getHowItWorksSteps(catalog.pages);
+  const productSummary = t('pages.productSummary');
+
+  const home = absoluteUrl(withLocale('/', activeLocale));
+  const barePath = meta.path === '/404' ? '/' : meta.path;
+  const pageUrl = absoluteUrl(withLocale(barePath, activeLocale));
+  const orgId = `${absoluteUrl('/')}#organization`;
+  const personId = `${absoluteUrl('/')}#creator`;
   const creatorSameAs = [LINKEDIN_URL, PORTFOLIO_URL].filter(Boolean);
   const graph: Record<string, unknown>[] = [];
 
@@ -18,14 +36,14 @@ export function PublicJsonLd({ meta }: { meta: RouteMeta }) {
         {
           '@type': 'ListItem',
           position: 1,
-          name: 'Home',
+          name: t('common.breadcrumbs.home'),
           item: home,
         },
         ...meta.breadcrumbs.map((crumb, i) => ({
           '@type': 'ListItem',
           position: i + 2,
           name: crumb.name,
-          item: absoluteUrl(crumb.path),
+          item: absoluteUrl(withLocale(crumb.path, activeLocale)),
         })),
       ],
     });
@@ -35,7 +53,7 @@ export function PublicJsonLd({ meta }: { meta: RouteMeta }) {
     graph.push({
       '@type': 'FAQPage',
       '@id': `${pageUrl}#faq`,
-      mainEntity: FAQ_ITEMS.map((item) => ({
+      mainEntity: faqItems.map((item) => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: {
@@ -70,7 +88,7 @@ export function PublicJsonLd({ meta }: { meta: RouteMeta }) {
         url: home,
         name: SITE.name,
         description: SITE.shortDescription,
-        inLanguage: SITE.language,
+        inLanguage: LOCALES[activeLocale].bcp47,
         publisher: { '@id': orgId },
       },
       {
@@ -88,9 +106,9 @@ export function PublicJsonLd({ meta }: { meta: RouteMeta }) {
       {
         '@type': 'HowTo',
         '@id': `${home}#how-it-works`,
-        name: 'How to process documents privately with LocalDocu',
-        description: PRODUCT_SUMMARY,
-        step: HOW_IT_WORKS_STEPS.map((step, index) => ({
+        name: t('pages.discoverability.howItWorksHeading'),
+        description: productSummary,
+        step: howItWorksSteps.map((step, index) => ({
           '@type': 'HowToStep',
           position: index + 1,
           name: step.name,

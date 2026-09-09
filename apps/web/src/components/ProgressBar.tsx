@@ -1,3 +1,5 @@
+import { useT } from '../i18n';
+
 interface ProgressBarProps {
   label: string;
   filesProcessed: number;
@@ -7,12 +9,22 @@ interface ProgressBarProps {
 }
 
 export function ProgressBar({ label, filesProcessed, totalFiles, fraction }: ProgressBarProps) {
+  const t = useT();
   const percent =
     typeof fraction === 'number' ? Math.round(Math.min(1, Math.max(0, fraction)) * 100) : null;
   const valueText =
     percent !== null
-      ? `${label}: ${percent} percent, ${filesProcessed} of ${totalFiles} files`
-      : `${label}: ${filesProcessed} of ${totalFiles} files`;
+      ? t('workspace.progress.valueWithPercent', {
+          label,
+          percent,
+          processed: filesProcessed,
+          total: totalFiles,
+        })
+      : t('workspace.progress.valueWithoutPercent', {
+          label,
+          processed: filesProcessed,
+          total: totalFiles,
+        });
 
   return (
     <div className="mt-4 space-y-2" role="status" aria-live="polite">

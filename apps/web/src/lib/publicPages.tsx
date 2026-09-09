@@ -1,20 +1,25 @@
-import { Link } from 'react-router-dom';
+import { LocalizedLink } from '../components/LocalizedLink';
+import { getEnglishCatalog } from '../i18n';
+import type { MessageTree } from '../i18n/translate';
 import {
   FAQ_ITEMS,
-  FAQ_SUBTITLE,
-  HOW_IT_WORKS_STEPS,
-  WHY_LOCAL_MATTERS,
+  getFaqItemsFromPages,
+  getHowItWorksSteps,
+  getWhyLocalMatters,
+  type FaqItem,
 } from './seoContent';
-import { GITHUB_URL, SITE, SITE_PATHS } from './siteConfig';
+import { GITHUB_URL, SITE_PATHS } from './siteConfig';
 
 export type PublicPageId =
   | 'merge-pdf'
   | 'merge-docx'
+  | 'compress-pdf'
   | 'pdf-tools'
   | 'docx-to-pdf'
   | 'offline'
   | 'privacy'
   | 'how-it-works'
+  | 'browser-support'
   | 'open-source'
   | 'contribute'
   | 'roadmap'
@@ -22,426 +27,375 @@ export type PublicPageId =
   | 'local-ai'
   | 'faq';
 
-type Block =
+export type Block =
   | { type: 'p'; text: string }
   | { type: 'h2'; text: string }
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
   | { type: 'note'; text: string }
+  | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
   | { type: 'links'; items: { label: string; to?: string; href?: string }[] }
-  | { type: 'faq' };
+  | { type: 'faq'; items?: FaqItem[] };
 
-export const PUBLIC_PAGE_BLOCKS: Record<PublicPageId, Block[]> = {
-  'merge-pdf': [
-    {
-      type: 'p',
-      text: 'Use LocalDocu to combine multiple PDF files on your device. Select the files, reorder them in the list, choose Merge, run the operation, then save the result locally.',
-    },
-    { type: 'h2', text: 'How to merge PDFs' },
-    {
-      type: 'ol',
-      items: [
-        'Open the workspace and select or drop two or more PDF files.',
-        'Reorder the list so pages appear in the order you want.',
-        'Choose Merge and run the operation.',
-        'Save or download the merged PDF on your device.',
-      ],
-    },
-    { type: 'h2', text: 'Privacy and offline' },
-    {
-      type: 'ul',
-      items: [
-        'Document bytes are processed in your browser — not uploaded to LocalDocu for merging.',
-        'After the app shell is cached, supported merge workflows can continue offline.',
-        'Browser capabilities (folder picker, save dialogs) vary by browser and device.',
-      ],
-    },
-    {
-      type: 'note',
-      text: 'This page explains the merge workflow. The actual tool lives on the homepage workspace — there is no separate merge app.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'PDF tools overview', to: SITE_PATHS.pdfTools },
-        { label: 'Privacy', to: SITE_PATHS.privacy },
-        { label: 'Offline use', to: SITE_PATHS.offline },
-      ],
-    },
-  ],
-  'merge-docx': [
-    {
-      type: 'p',
-      text: 'LocalDocu supports practical DOCX merge for suitable Word documents. Select same-type Word files, set the order, choose Merge, and run locally.',
-    },
-    { type: 'h2', text: 'Current behavior' },
-    {
-      type: 'ul',
-      items: [
-        'DOCX files can be merged in a practical, content-oriented way.',
-        'Processing happens on your device in the browser.',
-        'Output is saved or downloaded locally — no document upload to LocalDocu.',
-      ],
-    },
-    { type: 'h2', text: 'Limitations' },
-    {
-      type: 'ul',
-      items: [
-        'Not every Word feature or complex layout is guaranteed to survive merge.',
-        'Merge expects same-type documents (for example DOCX with DOCX).',
-        'Very large or unusual documents may hit browser capacity limits.',
-      ],
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Convert DOCX to PDF', to: SITE_PATHS.docxToPdf },
-        { label: 'How it works', to: SITE_PATHS.howItWorks },
-      ],
-    },
-  ],
-  'pdf-tools': [
-    {
-      type: 'p',
-      text: 'LocalDocu’s homepage workspace includes the PDF operations listed below. Each runs locally in your browser for suitable workloads.',
-    },
-    { type: 'h2', text: 'Supported PDF operations' },
-    {
-      type: 'ul',
-      items: [
-        'Merge — combine multiple PDFs in list order',
-        'Split — separate pages into outputs',
-        'Extract pages — keep selected pages',
-        'Delete pages — remove selected pages',
-        'Rotate pages — 90°, 180°, or 270°',
-        'Reorder pages — rearrange page order',
-        'Compress — reduce size with balanced or maximum modes',
-      ],
-    },
-    {
-      type: 'p',
-      text: 'Open the workspace, select a PDF (or several for merge), choose the operation in the panel, then run and save locally.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Merge PDFs', to: SITE_PATHS.mergePdf },
-        { label: 'Offline capability', to: SITE_PATHS.offline },
-        { label: 'FAQ', to: SITE_PATHS.faq },
-      ],
-    },
-  ],
-  'docx-to-pdf': [
-    {
-      type: 'p',
-      text: 'Convert DOC or DOCX files to a readable PDF generated on your device. Select a Word file in the workspace, choose Convert to PDF, run, and save locally.',
-    },
-    { type: 'h2', text: 'Honest limits' },
-    {
-      type: 'ul',
-      items: [
-        'Conversion is text-oriented and capacity-gated for browser workloads.',
-        'Complex Word layouts may not be preserved exactly.',
-        'Very large or heavily formatted documents may need a future desktop app.',
-      ],
-    },
-    {
-      type: 'note',
-      text: 'LocalDocu does not claim full Word layout fidelity for browser conversion.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Merge Word documents', to: SITE_PATHS.mergeDocx },
-        { label: 'Desktop roadmap', to: SITE_PATHS.desktop },
-      ],
-    },
-  ],
-  offline: [
-    {
-      type: 'p',
-      text: 'After a production visit caches the application shell, LocalDocu can load without a network for supported local workflows.',
-    },
-    { type: 'h2', text: 'What works offline' },
-    {
-      type: 'ul',
-      items: [
-        'App shell (HTML, JS, CSS, icons) via the service worker',
-        'Local PDF and Word operations that do not need the network',
-        'Informational pages that are part of the cached client app',
-      ],
-    },
-    { type: 'h2', text: 'Refresh while offline' },
-    {
-      type: 'ul',
-      items: [
-        'A normal reload can still open LocalDocu from the service worker cache after the first visit',
-        'Hard refresh (Shift+Reload / Ctrl+Shift+R) bypasses the service worker and usually fails while offline',
-        'Refreshing always clears in-memory documents and in-progress work in this browser session',
-      ],
-    },
-    { type: 'h2', text: 'What may vary' },
-    {
-      type: 'ul',
-      items: [
-        'First visit still needs a network to download and cache the app',
-        'Folder access, save pickers, and other browser APIs differ by browser',
-        'Updates to the app require a connection when a new version is published',
-      ],
-    },
-    {
-      type: 'p',
-      text: 'Offline is a product capability, not an error. Trust indicators show offline status without treating it as failure.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Privacy model', to: SITE_PATHS.privacy },
-        { label: 'Future desktop capacity', to: SITE_PATHS.desktop },
-      ],
-    },
-  ],
-  privacy: [
-    { type: 'h2', text: 'What stays local' },
-    {
-      type: 'ul',
-      items: [
-        'Document contents you select',
-        'Document processing and local previews',
-        'Operation execution in the browser session',
-      ],
-    },
-    { type: 'h2', text: 'What the current application does not do' },
-    {
-      type: 'ul',
-      items: [
-        'No document-upload backend for processing',
-        'No cloud document-processing pipeline',
-        'No account requirement',
-        'Cloud processing: Off · LocalDocu AI: Off',
-      ],
-    },
-    { type: 'h2', text: 'Data flow (current release)' },
-    {
-      type: 'ol',
-      items: [
-        'You select files on your device',
-        'LocalDocu reads them in the browser',
-        'A local document engine runs the operation',
-        'Output is saved or downloaded on your device',
-      ],
-    },
-    { type: 'h2', text: 'What may change later' },
-    {
-      type: 'ul',
-      items: [
-        'LocalDocu desktop app for heavier local workloads',
-        'LocalDocu AI in the desktop app: open-weight on-device model that uses document metadata and user intent to drive LocalDocu document-management commands (document contents stay on device)',
-        'Optional telemetry only if clearly disclosed — Phase 1 has no product analytics pipeline',
-      ],
-    },
-    {
-      type: 'note',
-      text: 'We do not claim “100% private,” “completely secure,” or “zero data collection” as absolute guarantees. Claims match the current implementation.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'How it works', to: SITE_PATHS.howItWorks },
-        { label: 'LocalDocu AI (future)', to: SITE_PATHS.localAi },
-      ],
-    },
-  ],
-  'how-it-works': [
-    {
-      type: 'p',
-      text: 'LocalDocu is a local-first workspace: you select documents on your device, choose an operation, and run it in the browser. Results are saved or downloaded locally.',
-    },
-    { type: 'h2', text: 'Steps' },
-    {
-      type: 'ol',
-      items: HOW_IT_WORKS_STEPS.map((s) => `${s.name}. ${s.text}`),
-    },
-    { type: 'h2', text: WHY_LOCAL_MATTERS.title },
-    { type: 'ul', items: [...WHY_LOCAL_MATTERS.points] },
-    {
-      type: 'p',
-      text: 'Preferred framing: use the computing capacity you already have. Suitable document operations can run locally instead of requiring document uploads and remote processing. Local processing can reduce unnecessary data transfer and remote compute for workloads your device can handle — without claiming universal energy efficiency.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Privacy', to: SITE_PATHS.privacy },
-        { label: 'FAQ', to: SITE_PATHS.faq },
-      ],
-    },
-  ],
-  'open-source': [
-    {
-      type: 'p',
-      text: `${SITE.name} is developed in the open under the ${SITE.license} license. Source code, issues, and roadmap live on GitHub. Community contributions are welcome.`,
-    },
-    { type: 'h2', text: 'What “open” means here' },
-    {
-      type: 'ul',
-      items: [
-        `${SITE.license} license`,
-        'Source available on GitHub',
-        'Transparent roadmap and issue reporting',
-        'Welcome help on accessibility, documentation, testing, and design',
-      ],
-    },
-    {
-      type: 'note',
-      text: 'The project is community-driven and developed in the open. It is not described as “community-owned” unless governance formally supports that claim.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'View the GitHub repository', href: GITHUB_URL },
-        { label: 'Contribute', to: SITE_PATHS.contribute },
-        { label: 'Roadmap', to: SITE_PATHS.roadmap },
-      ],
-    },
-  ],
-  contribute: [
-    {
-      type: 'p',
-      text: 'Help build LocalDocu with code, tests, documentation, accessibility improvements, design, and carefully written issues.',
-    },
-    { type: 'h2', text: 'Contributor journey' },
-    {
-      type: 'ol',
-      items: [
-        'Read the README and privacy model so local-first constraints stay clear.',
-        'Browse open issues or propose a focused improvement.',
-        'Follow CONTRIBUTING guidance for setup, branches, and pull requests.',
-        'Keep document processing local — do not introduce upload backends or auth unless the project explicitly asks for that work.',
-      ],
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'GitHub repository', href: GITHUB_URL },
-        { label: 'Contributing guide', href: `${GITHUB_URL}/blob/main/CONTRIBUTING.md` },
-        { label: 'Open source overview', to: SITE_PATHS.openSource },
-        { label: 'Code of conduct', href: `${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md` },
-        { label: 'Security policy', href: `${GITHUB_URL}/blob/main/SECURITY.md` },
-      ],
-    },
-  ],
-  roadmap: [
-    {
-      type: 'p',
-      text: 'The web workspace is the product today: local PDF and Word tools in the browser. Later phases add a LocalDocu desktop app and LocalDocu AI for intent-driven workflows on device.',
-    },
-    { type: 'h2', text: 'Shipped (web)' },
-    {
-      type: 'ul',
-      items: [
-        'Select files / folder / drag-and-drop',
-        'PDF merge, split, extract, delete, rotate, reorder, compress',
-        'Practical DOCX merge and text-oriented DOC/DOCX → PDF',
-        'Organize: sort, filter, rename, copy, move, folder, export',
-        'PWA app shell, themes, privacy and network status',
-      ],
-    },
-    { type: 'h2', text: 'Next directions' },
-    {
-      type: 'ul',
-      items: [
-        'Desktop app for heavier local workloads (positioning page available)',
-        'LocalDocu AI (desktop): open-weight on-device model → metadata + intent → LocalDocu document-management commands (not active yet)',
-        'Continued hardening of tests, accessibility, and discoverability',
-      ],
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Desktop', to: SITE_PATHS.desktop },
-        { label: 'LocalDocu AI', to: SITE_PATHS.localAi },
-        { label: 'GitHub', href: GITHUB_URL },
-      ],
-    },
-  ],
-  desktop: [
-    {
-      type: 'p',
-      text: 'A LocalDocu desktop application is planned for advanced local document automation — especially workloads that exceed comfortable browser limits — and as the home for LocalDocu AI. This page is positioning only; the desktop app is not shipping yet.',
-    },
-    { type: 'h2', text: 'Intended direction' },
-    {
-      type: 'ul',
-      items: [
-        'Stronger local resources for large or complex jobs',
-        'Same local-first privacy principles as the web app',
-        'LocalDocu AI: intent understanding that drives LocalDocu document-management capabilities using document metadata',
-        'Windows-first targets under consideration in the product roadmap',
-      ],
-    },
-    {
-      type: 'note',
-      text: 'Use the web workspace today. Do not expect desktop-only features or LocalDocu AI in the current browser release.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'LocalDocu AI', to: SITE_PATHS.localAi },
-        { label: 'Roadmap', to: SITE_PATHS.roadmap },
-        { label: 'Open LocalDocu (web)', to: SITE_PATHS.home },
-      ],
-    },
-  ],
-  'local-ai': [
-    {
-      type: 'p',
-      text: 'LocalDocu AI is a planned desktop capability: an open-weight, local-device-friendly model that understands user intent and LocalDocu’s document-management capabilities, then runs complex multi-step work through those local engines. LocalDocu AI is Off in the current web release.',
-    },
-    { type: 'h2', text: 'What LocalDocu AI is designed to do' },
-    {
-      type: 'ul',
-      items: [
-        'Run from the LocalDocu desktop application (not as a cloud AI document pipeline)',
-        'Use document metadata and your request — not document contents — to plan work',
-        'Drive LocalDocu’s existing document-management and PDF/Word operations for complex tasks',
-        'Use an open-weight model suited to capable local devices, chosen to preserve quality and performance rather than trade them away',
-      ],
-    },
-    { type: 'h2', text: 'Intended model (future)' },
-    {
-      type: 'ol',
-      items: [
-        'You describe what you want in plain language in the desktop app',
-        'LocalDocu AI interprets intent using LocalDocu capability knowledge plus document metadata (names, types, counts, structure signals — not file contents)',
-        'A validated command plan is produced against the LocalDocu command registry',
-        'Deterministic local engines execute the plan on your device',
-      ],
-    },
-    {
-      type: 'note',
-      text: 'This architecture is not implemented yet. The web workspace does not pretend LocalDocu AI is active. Document contents are not sent to a remote AI for processing in the current release.',
-    },
-    {
-      type: 'links',
-      items: [
-        { label: 'Desktop', to: SITE_PATHS.desktop },
-        { label: 'Privacy', to: SITE_PATHS.privacy },
-        { label: 'Roadmap', to: SITE_PATHS.roadmap },
-      ],
-    },
-  ],
-  faq: [
-    { type: 'p', text: FAQ_SUBTITLE },
-    { type: 'faq' },
-    {
-      type: 'links',
-      items: [
-        { label: 'Privacy details', to: SITE_PATHS.privacy },
-        { label: 'Contribute', to: SITE_PATHS.contribute },
-      ],
-    },
-  ],
+const PUBLIC_PAGE_IDS: PublicPageId[] = [
+  'merge-pdf',
+  'merge-docx',
+  'compress-pdf',
+  'pdf-tools',
+  'docx-to-pdf',
+  'offline',
+  'privacy',
+  'how-it-works',
+  'browser-support',
+  'open-source',
+  'contribute',
+  'roadmap',
+  'desktop',
+  'local-ai',
+  'faq',
+];
+
+/** Map PublicPageId (kebab-case) → pages catalog key (camelCase). */
+export function publicPageCatalogKey(pageId: PublicPageId): string {
+  if (pageId === 'faq') return 'faqPage';
+  return pageId.replace(/-([a-z])/g, (_, c: string) => c.toUpperCase());
+}
+
+function asRecord(value: unknown): Record<string, unknown> | undefined {
+  return value != null && typeof value === 'object' && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : undefined;
+}
+
+function asString(value: unknown): string | undefined {
+  return typeof value === 'string' ? value : undefined;
+}
+
+function asStringArray(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((x): x is string => typeof x === 'string') : [];
+}
+
+function asStringMatrix(value: unknown): string[][] {
+  if (!Array.isArray(value)) return [];
+  return value.map((row) => asStringArray(row));
+}
+
+const LINK_TARGETS: Record<string, { to?: string; href?: string }> = {
+  browserSupport: { to: SITE_PATHS.browserSupport },
+  pdfTools: { to: SITE_PATHS.pdfTools },
+  compressPdf: { to: SITE_PATHS.compressPdf },
+  privacy: { to: SITE_PATHS.privacy },
+  offline: { to: SITE_PATHS.offline },
+  docxToPdf: { to: SITE_PATHS.docxToPdf },
+  howItWorks: { to: SITE_PATHS.howItWorks },
+  mergePdfs: { to: SITE_PATHS.mergePdf },
+  faq: { to: SITE_PATHS.faq },
+  mergeDocx: { to: SITE_PATHS.mergeDocx },
+  desktop: { to: SITE_PATHS.desktop },
+  localAi: { to: SITE_PATHS.localAi },
+  contribute: { to: SITE_PATHS.contribute },
+  roadmap: { to: SITE_PATHS.roadmap },
+  openSource: { to: SITE_PATHS.openSource },
+  openLocalDocu: { to: SITE_PATHS.home },
+  openWeb: { to: SITE_PATHS.home },
+  github: { href: GITHUB_URL },
+  contributing: { href: `${GITHUB_URL}/blob/main/CONTRIBUTING.md` },
+  codeOfConduct: { href: `${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md` },
+  security: { href: `${GITHUB_URL}/blob/main/SECURITY.md` },
 };
+
+function mapLinks(links: unknown): Block | null {
+  const record = asRecord(links);
+  if (!record) return null;
+  const items: { label: string; to?: string; href?: string }[] = [];
+  for (const [key, label] of Object.entries(record)) {
+    if (typeof label !== 'string') continue;
+    const target = LINK_TARGETS[key];
+    if (!target) continue;
+    items.push({ label, ...target });
+  }
+  return items.length ? { type: 'links', items } : null;
+}
+
+function pushIfLinks(blocks: Block[], links: unknown): void {
+  const block = mapLinks(links);
+  if (block) blocks.push(block);
+}
+
+function pageNode(
+  catalogPages: MessageTree | Record<string, unknown>,
+  pageId: PublicPageId,
+): Record<string, unknown> {
+  const key = publicPageCatalogKey(pageId);
+  return asRecord((catalogPages as Record<string, unknown>)[key]) ?? {};
+}
+
+export function getPublicPageBlocks(
+  pageId: PublicPageId,
+  catalogPages: MessageTree | Record<string, unknown>,
+): Block[] {
+  const pages = catalogPages as Record<string, unknown>;
+  const page = pageNode(pages, pageId);
+  const blocks: Block[] = [];
+
+  switch (pageId) {
+    case 'merge-pdf': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.howToHeading)) blocks.push({ type: 'h2', text: asString(page.howToHeading)! });
+      if (asStringArray(page.howTo).length) blocks.push({ type: 'ol', items: asStringArray(page.howTo) });
+      if (asString(page.privacyHeading))
+        blocks.push({ type: 'h2', text: asString(page.privacyHeading)! });
+      if (asStringArray(page.privacy).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.privacy) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'merge-docx': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.behaviorHeading))
+        blocks.push({ type: 'h2', text: asString(page.behaviorHeading)! });
+      if (asStringArray(page.behavior).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.behavior) });
+      if (asString(page.limitsHeading))
+        blocks.push({ type: 'h2', text: asString(page.limitsHeading)! });
+      if (asStringArray(page.limits).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.limits) });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'compress-pdf': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.modesHeading)) blocks.push({ type: 'h2', text: asString(page.modesHeading)! });
+      if (asStringArray(page.modes).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.modes) });
+      if (asString(page.privacyHeading))
+        blocks.push({ type: 'h2', text: asString(page.privacyHeading)! });
+      if (asStringArray(page.privacy).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.privacy) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'pdf-tools': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.opsHeading)) blocks.push({ type: 'h2', text: asString(page.opsHeading)! });
+      if (asStringArray(page.ops).length) blocks.push({ type: 'ul', items: asStringArray(page.ops) });
+      if (asString(page.outro)) blocks.push({ type: 'p', text: asString(page.outro)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'docx-to-pdf': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.limitsHeading))
+        blocks.push({ type: 'h2', text: asString(page.limitsHeading)! });
+      if (asStringArray(page.limits).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.limits) });
+      if (asString(page.noteFidelity))
+        blocks.push({ type: 'note', text: asString(page.noteFidelity)! });
+      if (asString(page.notePhones)) blocks.push({ type: 'note', text: asString(page.notePhones)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'offline': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.worksHeading)) blocks.push({ type: 'h2', text: asString(page.worksHeading)! });
+      if (asStringArray(page.works).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.works) });
+      if (asString(page.refreshHeading))
+        blocks.push({ type: 'h2', text: asString(page.refreshHeading)! });
+      if (asStringArray(page.refresh).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.refresh) });
+      if (asString(page.varyHeading)) blocks.push({ type: 'h2', text: asString(page.varyHeading)! });
+      if (asStringArray(page.vary).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.vary) });
+      if (asString(page.outro)) blocks.push({ type: 'p', text: asString(page.outro)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'privacy': {
+      if (asString(page.staysLocalHeading))
+        blocks.push({ type: 'h2', text: asString(page.staysLocalHeading)! });
+      if (asStringArray(page.staysLocal).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.staysLocal) });
+      if (asString(page.doesNotHeading))
+        blocks.push({ type: 'h2', text: asString(page.doesNotHeading)! });
+      if (asStringArray(page.doesNot).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.doesNot) });
+      if (asString(page.dataFlowHeading))
+        blocks.push({ type: 'h2', text: asString(page.dataFlowHeading)! });
+      if (asStringArray(page.dataFlow).length)
+        blocks.push({ type: 'ol', items: asStringArray(page.dataFlow) });
+      if (asString(page.laterHeading))
+        blocks.push({ type: 'h2', text: asString(page.laterHeading)! });
+      if (asStringArray(page.later).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.later) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'how-it-works': {
+      const steps = getHowItWorksSteps(pages);
+      const whyLocal = getWhyLocalMatters(pages);
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.stepsHeading))
+        blocks.push({ type: 'h2', text: asString(page.stepsHeading)! });
+      if (steps.length) {
+        blocks.push({
+          type: 'ol',
+          items: steps.map((s) => `${s.name}. ${s.text}`),
+        });
+      }
+      if (asString(page.devicesHeading))
+        blocks.push({ type: 'h2', text: asString(page.devicesHeading)! });
+      if (asStringArray(page.devices).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.devices) });
+      if (whyLocal.title) blocks.push({ type: 'h2', text: whyLocal.title });
+      if (whyLocal.points.length) blocks.push({ type: 'ul', items: whyLocal.points });
+      if (asString(page.framing)) blocks.push({ type: 'p', text: asString(page.framing)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'browser-support': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.positioningHeading))
+        blocks.push({ type: 'h2', text: asString(page.positioningHeading)! });
+      if (asStringArray(page.positioning).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.positioning) });
+      if (asString(page.matrixHeading))
+        blocks.push({ type: 'h2', text: asString(page.matrixHeading)! });
+      {
+        const headers = asStringArray(page.headers);
+        const rows = asStringMatrix(page.rows);
+        if (headers.length && rows.length) {
+          blocks.push({
+            type: 'table',
+            headers,
+            rows,
+            caption: asString(page.tableCaption),
+          });
+        }
+      }
+      if (asString(page.footnote)) blocks.push({ type: 'p', text: asString(page.footnote)! });
+      if (asString(page.mobileHeading))
+        blocks.push({ type: 'h2', text: asString(page.mobileHeading)! });
+      if (asStringArray(page.mobile).length)
+        blocks.push({ type: 'ol', items: asStringArray(page.mobile) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'open-source': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.openMeansHeading))
+        blocks.push({ type: 'h2', text: asString(page.openMeansHeading)! });
+      if (asStringArray(page.openMeans).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.openMeans) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'contribute': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.journeyHeading))
+        blocks.push({ type: 'h2', text: asString(page.journeyHeading)! });
+      if (asStringArray(page.journey).length)
+        blocks.push({ type: 'ol', items: asStringArray(page.journey) });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'roadmap': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.shippedHeading))
+        blocks.push({ type: 'h2', text: asString(page.shippedHeading)! });
+      if (asStringArray(page.shipped).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.shipped) });
+      if (asString(page.nextHeading)) blocks.push({ type: 'h2', text: asString(page.nextHeading)! });
+      if (asStringArray(page.next).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.next) });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'desktop': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.directionHeading))
+        blocks.push({ type: 'h2', text: asString(page.directionHeading)! });
+      if (asStringArray(page.direction).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.direction) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'local-ai': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.designedHeading))
+        blocks.push({ type: 'h2', text: asString(page.designedHeading)! });
+      if (asStringArray(page.designed).length)
+        blocks.push({ type: 'ul', items: asStringArray(page.designed) });
+      if (asString(page.modelHeading))
+        blocks.push({ type: 'h2', text: asString(page.modelHeading)! });
+      if (asStringArray(page.model).length)
+        blocks.push({ type: 'ol', items: asStringArray(page.model) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'faq': {
+      const faq = asRecord(pages.faq);
+      const subtitle = asString(faq?.subtitle);
+      if (subtitle) blocks.push({ type: 'p', text: subtitle });
+      blocks.push({ type: 'faq', items: getFaqItemsFromPages(pages) });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    default:
+      break;
+  }
+
+  return blocks;
+}
+
+/** Lazy English snapshot for tests (built from getEnglishCatalog().pages). */
+function buildEnglishPublicPageBlocks(): Record<PublicPageId, Block[]> {
+  const pages = getEnglishCatalog().pages;
+  const result = {} as Record<PublicPageId, Block[]>;
+  for (const id of PUBLIC_PAGE_IDS) {
+    result[id] = getPublicPageBlocks(id, pages);
+  }
+  return result;
+}
+
+let englishBlocksCache: Record<PublicPageId, Block[]> | undefined;
+
+export const PUBLIC_PAGE_BLOCKS: Record<PublicPageId, Block[]> = new Proxy(
+  {} as Record<PublicPageId, Block[]>,
+  {
+    get(_target, prop: string | symbol) {
+      if (typeof prop !== 'string') return undefined;
+      if (!englishBlocksCache) englishBlocksCache = buildEnglishPublicPageBlocks();
+      return englishBlocksCache[prop as PublicPageId];
+    },
+    ownKeys() {
+      if (!englishBlocksCache) englishBlocksCache = buildEnglishPublicPageBlocks();
+      return Reflect.ownKeys(englishBlocksCache);
+    },
+    getOwnPropertyDescriptor(_target, prop) {
+      if (!englishBlocksCache) englishBlocksCache = buildEnglishPublicPageBlocks();
+      if (typeof prop === 'string' && prop in englishBlocksCache) {
+        return {
+          configurable: true,
+          enumerable: true,
+          value: englishBlocksCache[prop as PublicPageId],
+        };
+      }
+      return undefined;
+    },
+    has(_target, prop) {
+      if (!englishBlocksCache) englishBlocksCache = buildEnglishPublicPageBlocks();
+      return typeof prop === 'string' && prop in englishBlocksCache;
+    },
+  },
+);
 
 export function renderPublicBlocks(blocks: Block[]) {
   return blocks.map((block, index) => {
@@ -486,6 +440,50 @@ export function renderPublicBlocks(blocks: Block[]) {
             {block.text}
           </p>
         );
+      case 'table':
+        return (
+          <div key={index} className="overflow-x-auto pt-1">
+            <table className="w-full min-w-[36rem] border-collapse text-left text-sm text-[var(--text-secondary)]">
+              <caption className="sr-only">
+                {block.caption ?? 'Browser and device capability matrix'}
+              </caption>
+              <thead>
+                <tr className="border-b border-[var(--border)]">
+                  {block.headers.map((header) => (
+                    <th
+                      key={header}
+                      scope="col"
+                      className="px-2 py-2 font-semibold text-[var(--text-primary)]"
+                    >
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row) => (
+                  <tr key={row.join('|')} className="border-b border-[var(--border)] align-top">
+                    {row.map((cell, cellIndex) =>
+                      cellIndex === 0 ? (
+                        <th
+                          key={`${row[0]}-${cellIndex}`}
+                          scope="row"
+                          className="px-2 py-2 font-medium text-[var(--text-primary)]"
+                        >
+                          {cell}
+                        </th>
+                      ) : (
+                        <td key={`${row[0]}-${cellIndex}`} className="px-2 py-2">
+                          {cell}
+                        </td>
+                      ),
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
       case 'links':
         return (
           <ul key={index} className="flex flex-wrap gap-x-4 gap-y-2 pt-1">
@@ -502,21 +500,22 @@ export function renderPublicBlocks(blocks: Block[]) {
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 ) : (
-                  <Link
+                  <LocalizedLink
                     className="font-medium text-[var(--accent)] underline-offset-2 hover:underline"
                     to={item.to!}
                   >
                     {item.label}
-                  </Link>
+                  </LocalizedLink>
                 )}
               </li>
             ))}
           </ul>
         );
-      case 'faq':
+      case 'faq': {
+        const items = block.items?.length ? block.items : FAQ_ITEMS;
         return (
           <div key={index} className="space-y-3">
-            {FAQ_ITEMS.map((item) => (
+            {items.map((item) => (
               <details
                 key={item.id}
                 id={item.id}
@@ -530,6 +529,7 @@ export function renderPublicBlocks(blocks: Block[]) {
             ))}
           </div>
         );
+      }
       default:
         return null;
     }

@@ -1,0 +1,101 @@
+{
+  "home": {
+    "title": "LocalDocu — Automatisation documentaire avec priorité au local",
+    "description": "Dites-lui quoi faire. Vos fichiers restent sur votre appareil. Fusionnez, divisez, compressez et convertissez vos PDF et Word en local dans votre navigateur."
+  },
+  "mergePdf": {
+    "title": "Fusionner des PDF en local et en toute confidentialité | LocalDocu",
+    "description": "Fusionnez des fichiers PDF sans les téléverser. Sélectionnez, réorganisez et combinez vos PDF en local dans votre navigateur avec LocalDocu.",
+    "h1": "Fusionnez des fichiers PDF sans les téléverser",
+    "breadcrumb": "Fusionner des PDF"
+  },
+  "mergeDocx": {
+    "title": "Fusionner des documents Word en local | LocalDocu",
+    "description": "Fusionnez des documents Word DOCX en local sur votre appareil. Fusion pratique avec des limites claires — aucun téléversement de document vers LocalDocu.",
+    "h1": "Fusionnez des documents Word en local",
+    "breadcrumb": "Fusionner des DOCX"
+  },
+  "compressPdf": {
+    "title": "Compresser un PDF en local et en toute confidentialité | LocalDocu",
+    "description": "Compressez des fichiers PDF sans les téléverser. Réduisez la taille avec les modes équilibré ou maximum — le traitement reste sur votre appareil.",
+    "h1": "Compressez des fichiers PDF sans les téléverser",
+    "breadcrumb": "Compresser un PDF"
+  },
+  "pdfTools": {
+    "title": "Outils PDF locaux — fusionner, diviser, extraire et plus | LocalDocu",
+    "description": "Outils PDF locaux pour fusionner, diviser, extraire, supprimer, faire pivoter, réorganiser et compresser — sans téléversements inutiles.",
+    "h1": "Des outils PDF locaux sans téléversements inutiles",
+    "breadcrumb": "Outils PDF"
+  },
+  "docxToPdf": {
+    "title": "Convertir DOCX en PDF en local | LocalDocu",
+    "description": "Convertissez des fichiers DOC et DOCX en un PDF lisible sur votre appareil. Les mises en page Word complexes peuvent ne pas être conservées à l’identique.",
+    "h1": "Convertissez des documents Word en PDF en local",
+    "breadcrumb": "DOCX vers PDF"
+  },
+  "offline": {
+    "title": "Traitement de documents hors ligne | LocalDocu",
+    "description": "Travaillez hors ligne une fois le shell d’application de LocalDocu mis en cache. Le traitement local ne nécessite aucun réseau pour les flux pris en charge.",
+    "h1": "Travailler sur vos documents hors ligne",
+    "breadcrumb": "Hors ligne"
+  },
+  "privacy": {
+    "title": "Confidentialité LocalDocu — traitement documentaire avec priorité au local",
+    "description": "Confidentialité dès la conception : le contenu des documents est traité sur votre appareil. Aucun backend de téléversement ni compte requis actuellement.",
+    "h1": "Confidentialité dès la conception",
+    "breadcrumb": "Confidentialité"
+  },
+  "howItWorks": {
+    "title": "Comment fonctionne LocalDocu | Automatisation documentaire locale",
+    "description": "Sélectionnez des fichiers, choisissez une opération et exécutez en local. Découvrez comment LocalDocu garde le traitement des documents sur votre appareil.",
+    "h1": "Comment fonctionne LocalDocu",
+    "breadcrumb": "Comment ça marche"
+  },
+  "browserSupport": {
+    "title": "Compatibilité des navigateurs et des appareils | LocalDocu",
+    "description": "Ce que LocalDocu permet sur Chrome Android, Safari iOS et sur ordinateur : sélection de fichiers, dossier, Enregistrer sous, téléchargement et limites PWA.",
+    "h1": "Compatibilité des navigateurs et des appareils",
+    "breadcrumb": "Compatibilité des navigateurs"
+  },
+  "openSource": {
+    "title": "LocalDocu open source | Développé de manière ouverte",
+    "description": "LocalDocu est open source sous licence Apache-2.0. Consultez le code, la feuille de route et la façon dont le projet est développé de manière ouverte.",
+    "h1": "Open source dès la conception",
+    "breadcrumb": "Open source"
+  },
+  "contribute": {
+    "title": "Contribuer à LocalDocu | Automatisation documentaire open source",
+    "description": "Aidez à construire LocalDocu : code, tests, documentation, accessibilité, design. Commencez par les tickets et le guide du contributeur.",
+    "h1": "Aidez à construire LocalDocu",
+    "breadcrumb": "Contribuer"
+  },
+  "roadmap": {
+    "title": "Feuille de route LocalDocu | Web, bureau et LocalDocu AI",
+    "description": "Ce que LocalDocu propose aujourd’hui et ce qui est prévu : plus de capacité sur le bureau et LocalDocu AI pour des flux documentaires pilotés par l’intention.",
+    "h1": "Feuille de route",
+    "breadcrumb": "Feuille de route"
+  },
+  "desktop": {
+    "title": "LocalDocu Bureau | Automatisation documentaire locale avancée",
+    "description": "Future application de bureau pour les charges locales plus lourdes et LocalDocu AI. Positionnement uniquement — pas encore disponible ; le web reste le produit.",
+    "h1": "Bureau : plus de capacité locale à venir",
+    "breadcrumb": "Bureau"
+  },
+  "localAi": {
+    "title": "LocalDocu AI | Automatisation documentaire locale pilotée par l’intention",
+    "description": "LocalDocu AI s’exécute dans l’application de bureau : un modèle à poids ouverts, sur l’appareil, qui lit les métadonnées des documents et l’intention de l’utilisateur, puis pilote la gestion documentaire LocalDocu — sans envoyer le contenu des documents dans le cloud. Pas active dans la version web actuelle.",
+    "h1": "LocalDocu AI : prévue pour l’application de bureau",
+    "breadcrumb": "LocalDocu AI"
+  },
+  "faq": {
+    "title": "FAQ LocalDocu — confidentialité, hors ligne et formats",
+    "description": "Questions fréquentes sur LocalDocu, la confidentialité, les fichiers pris en charge, l’utilisation hors ligne, l’open source et les contributions.",
+    "h1": "Questions fréquentes",
+    "breadcrumb": "FAQ"
+  },
+  "notFound": {
+    "title": "Page introuvable | LocalDocu",
+    "description": "Cette page n’existe pas. Revenez à l’espace de travail LocalDocu.",
+    "h1": "Page introuvable"
+  }
+}

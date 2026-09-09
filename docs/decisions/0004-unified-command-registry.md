@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-LocalDoc AI will interpret natural language into structured plans. The AI must never invent capabilities or execute filesystem actions directly. Multiple packages already exposed separate registries (`pdf`, `filesystem`, `docx`).
+LocalDocu AI (desktop, future) will interpret natural language into structured plans. The AI must never invent capabilities or execute filesystem actions directly. Multiple packages already exposed separate registries (`pdf`, `filesystem`, `docx`).
 
 ## Decision
 

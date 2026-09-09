@@ -7,6 +7,7 @@ import {
   type LocalFileRef,
 } from '@localdoc/core';
 import type { FilesystemAdapter } from '@localdoc/filesystem';
+import { useT } from '../i18n';
 import { looksLikePdf } from '../lib/pdfMagic';
 
 interface DocumentPreviewProps {
@@ -15,6 +16,7 @@ interface DocumentPreviewProps {
 }
 
 export function DocumentPreview({ file, fs }: DocumentPreviewProps) {
+  const t = useT();
   const [url, setUrl] = useState<string | null>(null);
   const [docxText, setDocxText] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
@@ -48,7 +50,7 @@ export function DocumentPreview({ file, fs }: DocumentPreviewProps) {
       if (isPdfFile(file)) {
         // Magic-byte sniff only — full pdf-lib parse is reserved for Run ops.
         if (!looksLikePdf(result.value)) {
-          setError(`${file.name} could not be read as a PDF.`);
+          setError(t('workspace.preview.couldNotReadPdf', { name: file.name }));
           setLoading(false);
           return;
         }
@@ -74,7 +76,7 @@ export function DocumentPreview({ file, fs }: DocumentPreviewProps) {
           setLoading(false);
           return;
         }
-        setDocxText(extracted.value.text || '(No extractable text found.)');
+        setDocxText(extracted.value.text || t('workspace.preview.noExtractableText'));
         setNote(extracted.value.fidelityNote);
         setLoading(false);
         return;
@@ -90,13 +92,13 @@ export function DocumentPreview({ file, fs }: DocumentPreviewProps) {
           setLoading(false);
           return;
         }
-        setDocxText(extracted.value || '(No extractable text found.)');
-        setNote('Best-effort plain-text preview from legacy .doc — not a full Word layout preview.');
+        setDocxText(extracted.value || t('workspace.preview.noExtractableText'));
+        setNote(t('workspace.preview.docFidelityNote'));
         setLoading(false);
         return;
       }
 
-      setError('Preview supports PDF, DOC, and DOCX only. Select a supported document.');
+      setError(t('workspace.preview.unsupported'));
       setLoading(false);
     }
 
@@ -106,27 +108,43 @@ export function DocumentPreview({ file, fs }: DocumentPreviewProps) {
       cancelled = true;
       if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
-  }, [file, fs]);
+  }, [file, fs, t]);
 
   if (!file) {
     return (
       <div className="rounded-[var(--radius-surface)] border border-dashed border-[var(--border)] bg-[var(--surface-subtle)] px-4 py-12 text-center">
         <p className="text-sm font-medium text-[var(--text-primary)]">
-          Select a document to preview it here.
+          {t('workspace.preview.emptyTitle')}
         </p>
-        <p className="mt-1 text-sm text-[var(--text-secondary)]">Preview stays on this device.</p>
+        <p className="mt-1 text-sm text-[var(--text-secondary)]">
+          {t('workspace.preview.emptyBody')}
+        </p>
       </div>
     );
   }
 
   return (
     <div className="space-y-2">
-      <p className="text-sm text-[var(--text-secondary)]">
-        Preview: <span className="font-medium text-[var(--text-primary)]">{file.name}</span>
-      </p>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <p className="text-sm text-[var(--text-secondary)]">
+          {t('workspace.preview.label')}{' '}
+          <span className="font-medium text-[var(--text-primary)]">{file.name}</span>
+        </p>
+        {url ? (
+          <a
+            className="text-sm font-medium text-[var(--accent)] underline-offset-2 hover:underline"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('workspace.preview.openInNewTab')}
+            <span className="sr-only">{t('common.nav.opensInNewTab')}</span>
+          </a>
+        ) : null}
+      </div>
       {loading ? (
         <div className="space-y-2" role="status" aria-live="polite">
-          <p className="text-sm text-[var(--text-secondary)]">Loading preview…</p>
+          <p className="text-sm text-[var(--text-secondary)]">{t('workspace.preview.loading')}</p>
           <div
             className="h-1.5 overflow-hidden rounded-full bg-[var(--accent-soft)]"
             aria-hidden="true"
@@ -141,11 +159,16 @@ export function DocumentPreview({ file, fs }: DocumentPreviewProps) {
         </p>
       ) : null}
       {url ? (
-        <iframe
-          title={`Preview of ${file.name}`}
-          src={url}
-          className="h-80 w-full rounded-[var(--radius-surface)] border border-[var(--border)] bg-[var(--surface)]"
-        />
+        <>
+          <iframe
+            title={t('workspace.preview.iframeTitle', { name: file.name })}
+            src={url}
+            className="h-80 w-full rounded-[var(--radius-surface)] border border-[var(--border)] bg-[var(--surface)]"
+          />
+          <p className="text-xs text-[var(--text-tertiary)]">
+            {t('workspace.preview.mobileBlankNote')}
+          </p>
+        </>
       ) : null}
       {docxText ? (
         <div className="max-h-80 overflow-auto rounded-[var(--radius-surface)] border border-[var(--border)] bg-[var(--surface)] p-4 text-sm whitespace-pre-wrap text-[var(--text-primary)]">

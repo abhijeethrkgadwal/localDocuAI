@@ -1,0 +1,488 @@
+{
+  "productSummary": "O LocalDocu é uma automação de documentos para arquivos PDF e Word que coloca a privacidade e o processamento local em primeiro lugar. Você seleciona arquivos no seu dispositivo; juntar, dividir, extrair páginas, excluir páginas, girar, reordenar, comprimir, renomear e converter rodam no navegador. O conteúdo dos documentos não é enviado para processamento na versão atual.",
+  "howItWorksShared": {
+    "steps": [
+      {
+        "name": "Selecione os arquivos",
+        "text": "Escolha PDF, DOC ou DOCX com Selecionar arquivos (seleção múltipla). A seleção de pasta está disponível quando o navegador oferece suporte (funciona melhor no Chrome/Edge para desktop). Os arquivos ficam na sessão do seu navegador."
+      },
+      {
+        "name": "Escolha uma operação",
+        "text": "Junte, divida, extraia páginas, exclua páginas, gire, reordene, comprima, converta Word para PDF ou gerencie arquivos localmente."
+      },
+      {
+        "name": "Execute no seu dispositivo",
+        "text": "O processamento acontece localmente no seu navegador. Salve com um seletor nativo quando estiver disponível ou baixe o resultado — nada é enviado a um servidor do LocalDocu para processamento de documentos."
+      }
+    ],
+    "whyLocal": {
+      "title": "Por que o processamento local pode fazer diferença",
+      "points": [
+        "Transferências de arquivos desnecessárias podem ser evitadas em cargas de trabalho adequadas.",
+        "Operações de documento adequadas podem usar a capacidade de computação que você já tem no seu dispositivo.",
+        "Você pode processar documentos sem manter uma sessão de processamento remota.",
+        "Um futuro aplicativo desktop pode oferecer mais recursos para cargas de trabalho maiores e hospedar o LocalDocu AI."
+      ]
+    }
+  },
+  "faq": {
+    "subtitle": "Perguntas comuns sobre o LocalDocu, privacidade, arquivos compatíveis, uso offline, navegadores de celular e o LocalDocu AI.",
+    "items": {
+      "whatIsLocaldocu": {
+        "question": "O que é o LocalDocu?",
+        "answer": "O LocalDocu é um espaço de trabalho de documentos de código aberto, com processamento local em primeiro lugar, para trabalhar com PDFs e documentos Word. As operações de documento compatíveis rodam localmente no seu navegador, em vez de exigir o envio dos documentos para um servidor do LocalDocu."
+      },
+      "areFilesUploaded": {
+        "question": "O LocalDocu envia meus documentos?",
+        "answer": "O processamento de documentos na versão atual é local. Os bytes dos documentos que você seleciona são processados no seu dispositivo e não são enviados ao LocalDocu para processamento de documentos."
+      },
+      "worksOffline": {
+        "question": "Posso usar o LocalDocu offline?",
+        "answer": "Sim, para os fluxos locais compatíveis, depois que o aplicativo tiver sido carregado e armazenado em cache pelo navegador. A disponibilidade de cada recurso do navegador pode variar conforme o navegador e o dispositivo."
+      },
+      "supportedFormats": {
+        "question": "Quais formatos de arquivo o LocalDocu aceita?",
+        "answer": "O LocalDocu aceita PDF para juntar, dividir, extrair, excluir páginas, girar, reordenar e comprimir. Também aceita junção prática de DOCX, visualização de texto e conversão de DOC/DOCX para PDF limitada pela capacidade (PDF orientado a texto). Layouts complexos do Word podem não ser preservados exatamente."
+      },
+      "accountRequired": {
+        "question": "Preciso de uma conta?",
+        "answer": "Nenhuma conta é necessária para o aplicativo atual."
+      },
+      "howToMergePdfs": {
+        "question": "Como junto PDFs de forma privada?",
+        "answer": "Abra a página Juntar PDF (ou o espaço de trabalho da página inicial), selecione ou solte dois ou mais arquivos PDF, organize a ordem na lista, escolha Juntar e salve ou baixe o resultado localmente. Os arquivos não são enviados para a junção."
+      },
+      "filesAfterFinish": {
+        "question": "O que acontece com meus arquivos depois que eu termino?",
+        "answer": "Os bytes dos documentos ficam na sessão do seu navegador e nos identificadores locais de arquivo usados no trabalho em andamento. O LocalDocu não guarda uma cópia dos seus documentos na nuvem. Fechar a aba ou limpar os dados do site encerra a sessão em memória; os arquivos que você salvou ou baixou continuam onde você os guardou no seu dispositivo."
+      },
+      "reduceCloudProcessing": {
+        "question": "O LocalDocu pode reduzir processamento desnecessário na nuvem?",
+        "answer": "Em fluxos de documento adequados, o LocalDocu permite que o seu próprio dispositivo faça o processamento em vez de enviar os dados do documento para um serviço remoto de processamento de documentos. Isso pode reduzir transferência de dados desnecessária e parte do processamento no servidor nessas cargas de trabalho. Não há afirmação de economia universal de energia em comparação com toda e qualquer configuração de nuvem."
+      },
+      "isOpenSource": {
+        "question": "O LocalDocu é de código aberto?",
+        "answer": "Sim. O projeto é desenvolvido de forma aberta sob a licença Apache-2.0. O código-fonte, as orientações para contribuição e o roteiro estão disponíveis no GitHub."
+      },
+      "howToContribute": {
+        "question": "Como posso contribuir?",
+        "answer": "Você pode ajudar com código, testes, documentação, acessibilidade, design e relatos de problemas. Veja a página Contribuir para conhecer a jornada de quem contribui e o link para o repositório no GitHub."
+      },
+      "mobileBrowsers": {
+        "question": "O LocalDocu funciona em celulares e tablets?",
+        "answer": "Sim, para os fluxos principais: selecionar arquivos (seleção múltipla), juntar, comprimir, converter e baixar resultados no Chrome ou no Safari para celular. Seleção de pasta, Salvar como nativo e criação de pasta funcionam melhor no Chrome ou Edge para desktop. Em alguns celulares, a visualização de PDF na página pode ficar em branco — abra a visualização em uma nova aba. Arquivos muito grandes podem esbarrar nos limites de memória do navegador. Veja a página Compatibilidade de navegadores e dispositivos para a matriz completa."
+      },
+      "heavyOperations": {
+        "question": "O que acontece quando um navegador não consegue realizar uma operação pesada?",
+        "answer": "Alguns recursos avançados ou que exigem muito do dispositivo podem ir além do que um determinado navegador ou dispositivo consegue processar com folga. Essas cargas de trabalho podem ser mais adequadas a um futuro aplicativo desktop, com recursos locais mais robustos. O aplicativo web segue focado nas cargas de trabalho adequadas ao navegador."
+      },
+      "whatIsLocaldocuAi": {
+        "question": "O que é o LocalDocu AI?",
+        "answer": "O LocalDocu AI é um recurso planejado para o aplicativo desktop do LocalDocu. Ele usa um modelo de pesos abertos, adequado a dispositivos locais, para entender a sua intenção e as capacidades de gerenciamento de documentos do LocalDocu, e então executa tarefas complexas por meio desses motores locais. Ele foi projetado para trabalhar a partir dos metadados dos documentos e do seu pedido — e não enviando o conteúdo dos documentos para a nuvem. O LocalDocu AI está Desligado na versão web atual."
+      }
+    }
+  },
+  "discoverability": {
+    "howItWorksHeading": "Como o LocalDocu funciona",
+    "fullHowItWorksPage": "Página completa de como funciona",
+    "browserDeviceSupport": "Compatibilidade de navegadores e dispositivos",
+    "privacyHeading": "Privacidade por design",
+    "privacyBody": "O conteúdo dos documentos é processado neste dispositivo. Os arquivos de documento não são enviados ao LocalDocu para processamento. A versão atual não tem autenticação, não tem backend de envio de documentos e não tem pipeline do LocalDocu AI. Os indicadores de status mostram processamento local, processamento na nuvem desligado e LocalDocu AI desligado.",
+    "privacyDetails": "Detalhes de privacidade",
+    "faqHeading": "Perguntas frequentes",
+    "openFaqPage": "Abrir a página de FAQ"
+  },
+  "tool": {
+    "aboutHeading": "Sobre esta ferramenta"
+  },
+  "mergePdf": {
+    "intro": "Use o LocalDocu para combinar vários arquivos PDF no seu dispositivo. Selecione os arquivos acima, reordene-os na lista e depois junte e salve o resultado localmente.",
+    "howToHeading": "Como juntar PDFs",
+    "howTo": [
+      "Selecione ou solte dois ou mais arquivos PDF nesta página.",
+      "Reordene a lista para que os arquivos fiquem na ordem que você quer.",
+      "Escolha Juntar e salve ou baixe o PDF combinado no seu dispositivo."
+    ],
+    "privacyHeading": "Privacidade e uso offline",
+    "privacy": [
+      "Os bytes dos documentos são processados no seu navegador — não são enviados ao LocalDocu para a junção.",
+      "Depois que o shell do aplicativo estiver em cache, os fluxos de junção compatíveis podem continuar offline.",
+      "Os recursos do navegador (seletor de pastas, caixas de diálogo de salvamento) variam conforme o navegador e o dispositivo."
+    ],
+    "note": "Em celulares e tablets, use Selecionar arquivos (seleção múltipla) e espere que os resultados sejam baixados. Seleção de pasta e Salvar como nativo funcionam melhor no Chrome ou Edge para desktop.",
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "pdfTools": "Visão geral das ferramentas de PDF",
+      "compressPdf": "Comprimir PDF",
+      "privacy": "Privacidade",
+      "offline": "Uso offline"
+    }
+  },
+  "mergeDocx": {
+    "intro": "O LocalDocu oferece junção prática de DOCX para documentos Word adequados. Selecione acima arquivos Word do mesmo tipo, defina a ordem e junte localmente.",
+    "behaviorHeading": "Comportamento atual",
+    "behavior": [
+      "Arquivos DOCX podem ser juntados de forma prática e orientada ao conteúdo.",
+      "O processamento acontece no seu dispositivo, dentro do navegador.",
+      "O resultado é salvo ou baixado localmente — sem envio de documentos ao LocalDocu."
+    ],
+    "limitsHeading": "Limitações",
+    "limits": [
+      "Nem todo recurso do Word ou layout complexo tem garantia de sobreviver à junção.",
+      "A junção espera documentos do mesmo tipo (por exemplo, DOCX com DOCX).",
+      "Documentos muito grandes ou incomuns podem esbarrar nos limites de capacidade do navegador."
+    ],
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "docxToPdf": "Converter DOCX para PDF",
+      "howItWorks": "Como funciona"
+    }
+  },
+  "compressPdf": {
+    "intro": "Reduza o tamanho de arquivos PDF no seu dispositivo. Selecione um PDF acima, escolha Equilibrado (mantém o texto selecionável) ou Máximo (redução mais forte), defina a qualidade desejada e comprima e salve localmente.",
+    "modesHeading": "Modos",
+    "modes": [
+      "Equilibrado — mantém o texto selecionável sempre que possível enquanto reduz o tamanho.",
+      "Máximo — recodifica as páginas como imagens para uma redução maior de tamanho.",
+      "As metas de qualidade equilibram tamanho de arquivo e fidelidade visual."
+    ],
+    "privacyHeading": "Privacidade",
+    "privacy": [
+      "A compressão roda inteiramente no seu navegador — nada é enviado ao LocalDocu.",
+      "Depois que o shell do aplicativo estiver em cache, os fluxos de compressão compatíveis podem continuar offline."
+    ],
+    "note": "Em celulares, prefira a compressão Equilibrada e PDFs menores. O modo Máximo precisa de mais memória. Os resultados são baixados quando o Salvar como nativo não está disponível.",
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "mergePdfs": "Juntar PDFs",
+      "pdfTools": "Todas as ferramentas de PDF",
+      "privacy": "Privacidade"
+    }
+  },
+  "pdfTools": {
+    "intro": "Esta página reúne as operações de PDF do LocalDocu. Cada uma roda localmente no seu navegador para cargas de trabalho adequadas — use os painéis acima para selecionar arquivos e executar uma operação.",
+    "opsHeading": "Operações de PDF compatíveis",
+    "ops": [
+      "Juntar — combine vários PDFs na ordem da lista",
+      "Dividir — separe as páginas em arquivos de saída",
+      "Extrair páginas — mantenha as páginas selecionadas",
+      "Excluir páginas — remova as páginas selecionadas",
+      "Girar páginas — 90°, 180° ou 270°",
+      "Reordenar páginas — reorganize a ordem das páginas",
+      "Comprimir — reduza o tamanho com os modos equilibrado ou máximo"
+    ],
+    "outro": "Selecione um PDF (ou vários, para juntar), escolha a operação e depois execute e salve localmente. Também existem páginas dedicadas para juntar e comprimir.",
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "mergePdfs": "Juntar PDFs",
+      "compressPdf": "Comprimir PDF",
+      "offline": "Capacidade offline",
+      "faq": "FAQ"
+    }
+  },
+  "docxToPdf": {
+    "intro": "Converta arquivos DOC ou DOCX em um PDF legível gerado no seu dispositivo. Selecione um arquivo Word acima, converta e salve localmente.",
+    "limitsHeading": "Limites honestos",
+    "limits": [
+      "A conversão é orientada a texto e limitada pela capacidade das cargas de trabalho do navegador.",
+      "Layouts complexos do Word podem não ser preservados exatamente.",
+      "Documentos muito grandes ou com formatação pesada podem precisar de um futuro aplicativo desktop."
+    ],
+    "noteFidelity": "O LocalDocu não promete fidelidade total ao layout do Word na conversão feita pelo navegador.",
+    "notePhones": "Celulares aplicam limites de tamanho mais rígidos. Se a conversão for bloqueada, tente um arquivo menor ou aguarde o aplicativo desktop para trabalhos mais pesados.",
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "mergeDocx": "Juntar documentos Word",
+      "desktop": "Roteiro do desktop"
+    }
+  },
+  "offline": {
+    "intro": "Depois que uma visita em produção armazena o shell do aplicativo em cache, o LocalDocu pode carregar sem rede para os fluxos locais compatíveis.",
+    "worksHeading": "O que funciona offline",
+    "works": [
+      "O shell do aplicativo (HTML, JS, CSS, ícones) por meio do service worker",
+      "Operações locais de PDF e Word que não precisam de rede",
+      "Páginas informativas que fazem parte do aplicativo cliente em cache"
+    ],
+    "refreshHeading": "Atualizar estando offline",
+    "refresh": [
+      "Um recarregamento normal ainda consegue abrir o LocalDocu a partir do cache do service worker depois da primeira visita",
+      "A atualização forçada (Shift+Reload / Ctrl+Shift+R) ignora o service worker e costuma falhar quando você está offline",
+      "Atualizar sempre apaga os documentos em memória e o trabalho em andamento nesta sessão do navegador"
+    ],
+    "varyHeading": "O que pode variar",
+    "vary": [
+      "A primeira visita ainda precisa de rede para baixar o aplicativo e guardá-lo em cache",
+      "Acesso a pastas, seletores de salvamento e outras APIs do navegador variam conforme o navegador e o dispositivo",
+      "No Chrome para Android, Adicionar à tela inicial / instalar costuma funcionar depois da primeira visita",
+      "No Safari para iOS, use Compartilhar → Adicionar à Tela de Início; o modo offline do service worker tem limites mais rígidos do que no Android",
+      "Atualizações do aplicativo exigem conexão quando uma nova versão é publicada"
+    ],
+    "outro": "Ficar offline é um recurso do produto, não um erro. Os indicadores de confiança mostram o status offline sem tratá-lo como falha. Os navegadores de celular são melhores para selecionar arquivos → executar → baixar; a seleção completa de pastas e o Salvar como nativo continuam mais fortes no Chrome ou Edge para desktop.",
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "privacy": "Modelo de privacidade",
+      "desktop": "Capacidade futura no desktop"
+    }
+  },
+  "privacy": {
+    "staysLocalHeading": "O que fica local",
+    "staysLocal": [
+      "O conteúdo dos documentos que você seleciona",
+      "O processamento de documentos e as visualizações locais",
+      "A execução das operações na sessão do navegador"
+    ],
+    "doesNotHeading": "O que o aplicativo atual não faz",
+    "doesNot": [
+      "Nenhum backend de envio de documentos para processamento",
+      "Nenhum pipeline de processamento de documentos na nuvem",
+      "Nenhuma exigência de conta",
+      "Processamento na nuvem: Desligado · LocalDocu AI: Desligado"
+    ],
+    "dataFlowHeading": "Fluxo de dados (versão atual)",
+    "dataFlow": [
+      "Você seleciona arquivos no seu dispositivo",
+      "O LocalDocu os lê no navegador",
+      "Um motor local de documentos executa a operação",
+      "O resultado é salvo ou baixado no seu dispositivo"
+    ],
+    "laterHeading": "O que pode mudar mais adiante",
+    "later": [
+      "Aplicativo desktop do LocalDocu para cargas de trabalho locais mais pesadas",
+      "LocalDocu AI no aplicativo desktop: modelo de pesos abertos rodando no dispositivo, que usa metadados dos documentos e a intenção do usuário para acionar comandos de gerenciamento de documentos do LocalDocu (o conteúdo dos documentos fica no dispositivo)",
+      "Telemetria opcional apenas se for claramente informada — a Fase 1 não tem pipeline de análise de produto"
+    ],
+    "note": "Não afirmamos ser “100% privados”, “totalmente seguros” nem ter “zero coleta de dados” como garantias absolutas. As afirmações correspondem à implementação atual.",
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "howItWorks": "Como funciona",
+      "localAi": "LocalDocu AI (futuro)"
+    }
+  },
+  "howItWorks": {
+    "intro": "O LocalDocu é um espaço de trabalho com processamento local em primeiro lugar: você seleciona documentos no seu dispositivo, escolhe uma operação e a executa no navegador. Os resultados são salvos ou baixados localmente — conforme o que o seu navegador oferece.",
+    "stepsHeading": "Etapas",
+    "devicesHeading": "Dispositivos em resumo",
+    "devices": [
+      "Celulares e tablets: Selecionar arquivos → executar → baixar. Junção, compressão e conversão básicas funcionam dentro dos limites de memória.",
+      "Chrome / Edge para desktop: A experiência mais completa — seleção de pasta, Salvar como nativo, criar pasta.",
+      "Outros navegadores de desktop: Ferramentas básicas via seleção de arquivos + download; pasta/Salvar como costumam ser limitados."
+    ],
+    "framing": "Enquadramento preferido: use a capacidade de computação que você já tem. Operações de documento adequadas podem rodar localmente em vez de exigir envio de documentos e processamento remoto. O processamento local pode reduzir transferência de dados desnecessária e computação remota nas cargas de trabalho que o seu dispositivo dá conta — sem afirmar eficiência energética universal.",
+    "links": {
+      "browserSupport": "Compatibilidade completa de navegadores e dispositivos",
+      "privacy": "Privacidade",
+      "faq": "FAQ"
+    }
+  },
+  "browserSupport": {
+    "intro": "O LocalDocu roda no seu navegador. O que você consegue fazer depende das APIs do dispositivo (seletores de arquivo, caixas de diálogo de salvamento) e da memória — não do envio de documentos. O processamento fica no seu dispositivo na versão atual.",
+    "positioningHeading": "Posicionamento rápido",
+    "positioning": [
+      "Celulares e tablets (Chrome no Android, Safari no iOS): selecionar arquivos → executar a ferramenta → baixar",
+      "Chrome / Edge para desktop: a experiência web mais completa (seleção de pasta, Salvar como nativo, criar pasta)",
+      "Firefox / Safari para desktop: ferramentas básicas via seleção de arquivos + download; pasta / Salvar como limitados",
+      "Futuro aplicativo desktop: cargas de trabalho mais pesadas + LocalDocu AI (ainda não lançado)"
+    ],
+    "matrixHeading": "Matriz de recursos",
+    "tableCaption": "Matriz de recursos por navegador e dispositivo",
+    "headers": [
+      "Recurso",
+      "Chrome no Android",
+      "Safari no iOS",
+      "Chrome / Edge para desktop",
+      "Firefox / Safari para desktop"
+    ],
+    "rows": [
+      [
+        "Selecionar arquivos (seleção múltipla)",
+        "Sim",
+        "Sim",
+        "Sim",
+        "Sim"
+      ],
+      [
+        "Juntar / comprimir / ferramentas de página",
+        "Sim*",
+        "Sim*",
+        "Sim",
+        "Sim*"
+      ],
+      [
+        "Converter DOC/DOCX → PDF",
+        "Sim*",
+        "Sim*",
+        "Sim*",
+        "Sim*"
+      ],
+      [
+        "Baixar resultados",
+        "Sim",
+        "Sim",
+        "Sim",
+        "Sim"
+      ],
+      [
+        "Selecionar pasta",
+        "Limitado / muitas vezes não",
+        "Geralmente não",
+        "Sim",
+        "Limitado / muitas vezes não"
+      ],
+      [
+        "Salvar como nativo",
+        "Não (download)",
+        "Não (download)",
+        "Sim",
+        "Muitas vezes download"
+      ],
+      [
+        "Criar pasta no disco",
+        "Não",
+        "Não",
+        "Sim, depois de selecionar a pasta",
+        "Não"
+      ],
+      [
+        "Visualização de PDF na página",
+        "Costuma funcionar",
+        "Pode ficar em branco — abra em nova aba",
+        "Geralmente funciona",
+        "Geralmente funciona"
+      ],
+      [
+        "PWA / shell offline",
+        "Instalar depois da primeira visita",
+        "Adicionar à Tela de Início",
+        "Sim",
+        "Varia"
+      ],
+      [
+        "LocalDocu AI",
+        "Desligado",
+        "Desligado",
+        "Desligado",
+        "Desligado"
+      ]
+    ],
+    "footnote": "*Dentro dos limites de memória e capacidade do navegador. Em celulares, prefira a compressão Equilibrada e arquivos menores. O Chrome no iOS usa WebKit — trate-o como o Safari.",
+    "mobileHeading": "Fluxo no celular",
+    "mobile": [
+      "Abra uma página de ferramenta ou o espaço de trabalho da página inicial",
+      "Toque em Selecionar arquivos e escolha um ou mais documentos (seleção múltipla)",
+      "Execute a operação",
+      "Baixe o resultado — o Salvar como nativo não está disponível na web para celular"
+    ],
+    "note": "Se a visualização de PDF na página ficar em branco no iOS, use Abrir visualização em nova aba. Seleção de pasta e criação de pasta continuam sendo pontos fortes do Chromium para desktop. Os idiomas da IU disponíveis são English, Hindi, Spanish, Portuguese, German, French, Japanese e Simplified Chinese; árabe/RTL está planejado para uma versão posterior.",
+    "links": {
+      "faq": "FAQ",
+      "offline": "Offline / instalação",
+      "howItWorks": "Como funciona",
+      "openLocalDocu": "Abrir o LocalDocu"
+    }
+  },
+  "openSource": {
+    "intro": "O LocalDocu é desenvolvido de forma aberta sob a licença Apache-2.0. O código-fonte, os relatos de problemas e o roteiro ficam no GitHub. Contribuições da comunidade são bem-vindas.",
+    "openMeansHeading": "O que “aberto” significa aqui",
+    "openMeans": [
+      "Licença Apache-2.0",
+      "Código-fonte disponível no GitHub",
+      "Roteiro transparente e registro aberto de problemas",
+      "Ajuda bem-vinda em acessibilidade, documentação, testes e design"
+    ],
+    "note": "O projeto é conduzido pela comunidade e desenvolvido de forma aberta. Ele não é descrito como “de propriedade da comunidade”, a menos que a governança sustente formalmente essa afirmação.",
+    "links": {
+      "github": "Ver o repositório no GitHub",
+      "contribute": "Contribuir",
+      "roadmap": "Roteiro"
+    }
+  },
+  "contribute": {
+    "intro": "Ajude a construir o LocalDocu com código, testes, documentação, melhorias de acessibilidade, design e relatos de problemas bem escritos.",
+    "journeyHeading": "Jornada de quem contribui",
+    "journey": [
+      "Leia o README e o modelo de privacidade para que as restrições de processamento local fiquem claras.",
+      "Explore os problemas em aberto ou proponha uma melhoria focada.",
+      "Siga as orientações do CONTRIBUTING para configuração, branches e pull requests.",
+      "Ao alterar textos da IU, atualize os catálogos em inglês em apps/web/src/i18n/locales/en/ (os outros idiomas usam fallback até serem traduzidos).",
+      "Mantenha o processamento de documentos local — não introduza backends de envio nem autenticação, a menos que o projeto peça isso explicitamente."
+    ],
+    "links": {
+      "github": "Repositório no GitHub",
+      "contributing": "Guia de contribuição",
+      "openSource": "Visão geral do código aberto",
+      "codeOfConduct": "Código de conduta",
+      "security": "Política de segurança"
+    }
+  },
+  "roadmap": {
+    "intro": "O espaço de trabalho web é o produto hoje: ferramentas locais de PDF e Word no navegador. As fases seguintes acrescentam um aplicativo desktop do LocalDocu e o LocalDocu AI para fluxos guiados por intenção no dispositivo.",
+    "shippedHeading": "Já disponível (web)",
+    "shipped": [
+      "Selecionar arquivos / pasta / arrastar e soltar",
+      "PDF: juntar, dividir, extrair, excluir, girar, reordenar, comprimir",
+      "Junção prática de DOCX e conversão de DOC/DOCX → PDF orientada a texto",
+      "Organizar: ordenar, filtrar, renomear, copiar, mover, pasta, exportar",
+      "Shell do aplicativo PWA, temas, status de privacidade e de rede",
+      "Idiomas da IU: English, Hindi, Spanish, Portuguese, German, French, Japanese, Simplified Chinese"
+    ],
+    "nextHeading": "Próximas direções",
+    "next": [
+      "Aplicativo desktop para cargas de trabalho locais mais pesadas (página de posicionamento disponível)",
+      "LocalDocu AI (desktop): modelo de pesos abertos no dispositivo → metadados + intenção → comandos de gerenciamento de documentos do LocalDocu (ainda não ativo)",
+      "Locale árabe e layout RTL",
+      "Reforço contínuo de testes, acessibilidade e descoberta"
+    ],
+    "links": {
+      "desktop": "Desktop",
+      "localAi": "LocalDocu AI",
+      "github": "GitHub"
+    }
+  },
+  "desktop": {
+    "intro": "Um aplicativo desktop do LocalDocu está planejado para automação local avançada de documentos — especialmente cargas de trabalho que ultrapassam os limites confortáveis do navegador — e como casa do LocalDocu AI. Esta página é apenas posicionamento; o aplicativo desktop ainda não foi lançado.",
+    "directionHeading": "Direção pretendida",
+    "direction": [
+      "Recursos locais mais robustos para trabalhos grandes ou complexos",
+      "Os mesmos princípios de privacidade com processamento local do aplicativo web",
+      "LocalDocu AI: compreensão de intenção que aciona as capacidades de gerenciamento de documentos do LocalDocu usando metadados dos documentos",
+      "Alvos com Windows em primeiro lugar em análise no roteiro do produto"
+    ],
+    "note": "Use o espaço de trabalho web hoje. Não espere recursos exclusivos do desktop nem o LocalDocu AI na versão atual para navegador.",
+    "links": {
+      "localAi": "LocalDocu AI",
+      "roadmap": "Roteiro",
+      "openWeb": "Abrir o LocalDocu (web)"
+    }
+  },
+  "localAi": {
+    "intro": "O LocalDocu AI é um recurso planejado para o desktop: um modelo de pesos abertos, adequado a dispositivos locais, que entende a intenção do usuário e as capacidades de gerenciamento de documentos do LocalDocu e então executa trabalhos complexos de várias etapas por meio desses motores locais. O LocalDocu AI está Desligado na versão web atual.",
+    "designedHeading": "O que o LocalDocu AI foi projetado para fazer",
+    "designed": [
+      "Rodar a partir do aplicativo desktop do LocalDocu (e não como um pipeline de documentos com IA na nuvem)",
+      "Usar os metadados dos documentos e o seu pedido — não o conteúdo dos documentos — para planejar o trabalho",
+      "Acionar as operações de gerenciamento de documentos e de PDF/Word que o LocalDocu já tem para tarefas complexas",
+      "Usar um modelo de pesos abertos adequado a dispositivos locais capazes, escolhido para preservar qualidade e desempenho em vez de abrir mão deles"
+    ],
+    "modelHeading": "Modelo pretendido (futuro)",
+    "model": [
+      "Você descreve o que quer em linguagem simples no aplicativo desktop",
+      "O LocalDocu AI interpreta a intenção usando o conhecimento das capacidades do LocalDocu somado aos metadados dos documentos (nomes, tipos, quantidades, sinais de estrutura — não o conteúdo dos arquivos)",
+      "Um plano de comandos validado é gerado com base no registro de comandos do LocalDocu",
+      "Motores locais determinísticos executam o plano no seu dispositivo"
+    ],
+    "note": "Essa arquitetura ainda não foi implementada. O espaço de trabalho web não finge que o LocalDocu AI está ativo. O conteúdo dos documentos não é enviado a uma IA remota para processamento na versão atual.",
+    "links": {
+      "desktop": "Desktop",
+      "privacy": "Privacidade",
+      "roadmap": "Roteiro"
+    }
+  },
+  "faqPage": {
+    "links": {
+      "browserSupport": "Compatibilidade de navegadores e dispositivos",
+      "privacy": "Detalhes de privacidade",
+      "contribute": "Contribuir"
+    }
+  }
+}
