@@ -1,0 +1,101 @@
+{
+  "home": {
+    "title": "LocalDocu — Local-First Document Automation",
+    "description": "Tell it what to do. Your files stay on your device. Merge, split, compress, and convert PDF and Word files locally in your browser."
+  },
+  "mergePdf": {
+    "title": "Merge PDF Files Locally & Privately | LocalDocu",
+    "description": "Merge PDF files without uploading them. Select, reorder, and combine PDFs locally in your browser with LocalDocu.",
+    "h1": "Merge PDF files without uploading them",
+    "breadcrumb": "Merge PDF"
+  },
+  "mergeDocx": {
+    "title": "Merge Word Documents Locally | LocalDocu",
+    "description": "Merge DOCX Word documents locally on your device. Practical merge with clear limits — no document upload to LocalDocu.",
+    "h1": "Merge Word documents locally",
+    "breadcrumb": "Merge DOCX"
+  },
+  "compressPdf": {
+    "title": "Compress PDF Locally & Privately | LocalDocu",
+    "description": "Compress PDF files without uploading them. Reduce size with balanced or maximum modes — processing stays on your device.",
+    "h1": "Compress PDF files without uploading them",
+    "breadcrumb": "Compress PDF"
+  },
+  "pdfTools": {
+    "title": "Local PDF Tools — Merge, Split, Extract & More | LocalDocu",
+    "description": "Local PDF tools for merge, split, extract, delete, rotate, reorder, and compress — without unnecessary uploads.",
+    "h1": "Local PDF tools without unnecessary uploads",
+    "breadcrumb": "PDF tools"
+  },
+  "docxToPdf": {
+    "title": "Convert DOCX to PDF Locally | LocalDocu",
+    "description": "Convert DOC and DOCX to a readable PDF on your device. Complex Word layouts may not be preserved exactly.",
+    "h1": "Convert Word documents to PDF locally",
+    "breadcrumb": "DOCX to PDF"
+  },
+  "offline": {
+    "title": "Offline Document Processing | LocalDocu",
+    "description": "Work with documents offline after LocalDocu’s app shell is cached. Local processing does not require a network for supported workflows.",
+    "h1": "Work with documents offline",
+    "breadcrumb": "Offline"
+  },
+  "privacy": {
+    "title": "LocalDocu Privacy — Local-First Document Processing",
+    "description": "Privacy by design: document contents are processed on your device. No document-upload backend and no account required in the current release.",
+    "h1": "Privacy by design",
+    "breadcrumb": "Privacy"
+  },
+  "howItWorks": {
+    "title": "How LocalDocu Works | Local-First Document Automation",
+    "description": "Select files, choose an operation, and run locally. Learn how LocalDocu keeps document processing on your device.",
+    "h1": "How LocalDocu works",
+    "breadcrumb": "How it works"
+  },
+  "browserSupport": {
+    "title": "Browser & Device Support | LocalDocu",
+    "description": "What LocalDocu supports on Android Chrome, iOS Safari, and desktop browsers — file pick, folder, Save As, download, and PWA limits.",
+    "h1": "Browser and device support",
+    "breadcrumb": "Browser support"
+  },
+  "openSource": {
+    "title": "LocalDocu Open Source | Build in the Open",
+    "description": "LocalDocu is open source under Apache-2.0. View the code, roadmap, and how the project is developed in the open.",
+    "h1": "Open source by design",
+    "breadcrumb": "Open source"
+  },
+  "contribute": {
+    "title": "Contribute to LocalDocu | Open-Source Document Automation",
+    "description": "Help build LocalDocu with code, tests, docs, accessibility, and design. Start with issues and the contributor guide.",
+    "h1": "Help build LocalDocu",
+    "breadcrumb": "Contribute"
+  },
+  "roadmap": {
+    "title": "LocalDocu Roadmap | Web, Desktop & LocalDocu AI",
+    "description": "See what LocalDocu ships today and what is planned: stronger desktop capacity and LocalDocu AI for intent-driven local document workflows.",
+    "h1": "Roadmap",
+    "breadcrumb": "Roadmap"
+  },
+  "desktop": {
+    "title": "LocalDocu Desktop | Advanced Local Document Automation",
+    "description": "A future desktop app for heavier local workloads and LocalDocu AI. Positioning only — not available yet. The web workspace remains the product today.",
+    "h1": "Desktop: stronger local capacity ahead",
+    "breadcrumb": "Desktop"
+  },
+  "localAi": {
+    "title": "LocalDocu AI | Intent-Driven Local Document Automation",
+    "description": "LocalDocu AI runs in the desktop app: an open-weight, on-device model that reads document metadata and user intent, then drives LocalDocu document management — without sending document contents to the cloud. Not active in the current web release.",
+    "h1": "LocalDocu AI: planned for the desktop app",
+    "breadcrumb": "LocalDocu AI"
+  },
+  "faq": {
+    "title": "LocalDocu FAQ — Privacy, Offline & Formats",
+    "description": "Common questions about LocalDocu, privacy, supported files, offline use, open source, and contributions.",
+    "h1": "Frequently asked questions",
+    "breadcrumb": "FAQ"
+  },
+  "notFound": {
+    "title": "Page not found | LocalDocu",
+    "description": "This page does not exist. Return to the LocalDocu workspace.",
+    "h1": "Page not found"
+  }
+}

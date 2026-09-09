@@ -1,6 +1,7 @@
 /**
  * Public site identity and external links for SEO / AEO / GEO.
  * Set VITE_SITE_URL at build time to your production origin (no trailing slash).
+ * Default / production origin: https://www.localdocu.org
  * Leave optional social/support URLs empty until real values exist — do not invent them.
  */
 const viteEnv =
@@ -9,7 +10,7 @@ const viteEnv =
 const rawSiteUrl = (viteEnv.VITE_SITE_URL as string | undefined)?.trim() ?? '';
 
 /** Production origin used for canonicals, sitemap, OG, robots. */
-export const PRODUCTION_URL = rawSiteUrl.replace(/\/$/, '') || 'https://localdocu.app';
+export const PRODUCTION_URL = rawSiteUrl.replace(/\/$/, '') || 'https://www.localdocu.org';
 
 /** @deprecated Prefer PRODUCTION_URL — kept for existing imports. */
 export const SITE_URL = PRODUCTION_URL;
@@ -65,11 +66,13 @@ export const SITE_PATHS = {
   home: '/',
   mergePdf: '/merge-pdf',
   mergeDocx: '/merge-docx',
+  compressPdf: '/compress-pdf',
   pdfTools: '/pdf-tools',
   docxToPdf: '/docx-to-pdf',
   offline: '/offline',
   privacy: '/privacy',
   howItWorks: '/how-it-works',
+  browserSupport: '/browser-support',
   openSource: '/open-source',
   contribute: '/contribute',
   roadmap: '/roadmap',
@@ -80,7 +83,7 @@ export const SITE_PATHS = {
 
 export type SitePathKey = keyof typeof SITE_PATHS;
 
-/** Public discovery routes (excludes homepage workspace). */
+/** Public discovery + tool routes (excludes homepage workspace). */
 export const PUBLIC_ROUTE_PATHS = Object.values(SITE_PATHS).filter((p) => p !== '/') as string[];
 
 export function absoluteUrl(path = '/'): string {

@@ -8,6 +8,7 @@ import {
 } from '@localdoc/core';
 import { executeConvertToPdf, gateWordToPdfCapacity } from '@localdoc/docx';
 import type { FilesystemAdapter } from '@localdoc/filesystem';
+import { getT } from '../i18n';
 
 export interface ConvertWorkflowSuccess {
   filename: string;
@@ -45,13 +46,15 @@ export async function runLocalWordToPdf(
   file: LocalFileRef,
   options: ConvertWorkflowOptions = {},
 ): Promise<ConvertWorkflowResult> {
+  const t = getT();
+
   if (!isWordFile(file)) {
     return {
       ok: false,
       error: formatAppError(
         validationError(
-          'Convert to PDF requires a .doc or .docx file.',
-          'Select a Word document, then run Convert to PDF.',
+          t('workspace.convertWorkflow.requiresWord'),
+          t('workspace.convertWorkflow.requiresWordRecovery'),
         ),
       ),
     };
@@ -62,7 +65,7 @@ export async function runLocalWordToPdf(
     filesProcessed: 0,
     totalFiles: 1,
     fraction: 0.05,
-    message: 'Checking file size and device capacity…',
+    message: t('workspace.convertWorkflow.checkingCapacity'),
   });
 
   // size === 0 often means “unknown” from some pickers — skip pre-gate and recheck after read.
@@ -89,7 +92,7 @@ export async function runLocalWordToPdf(
         ok: false,
         error: {
           ...formatted,
-          message: `Size on disk didn’t match contents — rechecked: ${formatted.message}`,
+          message: t('workspace.convertWorkflow.sizeMismatch', { message: formatted.message }),
         },
       };
     }
@@ -110,7 +113,7 @@ export async function runLocalWordToPdf(
     return {
       ok: false,
       error: formatAppError(
-        cancelledError('Conversion finished, but save was cancelled. Run again to save.'),
+        cancelledError(t('workspace.convertWorkflow.saveCancelled')),
       ),
     };
   }
@@ -120,7 +123,7 @@ export async function runLocalWordToPdf(
     filesProcessed: 1,
     totalFiles: 1,
     fraction: 0.9,
-    message: 'Saving PDF…',
+    message: t('workspace.convertWorkflow.savingPdf'),
   });
 
   const saved = await adapter.writeBytes(converted.value.bytes, {
@@ -134,13 +137,25 @@ export async function runLocalWordToPdf(
         ok: false,
         error: {
           ...formatted,
-          message: 'Conversion finished, but save was cancelled. Run again to save.',
-          recovery: 'Run Convert to PDF again when you are ready to save.',
+          message: t('workspace.convertWorkflow.saveCancelled'),
+          recovery: t('workspace.convertWorkflow.saveCancelledRecovery'),
         },
       };
     }
     return { ok: false, error: formatted };
   }
+
+  const method =
+    saved.value.method === 'handle'
+      ? t('workspace.mergeWorkflow.savedLocally')
+      : t('workspace.mergeWorkflow.downloaded');
+  const base = t('workspace.convertWorkflow.converted', {
+    source: file.name,
+    filename: converted.value.filename,
+    pages: converted.value.pageCount,
+    method,
+    fidelityNote: converted.value.fidelityNote,
+  });
 
   return {
     ok: true,
@@ -150,7 +165,7 @@ export async function runLocalWordToPdf(
       saveMethod: saved.value.method,
       uri: saved.value.uri,
       fidelityNote: converted.value.fidelityNote,
-      message: `Converted ${file.name} → ${converted.value.filename} (${converted.value.pageCount} page(s), ${saved.value.method === 'handle' ? 'saved locally' : 'downloaded'}). ${converted.value.fidelityNote}${saved.value.note ? ` ${saved.value.note}` : ''}`,
+      message: `${base}${saved.value.note ? ` ${saved.value.note}` : ''}`,
     },
   };
 }

@@ -1,0 +1,101 @@
+{
+  "home": {
+    "title": "LocalDocu — 本地优先的文档自动化",
+    "description": "告诉它要做什么，文件始终留在你的设备上。使用 LocalDocu 在浏览器中本地合并、拆分、压缩和转换 PDF 与 Word 文件，文档内容无需上传即可完成处理。"
+  },
+  "mergePdf": {
+    "title": "在本地私密合并 PDF 文件 | LocalDocu",
+    "description": "无需上传即可合并 PDF 文件。使用 LocalDocu 在浏览器中本地选择、排序并合并多个 PDF，整个过程都在你的设备上完成，合并结果由你自己保存。",
+    "h1": "无需上传即可合并 PDF 文件",
+    "breadcrumb": "合并 PDF"
+  },
+  "mergeDocx": {
+    "title": "在本地合并 Word 文档 | LocalDocu",
+    "description": "在你的设备上本地合并 DOCX Word 文档。这是有明确限制的实用型合并，处理全程在浏览器中进行，不会向 LocalDocu 上传任何文档。",
+    "h1": "在本地合并 Word 文档",
+    "breadcrumb": "合并 DOCX"
+  },
+  "compressPdf": {
+    "title": "在本地私密压缩 PDF | LocalDocu",
+    "description": "无需上传即可压缩 PDF 文件。使用均衡或最大模式减小文件体积，处理始终留在你的设备上，文档内容不会离开你的浏览器。",
+    "h1": "无需上传即可压缩 PDF 文件",
+    "breadcrumb": "压缩 PDF"
+  },
+  "pdfTools": {
+    "title": "本地 PDF 工具 — 合并、拆分、提取等 | LocalDocu",
+    "description": "本地 PDF 工具，支持合并、拆分、提取、删除、旋转、重排和压缩，无需不必要的上传，所有操作都在你的浏览器中本地完成。",
+    "h1": "无需不必要上传的本地 PDF 工具",
+    "breadcrumb": "PDF 工具"
+  },
+  "docxToPdf": {
+    "title": "在本地将 DOCX 转换为 PDF | LocalDocu",
+    "description": "在你的设备上把 DOC 和 DOCX 转换为可读的 PDF。转换以文字内容为主，复杂的 Word 排版可能无法完全保留，文件无需上传。",
+    "h1": "在本地将 Word 文档转换为 PDF",
+    "breadcrumb": "DOCX 转 PDF"
+  },
+  "offline": {
+    "title": "离线文档处理 | LocalDocu",
+    "description": "在 LocalDocu 的应用外壳被浏览器缓存之后，你可以离线处理文档。对于受支持的流程，本地处理并不需要网络连接。",
+    "h1": "离线处理文档",
+    "breadcrumb": "离线"
+  },
+  "privacy": {
+    "title": "LocalDocu 隐私 — 本地优先的文档处理",
+    "description": "隐私源于设计：文档内容在你的设备上处理。当前版本没有文档上传后端，也不要求注册账号，云端处理与 LocalDocu AI 均为关闭状态。",
+    "h1": "隐私源于设计",
+    "breadcrumb": "隐私"
+  },
+  "howItWorks": {
+    "title": "LocalDocu 的工作原理 | 本地优先的文档自动化",
+    "description": "选择文件、选择操作，然后在本地运行。了解 LocalDocu 如何把文档处理保留在你的设备上，以及不同浏览器的能力差异。",
+    "h1": "LocalDocu 的工作原理",
+    "breadcrumb": "工作原理"
+  },
+  "browserSupport": {
+    "title": "浏览器与设备支持 | LocalDocu",
+    "description": "了解 LocalDocu 在 Android Chrome、iOS Safari 和桌面浏览器上的支持情况—文件选取、文件夹、另存为、下载以及 PWA 的各项限制。",
+    "h1": "浏览器与设备支持",
+    "breadcrumb": "浏览器支持"
+  },
+  "openSource": {
+    "title": "LocalDocu 开源 | 以开放方式构建",
+    "description": "LocalDocu 基于 Apache-2.0 许可开源。查看源代码、路线图，以及本项目如何以开放的方式开发并接受社区贡献。",
+    "h1": "开源源于设计",
+    "breadcrumb": "开源"
+  },
+  "contribute": {
+    "title": "参与贡献 LocalDocu | 开源文档自动化",
+    "description": "通过代码、测试、文档、无障碍和设计一起构建 LocalDocu。从开放的问题和贡献者指南开始，参与这个开源项目。",
+    "h1": "一起构建 LocalDocu",
+    "breadcrumb": "参与贡献"
+  },
+  "roadmap": {
+    "title": "LocalDocu 路线图 | 网页版、桌面版与 LocalDocu AI",
+    "description": "了解 LocalDocu 今天已经发布的功能和后续的规划：更强的桌面端容量，以及用于意图驱动本地文档流程的 LocalDocu AI。",
+    "h1": "路线图",
+    "breadcrumb": "路线图"
+  },
+  "desktop": {
+    "title": "LocalDocu 桌面版 | 高级本地文档自动化",
+    "description": "面向更繁重本地工作负载和 LocalDocu AI 的未来桌面应用。本页仅为定位说明，目前尚未发布，网页工作区仍然是今天的产品。",
+    "h1": "桌面版：更强的本地容量即将到来",
+    "breadcrumb": "桌面版"
+  },
+  "localAi": {
+    "title": "LocalDocu AI | 意图驱动的本地文档自动化",
+    "description": "LocalDocu AI 在桌面应用中运行：一个在设备上运行的开放权重模型，读取文档元数据和用户意图，进而驱动 LocalDocu 的文档管理—不会把文档内容发送到云端。在当前的网页版中尚未启用。",
+    "h1": "LocalDocu AI：为桌面应用规划",
+    "breadcrumb": "LocalDocu AI"
+  },
+  "faq": {
+    "title": "LocalDocu FAQ — 隐私、离线与格式",
+    "description": "关于 LocalDocu、隐私、支持的文件、离线使用、开源以及参与贡献的常见问题，帮助你快速了解本地优先的文档处理方式。",
+    "h1": "常见问题",
+    "breadcrumb": "FAQ"
+  },
+  "notFound": {
+    "title": "页面未找到 | LocalDocu",
+    "description": "此页面不存在。请返回 LocalDocu 工作区，继续在本地处理你的 PDF 与 Word 文档。",
+    "h1": "页面未找到"
+  }
+}

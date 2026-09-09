@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "やりたいことを伝えるだけ。ファイルはお使いのデバイスに残ります。",
+    "supportingMessage": "PDF と Word ファイルのためのローカルファーストなドキュメント自動化。",
+    "secondaryMessage": "ブラウザー内でドキュメントをローカルに処理・整理・結合・変換・管理できます。",
+    "description": "LocalDocu は、プライバシーファースト・ローカルファーストのドキュメントツールです。PDF と Word ファイルの結合、分割、圧縮、回転、変換をブラウザー内で実行し、ドキュメントの内容はお使いのデバイスに留まります。",
+    "shortDescription": "プライバシーファーストなローカルの PDF・Word 自動化。ファイルはお使いのデバイスに残ります。"
+  },
+  "loading": "読み込み中…",
+  "nav": {
+    "ariaPrimary": "メインナビゲーション",
+    "faq": "FAQ",
+    "privacy": "プライバシー",
+    "github": "GitHub",
+    "opensInNewTab": " （新しいタブで開きます）"
+  },
+  "theme": {
+    "ariaColorTheme": "配色テーマ",
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム",
+    "useLight": "ライト表示を使用",
+    "useDark": "ダーク表示を使用",
+    "matchSystem": "システム設定に合わせる"
+  },
+  "cta": {
+    "openLocalDocu": "LocalDocu を開く"
+  },
+  "breadcrumbs": {
+    "aria": "パンくずリスト",
+    "home": "ホーム"
+  },
+  "footer": {
+    "tagline": "PDF と Word ファイルのためのローカルファーストなドキュメント自動化。",
+    "controlLine": "あなたのファイル。あなたのデバイス。あなたの管理。",
+    "licensedUnder": "ライセンス：",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "オープンに開発されています。",
+    "product": "プロダクト",
+    "ariaProduct": "プロダクト",
+    "openLocalDocu": "LocalDocu を開く",
+    "pdfTools": "PDF ツール",
+    "mergePdf": "PDF を結合",
+    "compressPdf": "PDF を圧縮",
+    "mergeDocx": "DOCX を結合",
+    "docxToPdf": "DOCX を PDF に変換",
+    "howItWorks": "仕組み",
+    "browserSupport": "ブラウザー対応",
+    "privacy": "プライバシー",
+    "faq": "FAQ",
+    "openSource": "オープンソース",
+    "ariaOpenSource": "オープンソース",
+    "github": "GitHub",
+    "contribute": "貢献する",
+    "roadmap": "ロードマップ",
+    "license": "ライセンス",
+    "future": "今後の展開",
+    "ariaFuture": "今後の展開",
+    "desktop": "デスクトップ",
+    "localAi": "ローカル AI",
+    "support": "サポート",
+    "ariaSupport": "サポート",
+    "supportTheProject": "プロジェクトを支援する",
+    "sponsorLocalDocu": "LocalDocu をスポンサーする",
+    "sponsorshipComingSoon": "スポンサーシップは近日提供予定です。",
+    "createdBy": "Abhijeeth Gadwal が作成・保守しています",
+    "ariaLinkedIn": "Abhijeeth Gadwal の LinkedIn（新しいタブで開きます）",
+    "ariaPortfolio": "Abhijeeth Gadwal のポートフォリオ（新しいタブで開きます）",
+    "communityContributions": "コミュニティからの貢献を受けています。",
+    "processingStatusLine": "クラウドドキュメント処理：オフ・ローカル AI 処理：オフ"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "ネットワークとプライバシーの状態",
+    "browserOnline": "ブラウザーはオンライン",
+    "offline": "オフライン",
+    "ariaNetworkOnline": "ネットワーク：ブラウザーはオンラインと報告しています",
+    "ariaNetworkOffline": "ネットワーク：オフライン",
+    "localProcessing": "ローカル処理",
+    "ariaLocalProcessing": "ドキュメント処理：ローカル",
+    "cloudProcessingOff": "クラウド処理オフ",
+    "ariaCloudOff": "クラウドドキュメント処理：オフ",
+    "localDocuAiOff": "LocalDocu AI オフ",
+    "ariaAiOff": "LocalDocu AI：オフ",
+    "details": "詳細",
+    "offlineBannerTitle": "オフラインです。",
+    "offlineBannerBody": "このページではローカルのドキュメントツールが引き続き動作します。再読み込みは避けてください。このセッションのドキュメントが消える場合があります。ハード再読み込み（Shift+Reload）ではなく通常の再読み込みをお使いください。ハード再読み込みはサービスワーカーを回避するため、オフライン時はたいてい失敗します。",
+    "detailsOnlineTitle": "ブラウザーが接続を検出しています",
+    "detailsOfflineTitle": "オフライン",
+    "detailsOnlineBody": "ネットワークは利用できます。ローカルのドキュメント処理は引き続きこのデバイス上で行われます。",
+    "detailsOfflineBody": "オフラインです。ローカルのドキュメントツールは引き続き動作します。オフラインになっても実行中のローカル処理は止まりませんが、再読み込みやタブを閉じると中断される場合があります。通常の再読み込みはキャッシュされたアプリシェルを使用しますが、ハード再読み込みはオフライン時にはたいてい利用できません。",
+    "filesInSession": "セッション内のファイル：{count}",
+    "contentsProcessedLocally": "ドキュメントの内容はこのデバイス上で処理されます。",
+    "cloudDocumentProcessingOff": "クラウドドキュメント処理：オフ",
+    "localDocuAiOffDetail": "LocalDocu AI：オフ（デスクトップ向け、メタデータのみを扱う構想 — この Web リリースには含まれません）",
+    "notUploadedFootnote": "ドキュメント処理のためにファイルがアップロードされることはありません。お使いのデバイス上でローカルに処理されます。"
+  },
+  "privacyStatus": {
+    "aria": "プライバシーの状態",
+    "localProcessing": "ローカル処理",
+    "cloudProcessing": "クラウド処理 {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "デバイス上のファイル {count} 件。ドキュメント処理：{processingLocation}。クラウドドキュメント処理：{cloudDocumentProcessing}。LocalDocu AI：{aiProcessing}。ドキュメントの内容はこのデバイス上で処理されます。ドキュメント処理のためにファイルがアップロードされることはありません。"
+  },
+  "networkStatus": {
+    "ariaOnline": "ネットワーク：オンライン",
+    "ariaOffline": "ネットワーク：オフライン",
+    "online": "オンライン",
+    "offline": "オフライン",
+    "onlineSuffix": "・利用できる場合があります・処理はローカルに留まります",
+    "offlineSuffix": "・ローカルのドキュメントツールは引き続き動作します"
+  },
+  "notFound": {
+    "body": "そのアドレスは LocalDocu のページではありません。",
+    "bodyFull": "そのアドレスは LocalDocu のページではありません。ワークスペースか、下のページを開いてください。",
+    "workspace": "ワークスペース",
+    "faq": "FAQ",
+    "howItWorks": "仕組み",
+    "browserSupport": "ブラウザー対応",
+    "privacy": "プライバシー"
+  },
+  "language": {
+    "aria": "言語",
+    "label": "言語"
+  }
+}

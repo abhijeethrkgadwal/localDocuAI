@@ -14,6 +14,7 @@ export { PDF_ACCEPT, DOCX_ACCEPT, DOC_ACCEPT, DOCUMENT_ACCEPT } from './types.js
 
 export {
   checkAborted,
+  canPickFolder,
   describeCapabilities,
   filterByExtension,
   isChromiumFilesystemPreferred,

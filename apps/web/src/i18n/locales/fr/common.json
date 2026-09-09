@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "Dites-lui quoi faire. Vos fichiers restent sur votre appareil.",
+    "supportingMessage": "Automatisation documentaire avec priorité au local pour les fichiers PDF et Word.",
+    "secondaryMessage": "Traitez, organisez, fusionnez, convertissez et gérez vos documents en local dans votre navigateur.",
+    "description": "LocalDocu est un outil documentaire respectueux de la vie privée, avec priorité au local. Fusionnez, divisez, compressez, faites pivoter et convertissez des fichiers PDF et Word dans votre navigateur — le contenu des documents reste sur votre appareil.",
+    "shortDescription": "Automatisation locale PDF et Word respectueuse de la vie privée. Vos fichiers restent sur votre appareil."
+  },
+  "loading": "Chargement…",
+  "nav": {
+    "ariaPrimary": "Principale",
+    "faq": "FAQ",
+    "privacy": "Confidentialité",
+    "github": "GitHub",
+    "opensInNewTab": " (s’ouvre dans un nouvel onglet)"
+  },
+  "theme": {
+    "ariaColorTheme": "Thème de couleur",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système",
+    "useLight": "Utiliser l’apparence claire",
+    "useDark": "Utiliser l’apparence sombre",
+    "matchSystem": "Suivre l’apparence du système"
+  },
+  "cta": {
+    "openLocalDocu": "Ouvrir LocalDocu"
+  },
+  "breadcrumbs": {
+    "aria": "Fil d’Ariane",
+    "home": "Accueil"
+  },
+  "footer": {
+    "tagline": "Automatisation documentaire avec priorité au local pour les fichiers PDF et Word.",
+    "controlLine": "Vos fichiers. Votre appareil. Votre contrôle.",
+    "licensedUnder": "Sous licence",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "Développé de manière ouverte.",
+    "product": "Produit",
+    "ariaProduct": "Produit",
+    "openLocalDocu": "Ouvrir LocalDocu",
+    "pdfTools": "Outils PDF",
+    "mergePdf": "Fusionner des PDF",
+    "compressPdf": "Compresser un PDF",
+    "mergeDocx": "Fusionner des DOCX",
+    "docxToPdf": "DOCX vers PDF",
+    "howItWorks": "Comment ça marche",
+    "browserSupport": "Compatibilité des navigateurs",
+    "privacy": "Confidentialité",
+    "faq": "FAQ",
+    "openSource": "Open source",
+    "ariaOpenSource": "Open source",
+    "github": "GitHub",
+    "contribute": "Contribuer",
+    "roadmap": "Feuille de route",
+    "license": "Licence",
+    "future": "Avenir",
+    "ariaFuture": "Avenir",
+    "desktop": "Bureau",
+    "localAi": "IA locale",
+    "support": "Soutien",
+    "ariaSupport": "Soutien",
+    "supportTheProject": "Soutenir le projet",
+    "sponsorLocalDocu": "Parrainer LocalDocu",
+    "sponsorshipComingSoon": "Parrainage bientôt disponible.",
+    "createdBy": "Créé et maintenu par Abhijeeth Gadwal",
+    "ariaLinkedIn": "Abhijeeth Gadwal sur LinkedIn (s’ouvre dans un nouvel onglet)",
+    "ariaPortfolio": "Portfolio d’Abhijeeth Gadwal (s’ouvre dans un nouvel onglet)",
+    "communityContributions": "avec les contributions de la communauté.",
+    "processingStatusLine": "Traitement des documents dans le cloud : Désactivé · Traitement par IA locale : Désactivé"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "État du réseau et de la confidentialité",
+    "browserOnline": "Navigateur en ligne",
+    "offline": "Hors ligne",
+    "ariaNetworkOnline": "Réseau : le navigateur indique une connexion",
+    "ariaNetworkOffline": "Réseau : hors ligne",
+    "localProcessing": "Traitement local",
+    "ariaLocalProcessing": "Traitement des documents : local",
+    "cloudProcessingOff": "Traitement cloud désactivé",
+    "ariaCloudOff": "Traitement des documents dans le cloud : désactivé",
+    "localDocuAiOff": "LocalDocu AI désactivée",
+    "ariaAiOff": "LocalDocu AI : désactivée",
+    "details": "Détails",
+    "offlineBannerTitle": "Hors ligne.",
+    "offlineBannerBody": "Les outils documentaires locaux continuent de fonctionner sur cette page. Évitez d’actualiser — cela peut effacer les documents de cette session. Préférez un rechargement normal à une actualisation forcée (Shift+Reload) : l’actualisation forcée contourne le service worker et échoue généralement hors ligne.",
+    "detailsOnlineTitle": "Le navigateur indique une connexion",
+    "detailsOfflineTitle": "Hors ligne",
+    "detailsOnlineBody": "Réseau disponible. Le traitement local des documents se fait toujours sur cet appareil.",
+    "detailsOfflineBody": "Hors ligne. Les outils documentaires locaux continuent de fonctionner. Passer hors ligne n’interrompt pas une opération locale en cours — actualiser ou fermer l’onglet le peut. Le rechargement simple utilise le shell d’application mis en cache ; l’actualisation forcée en est généralement incapable hors ligne.",
+    "filesInSession": "Fichiers dans la session : {count}",
+    "contentsProcessedLocally": "Le contenu des documents est traité sur cet appareil.",
+    "cloudDocumentProcessingOff": "Traitement des documents dans le cloud : Désactivé",
+    "localDocuAiOffDetail": "LocalDocu AI : Désactivée (bureau, intention à partir des métadonnées uniquement — absente de cette version web)",
+    "notUploadedFootnote": "Les fichiers ne sont pas téléversés pour le traitement des documents. Traitement local sur votre appareil."
+  },
+  "privacyStatus": {
+    "aria": "État de confidentialité",
+    "localProcessing": "Traitement local",
+    "cloudProcessing": "Traitement cloud {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "{count} fichiers sur l’appareil. Traitement des documents : {processingLocation}. Traitement des documents dans le cloud : {cloudDocumentProcessing}. LocalDocu AI : {aiProcessing}. Le contenu des documents est traité sur cet appareil. Les fichiers ne sont pas téléversés pour le traitement des documents."
+  },
+  "networkStatus": {
+    "ariaOnline": "Réseau : en ligne",
+    "ariaOffline": "Réseau : hors ligne",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "onlineSuffix": "· Peut être disponible · le travail reste local",
+    "offlineSuffix": "· Les outils documentaires locaux continuent de fonctionner"
+  },
+  "notFound": {
+    "body": "Cette adresse ne correspond à aucune page LocalDocu.",
+    "bodyFull": "Cette adresse ne correspond à aucune page LocalDocu. Ouvrez l’espace de travail ou l’une des pages ci-dessous.",
+    "workspace": "Espace de travail",
+    "faq": "FAQ",
+    "howItWorks": "Comment ça marche",
+    "browserSupport": "Compatibilité des navigateurs",
+    "privacy": "Confidentialité"
+  },
+  "language": {
+    "aria": "Langue",
+    "label": "Langue"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "Dile qué hacer. Tus archivos permanecen en tu dispositivo.",
+    "supportingMessage": "Automatización de documentos con prioridad local para archivos PDF y Word.",
+    "secondaryMessage": "Procesa, organiza, combina, convierte y gestiona documentos localmente en tu navegador.",
+    "description": "LocalDocu es una herramienta de documentos con prioridad en la privacidad y en el procesamiento local. Combina, divide, comprime, gira y convierte archivos PDF y Word en tu navegador — el contenido de los documentos permanece en tu dispositivo.",
+    "shortDescription": "Automatización local de PDF y Word con prioridad en la privacidad. Tus archivos permanecen en tu dispositivo."
+  },
+  "loading": "Cargando…",
+  "nav": {
+    "ariaPrimary": "Principal",
+    "faq": "FAQ",
+    "privacy": "Privacidad",
+    "github": "GitHub",
+    "opensInNewTab": " (se abre en una pestaña nueva)"
+  },
+  "theme": {
+    "ariaColorTheme": "Tema de color",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "useLight": "Usar apariencia clara",
+    "useDark": "Usar apariencia oscura",
+    "matchSystem": "Seguir la apariencia del sistema"
+  },
+  "cta": {
+    "openLocalDocu": "Abrir LocalDocu"
+  },
+  "breadcrumbs": {
+    "aria": "Ruta de navegación",
+    "home": "Inicio"
+  },
+  "footer": {
+    "tagline": "Automatización de documentos con prioridad local para archivos PDF y Word.",
+    "controlLine": "Tus archivos. Tu dispositivo. Tu control.",
+    "licensedUnder": "Con licencia",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "Desarrollado de forma abierta.",
+    "product": "Producto",
+    "ariaProduct": "Producto",
+    "openLocalDocu": "Abrir LocalDocu",
+    "pdfTools": "Herramientas PDF",
+    "mergePdf": "Combinar PDF",
+    "compressPdf": "Comprimir PDF",
+    "mergeDocx": "Combinar DOCX",
+    "docxToPdf": "DOCX a PDF",
+    "howItWorks": "Cómo funciona",
+    "browserSupport": "Compatibilidad de navegadores",
+    "privacy": "Privacidad",
+    "faq": "FAQ",
+    "openSource": "Código abierto",
+    "ariaOpenSource": "Código abierto",
+    "github": "GitHub",
+    "contribute": "Contribuir",
+    "roadmap": "Hoja de ruta",
+    "license": "Licencia",
+    "future": "Futuro",
+    "ariaFuture": "Futuro",
+    "desktop": "Escritorio",
+    "localAi": "IA local",
+    "support": "Apoyo",
+    "ariaSupport": "Apoyo",
+    "supportTheProject": "Apoyar el proyecto",
+    "sponsorLocalDocu": "Patrocinar LocalDocu",
+    "sponsorshipComingSoon": "Patrocinios disponibles próximamente.",
+    "createdBy": "Creado y mantenido por Abhijeeth Gadwal",
+    "ariaLinkedIn": "Abhijeeth Gadwal en LinkedIn (se abre en una pestaña nueva)",
+    "ariaPortfolio": "Portafolio de Abhijeeth Gadwal (se abre en una pestaña nueva)",
+    "communityContributions": "con contribuciones de la comunidad.",
+    "processingStatusLine": "Procesamiento de documentos en la nube: desactivado · Procesamiento de IA local: desactivado"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "Estado de red y privacidad",
+    "browserOnline": "Navegador en línea",
+    "offline": "Sin conexión",
+    "ariaNetworkOnline": "Red: el navegador indica que está en línea",
+    "ariaNetworkOffline": "Red: sin conexión",
+    "localProcessing": "Procesamiento local",
+    "ariaLocalProcessing": "Procesamiento de documentos: local",
+    "cloudProcessingOff": "Procesamiento en la nube desactivado",
+    "ariaCloudOff": "Procesamiento de documentos en la nube: desactivado",
+    "localDocuAiOff": "LocalDocu AI desactivado",
+    "ariaAiOff": "LocalDocu AI: desactivado",
+    "details": "Detalles",
+    "offlineBannerTitle": "Sin conexión.",
+    "offlineBannerBody": "Las herramientas locales de documentos siguen funcionando en esta página. Evita actualizar — puede borrar los documentos de esta sesión. Prefiere una recarga normal antes que una recarga forzada (Shift+Reload): la recarga forzada omite el service worker y normalmente falla sin conexión.",
+    "detailsOnlineTitle": "El navegador indica que hay conexión",
+    "detailsOfflineTitle": "Sin conexión",
+    "detailsOnlineBody": "Red disponible. El procesamiento local de documentos sigue ocurriendo en este dispositivo.",
+    "detailsOfflineBody": "Sin conexión. Las herramientas locales de documentos siguen funcionando. Quedarse sin conexión no detiene una operación local en curso — actualizar o cerrar la pestaña sí puede hacerlo. La recarga suave usa el shell de la aplicación en caché; la recarga forzada normalmente no puede sin conexión.",
+    "filesInSession": "Archivos en la sesión: {count}",
+    "contentsProcessedLocally": "El contenido de los documentos se procesa en este dispositivo.",
+    "cloudDocumentProcessingOff": "Procesamiento de documentos en la nube: desactivado",
+    "localDocuAiOffDetail": "LocalDocu AI: desactivado (escritorio, uso previsto solo con metadatos — no en esta versión web)",
+    "notUploadedFootnote": "Los archivos no se suben para procesar documentos. Se procesan localmente en tu dispositivo."
+  },
+  "privacyStatus": {
+    "aria": "Estado de privacidad",
+    "localProcessing": "Procesamiento local",
+    "cloudProcessing": "Procesamiento en la nube {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "{count} archivos en el dispositivo. Procesamiento de documentos: {processingLocation}. Procesamiento de documentos en la nube: {cloudDocumentProcessing}. LocalDocu AI: {aiProcessing}. El contenido de los documentos se procesa en este dispositivo. Los archivos no se suben para procesar documentos."
+  },
+  "networkStatus": {
+    "ariaOnline": "Red: en línea",
+    "ariaOffline": "Red: sin conexión",
+    "online": "En línea",
+    "offline": "Sin conexión",
+    "onlineSuffix": "· Puede estar disponible · el trabajo permanece local",
+    "offlineSuffix": "· Las herramientas locales de documentos siguen funcionando"
+  },
+  "notFound": {
+    "body": "Esa dirección no es una página de LocalDocu.",
+    "bodyFull": "Esa dirección no es una página de LocalDocu. Abre el espacio de trabajo o una de las páginas siguientes.",
+    "workspace": "Espacio de trabajo",
+    "faq": "FAQ",
+    "howItWorks": "Cómo funciona",
+    "browserSupport": "Compatibilidad de navegadores",
+    "privacy": "Privacidad"
+  },
+  "language": {
+    "aria": "Idioma",
+    "label": "Idioma"
+  }
+}

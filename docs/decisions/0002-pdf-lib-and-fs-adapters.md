@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Phase 1 needs reliable in-browser PDF merge without uploading files. Web and future desktop must share command logic but differ in I/O.
+The web product needs reliable in-browser PDF merge without uploading files. Web and future desktop must share command logic but differ in I/O.
 
 ## Decision
 
@@ -19,4 +19,5 @@ Phase 1 needs reliable in-browser PDF merge without uploading files. Web and fut
 
 - No custom PDF binary format engine.
 - Commands accept bytes/refs after adapter reads — keeping PDF package free of React and browser APIs where practical.
-- Capability detection drives UX copy (folder pick vs file pick).
+- Capability detection drives UX (hide folder when unsupported; download vs Save As messaging; capacity hints).
+- See [browser-support.md](../product/browser-support.md) for the user-facing device matrix.

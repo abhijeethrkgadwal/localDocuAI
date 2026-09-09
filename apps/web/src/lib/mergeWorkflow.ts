@@ -9,6 +9,7 @@ import {
 import { readAllBytes, type FilesystemAdapter } from '@localdoc/filesystem';
 import { executeMergeDocx } from '@localdoc/docx';
 import { executeMergeFiles } from '@localdoc/pdf';
+import { getT } from '../i18n';
 
 export interface MergeWorkflowSuccess {
   filename: string;
@@ -40,6 +41,7 @@ export interface MergeWorkflowOptions {
 function detectMergeKind(
   files: LocalFileRef[],
 ): { ok: true; kind: 'pdf' | 'docx' } | { ok: false; error: MergeWorkflowFailure } {
+  const t = getT();
   const allPdf = files.every(isPdfFile);
   const allDocx = files.every(isDocxFile);
   if (allPdf) return { ok: true, kind: 'pdf' };
@@ -48,8 +50,8 @@ function detectMergeKind(
     ok: false,
     error: formatAppError(
       validationError(
-        'Merge requires all files to be the same type (all PDF or all DOCX).',
-        'Filter the list to one document type, then merge.',
+        t('workspace.mergeWorkflow.sameTypeRequired'),
+        t('workspace.mergeWorkflow.sameTypeRecovery'),
       ),
     ),
   };
@@ -64,13 +66,15 @@ export async function runLocalDocumentMerge(
   files: LocalFileRef[],
   options: MergeWorkflowOptions = {},
 ): Promise<MergeWorkflowResult> {
+  const t = getT();
+
   if (files.length < 2) {
     return {
       ok: false,
       error: formatAppError(
         validationError(
-          'Select at least two files to merge.',
-          'Add more files of the same type, then try again.',
+          t('workspace.mergeWorkflow.needTwoFiles'),
+          t('workspace.mergeWorkflow.needTwoRecovery'),
         ),
       ),
     };
@@ -88,7 +92,7 @@ export async function runLocalDocumentMerge(
     onProgress: (update) =>
       options.onProgress?.({
         ...update,
-        message: update.message ?? 'Reading files…',
+        message: update.message ?? t('workspace.mergeWorkflow.readingFiles'),
         fraction: update.fraction !== undefined ? update.fraction * 0.35 : undefined,
       }),
   });
@@ -117,6 +121,17 @@ export async function runLocalDocumentMerge(
     });
     if (!saved.ok) return { ok: false, error: formatAppError(saved.error) };
 
+    const method =
+      saved.value.method === 'handle'
+        ? t('workspace.mergeWorkflow.savedLocally')
+        : t('workspace.mergeWorkflow.downloaded');
+    const base = t('workspace.mergeWorkflow.mergedPdfs', {
+      count: merged.value.sourceCount,
+      pages: merged.value.pageCount,
+      filename: merged.value.filename,
+      method,
+    });
+
     return {
       ok: true,
       value: {
@@ -125,7 +140,7 @@ export async function runLocalDocumentMerge(
         sourceCount: merged.value.sourceCount,
         saveMethod: saved.value.method,
         uri: saved.value.uri,
-        message: `Merged ${merged.value.sourceCount} PDFs (${merged.value.pageCount} pages) → ${merged.value.filename} (${saved.value.method === 'handle' ? 'saved locally' : 'downloaded'}).${saved.value.note ? ` ${saved.value.note}` : ''}`,
+        message: `${base}${saved.value.note ? ` ${saved.value.note}` : ''}`,
       },
     };
   }
@@ -148,7 +163,7 @@ export async function runLocalDocumentMerge(
     filesProcessed: total,
     totalFiles: total,
     fraction: 0.95,
-    message: 'Saving merged DOCX…',
+    message: t('workspace.mergeWorkflow.savingMergedDocx'),
   });
 
   const saved = await adapter.writeBytes(merged.value.bytes, {
@@ -156,6 +171,16 @@ export async function runLocalDocumentMerge(
     signal: options.signal,
   });
   if (!saved.ok) return { ok: false, error: formatAppError(saved.error) };
+
+  const method =
+    saved.value.method === 'handle'
+      ? t('workspace.mergeWorkflow.savedLocally')
+      : t('workspace.mergeWorkflow.downloaded');
+  const base = t('workspace.mergeWorkflow.mergedDocx', {
+    count: merged.value.sourceCount,
+    filename: merged.value.filename,
+    method,
+  });
 
   return {
     ok: true,
@@ -165,7 +190,7 @@ export async function runLocalDocumentMerge(
       saveMethod: saved.value.method,
       uri: saved.value.uri,
       fidelityNote: merged.value.fidelityNote,
-      message: `Merged ${merged.value.sourceCount} DOCX files → ${merged.value.filename} (${saved.value.method === 'handle' ? 'saved locally' : 'downloaded'}).${saved.value.note ? ` ${saved.value.note}` : ''} ${merged.value.fidelityNote}`,
+      message: `${base}${saved.value.note ? ` ${saved.value.note}` : ''} ${merged.value.fidelityNote}`,
     },
   };
 }

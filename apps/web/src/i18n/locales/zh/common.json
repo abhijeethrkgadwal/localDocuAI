@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "告诉它要做什么。文件始终留在你的设备上。",
+    "supportingMessage": "面向 PDF 与 Word 文件的本地优先文档自动化。",
+    "secondaryMessage": "在浏览器中本地处理、整理、合并、转换和管理文档。",
+    "description": "LocalDocu 是一款隐私优先、本地优先的文档工具。在浏览器中合并、拆分、压缩、旋转和转换 PDF 与 Word 文件—文档内容始终留在你的设备上。",
+    "shortDescription": "隐私优先的本地 PDF 与 Word 自动化。文件始终留在你的设备上。"
+  },
+  "loading": "加载中…",
+  "nav": {
+    "ariaPrimary": "主导航",
+    "faq": "FAQ",
+    "privacy": "隐私",
+    "github": "GitHub",
+    "opensInNewTab": " （在新标签页中打开）"
+  },
+  "theme": {
+    "ariaColorTheme": "配色主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统",
+    "useLight": "使用浅色外观",
+    "useDark": "使用深色外观",
+    "matchSystem": "跟随系统外观"
+  },
+  "cta": {
+    "openLocalDocu": "打开 LocalDocu"
+  },
+  "breadcrumbs": {
+    "aria": "面包屑导航",
+    "home": "首页"
+  },
+  "footer": {
+    "tagline": "面向 PDF 与 Word 文件的本地优先文档自动化。",
+    "controlLine": "你的文件。你的设备。你来掌控。",
+    "licensedUnder": "许可协议",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "以开放方式开发。",
+    "product": "产品",
+    "ariaProduct": "产品",
+    "openLocalDocu": "打开 LocalDocu",
+    "pdfTools": "PDF 工具",
+    "mergePdf": "合并 PDF",
+    "compressPdf": "压缩 PDF",
+    "mergeDocx": "合并 DOCX",
+    "docxToPdf": "DOCX 转 PDF",
+    "howItWorks": "工作原理",
+    "browserSupport": "浏览器支持",
+    "privacy": "隐私",
+    "faq": "FAQ",
+    "openSource": "开源",
+    "ariaOpenSource": "开源",
+    "github": "GitHub",
+    "contribute": "参与贡献",
+    "roadmap": "路线图",
+    "license": "许可协议",
+    "future": "未来规划",
+    "ariaFuture": "未来规划",
+    "desktop": "桌面版",
+    "localAi": "本地 AI",
+    "support": "支持",
+    "ariaSupport": "支持",
+    "supportTheProject": "支持本项目",
+    "sponsorLocalDocu": "赞助 LocalDocu",
+    "sponsorshipComingSoon": "赞助功能即将推出。",
+    "createdBy": "由 Abhijeeth Gadwal 创建并维护",
+    "ariaLinkedIn": "Abhijeeth Gadwal 的 LinkedIn 主页（在新标签页中打开）",
+    "ariaPortfolio": "Abhijeeth Gadwal 的作品集（在新标签页中打开）",
+    "communityContributions": "并有社区成员参与贡献。",
+    "processingStatusLine": "云端文档处理：关闭 · 本地 AI 处理：关闭"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "网络与隐私状态",
+    "browserOnline": "浏览器在线",
+    "offline": "离线",
+    "ariaNetworkOnline": "网络：浏览器报告为在线",
+    "ariaNetworkOffline": "网络：离线",
+    "localProcessing": "本地处理",
+    "ariaLocalProcessing": "文档处理：本地",
+    "cloudProcessingOff": "云端处理已关闭",
+    "ariaCloudOff": "云端文档处理：已关闭",
+    "localDocuAiOff": "LocalDocu AI 已关闭",
+    "ariaAiOff": "LocalDocu AI：已关闭",
+    "details": "详情",
+    "offlineBannerTitle": "已离线。",
+    "offlineBannerBody": "本页的本地文档工具仍可继续使用。请避免刷新—刷新可能会清空本次会话中的文档。建议使用普通的重新加载，而不是强制刷新（Shift+Reload）：强制刷新会绕过 Service Worker，在离线状态下通常会失败。",
+    "detailsOnlineTitle": "浏览器报告已连接网络",
+    "detailsOfflineTitle": "离线",
+    "detailsOnlineBody": "网络可用。文档处理仍然在本设备上进行。",
+    "detailsOfflineBody": "已离线。本地文档工具仍可继续使用。断网并不会中止正在进行的本地操作—但刷新或关闭标签页会。软重新加载会使用已缓存的应用外壳；强制刷新在离线时通常无法完成。",
+    "filesInSession": "会话中的文件：{count}",
+    "contentsProcessedLocally": "文档内容在本设备上处理。",
+    "cloudDocumentProcessingOff": "云端文档处理：关闭",
+    "localDocuAiOffDetail": "LocalDocu AI：关闭（桌面版功能，仅基于元数据理解意图—不包含在本次网页版发布中）",
+    "notUploadedFootnote": "文件不会为了文档处理而被上传。全部在你的设备上本地处理。"
+  },
+  "privacyStatus": {
+    "aria": "隐私状态",
+    "localProcessing": "本地处理",
+    "cloudProcessing": "云端处理 {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "设备上有 {count} 个文件。文档处理：{processingLocation}。云端文档处理：{cloudDocumentProcessing}。LocalDocu AI：{aiProcessing}。文档内容在本设备上处理。文件不会为了文档处理而被上传。"
+  },
+  "networkStatus": {
+    "ariaOnline": "网络：在线",
+    "ariaOffline": "网络：离线",
+    "online": "在线",
+    "offline": "离线",
+    "onlineSuffix": "· 可能可用 · 处理仍在本地进行",
+    "offlineSuffix": "· 本地文档工具仍可继续使用"
+  },
+  "notFound": {
+    "body": "该地址不是 LocalDocu 的页面。",
+    "bodyFull": "该地址不是 LocalDocu 的页面。请打开工作区或以下页面之一。",
+    "workspace": "工作区",
+    "faq": "FAQ",
+    "howItWorks": "工作原理",
+    "browserSupport": "浏览器支持",
+    "privacy": "隐私"
+  },
+  "language": {
+    "aria": "语言",
+    "label": "语言"
+  }
+}

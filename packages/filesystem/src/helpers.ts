@@ -84,12 +84,20 @@ export async function readAllBytes(
 /** Short UX copy describing browser filesystem capabilities. */
 export function describeCapabilities(capabilities: FilesystemCapabilities): string {
   if (capabilities.supportsDirectoryPicker && capabilities.supportsWriteToHandle) {
-    return 'Full local access: folder pick and native save are available (Chrome or Edge).';
+    return 'Full local access: folder pick and native save are available (desktop Chrome or Edge).';
+  }
+  if (capabilities.supportsWebkitDirectory && capabilities.supportsBlobDownload) {
+    return 'Select files or a folder, then download results. Native Save As and on-disk create-folder need desktop Chrome or Edge.';
   }
   if (capabilities.supportsBlobDownload) {
-    return 'Limited local access: select files and download results. Folder pick works best in Chrome or Edge.';
+    return 'Select files and download results. Folder pick, native Save As, and create-folder need desktop Chrome or Edge.';
   }
   return 'Filesystem features are limited in this environment.';
+}
+
+/** True when any folder-style picker can run (FSA or webkitdirectory). */
+export function canPickFolder(capabilities: FilesystemCapabilities): boolean {
+  return capabilities.supportsDirectoryPicker || capabilities.supportsWebkitDirectory;
 }
 
 export function isChromiumFilesystemPreferred(capabilities: FilesystemCapabilities): boolean {

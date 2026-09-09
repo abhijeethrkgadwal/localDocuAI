@@ -1,39 +1,40 @@
 # Roadmap
 
-Implement in phases. Do not jump ahead.
+Implement in phases. Do not jump ahead of agreed scope. Public status: [https://www.localdocu.org/roadmap](https://www.localdocu.org/roadmap).
 
-## Phase 1 — Web PDF MVP (current)
+## Live today — Web workspace (shipped)
 
-File/folder selection, drag-and-drop, PDF discovery, preview, ordering, merge, export — all local. No auth. No document upload.
+Privacy-first local PDF and Word tools in the browser. No auth. No document-upload backend. **Cloud processing: Off. LocalDocu AI: Off.**
 
-### Near-term milestones
+| Area | Status |
+|------|--------|
+| Foundation (monorepo, FS adapter, types) | **Done** |
+| PDF merge (including bulk / 30+ under test) | **Done** |
+| Web select → order → merge → download + errors | **Done** |
+| PDF split, extract, delete, rotate, reorder, compress | **Done** |
+| File management (sort, filter, rename, copy, move, folder, export) | **Done** |
+| Practical DOCX merge + text preview + text-oriented DOC/DOCX→PDF | **Done** |
+| Unified `@localdoc/orchestration` catalog + registry | **Done** |
+| PWA app shell, themes, trust/status UI, public discovery pages | **Done** |
+| UI locales (en, hi, es, pt, de, fr, ja, zh) + hreflang / locale sitemap | **Done** |
 
-| Milestone | Spec steps | Done when |
-|-----------|------------|-----------|
-| M0 Foundation | 1–3 | Monorepo runs; FS abstraction + types |
-| M1 Merge engine | 4 | `MERGE_FILES` works under Vitest (including 30+ PDFs) — **done** |
-| M2 Web MVP | 5–6 | Select → order → merge → download + error/test hardening — **done** |
-| Phase 2 PDF cmds | 7 | Split, extract, delete, rotate, reorder — **done** |
-| File management | 8 | Sort, filter, rename, copy, move, create folder, export — **done** |
-| DOCX | 9 | Practical DOCX merge + text preview + capacity-gated simple DOC/DOCX→PDF — **done** (text PDF; not Word-layout) |
-| Command registry | 10 | Unified `@localdoc/orchestration` catalog + registry — **done** |
-| PDF compress | — | Local `COMPRESS_PDF`: balanced image recompress + web maximum rasterize — **done** (deeper desktop engines later) |
-| M3 Prove bulk | — | 30+ PDFs merge locally with progress/cancel |
+Honest limits that still apply: browser memory / File System Access constraints; DOCX is practical not Word-perfect; compress and convert are capacity-gated; some organize actions are session-oriented depending on browser APIs. Device matrix: [browser-support.md](./browser-support.md) · [/browser-support](https://www.localdocu.org/browser-support).
 
-## Phase 2 — Bulk document workspace
+## Next — Desktop app
 
-Additional PDF commands + file-management commands via the command registry.
+LocalDocu desktop (Tauri 2 direction, Windows first under consideration) for heavier local workloads beyond comfortable browser limits, and as the home for LocalDocu AI. Positioning pages exist (`/desktop`); the app is **not shipping yet**.
 
-## Phase 3 — DOCX
+## Then — LocalDocu AI (desktop)
 
-DOCX merge/order/extract and practical preview; compatibility fixtures. No fidelity claims without tests.
+LocalDocu AI runs in the desktop application: an open-weight, local-device-friendly model that understands user intent and LocalDocu capabilities. It plans complex work from **document metadata and the user request** (not document contents), then executes through validated LocalDocu document-management commands. Deterministic engines still perform filesystem and PDF/Word actions — the model never executes them directly.
 
-## Phase 4 — LocalDocu AI (desktop)
-
-LocalDocu AI runs in the desktop application: an open-weight, local-device-friendly model that understands user intent and LocalDocu capabilities. It plans complex work from **document metadata and the user request** (not document contents), then executes through validated LocalDocu document-management commands. Deterministic engines still perform filesystem and PDF/Word actions — the model never executes them directly. Target: preserve quality and performance rather than trade them away for a smaller model.
+Foundation already in place: AI-safe command catalog / registry (`@localdoc/orchestration`). Interpreter (Step 11) is **not** active in the web release.
 
 ## Later
 
-Desktop (Tauri 2, Windows first), privacy-safe analytics, feature-request capture, LocalDocu AI provider integration.
+- Arabic locale + RTL layout
+- Privacy-safe analytics (opt-in, disclosed), feature-request capture
+- Deeper desktop PDF engines
+- Optional funding / support URL when a real account exists
 
-Full step checklist (1–22) lives in the master product specification; execute one step at a time.
+Do not claim desktop, LocalDocu AI, cloud processing, Arabic/RTL, or analytics as live until they ship.

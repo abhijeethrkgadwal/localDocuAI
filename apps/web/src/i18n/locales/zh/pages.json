@@ -1,0 +1,488 @@
+{
+  "productSummary": "LocalDocu 是面向 PDF 与 Word 文件的隐私优先、本地优先文档自动化工具。你在自己的设备上选择文件；合并、拆分、提取、删除页面、旋转、重排、压缩、重命名和转换都在浏览器中运行。在当前版本中，文档内容不会为了处理而被上传。",
+  "howItWorksShared": {
+    "steps": [
+      {
+        "name": "选择文件",
+        "text": "使用“选择文件”（支持多选）来选择 PDF、DOC 或 DOCX。在浏览器支持时可以使用文件夹选取（在桌面版 Chrome/Edge 上效果最好）。文件始终保留在你的浏览器会话中。"
+      },
+      {
+        "name": "选择一项操作",
+        "text": "合并、拆分、提取页面、删除页面、旋转、重排、压缩、将 Word 转换为 PDF，或在本地管理文件。"
+      },
+      {
+        "name": "在你的设备上运行",
+        "text": "处理在你的浏览器中本地进行。可在支持时使用系统保存对话框保存，或下载结果—不会有任何内容为了文档处理而发送到 LocalDocu 服务器。"
+      }
+    ],
+    "whyLocal": {
+      "title": "本地处理为何可能重要",
+      "points": [
+        "对于合适的工作负载，可以避免不必要的文件传输。",
+        "合适的文档操作可以利用你设备上已有的计算能力。",
+        "你可以在不维持远程处理会话的情况下处理文档。",
+        "未来的桌面应用可以为更大的工作负载提供更多资源，并承载 LocalDocu AI。"
+      ]
+    }
+  },
+  "faq": {
+    "subtitle": "关于 LocalDocu、隐私、支持的文件、离线使用、移动浏览器以及 LocalDocu AI 的常见问题。",
+    "items": {
+      "whatIsLocaldocu": {
+        "question": "LocalDocu 是什么？",
+        "answer": "LocalDocu 是一个开源、本地优先的文档工作区，用于处理 PDF 和 Word 文档。受支持的文档操作在你的浏览器中本地运行，而不需要把文档上传到 LocalDocu 服务器。"
+      },
+      "areFilesUploaded": {
+        "question": "LocalDocu 会上传我的文档吗？",
+        "answer": "当前版本中的文档处理都在本地进行。你所选文档的字节在你的设备上处理，不会为了文档处理而上传到 LocalDocu。"
+      },
+      "worksOffline": {
+        "question": "我可以离线使用 LocalDocu 吗？",
+        "answer": "可以，在应用被浏览器加载并缓存之后，受支持的本地流程可以离线使用。各项浏览器能力的可用性可能因浏览器和设备而异。"
+      },
+      "supportedFormats": {
+        "question": "LocalDocu 支持哪些文件格式？",
+        "answer": "LocalDocu 支持对 PDF 进行合并、拆分、提取、删除页面、旋转、重排和压缩。它还支持实用型 DOCX 合并、文本预览，以及受容量限制的 DOC/DOCX 转 PDF 转换（以文字为主的 PDF）。复杂的 Word 排版可能无法完全保留。"
+      },
+      "accountRequired": {
+        "question": "我需要注册账号吗？",
+        "answer": "当前的应用不需要任何账号。"
+      },
+      "howToMergePdfs": {
+        "question": "如何私密地合并 PDF？",
+        "answer": "打开“合并 PDF”页面（或首页的工作区），选择或拖入两个及以上 PDF 文件，在列表中排好顺序，选择“合并”，然后在本地保存或下载结果。文件不会为了合并而被上传。"
+      },
+      "filesAfterFinish": {
+        "question": "我完成之后，文件会怎么样？",
+        "answer": "在你进行当前工作期间，文档字节会保留在浏览器会话和本地文件句柄中。LocalDocu 不会在云端保留你的文档副本。关闭标签页或清除站点数据即会结束内存中的会话；你已保存或下载的文件仍留在你设备上的存放位置。"
+      },
+      "reduceCloudProcessing": {
+        "question": "LocalDocu 能减少不必要的云端处理吗？",
+        "answer": "对于合适的文档流程，LocalDocu 让你自己的设备执行处理，而不是把文档数据发送到远程的文档处理服务。对于这些工作负载，这可以减少不必要的数据传输和部分服务器端处理。它并不声称相对于每一种云端方案都能普遍节能。"
+      },
+      "isOpenSource": {
+        "question": "LocalDocu 是开源的吗？",
+        "answer": "是的。本项目在 Apache-2.0 许可下以开放方式开发。源代码、贡献指南和路线图都可以通过 GitHub 获取。"
+      },
+      "howToContribute": {
+        "question": "我可以怎样参与贡献？",
+        "answer": "你可以在代码、测试、文档、无障碍、设计和问题反馈方面提供帮助。请查看“参与贡献”页面，了解贡献者流程以及前往 GitHub 仓库的链接。"
+      },
+      "mobileBrowsers": {
+        "question": "LocalDocu 能在手机和平板上使用吗？",
+        "answer": "核心流程可以：在移动版 Chrome 或 Safari 中选择文件（支持多选）、合并、压缩、转换并下载结果。文件夹选取、系统“另存为”和新建文件夹在桌面版 Chrome 或 Edge 上效果最好。在部分手机上，页面内的 PDF 预览可能是空白的—请在新标签页中打开预览。非常大的文件可能会触及浏览器的内存限制。完整对照表请见“浏览器与设备支持”页面。"
+      },
+      "heavyOperations": {
+        "question": "当浏览器无法执行繁重操作时会怎样？",
+        "answer": "某些高级或资源密集的能力，可能超出特定浏览器或设备可以从容处理的范围。这些工作负载可能更适合交给未来拥有更强本地资源的桌面应用。网页应用仍然专注于适合浏览器的工作负载。"
+      },
+      "whatIsLocaldocuAi": {
+        "question": "LocalDocu AI 是什么？",
+        "answer": "LocalDocu AI 是为 LocalDocu 桌面应用规划的一项能力。它使用开放权重、适合本地设备运行的模型来理解你的意图和 LocalDocu 的文档管理能力，然后通过这些本地引擎执行复杂任务。它的设计是依据文档元数据和你的请求来工作—而不是把文档内容发送到云端。在当前的网页版发布中，LocalDocu AI 处于关闭状态。"
+      }
+    }
+  },
+  "discoverability": {
+    "howItWorksHeading": "LocalDocu 的工作原理",
+    "fullHowItWorksPage": "完整的工作原理页面",
+    "browserDeviceSupport": "浏览器与设备支持",
+    "privacyHeading": "隐私源于设计",
+    "privacyBody": "文档内容在本设备上处理。文档文件不会为了处理而上传到 LocalDocu。当前版本没有身份验证、没有文档上传后端，也没有 LocalDocu AI 流水线。状态指示器会显示本地处理、云端处理关闭以及 LocalDocu AI 关闭。",
+    "privacyDetails": "隐私详情",
+    "faqHeading": "常见问题",
+    "openFaqPage": "打开 FAQ 页面"
+  },
+  "tool": {
+    "aboutHeading": "关于此工具"
+  },
+  "mergePdf": {
+    "intro": "使用 LocalDocu 在你的设备上合并多个 PDF 文件。在上方选择文件，在列表中调整顺序，然后合并并把结果保存到本地。",
+    "howToHeading": "如何合并 PDF",
+    "howTo": [
+      "在本页选择或拖入两个及以上 PDF 文件。",
+      "调整列表顺序，让文件按你想要的次序排列。",
+      "选择“合并”，并在你的设备上保存或下载合并后的 PDF。"
+    ],
+    "privacyHeading": "隐私与离线",
+    "privacy": [
+      "文档字节在你的浏览器中处理—不会为了合并而上传到 LocalDocu。",
+      "应用外壳被缓存之后，受支持的合并流程可以在离线状态下继续使用。",
+      "浏览器能力（文件夹选取器、保存对话框）因浏览器和设备而异。"
+    ],
+    "note": "在手机和平板上，请使用“选择文件”（支持多选），并预期结果会以下载的方式提供。文件夹选取和系统“另存为”在桌面版 Chrome 或 Edge 上效果最好。",
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "pdfTools": "PDF 工具概览",
+      "compressPdf": "压缩 PDF",
+      "privacy": "隐私",
+      "offline": "离线使用"
+    }
+  },
+  "mergeDocx": {
+    "intro": "LocalDocu 为合适的 Word 文档提供实用型 DOCX 合并。在上方选择同类型的 Word 文件，设置顺序，然后在本地合并。",
+    "behaviorHeading": "当前行为",
+    "behavior": [
+      "DOCX 文件可以以实用、以内容为主的方式合并。",
+      "处理在你设备上的浏览器中进行。",
+      "输出会保存或下载到本地—不会向 LocalDocu 上传文档。"
+    ],
+    "limitsHeading": "限制",
+    "limits": [
+      "并非每一项 Word 功能或复杂排版都能保证在合并后保留下来。",
+      "合并需要同类型的文档（例如 DOCX 与 DOCX）。",
+      "非常大或格式特殊的文档可能会触及浏览器的容量限制。"
+    ],
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "docxToPdf": "将 DOCX 转换为 PDF",
+      "howItWorks": "工作原理"
+    }
+  },
+  "compressPdf": {
+    "intro": "在你的设备上减小 PDF 文件体积。在上方选择一个 PDF，选择“均衡”（保留文字可选中）或“最大”（压缩更强），挑选质量目标，然后压缩并保存到本地。",
+    "modesHeading": "模式",
+    "modes": [
+      "均衡 — 在减小体积的同时，尽可能保留文字可选中。",
+      "最大 — 将页面重新编码为图片，以获得更强的体积压缩。",
+      "质量目标是在文件体积与视觉保真度之间做取舍。"
+    ],
+    "privacyHeading": "隐私",
+    "privacy": [
+      "压缩完全在你的浏览器中运行—不会向 LocalDocu 上传任何内容。",
+      "应用外壳被缓存之后，受支持的压缩流程可以在离线状态下继续使用。"
+    ],
+    "note": "在手机上，建议使用“均衡”压缩并选择较小的 PDF。“最大”模式需要更多内存。当系统的“另存为”不可用时，结果会以下载的方式提供。",
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "mergePdfs": "合并 PDF",
+      "pdfTools": "全部 PDF 工具",
+      "privacy": "隐私"
+    }
+  },
+  "pdfTools": {
+    "intro": "本页汇集了 LocalDocu 的 PDF 操作。对于合适的工作负载，每一项都在你的浏览器中本地运行—请使用上方的面板选择文件并运行操作。",
+    "opsHeading": "支持的 PDF 操作",
+    "ops": [
+      "合并 — 按列表顺序合并多个 PDF",
+      "拆分 — 将页面分离为多个输出",
+      "提取页面 — 保留所选页面",
+      "删除页面 — 移除所选页面",
+      "旋转页面 — 90°、180° 或 270°",
+      "重排页面 — 重新排列页面顺序",
+      "压缩 — 使用均衡或最大模式减小体积"
+    ],
+    "outro": "选择一个 PDF（合并时可选择多个），选择操作，然后运行并保存到本地。合并和压缩也有各自的专属页面。",
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "mergePdfs": "合并 PDF",
+      "compressPdf": "压缩 PDF",
+      "offline": "离线能力",
+      "faq": "FAQ"
+    }
+  },
+  "docxToPdf": {
+    "intro": "把 DOC 或 DOCX 文件转换为在你设备上生成的可读 PDF。在上方选择一个 Word 文件，进行转换，然后保存到本地。",
+    "limitsHeading": "诚实的限制",
+    "limits": [
+      "转换以文字为主，并针对浏览器工作负载设有容量限制。",
+      "复杂的 Word 排版可能无法完全保留。",
+      "非常大或排版繁重的文档可能需要等待未来的桌面应用。"
+    ],
+    "noteFidelity": "对于浏览器中的转换，LocalDocu 并不声称能完整还原 Word 排版。",
+    "notePhones": "手机上的体积上限更为严格。如果转换被阻止，可尝试较小的文件，或等待桌面应用来处理更繁重的任务。",
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "mergeDocx": "合并 Word 文档",
+      "desktop": "桌面版路线图"
+    }
+  },
+  "offline": {
+    "intro": "在一次正式访问缓存了应用外壳之后，LocalDocu 可以在没有网络的情况下加载，用于受支持的本地流程。",
+    "worksHeading": "离线可用的功能",
+    "works": [
+      "通过 Service Worker 提供的应用外壳（HTML、JS、CSS、图标）",
+      "不需要网络的本地 PDF 与 Word 操作",
+      "属于已缓存客户端应用一部分的信息类页面"
+    ],
+    "refreshHeading": "离线时刷新",
+    "refresh": [
+      "首次访问之后，普通的重新加载仍可从 Service Worker 缓存中打开 LocalDocu",
+      "强制刷新（Shift+Reload / Ctrl+Shift+R）会绕过 Service Worker，在离线时通常会失败",
+      "刷新一定会清空本次浏览器会话中内存里的文档和正在进行的工作"
+    ],
+    "varyHeading": "可能有所不同的方面",
+    "vary": [
+      "首次访问仍然需要网络来下载并缓存应用",
+      "文件夹访问、保存对话框和其他浏览器 API 因浏览器和设备而异",
+      "在 Android Chrome 上，“添加到主屏幕”/安装通常在首次访问后可用",
+      "在 iOS Safari 上，请使用“分享 → 添加到主屏幕”；Service Worker 的离线能力限制比 Android 更严格",
+      "当有新版本发布时，更新应用需要联网"
+    ],
+    "outro": "离线是一项产品能力，而不是错误。信任指示器会显示离线状态，而不把它当作失败。移动浏览器最适合“选择文件 → 运行 → 下载”；完整的文件夹功能和系统“另存为”仍以桌面版 Chrome 或 Edge 最为强大。",
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "privacy": "隐私模型",
+      "desktop": "未来的桌面端容量"
+    }
+  },
+  "privacy": {
+    "staysLocalHeading": "哪些内容留在本地",
+    "staysLocal": [
+      "你选择的文档内容",
+      "文档处理与本地预览",
+      "浏览器会话中的操作执行"
+    ],
+    "doesNotHeading": "当前应用不会做的事",
+    "doesNot": [
+      "没有用于处理的文档上传后端",
+      "没有云端文档处理流水线",
+      "不要求注册账号",
+      "云端处理：关闭 · LocalDocu AI：关闭"
+    ],
+    "dataFlowHeading": "数据流（当前版本）",
+    "dataFlow": [
+      "你在自己的设备上选择文件",
+      "LocalDocu 在浏览器中读取它们",
+      "本地文档引擎执行该操作",
+      "输出保存或下载到你的设备上"
+    ],
+    "laterHeading": "日后可能改变的内容",
+    "later": [
+      "面向更繁重本地工作负载的 LocalDocu 桌面应用",
+      "桌面应用中的 LocalDocu AI：在设备上运行的开放权重模型，利用文档元数据和用户意图来驱动 LocalDocu 的文档管理命令（文档内容始终留在设备上）",
+      "只有在明确告知的前提下才会提供可选的遥测—第一阶段没有任何产品分析流水线"
+    ],
+    "note": "我们并不把“100% 私密”“完全安全”或“零数据收集”作为绝对保证来宣称。所有说法都与当前的实现相符。",
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "howItWorks": "工作原理",
+      "localAi": "LocalDocu AI（未来）"
+    }
+  },
+  "howItWorks": {
+    "intro": "LocalDocu 是一个本地优先的工作区：你在自己的设备上选择文档，选择一项操作，然后在浏览器中运行。结果会保存或下载到本地—具体取决于你的浏览器支持哪些能力。",
+    "stepsHeading": "步骤",
+    "devicesHeading": "各类设备一览",
+    "devices": [
+      "手机与平板：选择文件 → 运行 → 下载。核心的合并、压缩和转换在内存限制之内可用。",
+      "桌面版 Chrome / Edge：体验最完整—文件夹选取、系统“另存为”、新建文件夹。",
+      "其他桌面浏览器：通过文件选取 + 下载使用核心工具；文件夹/“另存为”常常受限。"
+    ],
+    "framing": "我们更倾向这样的表述：使用你已经拥有的计算能力。合适的文档操作可以在本地运行，而不必上传文档并进行远程处理。对于你的设备能够胜任的工作负载，本地处理可以减少不必要的数据传输和远程计算—但并不声称具有普遍的能效优势。",
+    "links": {
+      "browserSupport": "完整的浏览器与设备支持",
+      "privacy": "隐私",
+      "faq": "FAQ"
+    }
+  },
+  "browserSupport": {
+    "intro": "LocalDocu 在你的浏览器中运行。你能做什么取决于设备 API（文件选取器、保存对话框）和内存—而不是取决于上传文档。在当前版本中，处理始终留在你的设备上。",
+    "positioningHeading": "快速定位",
+    "positioning": [
+      "手机与平板（Android Chrome、iOS Safari）：选择文件 → 运行工具 → 下载",
+      "桌面版 Chrome / Edge：最完整的网页体验（文件夹选取、系统“另存为”、新建文件夹）",
+      "桌面版 Firefox / Safari：通过文件选取 + 下载使用核心工具；文件夹 / “另存为”受限",
+      "未来的桌面应用：更繁重的工作负载 + LocalDocu AI（尚未发布）"
+    ],
+    "matrixHeading": "功能对照表",
+    "tableCaption": "浏览器与设备能力对照表",
+    "headers": [
+      "能力",
+      "Android Chrome",
+      "iOS Safari",
+      "桌面版 Chrome / Edge",
+      "桌面版 Firefox / Safari"
+    ],
+    "rows": [
+      [
+        "选择文件（支持多选）",
+        "支持",
+        "支持",
+        "支持",
+        "支持"
+      ],
+      [
+        "合并 / 压缩 / 页面工具",
+        "支持*",
+        "支持*",
+        "支持",
+        "支持*"
+      ],
+      [
+        "DOC/DOCX → PDF 转换",
+        "支持*",
+        "支持*",
+        "支持*",
+        "支持*"
+      ],
+      [
+        "下载结果",
+        "支持",
+        "支持",
+        "支持",
+        "支持"
+      ],
+      [
+        "选择文件夹",
+        "有限 / 通常不支持",
+        "通常不支持",
+        "支持",
+        "有限 / 通常不支持"
+      ],
+      [
+        "系统“另存为”",
+        "不支持（改为下载）",
+        "不支持（改为下载）",
+        "支持",
+        "通常改为下载"
+      ],
+      [
+        "在磁盘上新建文件夹",
+        "不支持",
+        "不支持",
+        "选择文件夹后支持",
+        "不支持"
+      ],
+      [
+        "页面内 PDF 预览",
+        "通常正常",
+        "可能空白 — 请在新标签页中打开",
+        "通常可用",
+        "通常可用"
+      ],
+      [
+        "PWA / 离线外壳",
+        "首次访问后可安装",
+        "添加到主屏幕",
+        "支持",
+        "视情况而定"
+      ],
+      [
+        "LocalDocu AI",
+        "关闭",
+        "关闭",
+        "关闭",
+        "关闭"
+      ]
+    ],
+    "footnote": "*在浏览器内存和容量限制之内。在手机上建议使用“均衡”压缩并选择较小的文件。iOS 版 Chrome 使用 WebKit—请按 Safari 来对待。",
+    "mobileHeading": "移动端流程",
+    "mobile": [
+      "打开某个工具页面或首页的工作区",
+      "点按“选择文件”并选择一个或多个文档（支持多选）",
+      "运行该操作",
+      "下载结果—移动网页端无法使用系统“另存为”"
+    ],
+    "note": "如果在 iOS 上页面内的 PDF 预览是空白的，请使用“在新标签页中打开预览”。文件夹选取和新建文件夹仍是桌面版 Chromium 的强项。已上线的界面语言包括 English、Hindi、Spanish、Portuguese、German、French、Japanese 和 Simplified Chinese；阿拉伯语/RTL 布局计划在后续版本中提供。",
+    "links": {
+      "faq": "FAQ",
+      "offline": "离线 / 安装",
+      "howItWorks": "工作原理",
+      "openLocalDocu": "打开 LocalDocu"
+    }
+  },
+  "openSource": {
+    "intro": "LocalDocu 在 Apache-2.0 许可下以开放方式开发。源代码、问题和路线图都托管在 GitHub 上。欢迎社区参与贡献。",
+    "openMeansHeading": "这里的“开放”意味着什么",
+    "openMeans": [
+      "Apache-2.0 许可",
+      "源代码在 GitHub 上公开",
+      "透明的路线图与问题反馈",
+      "欢迎在无障碍、文档、测试和设计方面提供帮助"
+    ],
+    "note": "本项目由社区推动，并以开放方式开发。除非治理机制正式支持这一说法，否则我们不会把它描述为“社区所有”。",
+    "links": {
+      "github": "查看 GitHub 仓库",
+      "contribute": "参与贡献",
+      "roadmap": "路线图"
+    }
+  },
+  "contribute": {
+    "intro": "通过代码、测试、文档、无障碍改进、设计以及认真撰写的问题反馈，一起来构建 LocalDocu。",
+    "journeyHeading": "贡献者旅程",
+    "journey": [
+      "阅读 README 和隐私模型，以便清楚了解本地优先的约束。",
+      "浏览开放的问题，或提出一个聚焦的改进建议。",
+      "按照 CONTRIBUTING 的指引进行环境搭建、分支管理和提交拉取请求。",
+      "更改界面文案时，请更新 apps/web/src/i18n/locales/en/ 下的英文目录（其他语言在翻译完成前会回退到英文）。",
+      "让文档处理保持在本地—除非项目明确提出这类需求，否则不要引入上传后端或身份验证。"
+    ],
+    "links": {
+      "github": "GitHub 仓库",
+      "contributing": "贡献指南",
+      "openSource": "开源概览",
+      "codeOfConduct": "行为准则",
+      "security": "安全策略"
+    }
+  },
+  "roadmap": {
+    "intro": "网页工作区就是今天的产品：在浏览器中运行的本地 PDF 与 Word 工具。后续阶段将加入 LocalDocu 桌面应用，以及用于在设备上实现意图驱动流程的 LocalDocu AI。",
+    "shippedHeading": "已发布（网页版）",
+    "shipped": [
+      "选择文件 / 文件夹 / 拖放",
+      "PDF 合并、拆分、提取、删除、旋转、重排、压缩",
+      "实用型 DOCX 合并，以及以文字为主的 DOC/DOCX → PDF",
+      "整理：排序、筛选、重命名、复制、移动、文件夹、导出",
+      "PWA 应用外壳、主题、隐私与网络状态",
+      "界面语言：English、Hindi、Spanish、Portuguese、German、French、Japanese、Simplified Chinese"
+    ],
+    "nextHeading": "接下来的方向",
+    "next": [
+      "面向更繁重本地工作负载的桌面应用（已提供定位页面）",
+      "LocalDocu AI（桌面版）：在设备上运行的开放权重模型 → 元数据 + 意图 → LocalDocu 文档管理命令（尚未启用）",
+      "阿拉伯语区域设置与 RTL 布局",
+      "持续加强测试、无障碍和可发现性"
+    ],
+    "links": {
+      "desktop": "桌面版",
+      "localAi": "LocalDocu AI",
+      "github": "GitHub"
+    }
+  },
+  "desktop": {
+    "intro": "我们计划推出 LocalDocu 桌面应用，用于高级的本地文档自动化—尤其是超出浏览器可从容承受范围的工作负载—并作为 LocalDocu AI 的落地平台。本页仅为定位说明；桌面应用尚未发布。",
+    "directionHeading": "预期方向",
+    "direction": [
+      "为大型或复杂任务提供更强的本地资源",
+      "与网页应用相同的本地优先隐私原则",
+      "LocalDocu AI：利用文档元数据理解意图，并驱动 LocalDocu 的文档管理能力",
+      "产品路线图中正在考虑优先支持 Windows"
+    ],
+    "note": "今天请使用网页工作区。请不要期待在当前的浏览器版本中出现仅限桌面的功能或 LocalDocu AI。",
+    "links": {
+      "localAi": "LocalDocu AI",
+      "roadmap": "路线图",
+      "openWeb": "打开 LocalDocu（网页版）"
+    }
+  },
+  "localAi": {
+    "intro": "LocalDocu AI 是一项规划中的桌面能力：一个开放权重、适合本地设备运行的模型，理解用户意图和 LocalDocu 的文档管理能力，然后通过这些本地引擎执行复杂的多步骤工作。在当前的网页版发布中，LocalDocu AI 处于关闭状态。",
+    "designedHeading": "LocalDocu AI 的设计目标",
+    "designed": [
+      "在 LocalDocu 桌面应用中运行（而不是作为云端 AI 文档流水线）",
+      "使用文档元数据和你的请求—而不是文档内容—来规划工作",
+      "驱动 LocalDocu 现有的文档管理以及 PDF/Word 操作来完成复杂任务",
+      "使用适合高性能本地设备的开放权重模型，其选择旨在保持质量与性能，而不是牺牲它们"
+    ],
+    "modelHeading": "预期模式（未来）",
+    "model": [
+      "你在桌面应用中用日常语言描述你想要什么",
+      "LocalDocu AI 借助对 LocalDocu 能力的了解，加上文档元数据（名称、类型、数量、结构信号—而非文件内容）来解读意图",
+      "系统会针对 LocalDocu 命令注册表生成一份经过校验的命令计划",
+      "确定性的本地引擎在你的设备上执行该计划"
+    ],
+    "note": "这套架构尚未实现。网页工作区不会假装 LocalDocu AI 已经启用。在当前版本中，文档内容不会被发送到远程 AI 进行处理。",
+    "links": {
+      "desktop": "桌面版",
+      "privacy": "隐私",
+      "roadmap": "路线图"
+    }
+  },
+  "faqPage": {
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "privacy": "隐私详情",
+      "contribute": "参与贡献"
+    }
+  }
+}

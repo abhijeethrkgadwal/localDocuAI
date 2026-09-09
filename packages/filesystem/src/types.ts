@@ -31,6 +31,8 @@ export interface DirectorySelection {
 
 export interface FilesystemCapabilities {
   supportsDirectoryPicker: boolean;
+  /** Limited folder pick via `<input webkitdirectory>` when FSA is missing. */
+  supportsWebkitDirectory: boolean;
   supportsFilePicker: boolean;
   supportsWriteToHandle: boolean;
   supportsBlobDownload: boolean;

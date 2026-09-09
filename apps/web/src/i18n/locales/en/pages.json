@@ -1,0 +1,488 @@
+{
+  "productSummary": "LocalDocu is privacy-first, local-first document automation for PDF and Word files. You select files on your device; merge, split, extract, delete pages, rotate, reorder, compress, rename, and convert run in the browser. Document contents are not uploaded for processing in the current release.",
+  "howItWorksShared": {
+    "steps": [
+      {
+        "name": "Select files",
+        "text": "Choose PDF, DOC, or DOCX with Select files (multi-select). Folder pick is available when the browser supports it (best on desktop Chrome/Edge). Files stay in your browser session."
+      },
+      {
+        "name": "Choose an operation",
+        "text": "Merge, split, extract pages, delete pages, rotate, reorder, compress, convert Word to PDF, or manage files locally."
+      },
+      {
+        "name": "Run on your device",
+        "text": "Processing happens locally in your browser. Save with a native picker when available, or download the result — nothing is sent to a LocalDocu server for document processing."
+      }
+    ],
+    "whyLocal": {
+      "title": "Why local processing can matter",
+      "points": [
+        "Unnecessary file transfers can be avoided for suitable workloads.",
+        "Suitable document operations can use the computing capacity you already have on your device.",
+        "You can process documents without maintaining a remote processing session.",
+        "A future desktop app can provide more resources for larger workloads and host LocalDocu AI."
+      ]
+    }
+  },
+  "faq": {
+    "subtitle": "Common questions about LocalDocu, privacy, supported files, offline use, mobile browsers, and LocalDocu AI.",
+    "items": {
+      "whatIsLocaldocu": {
+        "question": "What is LocalDocu?",
+        "answer": "LocalDocu is an open-source, local-first document workspace for working with PDFs and Word documents. Supported document operations run locally in your browser rather than requiring document upload to a LocalDocu server."
+      },
+      "areFilesUploaded": {
+        "question": "Does LocalDocu upload my documents?",
+        "answer": "Document processing in the current release is local. Your selected document bytes are processed on your device and are not uploaded to LocalDocu for document processing."
+      },
+      "worksOffline": {
+        "question": "Can I use LocalDocu offline?",
+        "answer": "Yes, for supported local workflows once the application has been loaded and cached by the browser. Availability of individual browser capabilities can vary by browser and device."
+      },
+      "supportedFormats": {
+        "question": "What file formats does LocalDocu support?",
+        "answer": "LocalDocu supports PDF for merge, split, extract, delete pages, rotate, reorder, and compress. It also supports practical DOCX merge, text preview, and capacity-gated DOC/DOCX to PDF conversion (text-oriented PDF). Complex Word layouts may not be preserved exactly."
+      },
+      "accountRequired": {
+        "question": "Do I need an account?",
+        "answer": "No account is required for the current application."
+      },
+      "howToMergePdfs": {
+        "question": "How do I merge PDFs privately?",
+        "answer": "Open the Merge PDF page (or the homepage workspace), select or drop two or more PDF files, arrange the order in the list, choose Merge, then save or download the result locally. Files are not uploaded for merging."
+      },
+      "filesAfterFinish": {
+        "question": "What happens to my files after I finish?",
+        "answer": "Document bytes stay in your browser session and local file handles for the work you are doing. LocalDocu does not keep a cloud copy of your documents. Closing the tab or clearing site data ends the in-memory session; files you saved or downloaded remain where you stored them on your device."
+      },
+      "reduceCloudProcessing": {
+        "question": "Can LocalDocu reduce unnecessary cloud processing?",
+        "answer": "For suitable document workflows, LocalDocu lets your own device perform processing instead of sending document data to a remote document-processing service. This can reduce unnecessary data transfer and some server-side processing for those workloads. It does not claim universal energy savings versus every cloud setup."
+      },
+      "isOpenSource": {
+        "question": "Is LocalDocu open source?",
+        "answer": "Yes. The project is developed in the open under the Apache-2.0 license. Source code, contribution guidance, and roadmap are available through GitHub."
+      },
+      "howToContribute": {
+        "question": "How can I contribute?",
+        "answer": "You can help with code, tests, documentation, accessibility, design, and issue reports. See the Contribute page for the contributor journey and link to the GitHub repository."
+      },
+      "mobileBrowsers": {
+        "question": "Does LocalDocu work on phones and tablets?",
+        "answer": "Yes for core workflows: select files (multi-select), merge, compress, convert, and download results in mobile Chrome or Safari. Folder pick, native Save As, and create-folder work best on desktop Chrome or Edge. On some phones the in-page PDF preview may be blank — open preview in a new tab. Very large files may hit browser memory limits. See the Browser & device support page for the full matrix."
+      },
+      "heavyOperations": {
+        "question": "What happens when a browser cannot perform a heavy operation?",
+        "answer": "Some advanced or resource-intensive capabilities may exceed what a given browser or device can handle comfortably. Those workloads may be better suited to a future desktop application with stronger local resources. The web app remains focused on suitable browser workloads."
+      },
+      "whatIsLocaldocuAi": {
+        "question": "What is LocalDocu AI?",
+        "answer": "LocalDocu AI is a planned capability for the LocalDocu desktop app. It uses an open-weight, local-device-friendly model to understand your intent and LocalDocu’s document-management capabilities, then runs complex tasks through those local engines. It is designed to work from document metadata and your request — not by sending document contents to the cloud. LocalDocu AI is Off in the current web release."
+      }
+    }
+  },
+  "discoverability": {
+    "howItWorksHeading": "How LocalDocu works",
+    "fullHowItWorksPage": "Full how-it-works page",
+    "browserDeviceSupport": "Browser & device support",
+    "privacyHeading": "Privacy by design",
+    "privacyBody": "Document contents are processed on this device. Document files are not uploaded to LocalDocu for processing. The current release has no authentication, no document-upload backend, and no LocalDocu AI pipeline. Status indicators show local processing, cloud processing off, and LocalDocu AI off.",
+    "privacyDetails": "Privacy details",
+    "faqHeading": "Frequently asked questions",
+    "openFaqPage": "Open FAQ page"
+  },
+  "tool": {
+    "aboutHeading": "About this tool"
+  },
+  "mergePdf": {
+    "intro": "Use LocalDocu to combine multiple PDF files on your device. Select the files above, reorder them in the list, then merge and save the result locally.",
+    "howToHeading": "How to merge PDFs",
+    "howTo": [
+      "Select or drop two or more PDF files on this page.",
+      "Reorder the list so files appear in the order you want.",
+      "Choose Merge and save or download the merged PDF on your device."
+    ],
+    "privacyHeading": "Privacy and offline",
+    "privacy": [
+      "Document bytes are processed in your browser — not uploaded to LocalDocu for merging.",
+      "After the app shell is cached, supported merge workflows can continue offline.",
+      "Browser capabilities (folder picker, save dialogs) vary by browser and device."
+    ],
+    "note": "On phones and tablets, use Select files (multi-select) and expect results to download. Folder pick and native Save As work best on desktop Chrome or Edge.",
+    "links": {
+      "browserSupport": "Browser & device support",
+      "pdfTools": "PDF tools overview",
+      "compressPdf": "Compress PDF",
+      "privacy": "Privacy",
+      "offline": "Offline use"
+    }
+  },
+  "mergeDocx": {
+    "intro": "LocalDocu supports practical DOCX merge for suitable Word documents. Select same-type Word files above, set the order, then merge locally.",
+    "behaviorHeading": "Current behavior",
+    "behavior": [
+      "DOCX files can be merged in a practical, content-oriented way.",
+      "Processing happens on your device in the browser.",
+      "Output is saved or downloaded locally — no document upload to LocalDocu."
+    ],
+    "limitsHeading": "Limitations",
+    "limits": [
+      "Not every Word feature or complex layout is guaranteed to survive merge.",
+      "Merge expects same-type documents (for example DOCX with DOCX).",
+      "Very large or unusual documents may hit browser capacity limits."
+    ],
+    "links": {
+      "browserSupport": "Browser & device support",
+      "docxToPdf": "Convert DOCX to PDF",
+      "howItWorks": "How it works"
+    }
+  },
+  "compressPdf": {
+    "intro": "Reduce PDF file size on your device. Select a PDF above, choose Balanced (keep selectable text) or Maximum (stronger shrink), pick a quality target, then compress and save locally.",
+    "modesHeading": "Modes",
+    "modes": [
+      "Balanced — keeps text selectable where possible while reducing size.",
+      "Maximum — re-encodes pages as images for stronger size reduction.",
+      "Quality targets trade file size against visual fidelity."
+    ],
+    "privacyHeading": "Privacy",
+    "privacy": [
+      "Compression runs entirely in your browser — nothing is uploaded to LocalDocu.",
+      "After the app shell is cached, supported compress workflows can continue offline."
+    ],
+    "note": "On phones, prefer Balanced compression and smaller PDFs. Maximum mode needs more memory. Results download when native Save As is unavailable.",
+    "links": {
+      "browserSupport": "Browser & device support",
+      "mergePdfs": "Merge PDFs",
+      "pdfTools": "All PDF tools",
+      "privacy": "Privacy"
+    }
+  },
+  "pdfTools": {
+    "intro": "This page includes LocalDocu’s PDF operations. Each runs locally in your browser for suitable workloads — use the panels above to select files and run an operation.",
+    "opsHeading": "Supported PDF operations",
+    "ops": [
+      "Merge — combine multiple PDFs in list order",
+      "Split — separate pages into outputs",
+      "Extract pages — keep selected pages",
+      "Delete pages — remove selected pages",
+      "Rotate pages — 90°, 180°, or 270°",
+      "Reorder pages — rearrange page order",
+      "Compress — reduce size with balanced or maximum modes"
+    ],
+    "outro": "Select a PDF (or several for merge), choose the operation, then run and save locally. Dedicated pages also exist for merge and compress.",
+    "links": {
+      "browserSupport": "Browser & device support",
+      "mergePdfs": "Merge PDFs",
+      "compressPdf": "Compress PDF",
+      "offline": "Offline capability",
+      "faq": "FAQ"
+    }
+  },
+  "docxToPdf": {
+    "intro": "Convert DOC or DOCX files to a readable PDF generated on your device. Select a Word file above, convert, and save locally.",
+    "limitsHeading": "Honest limits",
+    "limits": [
+      "Conversion is text-oriented and capacity-gated for browser workloads.",
+      "Complex Word layouts may not be preserved exactly.",
+      "Very large or heavily formatted documents may need a future desktop app."
+    ],
+    "noteFidelity": "LocalDocu does not claim full Word layout fidelity for browser conversion.",
+    "notePhones": "Phones enforce stricter size ceilings. If conversion is blocked, try a smaller file or wait for the desktop app for heavier jobs.",
+    "links": {
+      "browserSupport": "Browser & device support",
+      "mergeDocx": "Merge Word documents",
+      "desktop": "Desktop roadmap"
+    }
+  },
+  "offline": {
+    "intro": "After a production visit caches the application shell, LocalDocu can load without a network for supported local workflows.",
+    "worksHeading": "What works offline",
+    "works": [
+      "App shell (HTML, JS, CSS, icons) via the service worker",
+      "Local PDF and Word operations that do not need the network",
+      "Informational pages that are part of the cached client app"
+    ],
+    "refreshHeading": "Refresh while offline",
+    "refresh": [
+      "A normal reload can still open LocalDocu from the service worker cache after the first visit",
+      "Hard refresh (Shift+Reload / Ctrl+Shift+R) bypasses the service worker and usually fails while offline",
+      "Refreshing always clears in-memory documents and in-progress work in this browser session"
+    ],
+    "varyHeading": "What may vary",
+    "vary": [
+      "First visit still needs a network to download and cache the app",
+      "Folder access, save pickers, and other browser APIs differ by browser and device",
+      "On Android Chrome, Add to Home Screen / install usually works after the first visit",
+      "On iOS Safari, use Share → Add to Home Screen; service worker offline has tighter limits than Android",
+      "Updates to the app require a connection when a new version is published"
+    ],
+    "outro": "Offline is a product capability, not an error. Trust indicators show offline status without treating it as failure. Mobile browsers are best for select-files → run → download; full folder and native Save As remain strongest on desktop Chrome or Edge.",
+    "links": {
+      "browserSupport": "Browser & device support",
+      "privacy": "Privacy model",
+      "desktop": "Future desktop capacity"
+    }
+  },
+  "privacy": {
+    "staysLocalHeading": "What stays local",
+    "staysLocal": [
+      "Document contents you select",
+      "Document processing and local previews",
+      "Operation execution in the browser session"
+    ],
+    "doesNotHeading": "What the current application does not do",
+    "doesNot": [
+      "No document-upload backend for processing",
+      "No cloud document-processing pipeline",
+      "No account requirement",
+      "Cloud processing: Off · LocalDocu AI: Off"
+    ],
+    "dataFlowHeading": "Data flow (current release)",
+    "dataFlow": [
+      "You select files on your device",
+      "LocalDocu reads them in the browser",
+      "A local document engine runs the operation",
+      "Output is saved or downloaded on your device"
+    ],
+    "laterHeading": "What may change later",
+    "later": [
+      "LocalDocu desktop app for heavier local workloads",
+      "LocalDocu AI in the desktop app: open-weight on-device model that uses document metadata and user intent to drive LocalDocu document-management commands (document contents stay on device)",
+      "Optional telemetry only if clearly disclosed — Phase 1 has no product analytics pipeline"
+    ],
+    "note": "We do not claim “100% private,” “completely secure,” or “zero data collection” as absolute guarantees. Claims match the current implementation.",
+    "links": {
+      "browserSupport": "Browser & device support",
+      "howItWorks": "How it works",
+      "localAi": "LocalDocu AI (future)"
+    }
+  },
+  "howItWorks": {
+    "intro": "LocalDocu is a local-first workspace: you select documents on your device, choose an operation, and run it in the browser. Results are saved or downloaded locally — depending on what your browser supports.",
+    "stepsHeading": "Steps",
+    "devicesHeading": "Devices at a glance",
+    "devices": [
+      "Phones & tablets: Select files → run → download. Core merge, compress, and convert work within memory limits.",
+      "Desktop Chrome / Edge: Fullest experience — folder pick, native Save As, create folder.",
+      "Other desktop browsers: Core tools via file pick + download; folder/Save As often limited."
+    ],
+    "framing": "Preferred framing: use the computing capacity you already have. Suitable document operations can run locally instead of requiring document uploads and remote processing. Local processing can reduce unnecessary data transfer and remote compute for workloads your device can handle — without claiming universal energy efficiency.",
+    "links": {
+      "browserSupport": "Full browser & device support",
+      "privacy": "Privacy",
+      "faq": "FAQ"
+    }
+  },
+  "browserSupport": {
+    "intro": "LocalDocu runs in your browser. What you can do depends on device APIs (file pickers, save dialogs) and memory — not on uploading documents. Processing stays on your device in the current release.",
+    "positioningHeading": "Quick positioning",
+    "positioning": [
+      "Phones & tablets (Android Chrome, iOS Safari): select files → run tool → download",
+      "Desktop Chrome / Edge: fullest web experience (folder pick, native Save As, create folder)",
+      "Desktop Firefox / Safari: core tools via file pick + download; folder / Save As limited",
+      "Future desktop app: heavier workloads + LocalDocu AI (not shipped)"
+    ],
+    "matrixHeading": "Feature matrix",
+    "tableCaption": "Browser and device capability matrix",
+    "headers": [
+      "Capability",
+      "Android Chrome",
+      "iOS Safari",
+      "Desktop Chrome / Edge",
+      "Desktop Firefox / Safari"
+    ],
+    "rows": [
+      [
+        "Select files (multi-select)",
+        "Yes",
+        "Yes",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "Merge / compress / page tools",
+        "Yes*",
+        "Yes*",
+        "Yes",
+        "Yes*"
+      ],
+      [
+        "Convert DOC/DOCX → PDF",
+        "Yes*",
+        "Yes*",
+        "Yes*",
+        "Yes*"
+      ],
+      [
+        "Download results",
+        "Yes",
+        "Yes",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "Select folder",
+        "Limited / often no",
+        "Usually no",
+        "Yes",
+        "Limited / often no"
+      ],
+      [
+        "Native Save As",
+        "No (download)",
+        "No (download)",
+        "Yes",
+        "Often download"
+      ],
+      [
+        "Create folder on disk",
+        "No",
+        "No",
+        "Yes after folder pick",
+        "No"
+      ],
+      [
+        "In-page PDF preview",
+        "Often OK",
+        "May be blank — open new tab",
+        "Usually works",
+        "Usually works"
+      ],
+      [
+        "PWA / offline shell",
+        "Install after first visit",
+        "Add to Home Screen",
+        "Yes",
+        "Varies"
+      ],
+      [
+        "LocalDocu AI",
+        "Off",
+        "Off",
+        "Off",
+        "Off"
+      ]
+    ],
+    "footnote": "*Within browser memory and capacity gates. Prefer Balanced compress and smaller files on phones. iOS Chrome uses WebKit — treat it like Safari.",
+    "mobileHeading": "Mobile workflow",
+    "mobile": [
+      "Open a tool page or the homepage workspace",
+      "Tap Select files and choose one or more documents (multi-select)",
+      "Run the operation",
+      "Download the result — native Save As is not available on mobile web"
+    ],
+    "note": "If in-page PDF preview is blank on iOS, use Open preview in new tab. Folder pick and create-folder remain desktop Chromium strengths. UI locales ship for English, Hindi, Spanish, Portuguese, German, French, Japanese, and Simplified Chinese; Arabic/RTL layout is planned for a later release.",
+    "links": {
+      "faq": "FAQ",
+      "offline": "Offline / install",
+      "howItWorks": "How it works",
+      "openLocalDocu": "Open LocalDocu"
+    }
+  },
+  "openSource": {
+    "intro": "LocalDocu is developed in the open under the Apache-2.0 license. Source code, issues, and roadmap live on GitHub. Community contributions are welcome.",
+    "openMeansHeading": "What “open” means here",
+    "openMeans": [
+      "Apache-2.0 license",
+      "Source available on GitHub",
+      "Transparent roadmap and issue reporting",
+      "Welcome help on accessibility, documentation, testing, and design"
+    ],
+    "note": "The project is community-driven and developed in the open. It is not described as “community-owned” unless governance formally supports that claim.",
+    "links": {
+      "github": "View the GitHub repository",
+      "contribute": "Contribute",
+      "roadmap": "Roadmap"
+    }
+  },
+  "contribute": {
+    "intro": "Help build LocalDocu with code, tests, documentation, accessibility improvements, design, and carefully written issues.",
+    "journeyHeading": "Contributor journey",
+    "journey": [
+      "Read the README and privacy model so local-first constraints stay clear.",
+      "Browse open issues or propose a focused improvement.",
+      "Follow CONTRIBUTING guidance for setup, branches, and pull requests.",
+      "When changing UI copy, update English catalogs under apps/web/src/i18n/locales/en/ (other locales fall back until translated).",
+      "Keep document processing local — do not introduce upload backends or auth unless the project explicitly asks for that work."
+    ],
+    "links": {
+      "github": "GitHub repository",
+      "contributing": "Contributing guide",
+      "openSource": "Open source overview",
+      "codeOfConduct": "Code of conduct",
+      "security": "Security policy"
+    }
+  },
+  "roadmap": {
+    "intro": "The web workspace is the product today: local PDF and Word tools in the browser. Later phases add a LocalDocu desktop app and LocalDocu AI for intent-driven workflows on device.",
+    "shippedHeading": "Shipped (web)",
+    "shipped": [
+      "Select files / folder / drag-and-drop",
+      "PDF merge, split, extract, delete, rotate, reorder, compress",
+      "Practical DOCX merge and text-oriented DOC/DOCX → PDF",
+      "Organize: sort, filter, rename, copy, move, folder, export",
+      "PWA app shell, themes, privacy and network status",
+      "UI locales: English, Hindi, Spanish, Portuguese, German, French, Japanese, Simplified Chinese"
+    ],
+    "nextHeading": "Next directions",
+    "next": [
+      "Desktop app for heavier local workloads (positioning page available)",
+      "LocalDocu AI (desktop): open-weight on-device model → metadata + intent → LocalDocu document-management commands (not active yet)",
+      "Arabic locale and RTL layout",
+      "Continued hardening of tests, accessibility, and discoverability"
+    ],
+    "links": {
+      "desktop": "Desktop",
+      "localAi": "LocalDocu AI",
+      "github": "GitHub"
+    }
+  },
+  "desktop": {
+    "intro": "A LocalDocu desktop application is planned for advanced local document automation — especially workloads that exceed comfortable browser limits — and as the home for LocalDocu AI. This page is positioning only; the desktop app is not shipping yet.",
+    "directionHeading": "Intended direction",
+    "direction": [
+      "Stronger local resources for large or complex jobs",
+      "Same local-first privacy principles as the web app",
+      "LocalDocu AI: intent understanding that drives LocalDocu document-management capabilities using document metadata",
+      "Windows-first targets under consideration in the product roadmap"
+    ],
+    "note": "Use the web workspace today. Do not expect desktop-only features or LocalDocu AI in the current browser release.",
+    "links": {
+      "localAi": "LocalDocu AI",
+      "roadmap": "Roadmap",
+      "openWeb": "Open LocalDocu (web)"
+    }
+  },
+  "localAi": {
+    "intro": "LocalDocu AI is a planned desktop capability: an open-weight, local-device-friendly model that understands user intent and LocalDocu’s document-management capabilities, then runs complex multi-step work through those local engines. LocalDocu AI is Off in the current web release.",
+    "designedHeading": "What LocalDocu AI is designed to do",
+    "designed": [
+      "Run from the LocalDocu desktop application (not as a cloud AI document pipeline)",
+      "Use document metadata and your request — not document contents — to plan work",
+      "Drive LocalDocu’s existing document-management and PDF/Word operations for complex tasks",
+      "Use an open-weight model suited to capable local devices, chosen to preserve quality and performance rather than trade them away"
+    ],
+    "modelHeading": "Intended model (future)",
+    "model": [
+      "You describe what you want in plain language in the desktop app",
+      "LocalDocu AI interprets intent using LocalDocu capability knowledge plus document metadata (names, types, counts, structure signals — not file contents)",
+      "A validated command plan is produced against the LocalDocu command registry",
+      "Deterministic local engines execute the plan on your device"
+    ],
+    "note": "This architecture is not implemented yet. The web workspace does not pretend LocalDocu AI is active. Document contents are not sent to a remote AI for processing in the current release.",
+    "links": {
+      "desktop": "Desktop",
+      "privacy": "Privacy",
+      "roadmap": "Roadmap"
+    }
+  },
+  "faqPage": {
+    "links": {
+      "browserSupport": "Browser & device support",
+      "privacy": "Privacy details",
+      "contribute": "Contribute"
+    }
+  }
+}

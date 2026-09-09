@@ -5,6 +5,7 @@ import {
   useRefreshGuard,
 } from '../hooks/useRefreshGuard';
 import { useTheme } from '../hooks/useTheme';
+import { useLocale, useT } from '../i18n';
 import { applyDocumentMeta, type RouteMeta } from '../lib/routeMeta';
 import { Breadcrumbs } from './Breadcrumbs';
 import { OpenLocalDocuCta } from './OpenLocalDocuCta';
@@ -19,21 +20,23 @@ interface PublicPageShellProps {
 }
 
 export function PublicPageShell({ meta, children, showCta = true }: PublicPageShellProps) {
+  const t = useT();
+  const { locale } = useLocale();
   const { preference, setPreference } = useTheme();
   const online = useOnlineStatus();
   const refreshGuardMessage = useMemo(
-    () => buildRefreshGuardMessage({ offline: true, busy: false }),
-    [],
+    () => buildRefreshGuardMessage({ offline: true, busy: false, t }),
+    [t],
   );
   useRefreshGuard({ enabled: !online, confirmMessage: refreshGuardMessage });
 
   useEffect(() => {
-    applyDocumentMeta(meta);
-  }, [meta]);
+    applyDocumentMeta(meta, locale);
+  }, [meta, locale]);
 
   return (
     <div className="app-shell">
-      <PublicJsonLd meta={meta} />
+      <PublicJsonLd meta={meta} locale={locale} />
       <header className="space-y-4">
         <SiteHeader preference={preference} onThemeChange={setPreference} />
         {meta.breadcrumbs ? <Breadcrumbs items={meta.breadcrumbs} /> : null}

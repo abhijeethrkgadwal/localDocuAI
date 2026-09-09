@@ -1,0 +1,125 @@
+{
+  "site": {
+    "tagline": "Tell it what to do. Your files stay on your device.",
+    "supportingMessage": "Local-first document automation for PDF and Word files.",
+    "secondaryMessage": "Process, organize, merge, convert and manage documents locally in your browser.",
+    "description": "LocalDocu is a privacy-first, local-first document tool. Merge, split, compress, rotate, and convert PDF and Word files in your browser — document contents stay on your device.",
+    "shortDescription": "Privacy-first local PDF and Word automation. Files stay on your device."
+  },
+  "loading": "Loading…",
+  "nav": {
+    "ariaPrimary": "Primary",
+    "faq": "FAQ",
+    "privacy": "Privacy",
+    "github": "GitHub",
+    "opensInNewTab": " (opens in a new tab)"
+  },
+  "theme": {
+    "ariaColorTheme": "Color theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "useLight": "Use light appearance",
+    "useDark": "Use dark appearance",
+    "matchSystem": "Match system appearance"
+  },
+  "cta": {
+    "openLocalDocu": "Open LocalDocu"
+  },
+  "breadcrumbs": {
+    "aria": "Breadcrumb",
+    "home": "Home"
+  },
+  "footer": {
+    "tagline": "Local-first document automation for PDF and Word files.",
+    "controlLine": "Your files. Your device. Your control.",
+    "licensedUnder": "Licensed under",
+    "apache20": "Apache-2.0",
+    "developedInOpen": "Developed in the open.",
+    "product": "Product",
+    "ariaProduct": "Product",
+    "openLocalDocu": "Open LocalDocu",
+    "pdfTools": "PDF tools",
+    "mergePdf": "Merge PDF",
+    "compressPdf": "Compress PDF",
+    "mergeDocx": "Merge DOCX",
+    "docxToPdf": "DOCX to PDF",
+    "howItWorks": "How it works",
+    "browserSupport": "Browser support",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "openSource": "Open source",
+    "ariaOpenSource": "Open source",
+    "github": "GitHub",
+    "contribute": "Contribute",
+    "roadmap": "Roadmap",
+    "license": "License",
+    "future": "Future",
+    "ariaFuture": "Future",
+    "desktop": "Desktop",
+    "localAi": "Local AI",
+    "support": "Support",
+    "ariaSupport": "Support",
+    "supportTheProject": "Support the project",
+    "sponsorLocalDocu": "Sponsor LocalDocu",
+    "sponsorshipComingSoon": "Sponsorship coming soon.",
+    "createdBy": "Created and maintained by Abhijeeth Gadwal",
+    "ariaLinkedIn": "Abhijeeth Gadwal on LinkedIn (opens in a new tab)",
+    "ariaPortfolio": "Abhijeeth Gadwal portfolio (opens in a new tab)",
+    "communityContributions": "with contributions from the community.",
+    "processingStatusLine": "Cloud document processing: Off · Local AI processing: Off"
+  },
+  "trust": {
+    "ariaNetworkPrivacy": "Network and privacy status",
+    "browserOnline": "Browser online",
+    "offline": "Offline",
+    "ariaNetworkOnline": "Network: browser reports online",
+    "ariaNetworkOffline": "Network: offline",
+    "localProcessing": "Local processing",
+    "ariaLocalProcessing": "Document processing: local",
+    "cloudProcessingOff": "Cloud processing Off",
+    "ariaCloudOff": "Cloud document processing: off",
+    "localDocuAiOff": "LocalDocu AI Off",
+    "ariaAiOff": "LocalDocu AI: off",
+    "details": "Details",
+    "offlineBannerTitle": "Offline.",
+    "offlineBannerBody": "Local document tools continue to work on this page. Avoid refreshing — it can clear documents in this session. Prefer a normal reload over hard refresh (Shift+Reload): hard refresh bypasses the service worker and usually fails while offline.",
+    "detailsOnlineTitle": "Browser reports a connection",
+    "detailsOfflineTitle": "Offline",
+    "detailsOnlineBody": "Network available. Local document processing still happens on this device.",
+    "detailsOfflineBody": "Offline. Local document tools continue to work. Going offline does not stop an in-progress local operation — refreshing or closing the tab can. Soft reload uses the cached app shell; hard refresh usually cannot while offline.",
+    "filesInSession": "Files in session: {count}",
+    "contentsProcessedLocally": "Document contents are processed on this device.",
+    "cloudDocumentProcessingOff": "Cloud document processing: Off",
+    "localDocuAiOffDetail": "LocalDocu AI: Off (desktop, metadata-only intent — not in this web release)",
+    "notUploadedFootnote": "Files are not uploaded for document processing. Processed locally on your device."
+  },
+  "privacyStatus": {
+    "aria": "Privacy status",
+    "localProcessing": "Local processing",
+    "cloudProcessing": "Cloud processing {status}",
+    "localDocuAi": "LocalDocu AI {status}",
+    "srOnly": "{count} files on device. Document processing: {processingLocation}. Cloud document processing: {cloudDocumentProcessing}. LocalDocu AI: {aiProcessing}. Document contents are processed on this device. Files are not uploaded for document processing."
+  },
+  "networkStatus": {
+    "ariaOnline": "Network: online",
+    "ariaOffline": "Network: offline",
+    "online": "Online",
+    "offline": "Offline",
+    "onlineSuffix": "· May be available · work stays local",
+    "offlineSuffix": "· Local document tools continue to work"
+  },
+  "notFound": {
+    "body": "That address is not a LocalDocu page.",
+    "bodyFull": "That address is not a LocalDocu page. Open the workspace or one of the pages below.",
+    "workspace": "Workspace",
+    "faq": "FAQ",
+    "howItWorks": "How it works",
+    "browserSupport": "Browser support",
+    "privacy": "Privacy"
+  },
+  "language": {
+    "aria": "Language",
+    "label": "Language"
+  }
+}

@@ -28,17 +28,25 @@ export interface BrowserFilesystemAdapterOptions {
   capabilities?: Partial<FilesystemCapabilities>;
 }
 
+function detectWebkitDirectory(): boolean {
+  if (typeof document === 'undefined') return false;
+  const input = document.createElement('input');
+  return 'webkitdirectory' in input;
+}
+
 function detectCapabilities(): FilesystemCapabilities {
   const hasWindow = typeof window !== 'undefined';
   const w = hasWindow ? window : undefined;
+  const supportsDirectoryPicker = Boolean(w?.showDirectoryPicker);
 
   return {
-    supportsDirectoryPicker: Boolean(w?.showDirectoryPicker),
+    supportsDirectoryPicker,
+    supportsWebkitDirectory: detectWebkitDirectory(),
     supportsFilePicker: Boolean(w?.showOpenFilePicker),
     supportsWriteToHandle: Boolean(w?.showSaveFilePicker),
     supportsBlobDownload: hasWindow && typeof document !== 'undefined',
     supportsSessionMutation: true,
-    supportsCreateFolder: Boolean(w?.showDirectoryPicker),
+    supportsCreateFolder: supportsDirectoryPicker,
   };
 }
 
@@ -210,47 +218,109 @@ export function createBrowserFilesystemAdapter(
       const aborted = checkAborted(pickOptions.signal);
       if (!aborted.ok) return aborted;
 
+      const extensions = pickOptions.extensions ?? ['pdf'];
+
       if (
-        !capabilities.supportsDirectoryPicker ||
-        typeof window === 'undefined' ||
-        !window.showDirectoryPicker
+        capabilities.supportsDirectoryPicker &&
+        typeof window !== 'undefined' &&
+        window.showDirectoryPicker
       ) {
-        return err(
-          unsupportedError(
-            'Folder selection needs Chrome or Edge for the best experience.',
-            'Select PDF files individually, or open this app in Chrome or Edge.',
-          ),
-        );
-      }
+        try {
+          const dirHandle = await window.showDirectoryPicker();
+          const directoryId = newId();
+          directoryStore.set(directoryId, dirHandle);
 
-      try {
-        const dirHandle = await window.showDirectoryPicker();
-        const directoryId = newId();
-        directoryStore.set(directoryId, dirHandle);
+          const files = await collectFromDirectory(dirHandle, registerFile, {
+            recursive: pickOptions.recursive ?? true,
+            extensions,
+            signal: pickOptions.signal,
+            basePath: dirHandle.name,
+          });
+          if (!files.ok) return files;
 
-        const files = await collectFromDirectory(dirHandle, registerFile, {
-          recursive: pickOptions.recursive ?? true,
-          extensions: pickOptions.extensions ?? ['pdf'],
-          signal: pickOptions.signal,
-          basePath: dirHandle.name,
-        });
-        if (!files.ok) return files;
-
-        return ok({
-          directory: { id: directoryId, name: dirHandle.name },
-          files: files.value,
-        });
-      } catch (e) {
-        if (e instanceof DOMException && e.name === 'AbortError') {
-          return err(cancelledError('Folder selection was cancelled.'));
+          return ok({
+            directory: { id: directoryId, name: dirHandle.name },
+            files: files.value,
+          });
+        } catch (e) {
+          if (e instanceof DOMException && e.name === 'AbortError') {
+            return err(cancelledError('Folder selection was cancelled.'));
+          }
+          return err(
+            permissionError(
+              'Could not access the selected folder.',
+              'Grant folder permission when prompted.',
+            ),
+          );
         }
-        return err(
-          permissionError(
-            'Could not access the selected folder.',
-            'Grant folder permission when prompted.',
-          ),
-        );
       }
+
+      if (capabilities.supportsWebkitDirectory && typeof document !== 'undefined') {
+        return new Promise((resolve) => {
+          const input = document.createElement('input');
+          input.type = 'file';
+          input.multiple = true;
+          input.setAttribute('webkitdirectory', '');
+          input.setAttribute('directory', '');
+
+          let settled = false;
+          const finish = (result: Result<DirectorySelection>) => {
+            if (settled) return;
+            settled = true;
+            window.removeEventListener('focus', onWindowFocus);
+            input.removeEventListener('cancel', onCancel);
+            resolve(result);
+          };
+
+          const onCancel = () => {
+            finish(err(cancelledError('Folder selection was cancelled.')));
+          };
+
+          const onWindowFocus = () => {
+            window.setTimeout(() => {
+              if (!settled && !input.files?.length) {
+                finish(err(cancelledError('Folder selection was cancelled.')));
+              }
+            }, 400);
+          };
+
+          input.addEventListener('change', () => {
+            const abortedAfter = checkAborted(pickOptions.signal);
+            if (!abortedAfter.ok) {
+              finish(abortedAfter);
+              return;
+            }
+            const all = Array.from(input.files ?? []);
+            if (!all.length) {
+              finish(err(cancelledError('Folder selection was cancelled.')));
+              return;
+            }
+            const matched = all.filter((file) => matchesExtension(file.name, extensions));
+            const refs = matched.map((file) =>
+              registerFile(file, file.webkitRelativePath || file.name),
+            );
+            const rootName =
+              all[0]?.webkitRelativePath?.split(/[/\\]/).filter(Boolean)[0] ?? 'Selected folder';
+            finish(
+              ok({
+                // Empty id: webkitdirectory has no FSA handle — create-folder stays unavailable.
+                directory: { id: '', name: rootName },
+                files: refs,
+              }),
+            );
+          });
+          input.addEventListener('cancel', onCancel);
+          window.addEventListener('focus', onWindowFocus);
+          input.click();
+        });
+      }
+
+      return err(
+        unsupportedError(
+          'Folder selection is not available in this browser.',
+          'Use Select files to pick documents individually (multi-select is supported). Folder pick works best on desktop Chrome or Edge.',
+        ),
+      );
     },
 
     async listDirectory(
@@ -364,7 +434,7 @@ export function createBrowserFilesystemAdapter(
         return err(
           unsupportedError(
             'Cannot save the file in this environment.',
-            'Use a modern desktop browser such as Chrome or Edge.',
+            'Use a modern browser with download support, or desktop Chrome/Edge for native Save As.',
           ),
         );
       }
@@ -383,7 +453,7 @@ export function createBrowserFilesystemAdapter(
         method: 'download',
         note: savePickerFailed
           ? 'Native save failed; downloaded a copy instead.'
-          : undefined,
+          : 'Native Save As is not available here — the file was downloaded instead.',
       });
     },
 

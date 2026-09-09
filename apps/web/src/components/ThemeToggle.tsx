@@ -1,24 +1,30 @@
 import type { ThemePreference } from '../hooks/useTheme';
+import { useT } from '../i18n';
 
 interface ThemeToggleProps {
   preference: ThemePreference;
   onChange: (value: ThemePreference) => void;
 }
 
-const OPTIONS: { value: ThemePreference; label: string; description: string }[] = [
-  { value: 'light', label: 'Light', description: 'Use light appearance' },
-  { value: 'dark', label: 'Dark', description: 'Use dark appearance' },
-  { value: 'system', label: 'System', description: 'Match system appearance' },
-];
-
 export function ThemeToggle({ preference, onChange }: ThemeToggleProps) {
+  const t = useT();
+  const options: { value: ThemePreference; label: string; description: string }[] = [
+    { value: 'light', label: t('common.theme.light'), description: t('common.theme.useLight') },
+    { value: 'dark', label: t('common.theme.dark'), description: t('common.theme.useDark') },
+    {
+      value: 'system',
+      label: t('common.theme.system'),
+      description: t('common.theme.matchSystem'),
+    },
+  ];
+
   return (
     <div
       className="inline-flex items-center gap-0.5 rounded-[var(--radius-control)] border border-[var(--border)] bg-[var(--surface)] p-0.5"
       role="radiogroup"
-      aria-label="Color theme"
+      aria-label={t('common.theme.ariaColorTheme')}
     >
-      {OPTIONS.map((option) => {
+      {options.map((option) => {
         const selected = preference === option.value;
         return (
           <button

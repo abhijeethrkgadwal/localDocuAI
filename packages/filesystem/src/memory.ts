@@ -46,6 +46,7 @@ export function createMemoryFilesystemAdapter(
 ): FilesystemAdapter {
   const capabilities: FilesystemCapabilities = {
     supportsDirectoryPicker: true,
+    supportsWebkitDirectory: true,
     supportsFilePicker: true,
     supportsWriteToHandle: true,
     supportsBlobDownload: true,
@@ -106,9 +107,12 @@ export function createMemoryFilesystemAdapter(
       const aborted = checkAborted(pickOptions.signal);
       if (!aborted.ok) return aborted;
 
-      if (!capabilities.supportsDirectoryPicker) {
+      if (!capabilities.supportsDirectoryPicker && !capabilities.supportsWebkitDirectory) {
         return err(
-          unsupportedError('Folder selection is not available.', 'Select files individually.'),
+          unsupportedError(
+            'Folder selection is not available.',
+            'Select files individually (multi-select is supported).',
+          ),
         );
       }
 
