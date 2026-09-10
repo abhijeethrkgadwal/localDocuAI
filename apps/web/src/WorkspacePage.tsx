@@ -30,10 +30,10 @@ export function WorkspacePage() {
     <div className="app-shell">
       <PublicJsonLd meta={homeMeta} locale={locale} />
 
-      <header className="space-y-5">
+      <header className="space-y-4 md:space-y-5">
         <SiteHeader preference={preference} onThemeChange={setPreference} workspace />
 
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-2.5 sm:space-y-3">
           <h1 className="text-[2rem] leading-[1.1] font-semibold tracking-tight text-[var(--text-primary)] sm:text-[2.75rem] sm:leading-[1.08]">
             {taglineParts.length >= 2 ? (
               <>

@@ -41,7 +41,7 @@ export const SUPPORT_URL = (viteEnv.VITE_SUPPORT_URL as string | undefined)?.tri
 export const SITE = {
   name: 'LocalDocu',
   legalName: 'LocalDocu',
-  brandMark: 'LOCALDOCU',
+  brandMark: 'LocalDocu',
   tagline: 'Tell it what to do. Your files stay on your device.',
   supportingMessage: 'Local-first document automation for PDF and Word files.',
   secondaryMessage:
