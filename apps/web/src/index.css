@@ -269,7 +269,8 @@ body {
   max-width: var(--content-max);
   flex-direction: column;
   gap: var(--space-6);
-  padding: var(--space-6) var(--page-pad) var(--space-7);
+  /* Tighter top inset on mobile so the header sits closer to the browser chrome */
+  padding: var(--space-3) var(--page-pad) var(--space-7);
 }
 
 @media (min-width: 768px) {
