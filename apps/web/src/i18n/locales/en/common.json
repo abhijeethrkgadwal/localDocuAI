@@ -12,7 +12,11 @@
     "faq": "FAQ",
     "privacy": "Privacy",
     "github": "GitHub",
-    "opensInNewTab": " (opens in a new tab)"
+    "opensInNewTab": " (opens in a new tab)",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuHeading": "Menu",
+    "appearance": "Appearance"
   },
   "theme": {
     "ariaColorTheme": "Color theme",

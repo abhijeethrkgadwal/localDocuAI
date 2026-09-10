@@ -186,6 +186,69 @@ body {
   color: var(--text-secondary);
 }
 
+.brand-mark:hover .brand-mark-accent {
+  color: var(--accent-hover);
+}
+
+.brand-mark-text {
+  letter-spacing: 0.01em;
+}
+
+.brand-mark-accent {
+  color: var(--accent);
+}
+
+/* Mobile site header menu */
+.site-header {
+  position: relative;
+  z-index: 30;
+}
+
+.site-header-menu {
+  position: relative;
+  z-index: 30;
+  margin-top: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    max-height var(--duration-normal) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard),
+    margin-top var(--duration-fast) var(--ease-standard);
+}
+
+.site-header-menu.is-open {
+  margin-top: var(--space-3);
+  max-height: min(80vh, 40rem);
+  opacity: 1;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+
+.site-header-menu-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  border: 0;
+  background: color-mix(in srgb, var(--text-primary) 18%, transparent);
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header-menu {
+    transition: none;
+  }
+}
+
 #main-content:focus {
   outline: none;
 }

@@ -8,6 +8,7 @@ import {
   SUPPORT_URL,
 } from '../lib/siteConfig';
 import { useT } from '../i18n';
+import { BrandMark } from './BrandMark';
 import { LocalizedLink } from './LocalizedLink';
 
 const LICENSE_URL = `${GITHUB_URL}/blob/main/LICENSE`;
@@ -97,11 +98,8 @@ export function SiteFooter() {
     <footer className="border-t border-[var(--border)] pt-8 pb-4 text-sm text-[var(--text-tertiary)]">
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-2 sm:col-span-2 lg:col-span-1">
-          <p
-            className="text-xs font-semibold tracking-[0.14em] text-[var(--text-secondary)] uppercase"
-            translate="no"
-          >
-            {SITE.brandMark}
+          <p className="text-sm font-semibold tracking-tight text-[var(--text-primary)]">
+            <BrandMark />
           </p>
           <p className="text-[var(--text-secondary)]">{t('common.footer.tagline')}</p>
           <p>{t('common.footer.controlLine')}</p>
