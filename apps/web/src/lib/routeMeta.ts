@@ -280,15 +280,38 @@ export function applyDocumentMeta(meta: RouteMeta, locale: LocaleCode = DEFAULT_
   setOrCreateLinkAlternate('x-default', absoluteUrl(barePath === '/' ? '/' : barePath));
 }
 
-export function sitemapEntries(): { loc: string; priority: string; changefreq: string }[] {
-  const entries: { loc: string; priority: string; changefreq: string }[] = [];
+export function hreflangAlternates(barePath: string): { hreflang: string; href: string }[] {
+  const normalized = barePath === '/' ? '/' : stripLocale(barePath);
+  return [
+    ...LOCALE_CODES.map((code) => ({
+      hreflang: LOCALES[code].bcp47,
+      href: absoluteUrl(withLocale(normalized, code)),
+    })),
+    { hreflang: 'x-default', href: absoluteUrl(normalized) },
+  ];
+}
+
+export function sitemapEntries(): {
+  loc: string;
+  priority: string;
+  changefreq: string;
+  alternates: { hreflang: string; href: string }[];
+}[] {
+  const entries: {
+    loc: string;
+    priority: string;
+    changefreq: string;
+    alternates: { hreflang: string; href: string }[];
+  }[] = [];
   for (const m of Object.values(ROUTE_META)) {
+    const alternates = hreflangAlternates(m.path);
     for (const code of LOCALE_CODES) {
       const path = withLocale(m.path, code);
       entries.push({
         loc: absoluteUrl(path),
         priority: m.priority ?? '0.7',
         changefreq: m.changefreq ?? 'monthly',
+        alternates,
       });
     }
   }

@@ -1,4 +1,4 @@
-import { useLocale, useT, withLocale, LOCALES, type LocaleCode } from '../i18n';
+import { useLocale, useT, withLocale, LOCALES, LOCALE_CODES, type LocaleCode } from '../i18n';
 import {
   getFaqItems,
   getHowItWorksSteps,
@@ -21,6 +21,7 @@ export function PublicJsonLd({
   const howItWorksSteps = getHowItWorksSteps(catalog.pages);
   const productSummary = t('pages.productSummary');
 
+  const canonicalHome = absoluteUrl('/');
   const home = absoluteUrl(withLocale('/', activeLocale));
   const barePath = meta.path === '/404' ? '/' : meta.path;
   const pageUrl = absoluteUrl(withLocale(barePath, activeLocale));
@@ -77,7 +78,7 @@ export function PublicJsonLd({
         '@type': 'Organization',
         '@id': orgId,
         name: SITE.name,
-        url: home,
+        url: canonicalHome,
         description: SITE.description,
         logo: {
           '@type': 'ImageObject',
@@ -91,19 +92,28 @@ export function PublicJsonLd({
       },
       {
         '@type': 'WebSite',
-        '@id': `${home}#website`,
-        url: home,
+        '@id': `${canonicalHome}#website`,
+        url: canonicalHome,
         name: SITE.name,
         description: SITE.shortDescription,
-        inLanguage: LOCALES[activeLocale].bcp47,
+        inLanguage: LOCALE_CODES.map((code) => LOCALES[code].bcp47),
         publisher: { '@id': orgId },
         image: absoluteUrl(BRAND_ASSETS.ogImage),
       },
       {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: meta.title,
+        description: meta.description,
+        inLanguage: LOCALES[activeLocale].bcp47,
+        isPartOf: { '@id': `${canonicalHome}#website` },
+      },
+      {
         '@type': ['WebApplication', 'SoftwareApplication'],
-        '@id': `${home}#webapp`,
+        '@id': `${canonicalHome}#webapp`,
         name: SITE.name,
-        url: home,
+        url: canonicalHome,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web Browser',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -114,7 +124,7 @@ export function PublicJsonLd({
       },
       {
         '@type': 'HowTo',
-        '@id': `${home}#how-it-works`,
+        '@id': `${canonicalHome}#how-it-works`,
         name: t('pages.discoverability.howItWorksHeading'),
         description: productSummary,
         step: howItWorksSteps.map((step, index) => ({

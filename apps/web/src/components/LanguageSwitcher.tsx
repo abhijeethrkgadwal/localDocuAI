@@ -1,5 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LOCALE_CODES, LOCALES, stripLocale, useLocale, withLocale, type LocaleCode } from '../i18n';
+import {
+  LOCALE_CODES,
+  LOCALES,
+  stripLocale,
+  useLocale,
+  withLocale,
+  writeStoredLocale,
+  type LocaleCode,
+} from '../i18n';
 
 export function LanguageSwitcher() {
   const { locale, t } = useLocale();
@@ -8,6 +16,7 @@ export function LanguageSwitcher() {
 
   const onChange = (next: LocaleCode) => {
     if (next === locale) return;
+    writeStoredLocale(next);
     const bare = stripLocale(location.pathname);
     const target = withLocale(bare, next);
     navigate(

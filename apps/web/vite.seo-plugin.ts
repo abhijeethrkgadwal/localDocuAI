@@ -1,7 +1,7 @@
 import type { Plugin } from 'vite';
 import { loadEnv } from 'vite';
 import { FAQ_ITEMS, HOW_IT_WORKS_STEPS, PRODUCT_SUMMARY } from './src/lib/seoContent';
-import { ROUTE_META, sitemapEntries } from './src/lib/routeMeta';
+import { hreflangAlternates, ROUTE_META, sitemapEntries } from './src/lib/routeMeta';
 
 const DEFAULT_SITE_URL = 'https://www.localdocu.org';
 
@@ -51,25 +51,43 @@ Sitemap: ${siteUrl}/sitemap.xml
 }
 
 function sitemapXml(_siteUrl: string, lastmod: string): string {
-  // Includes every route × locale (English unprefixed; others `/:locale/...`).
+  // Includes every route × locale (English unprefixed; others `/:locale/...`)
+  // plus xhtml hreflang clusters so Google does not pick a random language as default.
   const urls = sitemapEntries();
 
   const body = urls
-    .map(
-      (u) => `  <url>
+    .map((u) => {
+      const links = u.alternates
+        .map(
+          (a) =>
+            `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`,
+        )
+        .join('\n');
+      return `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
-  </url>`,
-    )
+${links}
+  </url>`;
+    })
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${body}
 </urlset>
 `;
+}
+
+function homepageHreflangTags(siteUrl: string): string {
+  return hreflangAlternates('/')
+    .map((a) => {
+      const href = a.href.startsWith('http') ? a.href : `${siteUrl}${a.href}`;
+      return `    <link rel="alternate" hreflang="${a.hreflang}" href="${href}" />`;
+    })
+    .join('\n');
 }
 
 function llmsTxt(siteUrl: string): string {
@@ -182,7 +200,8 @@ export function seoDiscoverabilityPlugin(): Plugin {
         .replaceAll('%CANONICAL_URL%', `${siteUrl}/`)
         .replaceAll('%OG_IMAGE_URL%', `${siteUrl}/og-image.png`)
         .replaceAll('%META_TITLE%', title)
-        .replaceAll('%META_DESCRIPTION%', description);
+        .replaceAll('%META_DESCRIPTION%', description)
+        .replace('</head>', `${homepageHreflangTags(siteUrl)}\n  </head>`);
     },
     generateBundle() {
       const lastmod = new Date().toISOString().slice(0, 10);
