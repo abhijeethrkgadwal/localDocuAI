@@ -16,7 +16,10 @@ import {
   detectLocaleFromPath,
   isPrefixedLocale,
   LocaleProvider,
+  resolvePreferredLocale,
+  stripLocale,
   useT,
+  withLocale,
 } from './i18n';
 
 const InfoPage = lazy(() =>
@@ -66,8 +69,17 @@ function ToolRoute({ pageId }: { pageId: ToolPageId }) {
 
 function LocaleShell({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const locale = detectLocaleFromPath(location.pathname);
-  return <LocaleProvider locale={locale}>{children}</LocaleProvider>;
+  const pathLocale = detectLocaleFromPath(location.pathname);
+  const preferred = resolvePreferredLocale(pathLocale);
+  if (preferred !== pathLocale) {
+    const target = withLocale(stripLocale(location.pathname), preferred);
+    const dest = `${target}${location.search}${location.hash}`;
+    const current = `${location.pathname}${location.search}${location.hash}`;
+    if (dest !== current) {
+      return <Navigate to={dest} replace />;
+    }
+  }
+  return <LocaleProvider locale={pathLocale}>{children}</LocaleProvider>;
 }
 
 function PrefixedLocaleGate() {

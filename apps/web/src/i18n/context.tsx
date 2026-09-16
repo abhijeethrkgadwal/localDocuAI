@@ -9,7 +9,6 @@ import {
 } from 'react';
 import { flattenCatalog, getEnglishCatalog, loadCatalog, type Catalog } from './catalog';
 import { DEFAULT_LOCALE, LOCALES, type LocaleCode } from './locales';
-import { writeStoredLocale } from './storage';
 import { translate, type TranslateFn, type TranslateVars } from './translate';
 
 interface LocaleContextValue {
@@ -57,7 +56,6 @@ export function LocaleProvider({
     let cancelled = false;
     setReady(locale === DEFAULT_LOCALE);
     applyDocumentLang(locale);
-    writeStoredLocale(locale);
 
     void loadCatalog(locale).then((loaded) => {
       if (cancelled) return;

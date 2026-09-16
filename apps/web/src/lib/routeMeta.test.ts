@@ -80,4 +80,15 @@ describe('route metadata', () => {
     // 16 routes × 8 locales
     expect(entries.length).toBe(Object.keys(ROUTE_META).length * 8);
   });
+
+  it('clusters locales with hreflang including English x-default', () => {
+    const home = sitemapEntries().find((e) => /localdocu\.org\/$/.test(e.loc));
+    expect(home?.alternates.some((a) => a.hreflang === 'en' && /localdocu\.org\/$/.test(a.href))).toBe(
+      true,
+    );
+    expect(home?.alternates.some((a) => a.hreflang === 'de' && a.href.includes('/de'))).toBe(true);
+    expect(
+      home?.alternates.some((a) => a.hreflang === 'x-default' && /localdocu\.org\/$/.test(a.href)),
+    ).toBe(true);
+  });
 });
