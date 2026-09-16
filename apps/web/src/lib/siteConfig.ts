@@ -38,6 +38,23 @@ export const PORTFOLIO_URL =
  */
 export const SUPPORT_URL = (viteEnv.VITE_SUPPORT_URL as string | undefined)?.trim() || '';
 
+/** Public brand files (copied from `apps/web/public`). Paths are site-root absolute. */
+export const BRAND_ASSETS = {
+  logoOnLight: '/brand/logo-on-light.png',
+  logoOnDark: '/brand/logo-on-dark.png',
+  logoBlack: '/brand/logo-black.png',
+  logoWhite: '/brand/logo-white.png',
+  logoTaglineOnLight: '/brand/logo-tagline-on-light.png',
+  logoTaglineOnDark: '/brand/logo-tagline-on-dark.png',
+  logoTaglineBlack: '/brand/logo-tagline-black.png',
+  logoTaglineWhite: '/brand/logo-tagline-white.png',
+  iconColor: '/brand/icon-color.png',
+  iconBlack: '/brand/icon-black.png',
+  iconWhite: '/brand/icon-white.png',
+  ogImage: '/og-image.png',
+  appleTouchIcon: '/apple-touch-icon.png',
+} as const;
+
 export const SITE = {
   name: 'LocalDocu',
   legalName: 'LocalDocu',

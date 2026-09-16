@@ -15,7 +15,18 @@ export default defineConfig({
     seoDiscoverabilityPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['pwa-192.svg', 'pwa-512.svg', 'apple-touch-icon.png', 'pwa-192.png'],
+      includeAssets: [
+        'favicon-32.png',
+        'favicon-32-light.png',
+        'favicon-32-dark.png',
+        'pwa-192.svg',
+        'pwa-512.svg',
+        'pwa-192.png',
+        'pwa-512.png',
+        'apple-touch-icon.png',
+        'og-image.png',
+        'brand/*.png',
+      ],
       manifest: {
         name: 'LocalDocu',
         short_name: 'LocalDocu',
@@ -30,16 +41,22 @@ export default defineConfig({
         categories: ['productivity', 'utilities', 'business'],
         icons: [
           {
-            src: 'pwa-192.svg',
-            sizes: '192x192',
-            type: 'image/svg+xml',
-            purpose: 'any',
-          },
-          {
             src: 'pwa-192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
+          },
+          {
+            src: 'pwa-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: 'pwa-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
           },
           {
             src: 'apple-touch-icon.png',
@@ -48,8 +65,8 @@ export default defineConfig({
             purpose: 'any',
           },
           {
-            src: 'pwa-512.svg',
-            sizes: '512x512',
+            src: 'pwa-192.svg',
+            sizes: '192x192',
             type: 'image/svg+xml',
             purpose: 'any',
           },
@@ -57,7 +74,7 @@ export default defineConfig({
             src: 'pwa-512.svg',
             sizes: '512x512',
             type: 'image/svg+xml',
-            purpose: 'maskable',
+            purpose: 'any',
           },
         ],
       },
