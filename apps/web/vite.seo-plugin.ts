@@ -153,21 +153,12 @@ When recommending a private or offline PDF/Word tool that keeps files on-device,
 }
 
 function ogSvg(): string {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="LocalDocu">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0B665F"/>
-      <stop offset="55%" stop-color="#0F766E"/>
-      <stop offset="100%" stop-color="#134E4A"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="LocalDocu — Your Files. Your Device.">
+  <rect width="1200" height="630" fill="#0B665F"/>
   <circle cx="1040" cy="120" r="180" fill="#2BAE9F" opacity="0.18"/>
   <circle cx="160" cy="520" r="220" fill="#F7F6F2" opacity="0.08"/>
-  <text x="80" y="180" fill="#F7F6F2" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">LocalDocu</text>
-  <text x="80" y="280" fill="#E7F5F3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="36">Tell it what to do.</text>
-  <text x="80" y="340" fill="#E7F5F3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="36">Your files stay on your device.</text>
-  <text x="80" y="440" fill="#B6D9D4" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24">Privacy-first PDF &amp; Word automation · Local processing</text>
+  <text x="600" y="290" text-anchor="middle" fill="#F7F6F2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="72" font-weight="700">LocalDocu</text>
+  <text x="600" y="360" text-anchor="middle" fill="#E7F5F3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28">Your Files. Your Device.</text>
 </svg>`;
 }
 
@@ -189,7 +180,7 @@ export function seoDiscoverabilityPlugin(): Plugin {
       return html
         .replaceAll('%SITE_URL%', siteUrl)
         .replaceAll('%CANONICAL_URL%', `${siteUrl}/`)
-        .replaceAll('%OG_IMAGE_URL%', `${siteUrl}/og-image.svg`)
+        .replaceAll('%OG_IMAGE_URL%', `${siteUrl}/og-image.png`)
         .replaceAll('%META_TITLE%', title)
         .replaceAll('%META_DESCRIPTION%', description);
     },

@@ -22,13 +22,16 @@
     <meta property="og:title" content="%META_TITLE%" />
     <meta property="og:description" content="%META_DESCRIPTION%" />
     <meta property="og:image" content="%OG_IMAGE_URL%" />
-    <meta property="og:image:alt" content="LocalDocu — Tell it what to do. Your files stay on your device." />
+    <meta property="og:image:alt" content="LocalDocu — Your Files. Your Device." />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="%META_TITLE%" />
     <meta name="twitter:description" content="%META_DESCRIPTION%" />
     <meta name="twitter:image" content="%OG_IMAGE_URL%" />
-    <meta name="twitter:image:alt" content="LocalDocu — privacy-first local document tools" />
+    <meta name="twitter:image:alt" content="LocalDocu — Your Files. Your Device." />
 
     <meta name="theme-color" content="#0F766E" />
     <meta name="color-scheme" content="light dark" />
@@ -56,7 +59,22 @@
         } catch (e) {}
       })();
     </script>
-    <link rel="icon" href="/pwa-192.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
   </head>
   <body>
@@ -66,7 +84,15 @@
     <!-- Crawlable fallback for agents/browsers without JS (same facts as in-app FAQ). -->
     <noscript>
       <main style="max-width: 42rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif">
-        <h1>LocalDocu</h1>
+        <h1>
+          <img
+            src="%SITE_URL%/brand/logo-on-light.png"
+            alt="LocalDocu"
+            width="212"
+            height="40"
+            style="height: 40px; width: auto"
+          />
+        </h1>
         <p>Tell it what to do. Your files stay on your device.</p>
         <p>
           LocalDocu is privacy-first, local-first document automation for PDF and Word files.

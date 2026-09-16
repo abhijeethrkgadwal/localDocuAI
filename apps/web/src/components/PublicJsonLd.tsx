@@ -4,7 +4,7 @@ import {
   getHowItWorksSteps,
 } from '../lib/seoContent';
 import type { RouteMeta } from '../lib/routeMeta';
-import { LINKEDIN_URL, PORTFOLIO_URL, SITE, absoluteUrl } from '../lib/siteConfig';
+import { BRAND_ASSETS, LINKEDIN_URL, PORTFOLIO_URL, SITE, absoluteUrl } from '../lib/siteConfig';
 
 /** JSON-LD for public/info pages — only schemas appropriate to the page. */
 export function PublicJsonLd({
@@ -79,6 +79,13 @@ export function PublicJsonLd({
         name: SITE.name,
         url: home,
         description: SITE.description,
+        logo: {
+          '@type': 'ImageObject',
+          url: absoluteUrl(BRAND_ASSETS.logoOnLight),
+          width: 530,
+          height: 101,
+        },
+        image: absoluteUrl(BRAND_ASSETS.ogImage),
         founder: { '@id': personId },
         ...(SITE.sameAs.length ? { sameAs: [...SITE.sameAs] } : {}),
       },
@@ -90,6 +97,7 @@ export function PublicJsonLd({
         description: SITE.shortDescription,
         inLanguage: LOCALES[activeLocale].bcp47,
         publisher: { '@id': orgId },
+        image: absoluteUrl(BRAND_ASSETS.ogImage),
       },
       {
         '@type': ['WebApplication', 'SoftwareApplication'],
@@ -102,6 +110,7 @@ export function PublicJsonLd({
         isAccessibleForFree: true,
         description: SITE.description,
         publisher: { '@id': orgId },
+        image: absoluteUrl(BRAND_ASSETS.ogImage),
       },
       {
         '@type': 'HowTo',

@@ -98,9 +98,14 @@ export function SiteFooter() {
     <footer className="border-t border-[var(--border)] pt-8 pb-4 text-sm text-[var(--text-tertiary)]">
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-2 sm:col-span-2 lg:col-span-1">
-          <p className="text-sm font-semibold tracking-tight text-[var(--text-primary)]">
-            <BrandMark />
-          </p>
+          <LocalizedLink
+            to={SITE_PATHS.home}
+            className="brand-mark"
+            translate="no"
+            aria-label="LocalDocu"
+          >
+            <BrandMark variant="tagline" />
+          </LocalizedLink>
           <p className="text-[var(--text-secondary)]">{t('common.footer.tagline')}</p>
           <p>{t('common.footer.controlLine')}</p>
           {showApacheLicense ? (
