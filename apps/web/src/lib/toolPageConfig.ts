@@ -8,7 +8,12 @@ export type ToolPageId =
   | 'merge-docx'
   | 'compress-pdf'
   | 'docx-to-pdf'
-  | 'pdf-tools';
+  | 'pdf-tools'
+  | 'split-pdf'
+  | 'extract-pages'
+  | 'delete-pages'
+  | 'rotate-pdf'
+  | 'reorder-pages';
 
 export type FileAcceptKind = 'pdf' | 'word' | 'document';
 
@@ -18,7 +23,12 @@ export type WorkspaceCopyKey =
   | 'mergeDocx'
   | 'compressPdf'
   | 'docxToPdf'
-  | 'pdfTools';
+  | 'pdfTools'
+  | 'splitPdf'
+  | 'extractPages'
+  | 'deletePages'
+  | 'rotatePdf'
+  | 'reorderPages';
 
 export interface ToolWorkspaceConfig {
   pageId: ToolPageId;
@@ -43,6 +53,25 @@ const ALL_PDF_TOOL_ACTIONS: PdfAction[] = [
   'rotate',
   'reorder',
 ];
+
+function singlePdfAction(
+  pageId: ToolPageId,
+  path: string,
+  action: PdfAction,
+  copyKey: ToolWorkspaceConfig['copyKey'],
+): ToolWorkspaceConfig {
+  return {
+    pageId,
+    path,
+    allowedActions: [action],
+    lockAction: true,
+    acceptKind: 'pdf',
+    showFileManage: false,
+    showAiPlaceholder: false,
+    folderExtensions: ['pdf'],
+    copyKey,
+  };
+}
 
 export const TOOL_WORKSPACE_CONFIG: Record<ToolPageId, ToolWorkspaceConfig> = {
   'merge-pdf': {
@@ -100,6 +129,21 @@ export const TOOL_WORKSPACE_CONFIG: Record<ToolPageId, ToolWorkspaceConfig> = {
     folderExtensions: ['pdf'],
     copyKey: 'pdfTools',
   },
+  'split-pdf': singlePdfAction('split-pdf', SITE_PATHS.splitPdf, 'split', 'splitPdf'),
+  'extract-pages': singlePdfAction(
+    'extract-pages',
+    SITE_PATHS.extractPages,
+    'extract',
+    'extractPages',
+  ),
+  'delete-pages': singlePdfAction('delete-pages', SITE_PATHS.deletePages, 'delete', 'deletePages'),
+  'rotate-pdf': singlePdfAction('rotate-pdf', SITE_PATHS.rotatePdf, 'rotate', 'rotatePdf'),
+  'reorder-pages': singlePdfAction(
+    'reorder-pages',
+    SITE_PATHS.reorderPages,
+    'reorder',
+    'reorderPages',
+  ),
 };
 
 /** Homepage: full document workspace (PDF + Word). */

@@ -27,6 +27,31 @@
       "workspaceHeading": "Choisissez les PDF à traiter",
       "opsTitle": "Outils PDF",
       "opsDesc": "Fusionner, compresser, diviser, extraire, supprimer, faire pivoter ou réorganiser — le tout sur cet appareil."
+    },
+    "splitPdf": {
+      "workspaceHeading": "Choisissez un PDF à diviser",
+      "opsTitle": "Diviser un PDF",
+      "opsDesc": "Sélectionnez un PDF, puis divisez-le en un fichier par page, enregistré sur cet appareil."
+    },
+    "extractPages": {
+      "workspaceHeading": "Choisissez un PDF dont extraire des pages",
+      "opsTitle": "Extraire des pages",
+      "opsDesc": "Sélectionnez un PDF, saisissez les pages à conserver, puis enregistrez-les dans un nouveau PDF."
+    },
+    "deletePages": {
+      "workspaceHeading": "Choisissez un PDF dont supprimer des pages",
+      "opsTitle": "Supprimer des pages",
+      "opsDesc": "Sélectionnez un PDF, saisissez les pages à supprimer, puis enregistrez le résultat sur cet appareil."
+    },
+    "rotatePdf": {
+      "workspaceHeading": "Choisissez un PDF à faire pivoter",
+      "opsTitle": "Pivoter un PDF",
+      "opsDesc": "Sélectionnez un PDF, choisissez les pages et l’angle, puis enregistrez le fichier pivoté."
+    },
+    "reorderPages": {
+      "workspaceHeading": "Choisissez un PDF à réorganiser",
+      "opsTitle": "Réorganiser les pages",
+      "opsDesc": "Sélectionnez un PDF, définissez le nouvel ordre des pages, puis enregistrez le résultat sur cet appareil."
     }
   },
   "formats": {

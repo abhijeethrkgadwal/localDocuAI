@@ -1,97 +1,175 @@
 {
   "home": {
-    "title": "LocalDocu — ローカルファーストのドキュメント自動化",
-    "description": "やりたいことを伝えるだけ。ファイルはお使いのデバイスに残ります。PDF と Word ファイルの結合、分割、圧縮、変換をブラウザー内でローカルに実行できます。"
+    "title": "無料 PDF ツール：結合・圧縮・分割、アップロード不要 | LocalDocu",
+    "description": "PDF と Word の結合・分割・圧縮・回転・変換をブラウザーで無料で。アップロード不要、登録不要、透かしなし。オフラインでも動作するオープンソースです。"
   },
   "mergePdf": {
-    "title": "PDF ファイルをローカルでプライベートに結合 | LocalDocu",
-    "description": "PDF ファイルをアップロードせずに結合します。LocalDocu なら、PDF の選択、並べ替え、結合をブラウザー内でローカルに実行できます。",
+    "title": "PDF 結合 無料 — アップロード不要・オフライン対応 | LocalDocu",
+    "description": "複数の PDF をブラウザー内で 1 つに結合。ファイルはデバイスの外に出ません。無料・登録不要・透かしなし・ファイル数無制限。スマホでも PC でも使えます。",
     "h1": "PDF ファイルをアップロードせずに結合",
-    "breadcrumb": "PDF を結合"
+    "breadcrumb": "PDF 結合"
   },
   "mergeDocx": {
-    "title": "Word ドキュメントをローカルで結合 | LocalDocu",
-    "description": "DOCX の Word ドキュメントをお使いのデバイス上でローカルに結合します。制限を明示した実用重視の結合で、LocalDocu へのドキュメントのアップロードはありません。",
-    "h1": "Word ドキュメントをローカルで結合",
-    "breadcrumb": "DOCX を結合"
+    "title": "Word 結合（DOCX）無料・アップロード不要 | LocalDocu",
+    "description": "DOCX ファイルをブラウザー内で 1 つの Word 文書に結合。Microsoft Word 不要で、アップロードもありません。無料です（複雑なレイアウトには制限があります）。",
+    "h1": "Word 文書をローカルで結合",
+    "breadcrumb": "DOCX 結合"
   },
   "compressPdf": {
-    "title": "PDF をローカルでプライベートに圧縮 | LocalDocu",
-    "description": "PDF ファイルをアップロードせずに圧縮します。バランスまたは最大モードでサイズを削減し、処理はお使いのデバイス上に留まります。",
+    "title": "PDF 圧縮 無料 — アップロード不要でサイズ縮小 | LocalDocu",
+    "description": "メールやフォーム提出用に PDF のサイズをブラウザーで縮小。「バランス」はテキスト選択可、「最大」は最小サイズに。アップロード不要・無料・オフライン対応。",
     "h1": "PDF ファイルをアップロードせずに圧縮",
-    "breadcrumb": "PDF を圧縮"
+    "breadcrumb": "PDF 圧縮"
   },
   "pdfTools": {
-    "title": "ローカル PDF ツール — 結合・分割・抽出など | LocalDocu",
-    "description": "結合、分割、抽出、削除、回転、並べ替え、圧縮に対応したローカル PDF ツール。不要なアップロードは行いません。",
+    "title": "PDF ツール一覧 — 無料・アップロード不要 | LocalDocu",
+    "description": "PDF の結合・分割・抽出・削除・回転・並べ替え・圧縮を 1 か所で。すべてブラウザー内で動作し、無料・プライベート・アカウント不要・オフライン対応です。",
     "h1": "不要なアップロードのないローカル PDF ツール",
     "breadcrumb": "PDF ツール"
   },
   "docxToPdf": {
-    "title": "DOCX を PDF にローカルで変換 | LocalDocu",
-    "description": "DOC と DOCX をお使いのデバイス上で読みやすい PDF に変換します。複雑な Word のレイアウトは正確に保持されない場合があります。",
-    "h1": "Word ドキュメントを PDF にローカルで変換",
+    "title": "Word PDF 変換 無料 — アップロード不要 | LocalDocu",
+    "description": "DOC・DOCX をアップロードせずにブラウザーで PDF に変換。無料でプライベート。テキスト重視の出力のため、複雑な Word のレイアウトは異なる場合があります。",
+    "h1": "Word 文書をローカルで PDF に変換",
     "breadcrumb": "DOCX を PDF に変換"
   },
+  "splitPdf": {
+    "title": "PDF 分割 無料 — ページを分ける・アップロード不要 | LocalDocu",
+    "description": "PDF をブラウザー内で 1 ページずつ別ファイルに分割。アップロードなし・無料・登録不要・透かしなし。ページ範囲を指定したい場合は「ページ抽出」をどうぞ。",
+    "h1": "PDF ファイルをアップロードせずに分割",
+    "breadcrumb": "PDF 分割"
+  },
+  "extractPages": {
+    "title": "PDF ページ抽出 無料 — 必要なページだけ保存 | LocalDocu",
+    "description": "PDF から選んだページ（例：1-3,5）をブラウザーで新しいファイルとして保存。無料・プライベート・オフライン対応で、PDF はデバイスの外に出ません。",
+    "h1": "PDF からローカルでページを抽出",
+    "breadcrumb": "ページ抽出"
+  },
+  "deletePages": {
+    "title": "PDF ページ削除 無料 — アップロード不要 | LocalDocu",
+    "description": "PDF の空白ページ・重複ページ・不要なページをブラウザーで削除。アップロード不要・アカウント不要・透かしなし。編集したコピーはデバイスに保存されます。",
+    "h1": "PDF からローカルでページを削除",
+    "breadcrumb": "ページ削除"
+  },
+  "rotatePdf": {
+    "title": "PDF 回転 無料 — 向きを修正・アップロード不要 | LocalDocu",
+    "description": "PDF の全ページまたは選んだページを 90°・180°・270° 回転して保存。ブラウザーで動作し、無料でプライベート。iPhone や Android でも使えます。",
+    "h1": "PDF のページをアップロードせずに回転",
+    "breadcrumb": "PDF 回転"
+  },
+  "reorderPages": {
+    "title": "PDF ページ並べ替え 無料 — アップロード不要 | LocalDocu",
+    "description": "PDF のページを好きな順番に並べ替えたり、逆順にしたりできます。ブラウザー内で処理、無料・登録不要で、文書がデバイスの外に出ることはありません。",
+    "h1": "PDF のページをローカルで並べ替え",
+    "breadcrumb": "ページ並べ替え"
+  },
   "offline": {
-    "title": "オフラインでのドキュメント処理 | LocalDocu",
-    "description": "LocalDocu のアプリシェルがキャッシュされた後は、オフラインでもドキュメントを扱えます。対応するワークフローでは、ローカル処理にネットワークは必要ありません。",
-    "h1": "オフラインでドキュメントを扱う",
+    "title": "オフラインで PDF・Word を処理 | LocalDocu",
+    "description": "アプリシェルのキャッシュ後は、LocalDocu でオフラインでも文書を処理できます。対応する作業では、ローカル処理にネットワークは必要ありません。",
+    "h1": "オフラインで文書を扱う",
     "breadcrumb": "オフライン"
   },
   "privacy": {
-    "title": "LocalDocu のプライバシー — ローカルファーストのドキュメント処理",
-    "description": "設計によるプライバシー：ドキュメントの内容はお使いのデバイス上で処理されます。現在のリリースでは、ドキュメントアップロード用のバックエンドはなく、アカウントも必要ありません。",
+    "title": "プライバシー — ファイルはデバイス上で処理 | LocalDocu",
+    "description": "設計によるプライバシー：文書の内容はお使いのデバイス上で処理されます。現在のリリースには文書アップロード用のバックエンドがなく、アカウントも不要です。",
     "h1": "設計によるプライバシー",
     "breadcrumb": "プライバシー"
   },
   "howItWorks": {
-    "title": "LocalDocu の仕組み | ローカルファーストのドキュメント自動化",
-    "description": "ファイルを選び、操作を選んで、ローカルで実行するだけ。LocalDocu がドキュメント処理をお使いのデバイス上に保つ仕組みをご紹介します。",
+    "title": "仕組み — PDF をブラウザー内でローカル処理 | LocalDocu",
+    "description": "ファイルを選び、操作を選んで、ローカルで実行するだけ。LocalDocu が文書処理をお使いのデバイス上に留める仕組みを解説します。",
     "h1": "LocalDocu の仕組み",
     "breadcrumb": "仕組み"
   },
   "browserSupport": {
-    "title": "ブラウザーとデバイスの対応 | LocalDocu",
-    "description": "Android の Chrome、iOS の Safari、デスクトップブラウザーでの LocalDocu の対応状況 — ファイル選択、フォルダー、名前を付けて保存、ダウンロード、PWA の制限。",
+    "title": "ブラウザーとデバイスの対応状況 | LocalDocu",
+    "description": "Android の Chrome、iOS の Safari、デスクトップブラウザーでの対応状況。ファイル選択、フォルダー、名前を付けて保存、ダウンロード、PWA の制限を解説。",
     "h1": "ブラウザーとデバイスの対応",
     "breadcrumb": "ブラウザー対応"
   },
   "openSource": {
-    "title": "LocalDocu のオープンソース | オープンに開発する",
-    "description": "LocalDocu は Apache-2.0 のもとでのオープンソースです。コード、ロードマップ、そしてプロジェクトがオープンに開発されている様子をご覧ください。",
+    "title": "オープンソース（Apache-2.0）の PDF ツール | LocalDocu",
+    "description": "LocalDocu は Apache-2.0 ライセンスのオープンソースです。コード、ロードマップ、オープンな開発の進め方をご覧ください。",
     "h1": "設計からオープンソース",
     "breadcrumb": "オープンソース"
   },
   "contribute": {
-    "title": "LocalDocu に貢献する | オープンソースのドキュメント自動化",
-    "description": "コード、テスト、ドキュメント、アクセシビリティ、デザインで LocalDocu の開発にご協力ください。まずは課題と貢献者向けガイドからご覧ください。",
+    "title": "開発に貢献する — オープンソースの文書ツール | LocalDocu",
+    "description": "コード、テスト、ドキュメント、アクセシビリティ、デザインで LocalDocu の開発に参加しませんか。まずは Issue と貢献者ガイドからどうぞ。",
     "h1": "LocalDocu の開発にご協力ください",
     "breadcrumb": "貢献する"
   },
   "roadmap": {
-    "title": "LocalDocu のロードマップ | Web・デスクトップ・LocalDocu AI",
-    "description": "LocalDocu が今日提供しているものと、今後の計画をご覧ください。より強力なデスクトップの処理能力と、意図に基づくローカルのドキュメントワークフローのための LocalDocu AI。",
+    "title": "ロードマップ — Web・デスクトップ・AI | LocalDocu",
+    "description": "LocalDocu が現在提供している機能と今後の計画。より強力なデスクトップ処理と、意図に基づくローカル文書ワークフローを実現する LocalDocu AI。",
     "h1": "ロードマップ",
     "breadcrumb": "ロードマップ"
   },
   "desktop": {
-    "title": "LocalDocu デスクトップ | 高度なローカルのドキュメント自動化",
-    "description": "より重いローカル処理と LocalDocu AI のためのデスクトップアプリを開発中です。作業進行中 — オープンコミュニティとともに近日公開を目指しています。今日のプロダクトは引き続き Web ワークスペースです。",
+    "title": "デスクトップアプリ（開発中）— 高度なローカル処理 | LocalDocu",
+    "description": "より重いローカル処理と LocalDocu AI のためのデスクトップアプリを開発中です。公開までは、無料の Web ワークスペースをご利用ください。",
     "h1": "デスクトップ：より強力なローカル処理能力へ",
     "breadcrumb": "デスクトップ"
   },
   "localAi": {
-    "title": "LocalDocu AI | 意図に基づくローカルのドキュメント自動化",
-    "description": "LocalDocu AI はデスクトップアプリで動作します。オープンウェイトのオンデバイスモデルがドキュメントのメタデータとユーザーの意図を読み取り、LocalDocu のドキュメント管理を駆動します — ドキュメント内容をクラウドへ送ることはありません。作業進行中。現在の Web リリースでは未稼働。コミュニティの貢献を歓迎します。",
-    "h1": "LocalDocu AI：デスクトップアプリ向けに進行中",
+    "title": "LocalDocu AI — 意図ベースの文書自動化 | LocalDocu",
+    "description": "LocalDocu AI（開発中）は、デスクトップアプリ向けのオープンウェイトなオンデバイスモデル。意図とメタデータから文書作業を計画し、クラウドへのアップロードはありません。",
+    "h1": "LocalDocu AI：デスクトップアプリ向けに開発中",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {
-    "title": "LocalDocu の FAQ — プライバシー・オフライン・対応形式",
-    "description": "LocalDocu、プライバシー、対応ファイル、オフライン利用、オープンソース、貢献に関するよくある質問。",
+    "title": "よくある質問 — プライバシー・オフライン・対応形式 | LocalDocu",
+    "description": "LocalDocu、プライバシー、対応ファイル、オフライン利用、オープンソース、貢献に関するよくある質問と回答。",
     "h1": "よくある質問",
     "breadcrumb": "FAQ"
+  },
+  "guides": {
+    "title": "PDF プライバシーガイドとツール比較 | LocalDocu",
+    "description": "PDF をアップロードせずに結合・圧縮・編集するための実用ガイドと、iLovePDF・Smallpdf・Adobe Acrobat との事実に基づく比較。",
+    "h1": "ガイドと比較",
+    "breadcrumb": "ガイド"
+  },
+  "guideMergePdfWithoutUploading": {
+    "title": "アップロードせずに PDF を結合する方法（2026年） | LocalDocu",
+    "description": "PDF をサーバーに送らずに結合する 3 つの方法（ブラウザー、Mac、Windows）と、何もアップロードされていないことを確かめる方法を解説します。",
+    "h1": "PDF ファイルをアップロードせずに結合する方法",
+    "breadcrumb": "アップロードせずに PDF を結合"
+  },
+  "guideCompressPdfOffline": {
+    "title": "PDF をオフラインで圧縮する無料の方法（2026年） | LocalDocu",
+    "description": "ネット接続もアップロードもなしで PDF を圧縮。ブラウザー、macOS のプレビュー、Ghostscript を比較し、スキャン文書やメールの容量制限のコツも紹介。",
+    "h1": "PDF をオフラインで圧縮する方法",
+    "breadcrumb": "PDF をオフラインで圧縮"
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "title": "PDF をオンラインでアップロードしても安全？ | LocalDocu",
+    "description": "オンライン変換ツールに PDF をアップロードすると実際に何が起きるのか、デバイスから出すべきでない文書、ツールを信頼する前の確認方法を解説。",
+    "h1": "PDF をオンラインツールにアップロードしても安全？",
+    "breadcrumb": "PDF のアップロードは安全？"
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "title": "スマホで PDF 編集 — アプリもアップロードも不要 | LocalDocu",
+    "description": "スマホのブラウザーで PDF を結合・分割・回転・圧縮。アプリのインストールもアップロードも不要。iPhone の Safari と Android の Chrome の手順を紹介。",
+    "h1": "アプリをインストールせずにスマホで PDF を編集する方法",
+    "breadcrumb": "スマホで PDF"
+  },
+  "ilovepdfAlternative": {
+    "title": "iLovePDF の代替 — ファイルをアップロードしない | LocalDocu",
+    "description": "LocalDocu と iLovePDF を事実に基づき比較：ファイルの行き先、制限、オフライン利用、機能。iLovePDF のほうが適しているケースも紹介します。",
+    "h1": "プライベートな iLovePDF の代替：LocalDocu と iLovePDF の比較",
+    "breadcrumb": "iLovePDF の代替"
+  },
+  "smallpdfAlternative": {
+    "title": "Smallpdf の代替 — 無料・無制限・アップロード不要 | LocalDocu",
+    "description": "LocalDocu と Smallpdf を、プライバシー、無料プランの制限、オフライン利用、機能で比較。Smallpdf 自身が公開しているポリシーに基づいています。",
+    "h1": "無料でプライベートな Smallpdf の代替：LocalDocu と Smallpdf の比較",
+    "breadcrumb": "Smallpdf の代替"
+  },
+  "adobeAcrobatAlternative": {
+    "title": "Adobe Acrobat の無料代替（基本の PDF 作業） | LocalDocu",
+    "description": "LocalDocu と Adobe Acrobat オンライン版の比較：アップロードせず無料でできる PDF 作業と、Acrobat が必要な作業。日付を明記した公正な比較です。",
+    "h1": "日常の PDF 作業に使える Adobe Acrobat の無料代替",
+    "breadcrumb": "Adobe Acrobat の代替"
   },
   "notFound": {
     "title": "ページが見つかりません | LocalDocu",

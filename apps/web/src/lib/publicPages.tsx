@@ -8,14 +8,21 @@ import {
   getWhyLocalMatters,
   type FaqItem,
 } from './seoContent';
+import { COMPARE_PAGES, GUIDE_PAGES, type ContentPageId } from './contentPages';
 import { GITHUB_URL, SITE_PATHS } from './siteConfig';
 
 export type PublicPageId =
+  | ContentPageId
   | 'merge-pdf'
   | 'merge-docx'
   | 'compress-pdf'
   | 'pdf-tools'
   | 'docx-to-pdf'
+  | 'split-pdf'
+  | 'extract-pages'
+  | 'delete-pages'
+  | 'rotate-pdf'
+  | 'reorder-pages'
   | 'offline'
   | 'privacy'
   | 'how-it-works'
@@ -43,6 +50,11 @@ const PUBLIC_PAGE_IDS: PublicPageId[] = [
   'compress-pdf',
   'pdf-tools',
   'docx-to-pdf',
+  'split-pdf',
+  'extract-pages',
+  'delete-pages',
+  'rotate-pdf',
+  'reorder-pages',
   'offline',
   'privacy',
   'how-it-works',
@@ -53,7 +65,28 @@ const PUBLIC_PAGE_IDS: PublicPageId[] = [
   'desktop',
   'local-ai',
   'faq',
+  'guides',
+  ...GUIDE_PAGES.map((p) => p.id),
+  ...COMPARE_PAGES.map((p) => p.id),
 ];
+
+const TOOL_PAGE_IDS = new Set<PublicPageId>([
+  'merge-pdf',
+  'merge-docx',
+  'compress-pdf',
+  'pdf-tools',
+  'docx-to-pdf',
+  'split-pdf',
+  'extract-pages',
+  'delete-pages',
+  'rotate-pdf',
+  'reorder-pages',
+]);
+
+const ARTICLE_PAGE_IDS = new Set<PublicPageId>([
+  ...GUIDE_PAGES.map((p) => p.id),
+  ...COMPARE_PAGES.map((p) => p.id),
+]);
 
 /** Map PublicPageId (kebab-case) → pages catalog key (camelCase). */
 export function publicPageCatalogKey(pageId: PublicPageId): string {
@@ -87,6 +120,11 @@ const LINK_TARGETS: Record<string, { to?: string; href?: string }> = {
   privacy: { to: SITE_PATHS.privacy },
   offline: { to: SITE_PATHS.offline },
   docxToPdf: { to: SITE_PATHS.docxToPdf },
+  splitPdf: { to: SITE_PATHS.splitPdf },
+  extractPages: { to: SITE_PATHS.extractPages },
+  deletePages: { to: SITE_PATHS.deletePages },
+  rotatePdf: { to: SITE_PATHS.rotatePdf },
+  reorderPages: { to: SITE_PATHS.reorderPages },
   howItWorks: { to: SITE_PATHS.howItWorks },
   mergePdfs: { to: SITE_PATHS.mergePdf },
   faq: { to: SITE_PATHS.faq },
@@ -96,6 +134,14 @@ const LINK_TARGETS: Record<string, { to?: string; href?: string }> = {
   contribute: { to: SITE_PATHS.contribute },
   roadmap: { to: SITE_PATHS.roadmap },
   openSource: { to: SITE_PATHS.openSource },
+  guides: { to: SITE_PATHS.guides },
+  guideMergeWithoutUploading: { to: SITE_PATHS.guideMergeWithoutUploading },
+  guideCompressOffline: { to: SITE_PATHS.guideCompressOffline },
+  guideUploadSafety: { to: SITE_PATHS.guideUploadSafety },
+  guidePdfOnPhone: { to: SITE_PATHS.guidePdfOnPhone },
+  ilovepdfAlternative: { to: SITE_PATHS.ilovepdfAlternative },
+  smallpdfAlternative: { to: SITE_PATHS.smallpdfAlternative },
+  acrobatAlternative: { to: SITE_PATHS.acrobatAlternative },
   openLocalDocu: { to: SITE_PATHS.home },
   openWeb: { to: SITE_PATHS.home },
   github: { href: GITHUB_URL },
@@ -122,12 +168,88 @@ function pushIfLinks(blocks: Block[], links: unknown): void {
   if (block) blocks.push(block);
 }
 
+/** Page copy for the active locale, falling back to English when the locale lacks the page. */
 function pageNode(
   catalogPages: MessageTree | Record<string, unknown>,
   pageId: PublicPageId,
 ): Record<string, unknown> {
   const key = publicPageCatalogKey(pageId);
-  return asRecord((catalogPages as Record<string, unknown>)[key]) ?? {};
+  const localized = asRecord((catalogPages as Record<string, unknown>)[key]);
+  if (localized && Object.keys(localized).length) return localized;
+  return asRecord((getEnglishCatalog().pages as Record<string, unknown>)[key]) ?? {};
+}
+
+export function isToolPageId(pageId: PublicPageId): boolean {
+  return TOOL_PAGE_IDS.has(pageId);
+}
+
+export function isArticlePageId(pageId: PublicPageId): boolean {
+  return ARTICLE_PAGE_IDS.has(pageId);
+}
+
+/** Page-specific FAQ (tools, guides, comparisons) for visible blocks + FAQPage JSON-LD. */
+export function getPageFaqItems(
+  pageId: PublicPageId,
+  catalogPages: MessageTree | Record<string, unknown>,
+): FaqItem[] {
+  const page = pageNode(catalogPages, pageId);
+  if (!Array.isArray(page.faq)) return [];
+  return page.faq
+    .map((entry, index) => {
+      const row = asRecord(entry);
+      const question = asString(row?.question);
+      const answer = asString(row?.answer);
+      if (!question || !answer) return null;
+      return { id: `${pageId}-faq-${index + 1}`, question, answer };
+    })
+    .filter((item): item is FaqItem => item != null);
+}
+
+/** Tool how-to steps for HowTo JSON-LD. */
+export function getPageHowTo(
+  pageId: PublicPageId,
+  catalogPages: MessageTree | Record<string, unknown>,
+): { name: string; steps: string[] } | null {
+  const page = pageNode(catalogPages, pageId);
+  const steps = asStringArray(page.howTo);
+  const name = asString(page.howToHeading);
+  return steps.length && name ? { name, steps } : null;
+}
+
+function pushPageFaq(
+  blocks: Block[],
+  page: Record<string, unknown>,
+  pageId: PublicPageId,
+  catalogPages: MessageTree | Record<string, unknown>,
+): void {
+  const items = getPageFaqItems(pageId, catalogPages);
+  if (!items.length) return;
+  if (asString(page.faqHeading)) blocks.push({ type: 'h2', text: asString(page.faqHeading)! });
+  blocks.push({ type: 'faq', items });
+}
+
+/** Generic long-form layout shared by guides and comparison pages. */
+function pushGenericSections(blocks: Block[], page: Record<string, unknown>): void {
+  if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+  const sections = Array.isArray(page.sections) ? page.sections : [];
+  for (const raw of sections) {
+    const section = asRecord(raw);
+    if (!section) continue;
+    if (asString(section.heading)) blocks.push({ type: 'h2', text: asString(section.heading)! });
+    for (const text of asStringArray(section.paragraphs)) blocks.push({ type: 'p', text });
+    if (asStringArray(section.list).length)
+      blocks.push({ type: 'ul', items: asStringArray(section.list) });
+    if (asStringArray(section.steps).length)
+      blocks.push({ type: 'ol', items: asStringArray(section.steps) });
+    const table = asRecord(section.table);
+    if (table) {
+      const headers = asStringArray(table.headers);
+      const rows = asStringMatrix(table.rows);
+      if (headers.length && rows.length)
+        blocks.push({ type: 'table', headers, rows, caption: asString(table.caption) });
+    }
+    if (asString(section.note)) blocks.push({ type: 'note', text: asString(section.note)! });
+  }
 }
 
 export function getPublicPageBlocks(
@@ -137,6 +259,14 @@ export function getPublicPageBlocks(
   const pages = catalogPages as Record<string, unknown>;
   const page = pageNode(pages, pageId);
   const blocks: Block[] = [];
+
+  if (isArticlePageId(pageId) || pageId === 'guides') {
+    pushGenericSections(blocks, page);
+    pushPageFaq(blocks, page, pageId, pages);
+    if (asString(page.disclaimer)) blocks.push({ type: 'note', text: asString(page.disclaimer)! });
+    pushIfLinks(blocks, page.links);
+    return blocks;
+  }
 
   switch (pageId) {
     case 'merge-pdf': {
@@ -194,6 +324,18 @@ export function getPublicPageBlocks(
       if (asString(page.noteFidelity))
         blocks.push({ type: 'note', text: asString(page.noteFidelity)! });
       if (asString(page.notePhones)) blocks.push({ type: 'note', text: asString(page.notePhones)! });
+      pushIfLinks(blocks, page.links);
+      break;
+    }
+    case 'split-pdf':
+    case 'extract-pages':
+    case 'delete-pages':
+    case 'rotate-pdf':
+    case 'reorder-pages': {
+      if (asString(page.intro)) blocks.push({ type: 'p', text: asString(page.intro)! });
+      if (asString(page.howToHeading)) blocks.push({ type: 'h2', text: asString(page.howToHeading)! });
+      if (asStringArray(page.howTo).length) blocks.push({ type: 'ol', items: asStringArray(page.howTo) });
+      if (asString(page.note)) blocks.push({ type: 'note', text: asString(page.note)! });
       pushIfLinks(blocks, page.links);
       break;
     }
@@ -350,6 +492,24 @@ export function getPublicPageBlocks(
     }
     default:
       break;
+  }
+
+  if (isToolPageId(pageId)) {
+    const faqBlocks: Block[] = [];
+    const rendersHowToInline =
+      pageId === 'merge-pdf' ||
+      pageId === 'split-pdf' ||
+      pageId === 'extract-pages' ||
+      pageId === 'delete-pages' ||
+      pageId === 'rotate-pdf' ||
+      pageId === 'reorder-pages';
+    if (!rendersHowToInline && asStringArray(page.howTo).length) {
+      if (asString(page.howToHeading)) faqBlocks.push({ type: 'h2', text: asString(page.howToHeading)! });
+      faqBlocks.push({ type: 'ol', items: asStringArray(page.howTo) });
+    }
+    pushPageFaq(faqBlocks, page, pageId, pages);
+    const insertAt = blocks.at(-1)?.type === 'links' ? blocks.length - 1 : blocks.length;
+    blocks.splice(insertAt, 0, ...faqBlocks);
   }
 
   return blocks;

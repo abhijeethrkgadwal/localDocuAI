@@ -1,97 +1,175 @@
 {
   "home": {
-    "title": "LocalDocu — Automatización de documentos con prioridad local",
-    "description": "Dile qué hacer. Tus archivos permanecen en tu dispositivo. Combina, divide, comprime y convierte PDF y Word localmente en tu navegador."
+    "title": "Herramientas PDF gratis sin subir archivos | LocalDocu",
+    "description": "Une, divide, comprime, rota y convierte PDF y Word gratis en tu navegador. Sin subir archivos, sin registro ni marca de agua y sin conexión. Código abierto."
   },
   "mergePdf": {
-    "title": "Combinar archivos PDF de forma local y privada | LocalDocu",
-    "description": "Combina archivos PDF sin subirlos. Selecciona, reordena y une PDF localmente en tu navegador con LocalDocu.",
-    "h1": "Combina archivos PDF sin subirlos",
-    "breadcrumb": "Combinar PDF"
+    "title": "Unir PDF gratis — sin subir archivos, sin conexión | LocalDocu",
+    "description": "Une archivos PDF en uno solo desde tu navegador. Tus archivos nunca salen del dispositivo: gratis, sin registro, sin marca de agua ni límite de archivos.",
+    "h1": "Une archivos PDF sin subirlos",
+    "breadcrumb": "Unir PDF"
   },
   "mergeDocx": {
-    "title": "Combinar documentos de Word localmente | LocalDocu",
-    "description": "Combina documentos DOCX de Word localmente en tu dispositivo. Combinación práctica con límites claros — sin subir documentos a LocalDocu.",
-    "h1": "Combina documentos de Word localmente",
-    "breadcrumb": "Combinar DOCX"
+    "title": "Unir documentos Word gratis — sin subir archivos | LocalDocu",
+    "description": "Une archivos DOCX en un solo documento de Word en tu navegador, sin Microsoft Word y sin subir nada. Gratis, con límites claros en diseños complejos.",
+    "h1": "Une documentos de Word localmente",
+    "breadcrumb": "Unir Word"
   },
   "compressPdf": {
-    "title": "Comprimir PDF de forma local y privada | LocalDocu",
-    "description": "Comprime archivos PDF sin subirlos. Reduce el tamaño con los modos equilibrado o máximo — el procesamiento permanece en tu dispositivo.",
+    "title": "Comprimir PDF gratis — reduce el tamaño sin subirlo | LocalDocu",
+    "description": "Reduce el peso de un PDF en tu navegador para email o formularios. Equilibrado mantiene el texto; Máximo logra el archivo más pequeño. Gratis y sin subir.",
     "h1": "Comprime archivos PDF sin subirlos",
     "breadcrumb": "Comprimir PDF"
   },
   "pdfTools": {
-    "title": "Herramientas PDF locales — combinar, dividir, extraer y más | LocalDocu",
-    "description": "Herramientas PDF locales para combinar, dividir, extraer, eliminar, girar, reordenar y comprimir — sin subidas innecesarias.",
+    "title": "Todas las herramientas PDF en una página, gratis | LocalDocu",
+    "description": "Une, divide, extrae, elimina, rota, reordena y comprime PDF en un solo lugar. Todo en tu navegador: gratis, privado, sin cuenta y sin conexión.",
     "h1": "Herramientas PDF locales sin subidas innecesarias",
     "breadcrumb": "Herramientas PDF"
   },
   "docxToPdf": {
-    "title": "Convertir DOCX a PDF localmente | LocalDocu",
-    "description": "Convierte DOC y DOCX en un PDF legible en tu dispositivo. Puede que las maquetaciones complejas de Word no se conserven con exactitud.",
+    "title": "Convertir Word a PDF gratis — sin subir archivos | LocalDocu",
+    "description": "Convierte DOC y DOCX a PDF en tu navegador sin subir el archivo. Gratis y privado; resultado orientado al texto: los diseños complejos de Word pueden variar.",
     "h1": "Convierte documentos de Word a PDF localmente",
-    "breadcrumb": "DOCX a PDF"
+    "breadcrumb": "Word a PDF"
+  },
+  "splitPdf": {
+    "title": "Dividir PDF gratis — separa páginas sin subirlo | LocalDocu",
+    "description": "Divide un PDF en un archivo por página desde tu navegador. No se sube nada: gratis, sin registro ni marca de agua. ¿Necesitas un rango? Usa Extraer páginas.",
+    "h1": "Divide archivos PDF sin subirlos",
+    "breadcrumb": "Dividir PDF"
+  },
+  "extractPages": {
+    "title": "Extraer páginas de un PDF — gratis, sin subirlo | LocalDocu",
+    "description": "Guarda páginas concretas (como 1-3,5) de un PDF en un archivo nuevo, en tu navegador. Gratis, privado y sin conexión: el PDF nunca sale de tu dispositivo.",
+    "h1": "Extrae páginas de un PDF localmente",
+    "breadcrumb": "Extraer páginas"
+  },
+  "deletePages": {
+    "title": "Eliminar páginas de un PDF — gratis, sin subirlo | LocalDocu",
+    "description": "Quita páginas en blanco, duplicadas o sobrantes de un PDF en tu navegador. Sin subir archivos, sin cuenta ni marca de agua: la copia se guarda en tu equipo.",
+    "h1": "Elimina páginas de un PDF localmente",
+    "breadcrumb": "Eliminar páginas"
+  },
+  "rotatePdf": {
+    "title": "Rotar PDF gratis — endereza páginas sin subirlo | LocalDocu",
+    "description": "Rota todas o algunas páginas de un PDF 90°, 180° o 270° y guarda el cambio. Funciona en tu navegador: gratis, privado y compatible con iPhone y Android.",
+    "h1": "Rota páginas de PDF sin subirlas",
+    "breadcrumb": "Rotar PDF"
+  },
+  "reorderPages": {
+    "title": "Ordenar páginas de un PDF — gratis, sin subirlo | LocalDocu",
+    "description": "Reorganiza o invierte el orden de las páginas de un PDF en tu navegador. Gratis, sin registro y sin que tu documento salga nunca de tu dispositivo.",
+    "h1": "Reordena páginas de PDF localmente",
+    "breadcrumb": "Reordenar páginas"
   },
   "offline": {
-    "title": "Procesamiento de documentos sin conexión | LocalDocu",
-    "description": "Trabaja con documentos sin conexión cuando el shell de LocalDocu está en caché. El procesamiento local no necesita red para los flujos compatibles.",
+    "title": "Procesar documentos PDF y Word sin conexión | LocalDocu",
+    "description": "Trabaja con documentos sin conexión cuando LocalDocu ya está en caché. El procesamiento local no necesita red para los flujos de trabajo compatibles.",
     "h1": "Trabaja con documentos sin conexión",
     "breadcrumb": "Sin conexión"
   },
   "privacy": {
-    "title": "Privacidad de LocalDocu — procesamiento de documentos con prioridad local",
-    "description": "Privacidad por diseño: el contenido de los documentos se procesa en tu dispositivo. Sin backend de subida y sin cuenta en la versión actual.",
+    "title": "Privacidad: tus documentos se procesan en local | LocalDocu",
+    "description": "Privacidad por diseño: el contenido de tus documentos se procesa en tu dispositivo. Sin servidor de subida de documentos y sin cuenta en la versión actual.",
     "h1": "Privacidad por diseño",
     "breadcrumb": "Privacidad"
   },
   "howItWorks": {
-    "title": "Cómo funciona LocalDocu | Automatización de documentos con prioridad local",
-    "description": "Selecciona archivos, elige una operación y ejecútala localmente. Descubre cómo LocalDocu mantiene el procesamiento en tu dispositivo.",
+    "title": "Cómo funciona: automatización local de documentos | LocalDocu",
+    "description": "Selecciona archivos, elige una operación y ejecútala en local. Descubre cómo LocalDocu mantiene el procesamiento de documentos en tu dispositivo.",
     "h1": "Cómo funciona LocalDocu",
     "breadcrumb": "Cómo funciona"
   },
   "browserSupport": {
-    "title": "Compatibilidad de navegadores y dispositivos | LocalDocu",
-    "description": "Qué admite LocalDocu en Chrome de Android, Safari de iOS y escritorio — archivos, carpetas, Guardar como, descargas y límites de PWA.",
-    "h1": "Compatibilidad de navegadores y dispositivos",
+    "title": "Compatibilidad con navegadores y dispositivos | LocalDocu",
+    "description": "Qué funciona en Chrome para Android, Safari en iOS y escritorio: selección de archivos y carpetas, Guardar como, descargas y límites de la PWA.",
+    "h1": "Compatibilidad con navegadores y dispositivos",
     "breadcrumb": "Compatibilidad de navegadores"
   },
   "openSource": {
-    "title": "LocalDocu de código abierto | Desarrollo en abierto",
+    "title": "Código abierto: un proyecto desarrollado en abierto | LocalDocu",
     "description": "LocalDocu es de código abierto bajo Apache-2.0. Consulta el código, la hoja de ruta y cómo se desarrolla el proyecto de forma abierta.",
     "h1": "Código abierto por diseño",
     "breadcrumb": "Código abierto"
   },
   "contribute": {
-    "title": "Contribuir a LocalDocu | Automatización de documentos de código abierto",
-    "description": "Ayuda a construir LocalDocu con código, pruebas, documentación, accesibilidad y diseño. Empieza por las incidencias y la guía del colaborador.",
+    "title": "Colabora con un proyecto PDF de código abierto | LocalDocu",
+    "description": "Ayuda a construir LocalDocu con código, pruebas, documentación, accesibilidad y diseño. Empieza por las incidencias y la guía para colaboradores.",
     "h1": "Ayuda a construir LocalDocu",
     "breadcrumb": "Contribuir"
   },
   "roadmap": {
-    "title": "Hoja de ruta de LocalDocu | Web, escritorio y LocalDocu AI",
-    "description": "Descubre lo que LocalDocu ofrece hoy y lo previsto: más capacidad en escritorio y LocalDocu AI para flujos locales guiados por la intención.",
+    "title": "Hoja de ruta: web, escritorio y LocalDocu AI | LocalDocu",
+    "description": "Lo que LocalDocu ofrece hoy y lo que viene: más capacidad en escritorio y LocalDocu AI para flujos de documentos locales guiados por tu intención.",
     "h1": "Hoja de ruta",
     "breadcrumb": "Hoja de ruta"
   },
   "desktop": {
-    "title": "LocalDocu para escritorio | Automatización local avanzada de documentos",
-    "description": "Estamos construyendo una aplicación de escritorio para cargas locales más pesadas y LocalDocu AI. Trabajo en curso — queremos lanzarla pronto con la comunidad open source. El espacio de trabajo web sigue siendo el producto de hoy.",
-    "h1": "Escritorio: más capacidad local por delante",
+    "title": "App de escritorio: automatización local avanzada | LocalDocu",
+    "description": "Estamos creando una app de escritorio de LocalDocu para cargas locales más pesadas y LocalDocu AI. Hasta su lanzamiento, el producto es la web gratuita.",
+    "h1": "Escritorio: más capacidad local en camino",
     "breadcrumb": "Escritorio"
   },
   "localAi": {
-    "title": "LocalDocu AI | Automatización local de documentos guiada por la intención",
-    "description": "LocalDocu AI se ejecuta en la aplicación de escritorio: un modelo de pesos abiertos en el dispositivo que usa los metadatos de los documentos y la intención del usuario para impulsar la gestión de documentos de LocalDocu — sin enviar el contenido a la nube. Trabajo en curso; no está activo en la versión web actual. Se agradecen las contribuciones de la comunidad.",
-    "h1": "LocalDocu AI: en progreso para la aplicación de escritorio",
+    "title": "LocalDocu AI: IA local para tus documentos | LocalDocu",
+    "description": "LocalDocu AI (en desarrollo) es un modelo de pesos abiertos en el dispositivo que planifica tareas según tu intención y los metadatos, sin subir nada a la nube.",
+    "h1": "LocalDocu AI: en desarrollo para la app de escritorio",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {
-    "title": "FAQ de LocalDocu — privacidad, uso sin conexión y formatos",
-    "description": "Preguntas habituales sobre LocalDocu, la privacidad, los archivos compatibles, el uso sin conexión, el código abierto y las contribuciones.",
+    "title": "FAQ: privacidad, uso sin conexión y formatos | LocalDocu",
+    "description": "Preguntas habituales sobre LocalDocu: privacidad, archivos compatibles, uso sin conexión, código abierto y cómo contribuir.",
     "h1": "Preguntas frecuentes",
     "breadcrumb": "FAQ"
+  },
+  "guides": {
+    "title": "Guías de privacidad PDF y comparativas | LocalDocu",
+    "description": "Guías prácticas para unir, comprimir y editar PDF sin subirlos, y comparativas objetivas con iLovePDF, Smallpdf y Adobe Acrobat.",
+    "h1": "Guías y comparativas",
+    "breadcrumb": "Guías"
+  },
+  "guideMergePdfWithoutUploading": {
+    "title": "Cómo unir PDF sin subirlos a internet (2026) | LocalDocu",
+    "description": "Tres formas de unir archivos PDF sin enviarlos a un servidor —en el navegador, en Mac y en Windows— y cómo comprobar que no se sube nada.",
+    "h1": "Cómo unir archivos PDF sin subirlos",
+    "breadcrumb": "Unir PDF sin subirlos"
+  },
+  "guideCompressPdfOffline": {
+    "title": "Cómo comprimir un PDF sin conexión, gratis (2026) | LocalDocu",
+    "description": "Reduce el tamaño de un PDF sin internet ni subidas: compresión en el navegador, Preview de macOS y Ghostscript, con consejos para escaneos y email.",
+    "h1": "Cómo comprimir un PDF sin conexión",
+    "breadcrumb": "Comprimir PDF sin conexión"
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "title": "¿Es seguro subir PDF a herramientas online? | LocalDocu",
+    "description": "Qué pasa al subir un PDF a un conversor online, qué documentos nunca deberían salir de tu dispositivo y cómo evaluar una herramienta antes de fiarte.",
+    "h1": "¿Es seguro subir PDF a herramientas online?",
+    "breadcrumb": "¿Es seguro subir PDF?"
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "title": "Editar PDF en iPhone o Android sin instalar apps | LocalDocu",
+    "description": "Une, divide, rota y comprime PDF en el móvil desde el navegador, sin instalar apps ni subir archivos. Paso a paso para Safari en iPhone y Chrome en Android.",
+    "h1": "Cómo editar PDF en el móvil sin instalar una app",
+    "breadcrumb": "PDF en el móvil"
+  },
+  "ilovepdfAlternative": {
+    "title": "Alternativa a iLovePDF que no sube tus archivos | LocalDocu",
+    "description": "Comparativa objetiva LocalDocu vs iLovePDF: adónde van tus archivos, límites, uso sin conexión y funciones, y cuándo iLovePDF sigue siendo mejor opción.",
+    "h1": "Una alternativa privada a iLovePDF: LocalDocu vs iLovePDF",
+    "breadcrumb": "Alternativa a iLovePDF"
+  },
+  "smallpdfAlternative": {
+    "title": "Alternativa a Smallpdf sin subir archivos ni límites | LocalDocu",
+    "description": "LocalDocu vs Smallpdf: privacidad, límites del plan gratuito, uso sin conexión y funciones, según las políticas publicadas por la propia Smallpdf.",
+    "h1": "Una alternativa gratuita y privada a Smallpdf: LocalDocu vs Smallpdf",
+    "breadcrumb": "Alternativa a Smallpdf"
+  },
+  "adobeAcrobatAlternative": {
+    "title": "Alternativa gratis a Adobe Acrobat para tareas PDF | LocalDocu",
+    "description": "LocalDocu vs Adobe Acrobat online: qué tareas PDF puedes hacer gratis sin subir archivos y cuáles aún requieren Acrobat. Comparativa honesta y fechada.",
+    "h1": "Una alternativa gratuita a Adobe Acrobat para tareas PDF cotidianas",
+    "breadcrumb": "Alternativa a Adobe Acrobat"
   },
   "notFound": {
     "title": "Página no encontrada | LocalDocu",

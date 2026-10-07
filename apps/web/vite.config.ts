@@ -15,7 +15,7 @@ export default defineConfig({
     seoDiscoverabilityPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['pwa-192.svg', 'pwa-512.svg', 'apple-touch-icon.png', 'pwa-192.png'],
+      includeAssets: ['favicon.ico', 'pwa-192.svg', 'apple-touch-icon.png'],
       manifest: {
         name: 'LocalDocu',
         short_name: 'LocalDocu',
@@ -36,27 +36,21 @@ export default defineConfig({
             purpose: 'any',
           },
           {
-            src: 'pwa-192.png',
+            src: 'icon-192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: 'apple-touch-icon.png',
-            sizes: '180x180',
+            src: 'icon-512.png',
+            sizes: '512x512',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: 'pwa-512.svg',
+            src: 'icon-maskable-512.png',
             sizes: '512x512',
-            type: 'image/svg+xml',
-            purpose: 'any',
-          },
-          {
-            src: 'pwa-512.svg',
-            sizes: '512x512',
-            type: 'image/svg+xml',
+            type: 'image/png',
             purpose: 'maskable',
           },
         ],
@@ -65,11 +59,13 @@ export default defineConfig({
         // Cache the app shell + workers (.mjs) so reload/ops work offline after first visit.
         // User DOC/DOCX/PDF bytes and outputs are never fetched as navigable URLs — they stay
         // in memory / File System Access / download flows, so they are not SW-cached.
-        globPatterns: ['**/*.{js,mjs,css,html,ico,svg,woff2,png,webp,txt,xml,webmanifest}'],
+        // Prerendered *.html pages are for crawlers / first visits; the SW serves the bare shell.
+        globPatterns: ['**/*.{js,mjs,css,ico,svg,woff2,png,webp,webmanifest}', 'shell.html'],
+        globIgnores: ['og/**'],
         // pdf.js worker + engine chunks exceed the default 2 MiB precache cap.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
-        navigateFallback: '/index.html',
-        navigateFallbackDenylist: [/^\/robots\.txt$/, /^\/sitemap\.xml$/, /^\/llms/, /^\/og-image/],
+        navigateFallback: '/shell.html',
+        navigateFallbackDenylist: [/^\/robots\.txt$/, /^\/sitemap\.xml$/, /^\/llms/, /^\/og\//],
         clientsClaim: true,
         skipWaiting: true,
         runtimeCaching: [

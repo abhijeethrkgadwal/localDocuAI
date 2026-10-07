@@ -97,6 +97,29 @@
   },
   "mergePdf": {
     "intro": "Use LocalDocu to combine multiple PDF files on your device. Select the files above, reorder them in the list, then merge and save the result locally.",
+    "faqHeading": "Merge PDF questions",
+    "faq": [
+      {
+        "question": "Can I merge PDF files without uploading them?",
+        "answer": "Yes. LocalDocu merges PDFs inside your browser using JavaScript and WebAssembly. The files are read from your device, combined in memory and saved back to your device — they are never sent to a LocalDocu server."
+      },
+      {
+        "question": "Is there a limit on how many PDFs I can merge?",
+        "answer": "There is no fixed file-count limit or daily quota. The practical ceiling is your device’s memory: a laptop handles hundreds of pages comfortably, while very large batches on a phone can run out of memory."
+      },
+      {
+        "question": "How do I change the order of the merged pages?",
+        "answer": "Files are merged in list order. Reorder the list before choosing Merge. To rearrange individual pages afterwards, open the merged file in Reorder pages."
+      },
+      {
+        "question": "Can I merge password-protected PDFs?",
+        "answer": "Not yet. Encrypted PDFs are rejected so nothing is silently damaged. Remove the password in a tool you trust first, then merge."
+      },
+      {
+        "question": "Does the merged PDF get a watermark?",
+        "answer": "No. LocalDocu is free and open source and never adds watermarks, sign-up walls or daily limits."
+      }
+    ],
     "howToHeading": "How to merge PDFs",
     "howTo": [
       "Select or drop two or more PDF files on this page.",
@@ -120,6 +143,31 @@
   },
   "mergeDocx": {
     "intro": "LocalDocu supports practical DOCX merge for suitable Word documents. Select same-type Word files above, set the order, then merge locally.",
+    "howToHeading": "How to merge Word documents",
+    "howTo": [
+      "Select or drop two or more DOCX files on this page.",
+      "Arrange them in the order they should appear.",
+      "Choose Merge and save the combined DOCX on your device."
+    ],
+    "faqHeading": "Merge Word questions",
+    "faq": [
+      {
+        "question": "Can I combine Word documents without Microsoft Word?",
+        "answer": "Yes. LocalDocu merges DOCX files in your browser, so you do not need Word installed and nothing is uploaded."
+      },
+      {
+        "question": "Will formatting be preserved when merging DOCX files?",
+        "answer": "Text, headings and common formatting usually carry over. Complex layouts — section-specific headers, unusual styles, embedded objects — may not survive exactly, so check the result before sharing it."
+      },
+      {
+        "question": "Can I merge DOCX and PDF files together?",
+        "answer": "Not in one step. Merge expects files of the same type. Convert the Word files to PDF first, then use Merge PDF."
+      },
+      {
+        "question": "Does merging Word files work on a phone?",
+        "answer": "Yes for typical documents in mobile Chrome or Safari. Very large files can hit the phone’s memory limits."
+      }
+    ],
     "behaviorHeading": "Current behavior",
     "behavior": [
       "DOCX files can be merged in a practical, content-oriented way.",
@@ -140,6 +188,35 @@
   },
   "compressPdf": {
     "intro": "Reduce PDF file size on your device. Select a PDF above, choose Balanced (keep selectable text) or Maximum (stronger shrink), pick a quality target, then compress and save locally.",
+    "howToHeading": "How to compress a PDF",
+    "howTo": [
+      "Select or drop a PDF on this page.",
+      "Choose Balanced to keep text selectable, or Maximum for the smallest file.",
+      "Pick a quality target, run Compress and save the smaller PDF on your device."
+    ],
+    "faqHeading": "Compress PDF questions",
+    "faq": [
+      {
+        "question": "How do I compress a PDF without uploading it?",
+        "answer": "Open Compress PDF in LocalDocu, select the file and run Compress. Compression happens inside your browser, so the document never leaves your device — useful for contracts, payslips, medical or ID documents."
+      },
+      {
+        "question": "What is the difference between Balanced and Maximum?",
+        "answer": "Balanced optimises images and structure while keeping text selectable and searchable. Maximum re-renders pages as images for a much smaller file, but text is no longer selectable."
+      },
+      {
+        "question": "How small will my PDF get?",
+        "answer": "It depends on the content. Scanned and image-heavy PDFs shrink the most; text-only PDFs are often already small. LocalDocu shows the before and after size so you can try another quality target."
+      },
+      {
+        "question": "Is there a file size limit?",
+        "answer": "In the browser, compression is limited to PDFs up to 40 MB per file to stay within device memory. Phones may need smaller files; Balanced mode uses less memory than Maximum."
+      },
+      {
+        "question": "Can I compress a PDF to send by email?",
+        "answer": "Yes. Most email services cap attachments at around 20–25 MB. Start with Balanced; if the file is still too large, use Maximum with a lower quality target."
+      }
+    ],
     "modesHeading": "Modes",
     "modes": [
       "Balanced — keeps text selectable where possible while reducing size.",
@@ -161,6 +238,25 @@
   },
   "pdfTools": {
     "intro": "This page includes LocalDocu’s PDF operations. Each runs locally in your browser for suitable workloads — use the panels above to select files and run an operation.",
+    "faqHeading": "PDF tools questions",
+    "faq": [
+      {
+        "question": "Are these PDF tools really free?",
+        "answer": "Yes. LocalDocu is open source under Apache-2.0. There is no account, no paywall, no watermark and no daily task limit, because processing runs on your own device rather than on paid servers."
+      },
+      {
+        "question": "Do the PDF tools work offline?",
+        "answer": "Yes. After your first visit the app is cached by the browser, and merge, split, extract, delete, rotate, reorder and compress keep working without an internet connection."
+      },
+      {
+        "question": "Which PDF features are not available yet?",
+        "answer": "LocalDocu does not yet do OCR, e-signatures, PDF text editing, PDF-to-Word conversion or password removal. Those are on the roadmap; the current tools focus on organising, compressing and converting."
+      },
+      {
+        "question": "Which browsers are supported?",
+        "answer": "Current Chrome, Edge, Firefox and Safari on desktop, Android and iOS. Desktop Chrome and Edge add folder access and native Save As; see Browser & device support for details."
+      }
+    ],
     "opsHeading": "Supported PDF operations",
     "ops": [
       "Merge — combine multiple PDFs in list order",
@@ -171,7 +267,7 @@
       "Reorder pages — rearrange page order",
       "Compress — reduce size with balanced or maximum modes"
     ],
-    "outro": "Select a PDF (or several for merge), choose the operation, then run and save locally. Dedicated pages also exist for merge and compress.",
+    "outro": "Select a PDF (or several for merge), choose the operation, then run and save locally. Each operation also has its own dedicated page.",
     "links": {
       "browserSupport": "Browser & device support",
       "mergePdfs": "Merge PDFs",
@@ -182,6 +278,31 @@
   },
   "docxToPdf": {
     "intro": "Convert DOC or DOCX files to a readable PDF generated on your device. Select a Word file above, convert, and save locally.",
+    "howToHeading": "How to convert Word to PDF",
+    "howTo": [
+      "Select or drop a DOC or DOCX file on this page.",
+      "Choose Convert to PDF.",
+      "Review the PDF and save it on your device."
+    ],
+    "faqHeading": "Word to PDF questions",
+    "faq": [
+      {
+        "question": "Can I convert Word to PDF without uploading the file?",
+        "answer": "Yes. LocalDocu reads the DOC or DOCX file in your browser and generates the PDF on your device. The document is not uploaded anywhere."
+      },
+      {
+        "question": "Will the PDF look exactly like my Word document?",
+        "answer": "Not always. Browser conversion is text-oriented: text, headings and paragraphs come through, but complex layouts, columns, text boxes and some images may not match Word exactly. For pixel-perfect output, export to PDF from Word itself."
+      },
+      {
+        "question": "Does it support old .doc files?",
+        "answer": "Yes, DOC and DOCX are both accepted. Older .doc files with unusual formatting are more likely to lose layout details."
+      },
+      {
+        "question": "Why is conversion blocked for my file?",
+        "answer": "Conversion is capacity-gated so the browser does not run out of memory. Phones have stricter limits than desktops; try a smaller file or a desktop browser."
+      }
+    ],
     "limitsHeading": "Honest limits",
     "limits": [
       "Conversion is text-oriented and capacity-gated for browser workloads.",
@@ -194,6 +315,172 @@
       "browserSupport": "Browser & device support",
       "mergeDocx": "Merge Word documents",
       "desktop": "Desktop roadmap"
+    }
+  },
+  "splitPdf": {
+    "intro": "Split a PDF into separate files, one per page, directly in your browser. Nothing is uploaded to LocalDocu.",
+    "faqHeading": "Split PDF questions",
+    "faq": [
+      {
+        "question": "How do I split a PDF into separate pages for free?",
+        "answer": "Open Split PDF, select the file and choose Split. LocalDocu creates one PDF per page on your device — free, with no account and no upload."
+      },
+      {
+        "question": "Can I split a PDF by page range instead of every page?",
+        "answer": "Use Extract pages for that: enter a range such as 1-3,7 to save just those pages as a new PDF. Run it once per range you need."
+      },
+      {
+        "question": "Is splitting a PDF in the browser safe for confidential files?",
+        "answer": "Yes. The file is processed in your browser’s memory and the results are saved to your device. No copy is sent to or stored on a server."
+      },
+      {
+        "question": "Does splitting reduce quality?",
+        "answer": "No. Pages are copied as they are — text, images and vector graphics are not re-compressed."
+      }
+    ],
+    "howToHeading": "How to split a PDF",
+    "howTo": [
+      "Select or drop a PDF on this page.",
+      "Choose Split to create one PDF for each page.",
+      "Save or download the resulting files on your device."
+    ],
+    "links": {
+      "extractPages": "Extract pages",
+      "mergePdfs": "Merge PDFs",
+      "pdfTools": "All PDF tools"
+    }
+  },
+  "extractPages": {
+    "intro": "Keep only the pages you need. Extract selected pages from a PDF into a new file, processed locally on your device.",
+    "faqHeading": "Extract pages questions",
+    "faq": [
+      {
+        "question": "How do I write the page selection?",
+        "answer": "Use page numbers and ranges separated by commas, for example 1-3,5,8-10. Pages are counted from 1."
+      },
+      {
+        "question": "Does extracting pages change the original PDF?",
+        "answer": "No. LocalDocu creates a new PDF with the selected pages; the original file on your device is untouched."
+      },
+      {
+        "question": "What is the difference between Extract and Split?",
+        "answer": "Extract saves the pages you choose as one new PDF. Split saves every page as its own PDF."
+      },
+      {
+        "question": "Can I extract pages on my phone?",
+        "answer": "Yes. Extract works in mobile Chrome and Safari; the new file downloads to your device."
+      }
+    ],
+    "howToHeading": "How to extract pages",
+    "howTo": [
+      "Select or drop a PDF on this page.",
+      "Enter the page numbers or ranges you want to keep.",
+      "Run Extract and save the new PDF locally."
+    ],
+    "links": {
+      "deletePages": "Delete pages",
+      "splitPdf": "Split PDF",
+      "pdfTools": "All PDF tools"
+    }
+  },
+  "deletePages": {
+    "intro": "Remove blank, duplicate, or unwanted pages from a PDF without uploading it anywhere.",
+    "faqHeading": "Delete pages questions",
+    "faq": [
+      {
+        "question": "How do I remove pages from a PDF without Acrobat?",
+        "answer": "Open Delete pages in LocalDocu, select the PDF, enter the pages to remove (for example 2,4-6) and run it. It is free and runs in your browser."
+      },
+      {
+        "question": "Can I undo deleting pages?",
+        "answer": "Your original file is never modified — LocalDocu saves the edited copy as a new file. Keep the original if you might need the pages again."
+      },
+      {
+        "question": "Can I delete pages from a scanned PDF?",
+        "answer": "Yes. Page removal works the same for scanned and digital PDFs because whole pages are removed, not text."
+      },
+      {
+        "question": "Is there a page limit?",
+        "answer": "No fixed limit. Very large documents depend on your device’s memory, especially on phones."
+      }
+    ],
+    "howToHeading": "How to delete pages",
+    "howTo": [
+      "Select or drop a PDF on this page.",
+      "Enter the page numbers or ranges you want to remove.",
+      "Run Delete pages and save the edited PDF locally."
+    ],
+    "links": {
+      "extractPages": "Extract pages",
+      "reorderPages": "Reorder pages",
+      "pdfTools": "All PDF tools"
+    }
+  },
+  "rotatePdf": {
+    "intro": "Fix sideways or upside-down pages. Rotate some or all pages of a PDF by 90°, 180°, or 270° on your device.",
+    "faqHeading": "Rotate PDF questions",
+    "faq": [
+      {
+        "question": "Can I rotate only some pages of a PDF?",
+        "answer": "Yes. Enter the pages to rotate, such as 1,3-4. Leave the field empty to rotate every page."
+      },
+      {
+        "question": "Is the rotation saved permanently?",
+        "answer": "Yes. LocalDocu saves a new PDF with the rotation applied, so it opens correctly in any PDF viewer."
+      },
+      {
+        "question": "Does rotating a PDF reduce quality?",
+        "answer": "No. Rotation changes the page orientation only; text and images are not re-compressed."
+      },
+      {
+        "question": "Can I rotate a PDF on iPhone or Android?",
+        "answer": "Yes. Rotate works in mobile Safari and Chrome without installing an app, and the rotated file downloads to your device."
+      }
+    ],
+    "howToHeading": "How to rotate a PDF",
+    "howTo": [
+      "Select or drop a PDF on this page.",
+      "Choose the pages and the rotation angle.",
+      "Run Rotate and save the rotated PDF locally."
+    ],
+    "links": {
+      "reorderPages": "Reorder pages",
+      "compressPdf": "Compress PDF",
+      "pdfTools": "All PDF tools"
+    }
+  },
+  "reorderPages": {
+    "intro": "Put the pages of a PDF in exactly the order you want, processed entirely in your browser.",
+    "faqHeading": "Reorder pages questions",
+    "faq": [
+      {
+        "question": "How do I enter the new page order?",
+        "answer": "Type every page number once, separated by commas, in the order you want. For a 4-page file, 4,1,2,3 moves the last page to the front."
+      },
+      {
+        "question": "Can I reverse the page order of a PDF?",
+        "answer": "Yes. Enter the pages from last to first, for example 5,4,3,2,1."
+      },
+      {
+        "question": "Can I combine reordering with deleting pages?",
+        "answer": "Run Delete pages first, then Reorder the result. Each step saves a new file on your device."
+      },
+      {
+        "question": "Are my files uploaded to reorder them?",
+        "answer": "No. Reordering happens in your browser; the PDF never leaves your device."
+      }
+    ],
+    "howToHeading": "How to reorder pages",
+    "howTo": [
+      "Select or drop a PDF on this page.",
+      "Enter the full new page order, for example 3,1,2.",
+      "Run Reorder and save the result locally."
+    ],
+    "note": "List every page number exactly once, separated by commas.",
+    "links": {
+      "rotatePdf": "Rotate PDF",
+      "deletePages": "Delete pages",
+      "pdfTools": "All PDF tools"
     }
   },
   "offline": {
@@ -483,6 +770,475 @@
       "browserSupport": "Browser & device support",
       "privacy": "Privacy details",
       "contribute": "Contribute"
+    }
+  },
+  "article": {
+    "byline": "By {author}",
+    "updated": "Updated {date}"
+  },
+  "guides": {
+    "intro": "Short, practical guides for working with PDFs without handing them to a server — and honest comparisons with the most popular online PDF tools, so you can choose what fits your documents.",
+    "guidesHeading": "How-to guides",
+    "comparisonsHeading": "Comparisons",
+    "links": {
+      "pdfTools": "All PDF tools",
+      "privacy": "How LocalDocu handles privacy",
+      "faq": "FAQ"
+    }
+  },
+  "guideMergePdfWithoutUploading": {
+    "intro": "Most “merge PDF” websites upload your files to their servers, combine them there and send the result back. That is fine for a recipe, but not for a signed contract, a bank statement or a medical report. Here are three ways to merge PDFs where the files never leave your device.",
+    "sections": [
+      {
+        "heading": "Quick answer",
+        "paragraphs": [
+          "Open LocalDocu’s Merge PDF page, select your PDFs, put them in order and choose Merge. The merge runs inside your browser, so nothing is uploaded — and it works on Windows, Mac, Linux, Android and iPhone without installing anything."
+        ]
+      },
+      {
+        "heading": "Method 1: In your browser with LocalDocu (any device)",
+        "paragraphs": [
+          "LocalDocu is free, has no file-count limit or watermark, and keeps working offline after your first visit. To merge:"
+        ],
+        "steps": [
+          "Go to localdocu.org/merge-pdf.",
+          "Select or drag in two or more PDF files.",
+          "Drag the list into the order you want the pages to appear.",
+          "Choose Merge, then save or download the combined PDF."
+        ]
+      },
+      {
+        "heading": "Method 2: Preview on a Mac",
+        "steps": [
+          "Open the first PDF in Preview.",
+          "Choose View → Thumbnails to show the sidebar.",
+          "Drag the other PDFs into the sidebar where you want them.",
+          "Choose File → Export as PDF to save the merged file."
+        ]
+      },
+      {
+        "heading": "Method 3: A desktop app on Windows",
+        "paragraphs": [
+          "Windows has no built-in PDF merge. Offline desktop apps such as the open-source PDFsam Basic or paid Adobe Acrobat can merge locally, but need to be installed. A browser-based local tool avoids the install entirely."
+        ]
+      },
+      {
+        "heading": "How to check that a website really doesn’t upload your files",
+        "list": [
+          "Load the page, then switch on airplane mode or disconnect Wi-Fi. If merging still works, the processing is happening on your device.",
+          "Open your browser’s developer tools (F12) → Network tab while you merge. A local tool shows no large outgoing upload request.",
+          "Read the privacy policy: phrases like “files are deleted after 2 hours” mean files were uploaded and stored for a while."
+        ]
+      }
+    ],
+    "faqHeading": "Questions about merging PDFs privately",
+    "faq": [
+      {
+        "question": "Is it safe to merge PDFs online?",
+        "answer": "It depends on where the merge happens. Server-based sites receive a copy of your files and keep it for a period set in their policy. Browser-based tools like LocalDocu merge on your device, so there is no copy on anyone else’s server."
+      },
+      {
+        "question": "Can I merge PDFs without internet?",
+        "answer": "Yes. Use Preview on a Mac, an installed desktop app, or LocalDocu after one online visit — its app is cached by the browser and merges offline."
+      },
+      {
+        "question": "Does merging change the quality of my PDFs?",
+        "answer": "No. Merging copies pages as they are; text stays selectable and images are not re-compressed."
+      }
+    ],
+    "links": {
+      "mergePdfs": "Merge PDFs now",
+      "guideUploadSafety": "Is it safe to upload PDFs online?",
+      "reorderPages": "Reorder pages",
+      "guides": "All guides"
+    }
+  },
+  "guideCompressPdfOffline": {
+    "intro": "You need a PDF under an email or upload limit, but the document is confidential — or you are on a train with no signal. These methods shrink PDFs without an internet connection and without sending the file anywhere.",
+    "sections": [
+      {
+        "heading": "Quick answer",
+        "paragraphs": [
+          "Open LocalDocu’s Compress PDF page once while online. After that it works offline: select the PDF, choose Balanced (keeps text selectable) or Maximum (smallest file), and save. The file never leaves your device."
+        ]
+      },
+      {
+        "heading": "Method 1: LocalDocu in the browser (Windows, Mac, Linux, Android, iPhone)",
+        "steps": [
+          "Visit localdocu.org/compress-pdf once with a connection so the app is cached.",
+          "Select or drop your PDF (up to 40 MB per file in the browser).",
+          "Choose Balanced first; switch to Maximum with a lower quality target if you need it smaller.",
+          "Compare the before and after size, then save the result."
+        ]
+      },
+      {
+        "heading": "Method 2: Preview on a Mac",
+        "paragraphs": [
+          "Open the PDF in Preview, choose File → Export, and set Quartz Filter to “Reduce File Size”. It is fast but often aggressive — images can become very blurry, so check the result."
+        ]
+      },
+      {
+        "heading": "Method 3: Ghostscript (command line, all platforms)",
+        "paragraphs": [
+          "If you are comfortable with a terminal, the free Ghostscript tool compresses offline with presets such as /screen (smallest), /ebook (balanced) and /printer (higher quality):",
+          "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -sOutputFile=smaller.pdf input.pdf"
+        ]
+      },
+      {
+        "heading": "Which PDFs compress best?",
+        "list": [
+          "Scanned documents and photo-heavy PDFs usually shrink the most.",
+          "Text-only PDFs are often already small; expect modest savings.",
+          "If you must keep text searchable, avoid modes that turn pages into images (LocalDocu’s Maximum, Ghostscript’s /screen on some files)."
+        ]
+      }
+    ],
+    "faqHeading": "Questions about compressing PDFs offline",
+    "faq": [
+      {
+        "question": "Can I compress a PDF without uploading it?",
+        "answer": "Yes. LocalDocu, Mac Preview and Ghostscript all compress on your own device. Most compression websites upload the file to their servers first."
+      },
+      {
+        "question": "How do I get a PDF under 1 MB?",
+        "answer": "Try LocalDocu’s Maximum mode with a lower quality target. Text-heavy multi-page documents may not reach 1 MB without becoming hard to read; splitting the document is an alternative."
+      },
+      {
+        "question": "Why didn’t my PDF get smaller?",
+        "answer": "It may already be optimised, or consist mostly of text and fonts. Compression mainly reduces images."
+      }
+    ],
+    "links": {
+      "compressPdf": "Compress a PDF now",
+      "offline": "How offline mode works",
+      "splitPdf": "Split PDF",
+      "guides": "All guides"
+    }
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "intro": "Online PDF tools are convenient, and the big ones use encrypted connections and delete files automatically. But “uploaded and deleted later” is not the same as “never uploaded”. Here is what really happens to an uploaded PDF, which documents deserve extra care, and how to check any tool in under a minute.",
+    "sections": [
+      {
+        "heading": "Short answer",
+        "paragraphs": [
+          "For everyday, non-sensitive files, reputable online PDF tools are generally fine. For identity documents, financial, medical, legal or client files, prefer a tool that processes the PDF on your own device so no copy ever exists on a third-party server."
+        ]
+      },
+      {
+        "heading": "What happens when you upload a PDF",
+        "steps": [
+          "Your file is sent over an encrypted connection (HTTPS) to the provider’s servers.",
+          "It is stored there while it is processed — and usually for a retention period afterwards, commonly between one and a few hours on popular services, longer if you save it to an account.",
+          "The provider, its hosting company and any subcontractors operate under their own security practices and the laws of the countries where the servers are.",
+          "The result is sent back for you to download."
+        ],
+        "note": "Reputable providers protect this process well. The remaining risk is that a copy exists outside your control for a while — exposed to breaches, misconfiguration, legal requests or policy changes."
+      },
+      {
+        "heading": "Documents you should think twice about uploading",
+        "list": [
+          "Passports, ID cards and driving licences",
+          "Bank statements, tax returns and payslips",
+          "Medical records and insurance claims",
+          "Contracts, NDAs and anything under a confidentiality obligation",
+          "Client or patient data covered by GDPR, HIPAA or similar rules"
+        ]
+      },
+      {
+        "heading": "A one-minute checklist for any PDF tool",
+        "list": [
+          "Does it work offline? Load it, disconnect from the internet and try a task. If it works, your file is processed locally.",
+          "What does the privacy policy say about retention? “Deleted after X hours” means the file was stored.",
+          "Where are the servers, and who are the subprocessors?",
+          "Is an account required, and are files saved to it by default?",
+          "Is the code open source, so claims can be verified?"
+        ]
+      },
+      {
+        "heading": "The local alternative",
+        "paragraphs": [
+          "Browser-based local tools such as LocalDocu run the PDF engine inside your browser using WebAssembly. Merging, splitting, compressing and rotating happen on your device, the code is open source, and the app works with the network switched off — so there is nothing to delete later, because nothing was uploaded."
+        ]
+      }
+    ],
+    "faqHeading": "Questions about uploading PDFs",
+    "faq": [
+      {
+        "question": "Do online PDF converters keep my files?",
+        "answer": "Most reputable services delete uploaded files automatically after a retention window stated in their privacy policy — often one to two hours — unless you save them to an account. Local tools never receive the file at all."
+      },
+      {
+        "question": "Is HTTPS enough to keep my PDF private?",
+        "answer": "HTTPS protects the file in transit. It does not change the fact that the provider receives and stores a copy while processing it."
+      },
+      {
+        "question": "How can I tell if a PDF tool processes files locally?",
+        "answer": "Turn off your internet connection after the page loads and run a task. If it still works, processing happens in your browser."
+      }
+    ],
+    "links": {
+      "privacy": "How LocalDocu handles privacy",
+      "howItWorks": "How LocalDocu works",
+      "ilovepdfAlternative": "LocalDocu vs iLovePDF",
+      "guides": "All guides"
+    }
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "intro": "You do not need to install an app — or upload your files — to merge, split, rotate or compress a PDF on your phone. A modern mobile browser can do it on the device itself.",
+    "sections": [
+      {
+        "heading": "Quick answer",
+        "paragraphs": [
+          "Open localdocu.org in Safari (iPhone/iPad) or Chrome (Android), tap the tool you need, select your PDFs from Files or Downloads, run it, and the result downloads to your phone. Nothing is uploaded."
+        ]
+      },
+      {
+        "heading": "On iPhone or iPad (Safari)",
+        "steps": [
+          "Open localdocu.org and tap a tool such as Merge PDF.",
+          "Tap Select files and choose PDFs from the Files app (iCloud Drive, On My iPhone or Downloads).",
+          "Run the task, then tap the download to save it to Files.",
+          "Optional: Share → Add to Home Screen to use it like an app, including offline."
+        ],
+        "note": "If the in-page PDF preview looks blank on iOS, open the preview in a new tab — the file itself is fine."
+      },
+      {
+        "heading": "On Android (Chrome)",
+        "steps": [
+          "Open localdocu.org and choose a tool.",
+          "Tap Select files and pick PDFs from Downloads, Drive or another folder.",
+          "Run the task; the result is saved to Downloads.",
+          "Optional: menu → Install app (or Add to Home screen) for offline use."
+        ]
+      },
+      {
+        "heading": "What you can do on a phone",
+        "list": [
+          "Merge PDFs and Word documents",
+          "Split a PDF, extract or delete pages",
+          "Rotate and reorder pages",
+          "Compress PDFs (Balanced mode uses less memory on phones)",
+          "Convert Word documents to PDF (smaller files work best)"
+        ]
+      },
+      {
+        "heading": "Built-in alternatives",
+        "paragraphs": [
+          "On iPhone, the Files app can combine files: select several PDFs, tap More (…) → Create PDF. Markup can rotate pages. Android has no built-in PDF merge, which is where a browser tool helps most."
+        ]
+      }
+    ],
+    "faqHeading": "Questions about PDFs on phones",
+    "faq": [
+      {
+        "question": "Can I merge PDFs on iPhone for free?",
+        "answer": "Yes — with LocalDocu in Safari, or the Files app’s Create PDF action. Neither requires uploading the files."
+      },
+      {
+        "question": "Why did a large PDF fail on my phone?",
+        "answer": "Phones have less memory available to the browser than laptops. Try fewer or smaller files, use Balanced compression, or switch to a desktop browser for very large jobs."
+      },
+      {
+        "question": "Does it work without mobile data?",
+        "answer": "Yes, after the first visit. Add LocalDocu to your home screen and it opens and processes files offline."
+      }
+    ],
+    "links": {
+      "browserSupport": "Browser & device support",
+      "mergePdfs": "Merge PDFs",
+      "compressPdf": "Compress PDF",
+      "guides": "All guides"
+    }
+  },
+  "ilovepdfAlternative": {
+    "intro": "iLovePDF is one of the most popular PDF websites, with an enormous range of tools. It works by uploading your files to its servers. LocalDocu takes the opposite approach: the PDF engine runs in your browser, so files never leave your device. This page compares the two factually so you can pick the right tool for each document.",
+    "sections": [
+      {
+        "heading": "LocalDocu vs iLovePDF at a glance",
+        "table": {
+          "caption": "LocalDocu compared with iLovePDF",
+          "headers": ["", "LocalDocu", "iLovePDF"],
+          "rows": [
+            ["Where files are processed", "In your browser, on your device", "On iLovePDF’s servers (files are uploaded)"],
+            ["Copies kept on a server", "None — files are never uploaded", "Deleted automatically within 2 hours, per its privacy policy"],
+            ["Works offline", "Yes, after the first visit", "Web tools need a connection; separate desktop app available"],
+            ["Account required", "No", "Not for basic tools; needed for Premium and some features"],
+            ["Price", "Free, no task limits", "Free tier with limits; paid Premium plans"],
+            ["Source code", "Open source (Apache-2.0)", "Proprietary"],
+            ["Tool range", "Merge, split, extract, delete, rotate, reorder, compress, Word→PDF, merge Word", "Much wider: also OCR, editing, e-signing, PDF↔Office, watermark, unlock and more"]
+          ]
+        }
+      },
+      {
+        "heading": "When LocalDocu is the better fit",
+        "list": [
+          "Confidential documents — contracts, IDs, financial, medical or client files — that should not be uploaded anywhere",
+          "Work that must happen offline or on restricted networks",
+          "Organisations whose policies forbid sending documents to third-party processors",
+          "Everyday merge, split, rotate and compress tasks without daily limits or sign-up prompts"
+        ]
+      },
+      {
+        "heading": "When iLovePDF is the better fit",
+        "list": [
+          "You need OCR, PDF editing, e-signatures or PDF-to-Word conversion — LocalDocu does not offer these yet",
+          "You need high-fidelity Office conversions; server-side engines handle complex layouts better",
+          "The documents are not sensitive and you want the widest set of tools in one place"
+        ]
+      },
+      {
+        "heading": "Switching from iLovePDF: tool-by-tool",
+        "list": [
+          "Merge PDF → LocalDocu Merge PDF",
+          "Split PDF → LocalDocu Split PDF (one file per page) or Extract pages (custom ranges)",
+          "Remove pages → LocalDocu Delete pages",
+          "Organize PDF → LocalDocu Reorder pages and Rotate PDF",
+          "Compress PDF → LocalDocu Compress PDF",
+          "Word to PDF → LocalDocu DOCX to PDF (text-oriented)"
+        ]
+      }
+    ],
+    "faqHeading": "LocalDocu vs iLovePDF questions",
+    "faq": [
+      {
+        "question": "Is there an iLovePDF alternative that doesn’t upload files?",
+        "answer": "Yes. LocalDocu runs merge, split, extract, delete, rotate, reorder and compress entirely in your browser, so files are never uploaded. It is free and open source."
+      },
+      {
+        "question": "Does iLovePDF store my files?",
+        "answer": "According to iLovePDF’s privacy policy, uploaded files are processed on its servers and deleted automatically within two hours. Documents used with its e-signature service follow a separate, longer retention policy."
+      },
+      {
+        "question": "Is LocalDocu as powerful as iLovePDF?",
+        "answer": "No — iLovePDF has many more tools. LocalDocu focuses on the most common organising and compression tasks and does them without uploads. Many people use LocalDocu for sensitive files and a server-based tool for jobs like OCR."
+      }
+    ],
+    "disclaimer": "Competitor details are based on iLovePDF’s publicly available website and privacy policy as of October 2026 and may change. iLovePDF is a trademark of its owner; LocalDocu is not affiliated with or endorsed by iLovePDF.",
+    "links": {
+      "smallpdfAlternative": "LocalDocu vs Smallpdf",
+      "acrobatAlternative": "LocalDocu vs Adobe Acrobat",
+      "pdfTools": "Try the PDF tools",
+      "guideUploadSafety": "Is uploading PDFs safe?"
+    }
+  },
+  "smallpdfAlternative": {
+    "intro": "Smallpdf is a polished, popular PDF platform. Like most online PDF services it processes files on its servers, and its free plan has usage limits. LocalDocu is a free, open-source alternative that processes PDFs in your browser so nothing is uploaded. Here is a factual comparison.",
+    "sections": [
+      {
+        "heading": "LocalDocu vs Smallpdf at a glance",
+        "table": {
+          "caption": "LocalDocu compared with Smallpdf",
+          "headers": ["", "LocalDocu", "Smallpdf"],
+          "rows": [
+            ["Where files are processed", "In your browser, on your device", "On Smallpdf’s servers in the EU (files are uploaded)"],
+            ["Copies kept on a server", "None — files are never uploaded", "Most tools: deleted after 1 hour; files saved to an account are kept until you delete them, per its privacy notice"],
+            ["Works offline", "Yes, after the first visit", "Web tools need a connection"],
+            ["Free use", "Unlimited, no account", "Limited free use; full access with a paid Pro plan"],
+            ["Source code", "Open source (Apache-2.0)", "Proprietary"],
+            ["Tool range", "Merge, split, extract, delete, rotate, reorder, compress, Word→PDF, merge Word", "Much wider: also OCR, e-sign, editing, PDF↔Office and more"]
+          ]
+        }
+      },
+      {
+        "heading": "When LocalDocu is the better fit",
+        "list": [
+          "You have hit the free-plan limit and only need common tasks like merge, split or compress",
+          "Documents are sensitive and should not be uploaded, even temporarily",
+          "You need to work offline or on a restricted network",
+          "You want software whose privacy claims can be checked in the source code"
+        ]
+      },
+      {
+        "heading": "When Smallpdf is the better fit",
+        "list": [
+          "You need e-signatures, OCR, PDF editing or PDF-to-Word conversion",
+          "You want cloud storage and team workflows built into the PDF tool",
+          "You need the most faithful Office-to-PDF layouts"
+        ]
+      }
+    ],
+    "faqHeading": "LocalDocu vs Smallpdf questions",
+    "faq": [
+      {
+        "question": "Is there a free Smallpdf alternative without limits?",
+        "answer": "LocalDocu is free with no task limits or sign-up, because processing runs on your device instead of paid servers. It covers merging, splitting, page editing, compression and Word-to-PDF."
+      },
+      {
+        "question": "Does Smallpdf upload my files?",
+        "answer": "Yes. Smallpdf processes files on its servers. Its privacy notice states that files processed with most tools are deleted after one hour, while files you store in an account are kept until you delete them."
+      },
+      {
+        "question": "Can LocalDocu replace Smallpdf entirely?",
+        "answer": "For organising and compressing PDFs, often yes. For e-signing, OCR or editing text in a PDF, you will still need a tool like Smallpdf or Acrobat."
+      }
+    ],
+    "disclaimer": "Competitor details are based on Smallpdf’s publicly available website and privacy notice as of October 2026 and may change. Smallpdf is a trademark of its owner; LocalDocu is not affiliated with or endorsed by Smallpdf.",
+    "links": {
+      "ilovepdfAlternative": "LocalDocu vs iLovePDF",
+      "acrobatAlternative": "LocalDocu vs Adobe Acrobat",
+      "compressPdf": "Compress PDF",
+      "guideCompressOffline": "Compress a PDF offline"
+    }
+  },
+  "adobeAcrobatAlternative": {
+    "intro": "Adobe Acrobat is the industry standard for PDFs — and the full Acrobat Pro is a paid subscription. Acrobat’s free online tools process files on Adobe’s servers. If you mainly need to merge, split, rotate or compress, LocalDocu does those jobs free in your browser without uploading anything.",
+    "sections": [
+      {
+        "heading": "LocalDocu vs Adobe Acrobat at a glance",
+        "table": {
+          "caption": "LocalDocu compared with Adobe Acrobat",
+          "headers": ["", "LocalDocu", "Adobe Acrobat (online & Pro)"],
+          "rows": [
+            ["Where files are processed", "In your browser, on your device", "Online tools: on Adobe’s servers. Desktop Acrobat: on your computer"],
+            ["Copies kept on a server", "None — files are never uploaded", "Online tools: deleted unless you sign in and save them, per Adobe; signed-in files may be saved to Adobe cloud storage"],
+            ["Price", "Free, no account", "Limited free online tools; Acrobat Standard/Pro are paid subscriptions"],
+            ["Install required", "No — any modern browser", "Online: no. Full features: desktop app"],
+            ["Works offline", "Yes, after the first visit", "Desktop app: yes. Online tools: no"],
+            ["Source code", "Open source (Apache-2.0)", "Proprietary"],
+            ["Advanced features", "Not available", "Industry-leading editing, OCR, e-sign, redaction, forms and accessibility tools"]
+          ]
+        }
+      },
+      {
+        "heading": "When LocalDocu is enough",
+        "list": [
+          "Combining, splitting or reordering pages for an application, invoice or report",
+          "Rotating scanned pages or deleting blank ones",
+          "Shrinking a PDF to meet an email or portal size limit",
+          "Doing the above on a work or shared computer where you cannot install software or sign in"
+        ]
+      },
+      {
+        "heading": "When you still need Acrobat",
+        "list": [
+          "Editing text and images inside a PDF",
+          "OCR to make scans searchable, or redacting sensitive content",
+          "Legally binding e-signatures and form workflows",
+          "Preflight, PDF/A, accessibility remediation and print production"
+        ]
+      }
+    ],
+    "faqHeading": "LocalDocu vs Adobe Acrobat questions",
+    "faq": [
+      {
+        "question": "What is a free alternative to Adobe Acrobat for merging PDFs?",
+        "answer": "LocalDocu merges PDFs free in your browser with no sign-up, watermark or upload. Mac users can also use Preview."
+      },
+      {
+        "question": "Does Adobe Acrobat online upload my files?",
+        "answer": "Yes. Adobe states that files used with its online tools are handled by its servers and deleted unless you sign in and save them. The desktop Acrobat app processes files on your computer."
+      },
+      {
+        "question": "Can LocalDocu edit text in a PDF like Acrobat?",
+        "answer": "No. LocalDocu works with whole pages and files — merging, splitting, rotating, reordering, compressing and converting. Text editing, OCR and e-signing are not available."
+      }
+    ],
+    "disclaimer": "Competitor details are based on Adobe’s publicly available product pages and policies as of October 2026 and may change. Adobe and Acrobat are trademarks of Adobe; LocalDocu is not affiliated with or endorsed by Adobe.",
+    "links": {
+      "ilovepdfAlternative": "LocalDocu vs iLovePDF",
+      "smallpdfAlternative": "LocalDocu vs Smallpdf",
+      "mergePdfs": "Merge PDFs free",
+      "guideMergeWithoutUploading": "Merge PDFs without uploading"
     }
   }
 }

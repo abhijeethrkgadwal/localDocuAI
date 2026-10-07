@@ -1,97 +1,175 @@
 {
   "home": {
-    "title": "LocalDocu — Automatisation documentaire avec priorité au local",
-    "description": "Dites-lui quoi faire. Vos fichiers restent sur votre appareil. Fusionnez, divisez, compressez et convertissez vos PDF et Word en local dans votre navigateur."
+    "title": "Outils PDF gratuits sans téléversement de fichiers | LocalDocu",
+    "description": "Fusionnez, divisez, compressez, pivotez et convertissez PDF et Word gratuitement dans le navigateur. Sans envoi, sans inscription, sans filigrane, hors ligne."
   },
   "mergePdf": {
-    "title": "Fusionner des PDF en local et en toute confidentialité | LocalDocu",
-    "description": "Fusionnez des fichiers PDF sans les téléverser. Sélectionnez, réorganisez et combinez vos PDF en local dans votre navigateur avec LocalDocu.",
-    "h1": "Fusionnez des fichiers PDF sans les téléverser",
+    "title": "Fusionner PDF gratuit, sans téléversement, hors ligne | LocalDocu",
+    "description": "Fusionnez vos PDF en un seul fichier dans le navigateur. Vos fichiers restent sur l’appareil — gratuit, sans inscription ni filigrane, sur mobile et ordinateur.",
+    "h1": "Fusionner des fichiers PDF sans les téléverser",
     "breadcrumb": "Fusionner des PDF"
   },
   "mergeDocx": {
-    "title": "Fusionner des documents Word en local | LocalDocu",
-    "description": "Fusionnez des documents Word DOCX en local sur votre appareil. Fusion pratique avec des limites claires — aucun téléversement de document vers LocalDocu.",
-    "h1": "Fusionnez des documents Word en local",
+    "title": "Fusionner des documents Word gratuit, sans envoi | LocalDocu",
+    "description": "Combinez des fichiers DOCX en un seul document Word dans le navigateur, sans Microsoft Word ni téléversement. Gratuit, limites claires pour les mises en page.",
+    "h1": "Fusionner des documents Word en local",
     "breadcrumb": "Fusionner des DOCX"
   },
   "compressPdf": {
-    "title": "Compresser un PDF en local et en toute confidentialité | LocalDocu",
-    "description": "Compressez des fichiers PDF sans les téléverser. Réduisez la taille avec les modes équilibré ou maximum — le traitement reste sur votre appareil.",
-    "h1": "Compressez des fichiers PDF sans les téléverser",
+    "title": "Compresser PDF gratuit — réduire sans téléverser | LocalDocu",
+    "description": "Réduisez la taille d’un PDF dans le navigateur pour un e-mail ou un formulaire. Mode Équilibré ou Maximum. Sans téléversement, gratuit, fonctionne hors ligne.",
+    "h1": "Compresser des fichiers PDF sans les téléverser",
     "breadcrumb": "Compresser un PDF"
   },
   "pdfTools": {
-    "title": "Outils PDF locaux — fusionner, diviser, extraire et plus | LocalDocu",
-    "description": "Outils PDF locaux pour fusionner, diviser, extraire, supprimer, faire pivoter, réorganiser et compresser — sans téléversements inutiles.",
+    "title": "Tous les outils PDF gratuits, sans téléversement | LocalDocu",
+    "description": "Fusionnez, divisez, extrayez, supprimez, pivotez, réorganisez et compressez vos PDF au même endroit. Tout se fait dans le navigateur : gratuit, sans compte.",
     "h1": "Des outils PDF locaux sans téléversements inutiles",
     "breadcrumb": "Outils PDF"
   },
   "docxToPdf": {
-    "title": "Convertir DOCX en PDF en local | LocalDocu",
-    "description": "Convertissez des fichiers DOC et DOCX en un PDF lisible sur votre appareil. Les mises en page Word complexes peuvent ne pas être conservées à l’identique.",
-    "h1": "Convertissez des documents Word en PDF en local",
-    "breadcrumb": "DOCX vers PDF"
+    "title": "Convertir Word en PDF gratuit, sans téléversement | LocalDocu",
+    "description": "Convertissez DOC et DOCX en PDF dans le navigateur sans envoyer vos fichiers. Gratuit et privé ; rendu orienté texte (mises en page complexes non garanties).",
+    "h1": "Convertir des documents Word en PDF en local",
+    "breadcrumb": "Word en PDF"
+  },
+  "splitPdf": {
+    "title": "Diviser PDF gratuit — séparer les pages sans envoi | LocalDocu",
+    "description": "Divisez un PDF en un fichier par page dans le navigateur. Rien n’est téléversé — gratuit, sans inscription ni filigrane. Une plage de pages ? Utilisez Extraire.",
+    "h1": "Diviser des fichiers PDF sans les téléverser",
+    "breadcrumb": "Diviser un PDF"
+  },
+  "extractPages": {
+    "title": "Extraire des pages d’un PDF gratuit, sans envoi | LocalDocu",
+    "description": "Enregistrez les pages choisies (ex. 1-3,5) d’un PDF dans un nouveau fichier, depuis le navigateur. Gratuit, privé, hors ligne : le PDF reste sur votre appareil.",
+    "h1": "Extraire des pages d’un PDF en local",
+    "breadcrumb": "Extraire des pages"
+  },
+  "deletePages": {
+    "title": "Supprimer des pages d’un PDF gratuit, sans envoi | LocalDocu",
+    "description": "Retirez les pages blanches, en double ou inutiles d’un PDF dans le navigateur. Sans téléversement, sans compte ni filigrane — la copie reste sur votre appareil.",
+    "h1": "Supprimer des pages d’un PDF en local",
+    "breadcrumb": "Supprimer des pages"
+  },
+  "rotatePdf": {
+    "title": "Pivoter PDF gratuit — redresser les pages sans envoi | LocalDocu",
+    "description": "Faites pivoter tout ou partie des pages d’un PDF de 90°, 180° ou 270° et enregistrez. Dans le navigateur : gratuit, privé, compatible iPhone et Android.",
+    "h1": "Faire pivoter des pages PDF sans les téléverser",
+    "breadcrumb": "Pivoter un PDF"
+  },
+  "reorderPages": {
+    "title": "Réorganiser les pages d’un PDF gratuit, sans envoi | LocalDocu",
+    "description": "Changez l’ordre des pages d’un PDF ou inversez-le, directement dans le navigateur. Gratuit, sans inscription, et votre document ne quitte jamais votre appareil.",
+    "h1": "Réorganiser les pages d’un PDF en local",
+    "breadcrumb": "Réorganiser les pages"
   },
   "offline": {
-    "title": "Traitement de documents hors ligne | LocalDocu",
-    "description": "Travaillez hors ligne une fois le shell d’application de LocalDocu mis en cache. Le traitement local ne nécessite aucun réseau pour les flux pris en charge.",
+    "title": "Traiter vos PDF et documents hors ligne | LocalDocu",
+    "description": "Travaillez sur vos documents hors ligne une fois l’application LocalDocu mise en cache. Le traitement local se passe de réseau pour les flux pris en charge.",
     "h1": "Travailler sur vos documents hors ligne",
     "breadcrumb": "Hors ligne"
   },
   "privacy": {
-    "title": "Confidentialité LocalDocu — traitement documentaire avec priorité au local",
-    "description": "Confidentialité dès la conception : le contenu des documents est traité sur votre appareil. Aucun backend de téléversement ni compte requis actuellement.",
+    "title": "Confidentialité : traitement local des documents | LocalDocu",
+    "description": "Confidentialité dès la conception : le contenu des documents est traité sur votre appareil. Ni serveur de téléversement ni compte dans la version actuelle.",
     "h1": "Confidentialité dès la conception",
     "breadcrumb": "Confidentialité"
   },
   "howItWorks": {
-    "title": "Comment fonctionne LocalDocu | Automatisation documentaire locale",
-    "description": "Sélectionnez des fichiers, choisissez une opération et exécutez en local. Découvrez comment LocalDocu garde le traitement des documents sur votre appareil.",
+    "title": "Comment ça marche : traitement local des documents | LocalDocu",
+    "description": "Sélectionnez des fichiers, choisissez une opération et lancez-la en local. Découvrez comment LocalDocu garde le traitement des documents sur votre appareil.",
     "h1": "Comment fonctionne LocalDocu",
     "breadcrumb": "Comment ça marche"
   },
   "browserSupport": {
     "title": "Compatibilité des navigateurs et des appareils | LocalDocu",
-    "description": "Ce que LocalDocu permet sur Chrome Android, Safari iOS et sur ordinateur : sélection de fichiers, dossier, Enregistrer sous, téléchargement et limites PWA.",
+    "description": "Ce que LocalDocu permet sur Chrome Android, Safari iOS et ordinateur : sélection de fichiers, dossiers, Enregistrer sous, téléchargement et limites de la PWA.",
     "h1": "Compatibilité des navigateurs et des appareils",
     "breadcrumb": "Compatibilité des navigateurs"
   },
   "openSource": {
-    "title": "LocalDocu open source | Développé de manière ouverte",
+    "title": "Open source : un projet développé en toute ouverture | LocalDocu",
     "description": "LocalDocu est open source sous licence Apache-2.0. Consultez le code, la feuille de route et la façon dont le projet est développé de manière ouverte.",
     "h1": "Open source dès la conception",
     "breadcrumb": "Open source"
   },
   "contribute": {
-    "title": "Contribuer à LocalDocu | Automatisation documentaire open source",
-    "description": "Aidez à construire LocalDocu : code, tests, documentation, accessibilité, design. Commencez par les tickets et le guide du contributeur.",
+    "title": "Contribuer : automatisation documentaire open source | LocalDocu",
+    "description": "Aidez à construire LocalDocu : code, tests, documentation, accessibilité et design. Commencez par les tickets et le guide du contributeur.",
     "h1": "Aidez à construire LocalDocu",
     "breadcrumb": "Contribuer"
   },
   "roadmap": {
-    "title": "Feuille de route LocalDocu | Web, bureau et LocalDocu AI",
-    "description": "Ce que LocalDocu propose aujourd’hui et ce qui est prévu : plus de capacité sur le bureau et LocalDocu AI pour des flux documentaires pilotés par l’intention.",
+    "title": "Feuille de route : web, bureau et LocalDocu AI | LocalDocu",
+    "description": "Ce que LocalDocu propose aujourd’hui et ce qui est prévu : plus de capacité sur ordinateur et LocalDocu AI pour des flux locaux pilotés par l’intention.",
     "h1": "Feuille de route",
     "breadcrumb": "Feuille de route"
   },
   "desktop": {
-    "title": "LocalDocu Bureau | Automatisation documentaire locale avancée",
-    "description": "Nous construisons une application de bureau pour les charges locales plus lourdes et LocalDocu AI. Travail en cours — nous visons une publication bientôt avec la communauté open source. Le web reste le produit aujourd'hui.",
+    "title": "Application de bureau : automatisation locale avancée | LocalDocu",
+    "description": "Une application de bureau LocalDocu pour les traitements locaux plus lourds et LocalDocu AI est en cours. En attendant, l’espace web gratuit est le produit.",
     "h1": "Bureau : plus de capacité locale à venir",
     "breadcrumb": "Bureau"
   },
   "localAi": {
-    "title": "LocalDocu AI | Automatisation documentaire locale pilotée par l’intention",
-    "description": "LocalDocu AI s'exécute dans l'application de bureau : un modèle à poids ouverts sur l'appareil qui lit les métadonnées des documents et l'intention de l'utilisateur, puis pilote la gestion documentaire LocalDocu — sans envoyer le contenu vers le cloud. Travail en cours ; pas active dans la version web actuelle. Les contributions de la communauté sont les bienvenues.",
+    "title": "LocalDocu AI : automatisation pilotée par l’intention | LocalDocu",
+    "description": "LocalDocu AI (en cours) : un modèle à poids ouverts sur l’appareil qui planifie vos tâches d’après l’intention et les métadonnées, sans envoi vers le cloud.",
     "h1": "LocalDocu AI : en cours pour l’application de bureau",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {
-    "title": "FAQ LocalDocu — confidentialité, hors ligne et formats",
+    "title": "FAQ : confidentialité, hors ligne et formats | LocalDocu",
     "description": "Questions fréquentes sur LocalDocu, la confidentialité, les fichiers pris en charge, l’utilisation hors ligne, l’open source et les contributions.",
     "h1": "Questions fréquentes",
     "breadcrumb": "FAQ"
+  },
+  "guides": {
+    "title": "Guides PDF confidentialité et comparatifs d’outils | LocalDocu",
+    "description": "Guides pratiques pour fusionner, compresser et modifier des PDF sans les téléverser, et comparatifs factuels avec iLovePDF, Smallpdf et Adobe Acrobat.",
+    "h1": "Guides et comparatifs",
+    "breadcrumb": "Guides"
+  },
+  "guideMergePdfWithoutUploading": {
+    "title": "Comment fusionner des PDF sans les téléverser (2026) | LocalDocu",
+    "description": "Trois façons de fusionner des PDF sans les envoyer sur un serveur — dans le navigateur, sur Mac et sous Windows — et comment vérifier que rien n’est téléversé.",
+    "h1": "Comment fusionner des fichiers PDF sans les téléverser",
+    "breadcrumb": "Fusionner des PDF sans téléversement"
+  },
+  "guideCompressPdfOffline": {
+    "title": "Compresser un PDF hors ligne, méthodes gratuites 2026 | LocalDocu",
+    "description": "Réduire un PDF sans Internet ni envoi : navigateur, Aperçu sur macOS et Ghostscript comparés, avec des conseils pour les scans et les limites d’e-mail.",
+    "h1": "Comment compresser un PDF hors ligne",
+    "breadcrumb": "Compresser un PDF hors ligne"
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "title": "Téléverser ses PDF sur un outil en ligne est-il sûr ? | LocalDocu",
+    "description": "Ce qui arrive vraiment à un PDF envoyé à un convertisseur en ligne, quels documents ne doivent pas quitter votre appareil et comment vérifier un outil.",
+    "h1": "Est-il sûr de téléverser des PDF sur des outils en ligne ?",
+    "breadcrumb": "Téléverser des PDF est-il sûr ?"
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "title": "Modifier un PDF sur iPhone ou Android sans appli | LocalDocu",
+    "description": "Fusionnez, divisez, pivotez et compressez des PDF sur téléphone dans le navigateur — sans appli ni envoi. Pas à pas pour Safari (iPhone) et Chrome (Android).",
+    "h1": "Comment modifier des PDF sur votre téléphone sans installer d’application",
+    "breadcrumb": "PDF sur téléphone"
+  },
+  "ilovepdfAlternative": {
+    "title": "Alternative à iLovePDF sans téléversement de fichiers | LocalDocu",
+    "description": "Comparatif factuel LocalDocu vs iLovePDF : où vont vos fichiers, limites, usage hors ligne et fonctionnalités — et quand iLovePDF reste le meilleur choix.",
+    "h1": "Une alternative privée à iLovePDF : LocalDocu vs iLovePDF",
+    "breadcrumb": "Alternative à iLovePDF"
+  },
+  "smallpdfAlternative": {
+    "title": "Alternative à Smallpdf gratuite, sans envoi ni limite | LocalDocu",
+    "description": "LocalDocu vs Smallpdf : confidentialité, limites de l’offre gratuite, usage hors ligne et fonctionnalités comparés, d’après les politiques de Smallpdf.",
+    "h1": "Une alternative gratuite et privée à Smallpdf : LocalDocu vs Smallpdf",
+    "breadcrumb": "Alternative à Smallpdf"
+  },
+  "adobeAcrobatAlternative": {
+    "title": "Alternative gratuite à Adobe Acrobat pour vos PDF | LocalDocu",
+    "description": "LocalDocu vs Adobe Acrobat en ligne : les tâches PDF faisables gratuitement sans téléversement, et celles qui exigent Acrobat. Comparatif honnête et daté.",
+    "h1": "Une alternative gratuite à Adobe Acrobat pour les tâches PDF courantes",
+    "breadcrumb": "Alternative à Adobe Acrobat"
   },
   "notFound": {
     "title": "Page introuvable | LocalDocu",

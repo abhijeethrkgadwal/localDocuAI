@@ -7,12 +7,18 @@
     "shortDescription": "Privacy-First-Automatisierung für PDF und Word, lokal. Dateien bleiben auf deinem Gerät."
   },
   "loading": "Wird geladen…",
+  "skipToContent": "Zum Hauptinhalt springen",
+  "noscript": "Der interaktive Arbeitsbereich benötigt JavaScript. Alle Inhalte dieser Seite sind auch ohne lesbar; aktiviere JavaScript, um Dateien lokal zusammenzuführen, zu teilen, zu komprimieren oder zu konvertieren.",
   "nav": {
     "ariaPrimary": "Hauptnavigation",
     "faq": "FAQ",
     "privacy": "Datenschutz",
     "github": "GitHub",
-    "opensInNewTab": " (wird in einem neuen Tab geöffnet)"
+    "opensInNewTab": " (wird in einem neuen Tab geöffnet)",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "menuHeading": "Menü",
+    "appearance": "Erscheinungsbild"
   },
   "theme": {
     "ariaColorTheme": "Farbschema",
@@ -42,12 +48,24 @@
     "pdfTools": "PDF-Tools",
     "mergePdf": "PDF zusammenführen",
     "compressPdf": "PDF komprimieren",
+    "splitPdf": "PDF teilen",
+    "rotatePdf": "PDF drehen",
     "mergeDocx": "DOCX zusammenführen",
     "docxToPdf": "DOCX zu PDF",
     "howItWorks": "So funktioniert es",
     "browserSupport": "Browser-Unterstützung",
     "privacy": "Datenschutz",
     "faq": "FAQ",
+    "resources": "Ressourcen",
+    "ariaResources": "Anleitungen und Vergleiche",
+    "guides": "Anleitungen",
+    "uploadSafety": "Ist das Hochladen von PDFs sicher?",
+    "ilovepdfAlternative": "iLovePDF-Alternative",
+    "smallpdfAlternative": "Smallpdf-Alternative",
+    "acrobatAlternative": "Adobe-Acrobat-Alternative",
+    "languages": "Sprachen",
+    "ariaLanguages": "Sprache auswählen",
+    "allPages": "Alle Seiten",
     "openSource": "Open Source",
     "ariaOpenSource": "Open Source",
     "github": "GitHub",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "Sprache",
     "label": "Sprache"
+  },
+  "tasks": {
+    "heading": "Alle Tools, die du brauchst — direkt auf deinem Gerät",
+    "subheading": "Wähle eine Aufgabe, um loszulegen. Dateien werden lokal verarbeitet und nie hochgeladen.",
+    "filterAria": "Tools nach Kategorie filtern",
+    "comingSoon": "Demnächst",
+    "learnMore": "Mehr erfahren",
+    "workspaceLink": "Lieber alles an einem Ort? Nutze den vollständigen Arbeitsbereich unten.",
+    "allPdfToolsLink": "Alle PDF-Tools auf einer Seite",
+    "categories": {
+      "all": "Alle",
+      "organize": "Organisieren",
+      "optimize": "Optimieren",
+      "convert": "Konvertieren",
+      "ai": "KI"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "PDF zusammenfügen",
+        "desc": "Mehrere PDFs in der gewünschten Reihenfolge zu einer Datei kombinieren."
+      },
+      "splitPdf": {
+        "title": "PDF teilen",
+        "desc": "Jede Seite einer PDF als eigene Datei speichern."
+      },
+      "compressPdf": {
+        "title": "PDF komprimieren",
+        "desc": "Die PDF-Dateigröße verkleinern und die nötige Qualität behalten."
+      },
+      "docxToPdf": {
+        "title": "Word in PDF",
+        "desc": "DOC- und DOCX-Dokumente in gut lesbare PDFs umwandeln."
+      },
+      "extractPages": {
+        "title": "Seiten extrahieren",
+        "desc": "Ausgewählte Seiten einer PDF in ein neues Dokument übernehmen."
+      },
+      "deletePages": {
+        "title": "Seiten löschen",
+        "desc": "Unerwünschte Seiten mit wenigen Klicks aus einer PDF entfernen."
+      },
+      "rotatePdf": {
+        "title": "PDF drehen",
+        "desc": "Seiten richtig ausrichten und das Ergebnis speichern."
+      },
+      "reorderPages": {
+        "title": "Seiten neu anordnen",
+        "desc": "PDF-Seiten genau in die gewünschte Reihenfolge bringen."
+      },
+      "mergeDocx": {
+        "title": "Word zusammenfügen",
+        "desc": "Mehrere Word-Dokumente zu einer einzigen DOCX-Datei verbinden."
+      },
+      "chatPdf": {
+        "title": "Mit PDF chatten",
+        "desc": "Stelle Fragen zu deinen Dokumenten — mit KI direkt auf dem Gerät."
+      },
+      "summarize": {
+        "title": "Zusammenfassen",
+        "desc": "Kurze Zusammenfassungen langer Dokumente, lokal erstellt."
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "Gescannte Seiten in durchsuchbaren, markierbaren Text umwandeln."
+      }
+    }
   }
 }

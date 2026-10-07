@@ -27,6 +27,31 @@
       "workspaceHeading": "Choose PDFs to work with",
       "opsTitle": "PDF tools",
       "opsDesc": "Merge, compress, split, extract, delete, rotate, or reorder — all on this device."
+    },
+    "splitPdf": {
+      "workspaceHeading": "Choose a PDF to split",
+      "opsTitle": "Split PDF",
+      "opsDesc": "Select a PDF, then split it into one file per page, saved on this device."
+    },
+    "extractPages": {
+      "workspaceHeading": "Choose a PDF to extract pages from",
+      "opsTitle": "Extract pages",
+      "opsDesc": "Select a PDF, enter the pages to keep, then save them as a new PDF."
+    },
+    "deletePages": {
+      "workspaceHeading": "Choose a PDF to delete pages from",
+      "opsTitle": "Delete pages",
+      "opsDesc": "Select a PDF, enter the pages to remove, then save the result on this device."
+    },
+    "rotatePdf": {
+      "workspaceHeading": "Choose a PDF to rotate",
+      "opsTitle": "Rotate PDF",
+      "opsDesc": "Select a PDF, pick the pages and angle, then save the rotated file."
+    },
+    "reorderPages": {
+      "workspaceHeading": "Choose a PDF to reorder",
+      "opsTitle": "Reorder pages",
+      "opsDesc": "Select a PDF, set the new page order, then save the result on this device."
     }
   },
   "formats": {

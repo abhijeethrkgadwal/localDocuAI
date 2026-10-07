@@ -7,7 +7,13 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { flattenCatalog, getEnglishCatalog, loadCatalog, type Catalog } from './catalog';
+import {
+  flattenCatalog,
+  getCachedCatalog,
+  getEnglishCatalog,
+  loadCatalog,
+  type Catalog,
+} from './catalog';
 import { DEFAULT_LOCALE, LOCALES, type LocaleCode } from './locales';
 import { writeStoredLocale } from './storage';
 import { translate, type TranslateFn, type TranslateVars } from './translate';
@@ -48,14 +54,18 @@ export function LocaleProvider({
   locale: LocaleCode;
   children: ReactNode;
 }) {
-  const [catalog, setCatalog] = useState<Catalog>(() =>
-    locale === DEFAULT_LOCALE ? getEnglishCatalog() : getEnglishCatalog(),
+  const [catalog, setCatalog] = useState<Catalog>(
+    () => getCachedCatalog(locale) ?? getEnglishCatalog(),
   );
-  const [ready, setReady] = useState(locale === DEFAULT_LOCALE);
+  const [ready, setReady] = useState(
+    () => locale === DEFAULT_LOCALE || getCachedCatalog(locale) != null,
+  );
 
   useEffect(() => {
     let cancelled = false;
-    setReady(locale === DEFAULT_LOCALE);
+    const cached = getCachedCatalog(locale);
+    if (cached) setCatalog(cached);
+    setReady(locale === DEFAULT_LOCALE || cached != null);
     applyDocumentLang(locale);
     writeStoredLocale(locale);
 

@@ -85,11 +85,20 @@
       ]
     },
     {
-      "source": "/og-image.svg",
+      "source": "/og/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600, must-revalidate"
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/shell",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
         }
       ]
     },
@@ -121,18 +130,17 @@
       ]
     }
   ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "localdocu.org" }],
       "destination": "https://www.localdocu.org/:path*",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/og-image.svg", "destination": "/og/default.png", "permanent": true }
   ]
 }

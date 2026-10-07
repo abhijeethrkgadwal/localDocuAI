@@ -7,12 +7,18 @@
     "shortDescription": "Automação local de PDF e Word com foco em privacidade. Os arquivos ficam no seu dispositivo."
   },
   "loading": "Carregando…",
+  "skipToContent": "Pular para o conteúdo principal",
+  "noscript": "O espaço de trabalho interativo precisa de JavaScript. Todo o conteúdo desta página pode ser lido sem ele; ative o JavaScript para juntar, dividir, comprimir ou converter arquivos localmente.",
   "nav": {
     "ariaPrimary": "Principal",
     "faq": "FAQ",
     "privacy": "Privacidade",
     "github": "GitHub",
-    "opensInNewTab": " (abre em uma nova aba)"
+    "opensInNewTab": " (abre em uma nova aba)",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menuHeading": "Menu",
+    "appearance": "Aparência"
   },
   "theme": {
     "ariaColorTheme": "Tema de cores",
@@ -42,12 +48,24 @@
     "pdfTools": "Ferramentas de PDF",
     "mergePdf": "Juntar PDF",
     "compressPdf": "Comprimir PDF",
+    "splitPdf": "Dividir PDF",
+    "rotatePdf": "Girar PDF",
     "mergeDocx": "Juntar DOCX",
     "docxToPdf": "DOCX para PDF",
     "howItWorks": "Como funciona",
     "browserSupport": "Compatibilidade de navegadores",
     "privacy": "Privacidade",
     "faq": "FAQ",
+    "resources": "Recursos",
+    "ariaResources": "Guias e comparações",
+    "guides": "Guias",
+    "uploadSafety": "É seguro enviar PDFs?",
+    "ilovepdfAlternative": "Alternativa ao iLovePDF",
+    "smallpdfAlternative": "Alternativa ao Smallpdf",
+    "acrobatAlternative": "Alternativa ao Adobe Acrobat",
+    "languages": "Idiomas",
+    "ariaLanguages": "Escolha um idioma",
+    "allPages": "Todas as páginas",
     "openSource": "Código aberto",
     "ariaOpenSource": "Código aberto",
     "github": "GitHub",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "Idioma",
     "label": "Idioma"
+  },
+  "tasks": {
+    "heading": "Todas as ferramentas que você precisa, rodando no seu dispositivo",
+    "subheading": "Escolha uma tarefa para começar. Os arquivos são processados localmente e nunca são enviados.",
+    "filterAria": "Filtrar ferramentas por categoria",
+    "comingSoon": "Em breve",
+    "learnMore": "Saiba mais",
+    "workspaceLink": "Prefere tudo em um só lugar? Use o espaço de trabalho completo abaixo.",
+    "allPdfToolsLink": "Todas as ferramentas de PDF em uma página",
+    "categories": {
+      "all": "Todas",
+      "organize": "Organizar",
+      "optimize": "Otimizar",
+      "convert": "Converter",
+      "ai": "IA"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "Juntar PDF",
+        "desc": "Combine vários PDFs em um único arquivo, na ordem que você escolher."
+      },
+      "splitPdf": {
+        "title": "Dividir PDF",
+        "desc": "Separe cada página de um PDF em um arquivo próprio."
+      },
+      "compressPdf": {
+        "title": "Comprimir PDF",
+        "desc": "Reduza o tamanho do PDF mantendo a qualidade de que você precisa."
+      },
+      "docxToPdf": {
+        "title": "Word para PDF",
+        "desc": "Converta documentos DOC e DOCX em PDFs legíveis."
+      },
+      "extractPages": {
+        "title": "Extrair páginas",
+        "desc": "Tire as páginas selecionadas de um PDF e salve em um novo documento."
+      },
+      "deletePages": {
+        "title": "Excluir páginas",
+        "desc": "Remova páginas indesejadas de um PDF em poucos cliques."
+      },
+      "rotatePdf": {
+        "title": "Girar PDF",
+        "desc": "Coloque as páginas na orientação certa e salve o resultado."
+      },
+      "reorderPages": {
+        "title": "Reordenar páginas",
+        "desc": "Reorganize as páginas do PDF exatamente na ordem que você quer."
+      },
+      "mergeDocx": {
+        "title": "Juntar Word",
+        "desc": "Una vários documentos Word em um único arquivo DOCX."
+      },
+      "chatPdf": {
+        "title": "Conversar com PDF",
+        "desc": "Faça perguntas sobre seus documentos com IA no próprio dispositivo."
+      },
+      "summarize": {
+        "title": "Resumir",
+        "desc": "Obtenha resumos curtos de documentos longos, processados localmente."
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "Transforme páginas digitalizadas em texto pesquisável e selecionável."
+      }
+    }
   }
 }

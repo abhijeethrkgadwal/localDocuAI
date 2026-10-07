@@ -27,6 +27,31 @@
       "workspaceHeading": "PDFs zum Bearbeiten auswählen",
       "opsTitle": "PDF-Tools",
       "opsDesc": "Zusammenführen, komprimieren, aufteilen, extrahieren, löschen, drehen oder neu anordnen — alles auf diesem Gerät."
+    },
+    "splitPdf": {
+      "workspaceHeading": "PDF zum Teilen auswählen",
+      "opsTitle": "PDF teilen",
+      "opsDesc": "Wähle eine PDF und teile sie in eine Datei pro Seite auf — gespeichert auf diesem Gerät."
+    },
+    "extractPages": {
+      "workspaceHeading": "PDF zum Extrahieren von Seiten auswählen",
+      "opsTitle": "Seiten extrahieren",
+      "opsDesc": "Wähle eine PDF, gib die Seiten ein, die du behalten möchtest, und speichere sie als neue PDF."
+    },
+    "deletePages": {
+      "workspaceHeading": "PDF zum Löschen von Seiten auswählen",
+      "opsTitle": "Seiten löschen",
+      "opsDesc": "Wähle eine PDF, gib die zu entfernenden Seiten ein und speichere das Ergebnis auf diesem Gerät."
+    },
+    "rotatePdf": {
+      "workspaceHeading": "PDF zum Drehen auswählen",
+      "opsTitle": "PDF drehen",
+      "opsDesc": "Wähle eine PDF, lege Seiten und Winkel fest und speichere die gedrehte Datei."
+    },
+    "reorderPages": {
+      "workspaceHeading": "PDF zum Neuanordnen auswählen",
+      "opsTitle": "Seiten neu anordnen",
+      "opsDesc": "Wähle eine PDF, lege die neue Seitenreihenfolge fest und speichere das Ergebnis auf diesem Gerät."
     }
   },
   "formats": {

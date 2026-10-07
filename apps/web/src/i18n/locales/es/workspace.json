@@ -27,6 +27,31 @@
       "workspaceHeading": "Elige los PDF con los que quieres trabajar",
       "opsTitle": "Herramientas PDF",
       "opsDesc": "Combinar, comprimir, dividir, extraer, eliminar, girar o reordenar — todo en este dispositivo."
+    },
+    "splitPdf": {
+      "workspaceHeading": "Elige un PDF para dividir",
+      "opsTitle": "Dividir PDF",
+      "opsDesc": "Selecciona un PDF y divídelo en un archivo por página, guardado en este dispositivo."
+    },
+    "extractPages": {
+      "workspaceHeading": "Elige un PDF del que extraer páginas",
+      "opsTitle": "Extraer páginas",
+      "opsDesc": "Selecciona un PDF, indica las páginas que quieres conservar y guárdalas como un PDF nuevo."
+    },
+    "deletePages": {
+      "workspaceHeading": "Elige un PDF del que eliminar páginas",
+      "opsTitle": "Eliminar páginas",
+      "opsDesc": "Selecciona un PDF, indica las páginas que quieres quitar y guarda el resultado en este dispositivo."
+    },
+    "rotatePdf": {
+      "workspaceHeading": "Elige un PDF para girar",
+      "opsTitle": "Girar PDF",
+      "opsDesc": "Selecciona un PDF, elige las páginas y el ángulo, y guarda el archivo girado."
+    },
+    "reorderPages": {
+      "workspaceHeading": "Elige un PDF para reordenar",
+      "opsTitle": "Reordenar páginas",
+      "opsDesc": "Selecciona un PDF, define el nuevo orden de las páginas y guarda el resultado en este dispositivo."
     }
   },
   "formats": {

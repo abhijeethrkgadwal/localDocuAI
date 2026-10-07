@@ -7,12 +7,18 @@
     "shortDescription": "प्राइवेसी-फ़र्स्ट लोकल PDF और Word ऑटोमेशन। फ़ाइलें आपके डिवाइस पर ही रहती हैं।"
   },
   "loading": "लोड हो रहा है…",
+  "skipToContent": "मुख्य सामग्री पर जाएँ",
+  "noscript": "इंटरैक्टिव वर्कस्पेस के लिए JavaScript ज़रूरी है। इस पेज की हर जानकारी इसके बिना भी पढ़ी जा सकती है; फ़ाइलें लोकल रूप से मर्ज, स्प्लिट, कंप्रेस या कन्वर्ट करने के लिए JavaScript चालू करें।",
   "nav": {
     "ariaPrimary": "मुख्य",
     "faq": "FAQ",
     "privacy": "प्राइवेसी",
     "github": "GitHub",
-    "opensInNewTab": " (नए टैब में खुलता है)"
+    "opensInNewTab": " (नए टैब में खुलता है)",
+    "openMenu": "मेन्यू खोलें",
+    "closeMenu": "मेन्यू बंद करें",
+    "menuHeading": "मेन्यू",
+    "appearance": "थीम"
   },
   "theme": {
     "ariaColorTheme": "रंग थीम",
@@ -42,12 +48,24 @@
     "pdfTools": "PDF टूल",
     "mergePdf": "PDF मर्ज करें",
     "compressPdf": "PDF कंप्रेस करें",
+    "splitPdf": "PDF स्प्लिट करें",
+    "rotatePdf": "PDF घुमाएँ",
     "mergeDocx": "DOCX मर्ज करें",
     "docxToPdf": "DOCX से PDF",
     "howItWorks": "यह कैसे काम करता है",
     "browserSupport": "ब्राउज़र सपोर्ट",
     "privacy": "प्राइवेसी",
     "faq": "FAQ",
+    "resources": "संसाधन",
+    "ariaResources": "गाइड और तुलनाएँ",
+    "guides": "गाइड",
+    "uploadSafety": "क्या PDF अपलोड करना सुरक्षित है?",
+    "ilovepdfAlternative": "iLovePDF का विकल्प",
+    "smallpdfAlternative": "Smallpdf का विकल्प",
+    "acrobatAlternative": "Adobe Acrobat का विकल्प",
+    "languages": "भाषाएँ",
+    "ariaLanguages": "भाषा चुनें",
+    "allPages": "सभी पेज",
     "openSource": "ओपन सोर्स",
     "ariaOpenSource": "ओपन सोर्स",
     "github": "GitHub",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "भाषा",
     "label": "भाषा"
+  },
+  "tasks": {
+    "heading": "हर ज़रूरी टूल, आपके अपने डिवाइस पर",
+    "subheading": "शुरू करने के लिए कोई काम चुनें। फ़ाइलें लोकल रूप से प्रोसेस होती हैं और कभी अपलोड नहीं होतीं।",
+    "filterAria": "टूल को श्रेणी के अनुसार फ़िल्टर करें",
+    "comingSoon": "जल्द आ रहा है",
+    "learnMore": "और जानें",
+    "workspaceLink": "सब कुछ एक ही जगह चाहिए? नीचे पूरा वर्कस्पेस इस्तेमाल करें।",
+    "allPdfToolsLink": "सभी PDF टूल एक पेज पर",
+    "categories": {
+      "all": "सभी",
+      "organize": "व्यवस्थित करें",
+      "optimize": "ऑप्टिमाइज़ करें",
+      "convert": "कन्वर्ट करें",
+      "ai": "AI"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "PDF मर्ज करें",
+        "desc": "कई PDF को अपने चुने हुए क्रम में एक फ़ाइल में जोड़ें।"
+      },
+      "splitPdf": {
+        "title": "PDF स्प्लिट करें",
+        "desc": "PDF के हर पेज को अलग फ़ाइल में बाँटें।"
+      },
+      "compressPdf": {
+        "title": "PDF कंप्रेस करें",
+        "desc": "ज़रूरी क्वालिटी बनाए रखते हुए PDF का साइज़ घटाएँ।"
+      },
+      "docxToPdf": {
+        "title": "Word से PDF",
+        "desc": "DOC और DOCX दस्तावेज़ों को पढ़ने योग्य PDF में कन्वर्ट करें।"
+      },
+      "extractPages": {
+        "title": "पेज निकालें",
+        "desc": "PDF से चुने हुए पेज निकालकर नया दस्तावेज़ बनाएँ।"
+      },
+      "deletePages": {
+        "title": "पेज हटाएँ",
+        "desc": "कुछ ही क्लिक में PDF से अनचाहे पेज हटाएँ।"
+      },
+      "rotatePdf": {
+        "title": "PDF घुमाएँ",
+        "desc": "पेजों को सही दिशा में घुमाएँ और नतीजा सेव करें।"
+      },
+      "reorderPages": {
+        "title": "पेजों का क्रम बदलें",
+        "desc": "PDF के पेजों को ठीक अपने मनचाहे क्रम में लगाएँ।"
+      },
+      "mergeDocx": {
+        "title": "Word मर्ज करें",
+        "desc": "कई Word दस्तावेज़ों को एक DOCX फ़ाइल में जोड़ें।"
+      },
+      "chatPdf": {
+        "title": "PDF से चैट करें",
+        "desc": "ऑन-डिवाइस AI से अपने दस्तावेज़ों के बारे में सवाल पूछें।"
+      },
+      "summarize": {
+        "title": "सारांश बनाएँ",
+        "desc": "लंबे दस्तावेज़ों का छोटा सारांश पाएँ, लोकल रूप से प्रोसेस किया हुआ।"
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "स्कैन किए गए पेजों को खोजने और चुनने योग्य टेक्स्ट में बदलें।"
+      }
+    }
   }
 }

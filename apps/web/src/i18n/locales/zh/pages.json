@@ -97,6 +97,29 @@
   },
   "mergePdf": {
     "intro": "使用 LocalDocu 在你的设备上合并多个 PDF 文件。在上方选择文件，在列表中调整顺序，然后合并并把结果保存到本地。",
+    "faqHeading": "合并 PDF 常见问题",
+    "faq": [
+      {
+        "question": "可以不上传就合并 PDF 文件吗？",
+        "answer": "可以。LocalDocu 使用 JavaScript 和 WebAssembly 在你的浏览器内合并 PDF。文件从你的设备读取，在内存中合并，再保存回你的设备—绝不会发送到 LocalDocu 服务器。"
+      },
+      {
+        "question": "一次可以合并的 PDF 数量有限制吗？",
+        "answer": "没有固定的文件数量限制，也没有每日配额。实际上限取决于设备内存：笔记本电脑可以轻松处理数百页，而在手机上一次合并非常多的文件可能会耗尽内存。"
+      },
+      {
+        "question": "如何调整合并后页面的顺序？",
+        "answer": "文件按列表顺序合并。请在选择“合并”之前调整列表顺序。如需事后重新排列单独的页面，可以在“重排页面”中打开合并后的文件。"
+      },
+      {
+        "question": "可以合并受密码保护的 PDF 吗？",
+        "answer": "暂时还不行。加密的 PDF 会被拒绝处理，以免文件在不知不觉中被损坏。请先在你信任的工具中移除密码，然后再合并。"
+      },
+      {
+        "question": "合并后的 PDF 会有水印吗？",
+        "answer": "不会。LocalDocu 免费且开源，绝不会添加水印、强制注册或设置每日次数限制。"
+      }
+    ],
     "howToHeading": "如何合并 PDF",
     "howTo": [
       "在本页选择或拖入两个及以上 PDF 文件。",
@@ -120,6 +143,31 @@
   },
   "mergeDocx": {
     "intro": "LocalDocu 为合适的 Word 文档提供实用型 DOCX 合并。在上方选择同类型的 Word 文件，设置顺序，然后在本地合并。",
+    "howToHeading": "如何合并 Word 文档",
+    "howTo": [
+      "在本页选择或拖入两个及以上 DOCX 文件。",
+      "按照它们应出现的顺序排列。",
+      "选择“合并”，并在你的设备上保存合并后的 DOCX。"
+    ],
+    "faqHeading": "合并 Word 常见问题",
+    "faq": [
+      {
+        "question": "没有 Microsoft Word 也能合并 Word 文档吗？",
+        "answer": "可以。LocalDocu 在你的浏览器中合并 DOCX 文件，因此无需安装 Word，也不会上传任何内容。"
+      },
+      {
+        "question": "合并 DOCX 文件时会保留格式吗？",
+        "answer": "文字、标题和常见格式通常都能保留。复杂排版—例如按节设置的页眉、特殊样式、嵌入对象—可能无法完全保留，因此分享之前请先检查结果。"
+      },
+      {
+        "question": "可以把 DOCX 和 PDF 文件合并在一起吗？",
+        "answer": "无法一步完成。合并要求文件类型相同。请先将 Word 文件转换为 PDF，然后使用“合并 PDF”。"
+      },
+      {
+        "question": "在手机上可以合并 Word 文件吗？",
+        "answer": "对于普通文档，在手机版 Chrome 或 Safari 中可以。非常大的文件可能会触及手机的内存上限。"
+      }
+    ],
     "behaviorHeading": "当前行为",
     "behavior": [
       "DOCX 文件可以以实用、以内容为主的方式合并。",
@@ -140,6 +188,35 @@
   },
   "compressPdf": {
     "intro": "在你的设备上减小 PDF 文件体积。在上方选择一个 PDF，选择“均衡”（保留文字可选中）或“最大”（压缩更强），挑选质量目标，然后压缩并保存到本地。",
+    "howToHeading": "如何压缩 PDF",
+    "howTo": [
+      "在本页选择或拖入一个 PDF。",
+      "选择“均衡”以保留可选中的文字，或选择“最大”以获得最小的文件。",
+      "挑选质量目标，运行“压缩”，然后在你的设备上保存更小的 PDF。"
+    ],
+    "faqHeading": "压缩 PDF 常见问题",
+    "faq": [
+      {
+        "question": "如何不上传就压缩 PDF？",
+        "answer": "在 LocalDocu 中打开“压缩 PDF”，选择文件并运行“压缩”。压缩在你的浏览器内完成，文档始终不会离开你的设备—非常适合合同、工资单、医疗或身份证件等文件。"
+      },
+      {
+        "question": "“均衡”和“最大”有什么区别？",
+        "answer": "“均衡”会优化图片和文件结构，同时保留文字可选中、可搜索。“最大”会把页面重新渲染为图片，文件会小得多，但文字将无法再选中。"
+      },
+      {
+        "question": "PDF 能压缩到多小？",
+        "answer": "这取决于内容。扫描件和图片较多的 PDF 压缩效果最明显；纯文字 PDF 通常本来就很小。LocalDocu 会显示压缩前后的大小，方便你尝试其他质量目标。"
+      },
+      {
+        "question": "有文件大小限制吗？",
+        "answer": "在浏览器中，为了不超出设备内存，压缩仅支持单个不超过 40 MB 的 PDF。手机可能需要更小的文件；“均衡”模式比“最大”模式占用更少内存。"
+      },
+      {
+        "question": "可以压缩 PDF 以便通过邮件发送吗？",
+        "answer": "可以。大多数邮箱服务的附件上限约为 20–25 MB。先尝试“均衡”；如果文件仍然太大，再使用“最大”并选择较低的质量目标。"
+      }
+    ],
     "modesHeading": "模式",
     "modes": [
       "均衡 — 在减小体积的同时，尽可能保留文字可选中。",
@@ -161,6 +238,25 @@
   },
   "pdfTools": {
     "intro": "本页汇集了 LocalDocu 的 PDF 操作。对于合适的工作负载，每一项都在你的浏览器中本地运行—请使用上方的面板选择文件并运行操作。",
+    "faqHeading": "PDF 工具常见问题",
+    "faq": [
+      {
+        "question": "这些 PDF 工具真的免费吗？",
+        "answer": "是的。LocalDocu 基于 Apache-2.0 许可开源。无需账号、没有付费墙、没有水印，也没有每日任务限制，因为处理在你自己的设备上运行，而不是在付费服务器上。"
+      },
+      {
+        "question": "PDF 工具可以离线使用吗？",
+        "answer": "可以。首次访问后，应用会被浏览器缓存，合并、拆分、提取、删除、旋转、重排和压缩功能在没有网络连接时也能继续使用。"
+      },
+      {
+        "question": "哪些 PDF 功能目前还不可用？",
+        "answer": "LocalDocu 目前还不支持 OCR、电子签名、PDF 文字编辑、PDF 转 Word 或移除密码。这些功能已列入路线图；当前的工具专注于整理、压缩和转换。"
+      },
+      {
+        "question": "支持哪些浏览器？",
+        "answer": "桌面端、Android 和 iOS 上最新版本的 Chrome、Edge、Firefox 和 Safari。桌面版 Chrome 和 Edge 还支持文件夹访问和系统“另存为”；详情请参阅“浏览器与设备支持”。"
+      }
+    ],
     "opsHeading": "支持的 PDF 操作",
     "ops": [
       "合并 — 按列表顺序合并多个 PDF",
@@ -182,6 +278,31 @@
   },
   "docxToPdf": {
     "intro": "把 DOC 或 DOCX 文件转换为在你设备上生成的可读 PDF。在上方选择一个 Word 文件，进行转换，然后保存到本地。",
+    "howToHeading": "如何将 Word 转换为 PDF",
+    "howTo": [
+      "在本页选择或拖入一个 DOC 或 DOCX 文件。",
+      "选择“转换为 PDF”。",
+      "检查 PDF，然后保存到你的设备上。"
+    ],
+    "faqHeading": "Word 转 PDF 常见问题",
+    "faq": [
+      {
+        "question": "可以不上传文件就将 Word 转换为 PDF 吗？",
+        "answer": "可以。LocalDocu 在你的浏览器中读取 DOC 或 DOCX 文件，并在你的设备上生成 PDF。文档不会被上传到任何地方。"
+      },
+      {
+        "question": "生成的 PDF 会和我的 Word 文档完全一样吗？",
+        "answer": "不一定。浏览器转换以文字内容为主：文字、标题和段落都能保留，但复杂排版、分栏、文本框和部分图片可能与 Word 中不完全一致。如需像素级一致的效果，请直接在 Word 中导出为 PDF。"
+      },
+      {
+        "question": "支持旧版 .doc 文件吗？",
+        "answer": "支持，DOC 和 DOCX 都可以。格式特殊的旧版 .doc 文件更容易丢失排版细节。"
+      },
+      {
+        "question": "为什么我的文件无法转换？",
+        "answer": "转换设有容量限制，以免浏览器内存不足。手机的限制比电脑更严格；请尝试更小的文件或使用桌面浏览器。"
+      }
+    ],
     "limitsHeading": "诚实的限制",
     "limits": [
       "转换以文字为主，并针对浏览器工作负载设有容量限制。",
@@ -194,6 +315,172 @@
       "browserSupport": "浏览器与设备支持",
       "mergeDocx": "合并 Word 文档",
       "desktop": "桌面版路线图"
+    }
+  },
+  "splitPdf": {
+    "intro": "直接在浏览器中把 PDF 拆分为多个文件，每页一个。不会向 LocalDocu 上传任何内容。",
+    "faqHeading": "拆分 PDF 常见问题",
+    "faq": [
+      {
+        "question": "如何免费把 PDF 拆分成单独的页面？",
+        "answer": "打开“拆分 PDF”，选择文件并选择“拆分”。LocalDocu 会在你的设备上为每一页生成一个 PDF—免费、无需账号、无需上传。"
+      },
+      {
+        "question": "可以按页码范围拆分 PDF，而不是每页拆分吗？",
+        "answer": "请使用“提取页面”：输入 1-3,7 这样的范围，即可仅把这些页面另存为新的 PDF。每个需要的范围运行一次即可。"
+      },
+      {
+        "question": "在浏览器中拆分机密 PDF 安全吗？",
+        "answer": "安全。文件在浏览器内存中处理，结果保存到你的设备上。不会有任何副本被发送到服务器或存储在服务器上。"
+      },
+      {
+        "question": "拆分会降低质量吗？",
+        "answer": "不会。页面按原样复制—文字、图片和矢量图形都不会被重新压缩。"
+      }
+    ],
+    "howToHeading": "如何拆分 PDF",
+    "howTo": [
+      "在本页选择或拖入一个 PDF。",
+      "选择“拆分”，为每一页生成一个 PDF。",
+      "在你的设备上保存或下载生成的文件。"
+    ],
+    "links": {
+      "extractPages": "提取页面",
+      "mergePdfs": "合并 PDF",
+      "pdfTools": "所有 PDF 工具"
+    }
+  },
+  "extractPages": {
+    "intro": "只保留你需要的页面。将 PDF 中的选定页面提取为新文件，全程在你的设备上本地处理。",
+    "faqHeading": "提取页面常见问题",
+    "faq": [
+      {
+        "question": "如何填写页面选择？",
+        "answer": "使用以逗号分隔的页码和范围，例如 1-3,5,8-10。页码从 1 开始计算。"
+      },
+      {
+        "question": "提取页面会改变原始 PDF 吗？",
+        "answer": "不会。LocalDocu 会用选定的页面创建一个新的 PDF；你设备上的原始文件保持不变。"
+      },
+      {
+        "question": "“提取”和“拆分”有什么区别？",
+        "answer": "“提取”会把你选择的页面保存为一个新的 PDF。“拆分”会把每一页分别保存为单独的 PDF。"
+      },
+      {
+        "question": "可以在手机上提取页面吗？",
+        "answer": "可以。“提取”在手机版 Chrome 和 Safari 中都能使用；新文件会下载到你的设备上。"
+      }
+    ],
+    "howToHeading": "如何提取页面",
+    "howTo": [
+      "在本页选择或拖入一个 PDF。",
+      "输入你想保留的页码或页码范围。",
+      "运行“提取”，并将新的 PDF 保存到本地。"
+    ],
+    "links": {
+      "deletePages": "删除页面",
+      "splitPdf": "拆分 PDF",
+      "pdfTools": "所有 PDF 工具"
+    }
+  },
+  "deletePages": {
+    "intro": "从 PDF 中删除空白页、重复页或不需要的页面，无需上传到任何地方。",
+    "faqHeading": "删除页面常见问题",
+    "faq": [
+      {
+        "question": "没有 Acrobat，如何删除 PDF 中的页面？",
+        "answer": "在 LocalDocu 中打开“删除页面”，选择 PDF，输入要删除的页面（例如 2,4-6）并运行。它是免费的，并在你的浏览器中运行。"
+      },
+      {
+        "question": "删除页面后可以撤销吗？",
+        "answer": "你的原始文件永远不会被修改—LocalDocu 会把编辑后的副本另存为新文件。如果之后可能还需要这些页面，请保留原始文件。"
+      },
+      {
+        "question": "可以从扫描版 PDF 中删除页面吗？",
+        "answer": "可以。扫描版和电子版 PDF 删除页面的方式相同，因为删除的是整页，而不是文字。"
+      },
+      {
+        "question": "有页数限制吗？",
+        "answer": "没有固定限制。非常大的文档取决于你设备的内存，在手机上尤其如此。"
+      }
+    ],
+    "howToHeading": "如何删除页面",
+    "howTo": [
+      "在本页选择或拖入一个 PDF。",
+      "输入你想删除的页码或页码范围。",
+      "运行“删除页面”，并将编辑后的 PDF 保存到本地。"
+    ],
+    "links": {
+      "extractPages": "提取页面",
+      "reorderPages": "重排页面",
+      "pdfTools": "所有 PDF 工具"
+    }
+  },
+  "rotatePdf": {
+    "intro": "修正横向或上下颠倒的页面。在你的设备上将 PDF 的部分或全部页面旋转 90°、180° 或 270°。",
+    "faqHeading": "旋转 PDF 常见问题",
+    "faq": [
+      {
+        "question": "可以只旋转 PDF 的部分页面吗？",
+        "answer": "可以。输入要旋转的页面，例如 1,3-4。留空则旋转所有页面。"
+      },
+      {
+        "question": "旋转会被永久保存吗？",
+        "answer": "会。LocalDocu 会保存一个已应用旋转的新 PDF，因此在任何 PDF 阅读器中都能以正确方向打开。"
+      },
+      {
+        "question": "旋转 PDF 会降低质量吗？",
+        "answer": "不会。旋转只改变页面方向；文字和图片都不会被重新压缩。"
+      },
+      {
+        "question": "可以在 iPhone 或 Android 上旋转 PDF 吗？",
+        "answer": "可以。“旋转”在手机版 Safari 和 Chrome 中无需安装 App 即可使用，旋转后的文件会下载到你的设备上。"
+      }
+    ],
+    "howToHeading": "如何旋转 PDF",
+    "howTo": [
+      "在本页选择或拖入一个 PDF。",
+      "选择页面和旋转角度。",
+      "运行“旋转”，并将旋转后的 PDF 保存到本地。"
+    ],
+    "links": {
+      "reorderPages": "重排页面",
+      "compressPdf": "压缩 PDF",
+      "pdfTools": "所有 PDF 工具"
+    }
+  },
+  "reorderPages": {
+    "intro": "将 PDF 的页面精确排列成你想要的顺序，全程在你的浏览器中处理。",
+    "faqHeading": "重排页面常见问题",
+    "faq": [
+      {
+        "question": "如何输入新的页面顺序？",
+        "answer": "按你想要的顺序输入每个页码各一次，用逗号分隔。对于 4 页的文件，输入 4,1,2,3 会把最后一页移到最前面。"
+      },
+      {
+        "question": "可以把 PDF 的页面顺序倒过来吗？",
+        "answer": "可以。从最后一页到第一页依次输入页码，例如 5,4,3,2,1。"
+      },
+      {
+        "question": "可以在重排的同时删除页面吗？",
+        "answer": "请先运行“删除页面”，再对结果进行“重排”。每一步都会在你的设备上保存一个新文件。"
+      },
+      {
+        "question": "重排页面需要上传文件吗？",
+        "answer": "不需要。重排在你的浏览器中进行；PDF 始终不会离开你的设备。"
+      }
+    ],
+    "howToHeading": "如何重排页面",
+    "howTo": [
+      "在本页选择或拖入一个 PDF。",
+      "输入完整的新页面顺序，例如 3,1,2。",
+      "运行“重排”，并将结果保存到本地。"
+    ],
+    "note": "每个页码必须且只能列出一次，用逗号分隔。",
+    "links": {
+      "rotatePdf": "旋转 PDF",
+      "deletePages": "删除页面",
+      "pdfTools": "所有 PDF 工具"
     }
   },
   "offline": {
@@ -483,6 +770,567 @@
       "browserSupport": "浏览器与设备支持",
       "privacy": "隐私详情",
       "contribute": "参与贡献"
+    }
+  },
+  "article": {
+    "byline": "作者：{author}",
+    "updated": "更新于 {date}"
+  },
+  "guides": {
+    "intro": "简短实用的指南，教你在不把 PDF 交给服务器的情况下处理文件—以及与最热门在线 PDF 工具的客观对比，帮你选出适合自己文档的工具。",
+    "guidesHeading": "操作指南",
+    "comparisonsHeading": "对比",
+    "links": {
+      "pdfTools": "所有 PDF 工具",
+      "privacy": "LocalDocu 如何保护隐私",
+      "faq": "FAQ"
+    }
+  },
+  "guideMergePdfWithoutUploading": {
+    "intro": "大多数“合并 PDF”网站会把你的文件上传到它们的服务器，在那里合并后再把结果发回给你。对于一份菜谱来说这没什么问题，但对于已签署的合同、银行对账单或医疗报告就不合适了。下面介绍三种让文件始终不离开你设备的 PDF 合并方法。",
+    "sections": [
+      {
+        "heading": "快速回答",
+        "paragraphs": [
+          "打开 LocalDocu 的“合并 PDF”页面，选择你的 PDF，排好顺序，然后选择“合并”。合并在你的浏览器内运行，因此不会上传任何内容—而且无需安装任何软件，即可在 Windows、Mac、Linux、Android 和 iPhone 上使用。"
+        ]
+      },
+      {
+        "heading": "方法 1：在浏览器中使用 LocalDocu（任何设备）",
+        "paragraphs": [
+          "LocalDocu 免费，没有文件数量限制，也不加水印，首次访问后还能离线使用。合并步骤："
+        ],
+        "steps": [
+          "前往 localdocu.org/merge-pdf。",
+          "选择或拖入两个及以上 PDF 文件。",
+          "拖动列表，按你希望页面出现的顺序排列。",
+          "选择“合并”，然后保存或下载合并后的 PDF。"
+        ]
+      },
+      {
+        "heading": "方法 2：在 Mac 上使用“预览”",
+        "steps": [
+          "在“预览”中打开第一个 PDF。",
+          "选择“显示”→“缩略图”以显示边栏。",
+          "将其他 PDF 拖到边栏中你想要的位置。",
+          "选择“文件”→“导出为 PDF”以保存合并后的文件。"
+        ]
+      },
+      {
+        "heading": "方法 3：在 Windows 上使用桌面应用",
+        "paragraphs": [
+          "Windows 没有内置的 PDF 合并功能。开源的 PDFsam Basic 或付费的 Adobe Acrobat 等离线桌面应用可以在本地合并，但需要安装。基于浏览器的本地工具则完全无需安装。"
+        ]
+      },
+      {
+        "heading": "如何确认一个网站真的没有上传你的文件",
+        "list": [
+          "加载页面后，开启飞行模式或断开 Wi-Fi。如果仍然可以合并，说明处理是在你的设备上进行的。",
+          "合并时打开浏览器的开发者工具（F12）→“网络”（Network）标签页。本地工具不会出现大型的上传请求。",
+          "阅读隐私政策：诸如“文件将在 2 小时后删除”之类的表述，意味着文件已被上传并存储了一段时间。"
+        ]
+      }
+    ],
+    "faqHeading": "关于私密合并 PDF 的问题",
+    "faq": [
+      {
+        "question": "在线合并 PDF 安全吗？",
+        "answer": "这取决于合并在哪里进行。基于服务器的网站会收到你文件的副本，并按其政策规定的期限保留。LocalDocu 这类基于浏览器的工具在你的设备上合并，因此其他任何人的服务器上都不会有副本。"
+      },
+      {
+        "question": "没有网络可以合并 PDF 吗？",
+        "answer": "可以。可以使用 Mac 上的“预览”、已安装的桌面应用，或者在联网访问一次之后使用 LocalDocu—它的应用会被浏览器缓存，可以离线合并。"
+      },
+      {
+        "question": "合并会改变 PDF 的质量吗？",
+        "answer": "不会。合并会按原样复制页面；文字保持可选中，图片也不会被重新压缩。"
+      }
+    ],
+    "links": {
+      "mergePdfs": "立即合并 PDF",
+      "guideUploadSafety": "在线上传 PDF 安全吗？",
+      "reorderPages": "重排页面",
+      "guides": "所有指南"
+    }
+  },
+  "guideCompressPdfOffline": {
+    "intro": "你需要让 PDF 小于邮件或上传的大小限制，但文档是机密的—或者你正在没有信号的火车上。以下方法无需网络连接、也无需把文件发送到任何地方，即可压缩 PDF。",
+    "sections": [
+      {
+        "heading": "快速回答",
+        "paragraphs": [
+          "在联网状态下打开一次 LocalDocu 的“压缩 PDF”页面。之后它就可以离线使用：选择 PDF，选择“均衡”（保留可选中的文字）或“最大”（文件最小），然后保存。文件始终不会离开你的设备。"
+        ]
+      },
+      {
+        "heading": "方法 1：在浏览器中使用 LocalDocu（Windows、Mac、Linux、Android、iPhone）",
+        "steps": [
+          "在联网状态下访问一次 localdocu.org/compress-pdf，让应用被缓存。",
+          "选择或拖入你的 PDF（在浏览器中单个文件最大 40 MB）。",
+          "先选择“均衡”；如果需要更小，再切换到“最大”并选择较低的质量目标。",
+          "比较压缩前后的大小，然后保存结果。"
+        ]
+      },
+      {
+        "heading": "方法 2：在 Mac 上使用“预览”",
+        "paragraphs": [
+          "在“预览”中打开 PDF，选择“文件”→“导出”，并将“Quartz 滤镜”设为“减小文件大小”。这种方法速度快，但压缩往往过于激进—图片可能会变得非常模糊，因此请检查结果。"
+        ]
+      },
+      {
+        "heading": "方法 3：Ghostscript（命令行，全平台）",
+        "paragraphs": [
+          "如果你习惯使用终端，免费的 Ghostscript 工具可以离线压缩，并提供 /screen（最小）、/ebook（均衡）和 /printer（较高质量）等预设：",
+          "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -sOutputFile=smaller.pdf input.pdf"
+        ]
+      },
+      {
+        "heading": "哪些 PDF 压缩效果最好？",
+        "list": [
+          "扫描文档和图片较多的 PDF 通常压缩得最多。",
+          "纯文字 PDF 通常本来就很小；压缩幅度会比较有限。",
+          "如果必须保留文字可搜索，请避免使用把页面转为图片的模式（LocalDocu 的“最大”模式，以及对某些文件使用 Ghostscript 的 /screen）。"
+        ]
+      }
+    ],
+    "faqHeading": "关于离线压缩 PDF 的问题",
+    "faq": [
+      {
+        "question": "可以不上传就压缩 PDF 吗？",
+        "answer": "可以。LocalDocu、Mac 上的“预览”和 Ghostscript 都在你自己的设备上压缩。大多数压缩网站会先把文件上传到它们的服务器。"
+      },
+      {
+        "question": "如何把 PDF 压缩到 1 MB 以下？",
+        "answer": "尝试使用 LocalDocu 的“最大”模式并选择较低的质量目标。文字较多的多页文档可能无法在保持清晰可读的前提下压缩到 1 MB；拆分文档是另一种选择。"
+      },
+      {
+        "question": "为什么我的 PDF 没有变小？",
+        "answer": "它可能已经过优化，或者主要由文字和字体构成。压缩主要是减小图片的体积。"
+      }
+    ],
+    "links": {
+      "compressPdf": "立即压缩 PDF",
+      "offline": "离线模式的工作原理",
+      "splitPdf": "拆分 PDF",
+      "guides": "所有指南"
+    }
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "intro": "在线 PDF 工具很方便，大型服务也会使用加密连接并自动删除文件。但“上传后稍后删除”并不等于“从未上传”。下面介绍上传的 PDF 实际会经历什么、哪些文档需要格外小心，以及如何在一分钟内检查任何工具。",
+    "sections": [
+      {
+        "heading": "简短回答",
+        "paragraphs": [
+          "对于日常的非敏感文件，信誉良好的在线 PDF 工具通常没有问题。对于身份证件、财务、医疗、法律或客户文件，最好选择在你自己的设备上处理 PDF 的工具，这样第三方服务器上永远不会存在副本。"
+        ]
+      },
+      {
+        "heading": "上传 PDF 时会发生什么",
+        "steps": [
+          "你的文件通过加密连接（HTTPS）发送到服务提供商的服务器。",
+          "文件在处理期间存储在那里—通常处理完成后还会保留一段时间，热门服务一般为一到几个小时，如果保存到账号中则会更久。",
+          "服务提供商、其托管公司以及任何分包商都按照各自的安全规范运营，并受服务器所在国家/地区法律的约束。",
+          "处理结果会发回给你下载。"
+        ],
+        "note": "信誉良好的服务提供商会很好地保护这一过程。剩下的风险在于：在一段时间内，有一份副本存在于你的控制范围之外—可能面临数据泄露、配置错误、法律调取或政策变更的影响。"
+      },
+      {
+        "heading": "上传前应三思的文档",
+        "list": [
+          "护照、身份证和驾驶证",
+          "银行对账单、纳税申报表和工资单",
+          "病历和保险理赔材料",
+          "合同、保密协议（NDA）以及任何负有保密义务的文件",
+          "受 GDPR、HIPAA 或类似法规保护的客户或患者数据"
+        ]
+      },
+      {
+        "heading": "适用于任何 PDF 工具的一分钟检查清单",
+        "list": [
+          "能离线使用吗？加载页面后断开网络，再尝试执行一项任务。如果能正常完成，说明你的文件是在本地处理的。",
+          "隐私政策对保留期限是怎么说的？“X 小时后删除”意味着文件曾被存储。",
+          "服务器在哪里？子处理方是谁？",
+          "是否需要账号？文件是否默认保存到账号中？",
+          "代码是否开源，从而可以验证其声明？"
+        ]
+      },
+      {
+        "heading": "本地替代方案",
+        "paragraphs": [
+          "LocalDocu 等基于浏览器的本地工具使用 WebAssembly 在你的浏览器内运行 PDF 引擎。合并、拆分、压缩和旋转都在你的设备上完成，代码是开源的，应用在断网状态下也能工作—因此事后不需要删除任何东西，因为根本没有上传过。"
+        ]
+      }
+    ],
+    "faqHeading": "关于上传 PDF 的问题",
+    "faq": [
+      {
+        "question": "在线 PDF 转换器会保留我的文件吗？",
+        "answer": "大多数信誉良好的服务会在其隐私政策中规定的保留期限（通常为一到两小时）之后自动删除上传的文件，除非你将其保存到账号中。本地工具则根本不会接收到文件。"
+      },
+      {
+        "question": "仅靠 HTTPS 就能保证 PDF 的私密性吗？",
+        "answer": "HTTPS 保护的是传输过程中的文件。它并不能改变服务提供商在处理时会接收并存储一份副本的事实。"
+      },
+      {
+        "question": "如何判断一个 PDF 工具是否在本地处理文件？",
+        "answer": "在页面加载完成后断开网络连接，然后执行一项任务。如果仍然可以正常完成，说明处理是在你的浏览器中进行的。"
+      }
+    ],
+    "links": {
+      "privacy": "LocalDocu 如何保护隐私",
+      "howItWorks": "LocalDocu 的工作原理",
+      "ilovepdfAlternative": "LocalDocu 与 iLovePDF 对比",
+      "guides": "所有指南"
+    }
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "intro": "在手机上合并、拆分、旋转或压缩 PDF，既不需要安装 App，也不需要上传文件。现代手机浏览器就能直接在设备上完成这些操作。",
+    "sections": [
+      {
+        "heading": "快速回答",
+        "paragraphs": [
+          "在 Safari（iPhone/iPad）或 Chrome（Android）中打开 localdocu.org，点按你需要的工具，从“文件”或“下载”中选择 PDF，运行后结果会下载到你的手机上。不会上传任何内容。"
+        ]
+      },
+      {
+        "heading": "在 iPhone 或 iPad 上（Safari）",
+        "steps": [
+          "打开 localdocu.org，点按“合并 PDF”等工具。",
+          "点按“选择文件”，从“文件”App（iCloud 云盘、“我的 iPhone”或“下载”）中选择 PDF。",
+          "运行任务，然后点按下载项，将其存储到“文件”中。",
+          "可选：通过“共享”→“添加到主屏幕”，像 App 一样使用它，包括离线使用。"
+        ],
+        "note": "如果在 iOS 上页面内的 PDF 预览显示为空白，请在新标签页中打开预览—文件本身没有问题。"
+      },
+      {
+        "heading": "在 Android 上（Chrome）",
+        "steps": [
+          "打开 localdocu.org 并选择一个工具。",
+          "点按“选择文件”，从“下载”、Drive 或其他文件夹中选择 PDF。",
+          "运行任务；结果会保存到“下载”中。",
+          "可选：菜单 →“安装应用”（或“添加到主屏幕”），以便离线使用。"
+        ]
+      },
+      {
+        "heading": "在手机上可以做什么",
+        "list": [
+          "合并 PDF 和 Word 文档",
+          "拆分 PDF，提取或删除页面",
+          "旋转和重排页面",
+          "压缩 PDF（在手机上“均衡”模式占用内存更少）",
+          "将 Word 文档转换为 PDF（较小的文件效果最好）"
+        ]
+      },
+      {
+        "heading": "系统内置的替代方案",
+        "paragraphs": [
+          "在 iPhone 上，“文件”App 可以合并文件：选择多个 PDF，点按“更多”（…）→“创建 PDF”。“标记”功能可以旋转页面。Android 没有内置的 PDF 合并功能，这正是浏览器工具最能派上用场的地方。"
+        ]
+      }
+    ],
+    "faqHeading": "关于在手机上处理 PDF 的问题",
+    "faq": [
+      {
+        "question": "可以在 iPhone 上免费合并 PDF 吗？",
+        "answer": "可以—在 Safari 中使用 LocalDocu，或者使用“文件”App 的“创建 PDF”操作。两种方式都不需要上传文件。"
+      },
+      {
+        "question": "为什么大型 PDF 在我的手机上处理失败？",
+        "answer": "手机上可供浏览器使用的内存比笔记本电脑少。请尝试减少文件数量或使用更小的文件，使用“均衡”压缩，或者在处理非常大的任务时改用桌面浏览器。"
+      },
+      {
+        "question": "没有移动数据也能用吗？",
+        "answer": "可以，首次访问之后即可。将 LocalDocu 添加到主屏幕，它就能离线打开并处理文件。"
+      }
+    ],
+    "links": {
+      "browserSupport": "浏览器与设备支持",
+      "mergePdfs": "合并 PDF",
+      "compressPdf": "压缩 PDF",
+      "guides": "所有指南"
+    }
+  },
+  "ilovepdfAlternative": {
+    "intro": "iLovePDF 是最受欢迎的 PDF 网站之一，提供种类极其丰富的工具。它的工作方式是把你的文件上传到它的服务器。LocalDocu 采取了相反的方式：PDF 引擎在你的浏览器中运行，因此文件始终不会离开你的设备。本页对两者进行客观对比，帮助你为每份文档选择合适的工具。",
+    "sections": [
+      {
+        "heading": "LocalDocu 与 iLovePDF 一览对比",
+        "table": {
+          "caption": "LocalDocu 与 iLovePDF 对比",
+          "headers": [
+            "",
+            "LocalDocu",
+            "iLovePDF"
+          ],
+          "rows": [
+            [
+              "文件在哪里处理",
+              "在你的浏览器中，在你的设备上",
+              "在 iLovePDF 的服务器上（文件会被上传）"
+            ],
+            [
+              "服务器上保留的副本",
+              "无—文件从不上传",
+              "根据其隐私政策，在 2 小时内自动删除"
+            ],
+            [
+              "离线使用",
+              "可以，首次访问之后",
+              "网页工具需要联网；另有单独的桌面应用"
+            ],
+            [
+              "是否需要账号",
+              "不需要",
+              "基础工具不需要；Premium 及部分功能需要"
+            ],
+            [
+              "价格",
+              "免费，无任务限制",
+              "免费版有限制；提供付费 Premium 方案"
+            ],
+            [
+              "源代码",
+              "开源（Apache-2.0）",
+              "专有"
+            ],
+            [
+              "工具范围",
+              "合并、拆分、提取、删除、旋转、重排、压缩、Word→PDF、合并 Word",
+              "范围广得多：还包括 OCR、编辑、电子签名、PDF↔Office、水印、解锁等"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "LocalDocu 更适合的情况",
+        "list": [
+          "不应上传到任何地方的机密文档—合同、身份证件、财务、医疗或客户文件",
+          "必须在离线状态或受限网络中完成的工作",
+          "政策禁止将文档发送给第三方处理方的组织",
+          "不受每日次数限制、没有注册提示的日常合并、拆分、旋转和压缩任务"
+        ]
+      },
+      {
+        "heading": "iLovePDF 更适合的情况",
+        "list": [
+          "你需要 OCR、PDF 编辑、电子签名或 PDF 转 Word—LocalDocu 目前还不提供这些功能",
+          "你需要高保真的 Office 转换；服务器端引擎处理复杂排版的效果更好",
+          "文档并不敏感，而你希望在一个地方使用最丰富的工具"
+        ]
+      },
+      {
+        "heading": "从 iLovePDF 切换：逐项工具对照",
+        "list": [
+          "合并 PDF → LocalDocu“合并 PDF”",
+          "拆分 PDF → LocalDocu“拆分 PDF”（每页一个文件）或“提取页面”（自定义范围）",
+          "删除页面 → LocalDocu“删除页面”",
+          "整理 PDF → LocalDocu“重排页面”和“旋转 PDF”",
+          "压缩 PDF → LocalDocu“压缩 PDF”",
+          "Word 转 PDF → LocalDocu“DOCX 转 PDF”（以文字内容为主）"
+        ]
+      }
+    ],
+    "faqHeading": "LocalDocu 与 iLovePDF 常见问题",
+    "faq": [
+      {
+        "question": "有不上传文件的 iLovePDF 替代工具吗？",
+        "answer": "有。LocalDocu 完全在你的浏览器中运行合并、拆分、提取、删除、旋转、重排和压缩，因此文件从不上传。它免费且开源。"
+      },
+      {
+        "question": "iLovePDF 会存储我的文件吗？",
+        "answer": "根据 iLovePDF 的隐私政策，上传的文件在其服务器上处理，并在两小时内自动删除。用于其电子签名服务的文档适用另一项期限更长的保留政策。"
+      },
+      {
+        "question": "LocalDocu 和 iLovePDF 一样强大吗？",
+        "answer": "不是—iLovePDF 的工具要多得多。LocalDocu 专注于最常见的整理和压缩任务，并且无需上传即可完成。很多人用 LocalDocu 处理敏感文件，用基于服务器的工具处理 OCR 之类的任务。"
+      }
+    ],
+    "disclaimer": "竞品信息基于截至 2026 年 10 月 iLovePDF 公开的网站和隐私政策，可能会发生变化。iLovePDF 是其所有者的商标；LocalDocu 与 iLovePDF 无任何关联，也未获得其认可。",
+    "links": {
+      "smallpdfAlternative": "LocalDocu 与 Smallpdf 对比",
+      "acrobatAlternative": "LocalDocu 与 Adobe Acrobat 对比",
+      "pdfTools": "试用 PDF 工具",
+      "guideUploadSafety": "上传 PDF 安全吗？"
+    }
+  },
+  "smallpdfAlternative": {
+    "intro": "Smallpdf 是一个精致且热门的 PDF 平台。和大多数在线 PDF 服务一样，它在自己的服务器上处理文件，免费方案有使用限制。LocalDocu 是一款免费、开源的替代工具，在你的浏览器中处理 PDF，因此不会上传任何内容。以下是客观对比。",
+    "sections": [
+      {
+        "heading": "LocalDocu 与 Smallpdf 一览对比",
+        "table": {
+          "caption": "LocalDocu 与 Smallpdf 对比",
+          "headers": [
+            "",
+            "LocalDocu",
+            "Smallpdf"
+          ],
+          "rows": [
+            [
+              "文件在哪里处理",
+              "在你的浏览器中，在你的设备上",
+              "在 Smallpdf 位于欧盟的服务器上（文件会被上传）"
+            ],
+            [
+              "服务器上保留的副本",
+              "无—文件从不上传",
+              "根据其隐私声明，大多数工具：1 小时后删除；保存到账号中的文件会一直保留，直到你删除"
+            ],
+            [
+              "离线使用",
+              "可以，首次访问之后",
+              "网页工具需要联网"
+            ],
+            [
+              "免费使用",
+              "无限制，无需账号",
+              "免费使用有限制；付费 Pro 方案可获得完整功能"
+            ],
+            [
+              "源代码",
+              "开源（Apache-2.0）",
+              "专有"
+            ],
+            [
+              "工具范围",
+              "合并、拆分、提取、删除、旋转、重排、压缩、Word→PDF、合并 Word",
+              "范围广得多：还包括 OCR、电子签名、编辑、PDF↔Office 等"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "LocalDocu 更适合的情况",
+        "list": [
+          "你已达到免费方案的上限，而只需要合并、拆分或压缩等常见任务",
+          "文档很敏感，即使是临时上传也不应该",
+          "你需要在离线状态或受限网络中工作",
+          "你希望使用隐私声明可以通过源代码核实的软件"
+        ]
+      },
+      {
+        "heading": "Smallpdf 更适合的情况",
+        "list": [
+          "你需要电子签名、OCR、PDF 编辑或 PDF 转 Word",
+          "你希望 PDF 工具内置云存储和团队协作流程",
+          "你需要最忠实于原文的 Office 转 PDF 排版"
+        ]
+      }
+    ],
+    "faqHeading": "LocalDocu 与 Smallpdf 常见问题",
+    "faq": [
+      {
+        "question": "有没有免费且无限制的 Smallpdf 替代工具？",
+        "answer": "LocalDocu 免费，没有任务限制，也无需注册，因为处理在你的设备上运行，而不是在付费服务器上。它涵盖合并、拆分、页面编辑、压缩和 Word 转 PDF。"
+      },
+      {
+        "question": "Smallpdf 会上传我的文件吗？",
+        "answer": "会。Smallpdf 在其服务器上处理文件。其隐私声明指出，使用大多数工具处理的文件会在一小时后删除，而你存储在账号中的文件会一直保留，直到你将其删除。"
+      },
+      {
+        "question": "LocalDocu 能完全取代 Smallpdf 吗？",
+        "answer": "对于整理和压缩 PDF，通常可以。对于电子签名、OCR 或编辑 PDF 中的文字，你仍然需要 Smallpdf 或 Acrobat 之类的工具。"
+      }
+    ],
+    "disclaimer": "竞品信息基于截至 2026 年 10 月 Smallpdf 公开的网站和隐私声明，可能会发生变化。Smallpdf 是其所有者的商标；LocalDocu 与 Smallpdf 无任何关联，也未获得其认可。",
+    "links": {
+      "ilovepdfAlternative": "LocalDocu 与 iLovePDF 对比",
+      "acrobatAlternative": "LocalDocu 与 Adobe Acrobat 对比",
+      "compressPdf": "压缩 PDF",
+      "guideCompressOffline": "离线压缩 PDF"
+    }
+  },
+  "adobeAcrobatAlternative": {
+    "intro": "Adobe Acrobat 是 PDF 领域的行业标准—而完整版 Acrobat Pro 需要付费订阅。Acrobat 的免费在线工具在 Adobe 的服务器上处理文件。如果你主要需要合并、拆分、旋转或压缩，LocalDocu 可以在你的浏览器中免费完成这些工作，无需上传任何内容。",
+    "sections": [
+      {
+        "heading": "LocalDocu 与 Adobe Acrobat 一览对比",
+        "table": {
+          "caption": "LocalDocu 与 Adobe Acrobat 对比",
+          "headers": [
+            "",
+            "LocalDocu",
+            "Adobe Acrobat（在线版和 Pro）"
+          ],
+          "rows": [
+            [
+              "文件在哪里处理",
+              "在你的浏览器中，在你的设备上",
+              "在线工具：在 Adobe 的服务器上。桌面版 Acrobat：在你的电脑上"
+            ],
+            [
+              "服务器上保留的副本",
+              "无—文件从不上传",
+              "在线工具：据 Adobe 称，除非你登录并保存，否则文件会被删除；登录后的文件可能会保存到 Adobe 云存储"
+            ],
+            [
+              "价格",
+              "免费，无需账号",
+              "免费在线工具有限；Acrobat Standard/Pro 为付费订阅"
+            ],
+            [
+              "是否需要安装",
+              "不需要—任何现代浏览器均可",
+              "在线版：不需要。完整功能：需要桌面应用"
+            ],
+            [
+              "离线使用",
+              "可以，首次访问之后",
+              "桌面应用：可以。在线工具：不可以"
+            ],
+            [
+              "源代码",
+              "开源（Apache-2.0）",
+              "专有"
+            ],
+            [
+              "高级功能",
+              "不提供",
+              "业界领先的编辑、OCR、电子签名、涂黑、表单和无障碍工具"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "LocalDocu 就够用的情况",
+        "list": [
+          "为申请材料、发票或报告合并、拆分或重排页面",
+          "旋转扫描页面或删除空白页",
+          "压缩 PDF 以满足邮件或网站平台的大小限制",
+          "在无法安装软件或登录的工作电脑或共用电脑上完成上述操作"
+        ]
+      },
+      {
+        "heading": "仍然需要 Acrobat 的情况",
+        "list": [
+          "编辑 PDF 中的文字和图片",
+          "通过 OCR 让扫描件可搜索，或涂黑敏感内容",
+          "具有法律效力的电子签名和表单流程",
+          "印前检查、PDF/A、无障碍修复和印刷制作"
+        ]
+      }
+    ],
+    "faqHeading": "LocalDocu 与 Adobe Acrobat 常见问题",
+    "faq": [
+      {
+        "question": "有什么可以替代 Adobe Acrobat 合并 PDF 的免费工具？",
+        "answer": "LocalDocu 可以在你的浏览器中免费合并 PDF，无需注册、没有水印、也无需上传。Mac 用户也可以使用“预览”。"
+      },
+      {
+        "question": "Adobe Acrobat 在线版会上传我的文件吗？",
+        "answer": "会。Adobe 表示，使用其在线工具的文件由其服务器处理，除非你登录并保存，否则会被删除。桌面版 Acrobat 应用在你的电脑上处理文件。"
+      },
+      {
+        "question": "LocalDocu 能像 Acrobat 一样编辑 PDF 中的文字吗？",
+        "answer": "不能。LocalDocu 处理的是整个页面和文件—合并、拆分、旋转、重排、压缩和转换。不提供文字编辑、OCR 和电子签名功能。"
+      }
+    ],
+    "disclaimer": "竞品信息基于截至 2026 年 10 月 Adobe 公开的产品页面和政策，可能会发生变化。Adobe 和 Acrobat 是 Adobe 的商标；LocalDocu 与 Adobe 无任何关联，也未获得其认可。",
+    "links": {
+      "ilovepdfAlternative": "LocalDocu 与 iLovePDF 对比",
+      "smallpdfAlternative": "LocalDocu 与 Smallpdf 对比",
+      "mergePdfs": "免费合并 PDF",
+      "guideMergeWithoutUploading": "不上传合并 PDF"
     }
   }
 }

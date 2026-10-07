@@ -4,6 +4,7 @@ import { DiscoverabilitySections } from './components/DiscoverabilitySections';
 import { PublicJsonLd } from './components/PublicJsonLd';
 import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
+import { TaskTileGrid } from './components/TaskTileGrid';
 import { TrustStatusStrip } from './components/TrustStatusStrip';
 import { useTheme } from './hooks/useTheme';
 import { useLocale, useT } from './i18n';
@@ -56,17 +57,21 @@ export function WorkspacePage() {
       </header>
 
       <main id="main-content" className="flex flex-col gap-6 md:gap-8" tabIndex={-1}>
-        <DocumentWorkspace
-          allowedActions={FULL_WORKSPACE_CONFIG.allowedActions}
-          lockAction={FULL_WORKSPACE_CONFIG.lockAction}
-          acceptKind={FULL_WORKSPACE_CONFIG.acceptKind}
-          showFileManage={FULL_WORKSPACE_CONFIG.showFileManage}
-          showAiPlaceholder={FULL_WORKSPACE_CONFIG.showAiPlaceholder}
-          folderExtensions={FULL_WORKSPACE_CONFIG.folderExtensions}
-          workspaceHeading={copy.workspaceHeading}
-          opsTitle={copy.opsTitle}
-          opsDesc={copy.opsDesc}
-        />
+        <TaskTileGrid />
+
+        <div id="workspace" className="flex scroll-mt-6 flex-col gap-6 md:gap-8">
+          <DocumentWorkspace
+            allowedActions={FULL_WORKSPACE_CONFIG.allowedActions}
+            lockAction={FULL_WORKSPACE_CONFIG.lockAction}
+            acceptKind={FULL_WORKSPACE_CONFIG.acceptKind}
+            showFileManage={FULL_WORKSPACE_CONFIG.showFileManage}
+            showAiPlaceholder={FULL_WORKSPACE_CONFIG.showAiPlaceholder}
+            folderExtensions={FULL_WORKSPACE_CONFIG.folderExtensions}
+            workspaceHeading={copy.workspaceHeading}
+            opsTitle={copy.opsTitle}
+            opsDesc={copy.opsDesc}
+          />
+        </div>
 
         <DiscoverabilitySections />
       </main>

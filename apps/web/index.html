@@ -1,20 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--seo:head-->
     <title>%META_TITLE%</title>
     <meta name="description" content="%META_DESCRIPTION%" />
-    <meta
-      name="keywords"
-      content="LocalDocu, local PDF merge, privacy PDF tool, offline PDF, split PDF locally, compress PDF browser, Word to PDF local, no upload documents"
-    />
-    <meta name="author" content="Abhijeeth Gadwal" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="bingbot" content="index, follow" />
     <link rel="canonical" href="%CANONICAL_URL%" />
-
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="LocalDocu" />
     <meta property="og:locale" content="en_US" />
@@ -22,13 +15,16 @@
     <meta property="og:title" content="%META_TITLE%" />
     <meta property="og:description" content="%META_DESCRIPTION%" />
     <meta property="og:image" content="%OG_IMAGE_URL%" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="LocalDocu — Tell it what to do. Your files stay on your device." />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="%META_TITLE%" />
     <meta name="twitter:description" content="%META_DESCRIPTION%" />
     <meta name="twitter:image" content="%OG_IMAGE_URL%" />
     <meta name="twitter:image:alt" content="LocalDocu — privacy-first local document tools" />
+    <!--/seo:head-->
+    <meta name="author" content="Abhijeeth Gadwal" />
 
     <meta name="theme-color" content="#0F766E" />
     <meta name="color-scheme" content="light dark" />
@@ -56,52 +52,19 @@
         } catch (e) {}
       })();
     </script>
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/pwa-192.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="root"></div>
-
-    <!-- Crawlable fallback for agents/browsers without JS (same facts as in-app FAQ). -->
     <noscript>
-      <main style="max-width: 42rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif">
-        <h1>LocalDocu</h1>
-        <p>Tell it what to do. Your files stay on your device.</p>
-        <p>
-          LocalDocu is privacy-first, local-first document automation for PDF and Word files.
-          Merge, split, compress, rotate, and convert in your browser — document contents are not
-          uploaded for processing in the current release. Enable JavaScript to use the interactive workspace.
-        </p>
-        <h2>Privacy</h2>
-        <p>No authentication. No document-upload backend. Cloud processing: Off. LocalDocu AI: Off.</p>
-        <h2>How it works</h2>
-        <ol>
-          <li>Select PDF, DOC, or DOCX files or a folder (or drag and drop).</li>
-          <li>Choose an operation such as merge, split, compress, or convert.</li>
-          <li>Run locally and save or download the result on your device.</li>
-        </ol>
-        <h2>Explore</h2>
-        <ul>
-          <li><a href="%SITE_URL%/merge-pdf">Merge PDF</a></li>
-          <li><a href="%SITE_URL%/compress-pdf">Compress PDF</a></li>
-          <li><a href="%SITE_URL%/pdf-tools">PDF tools</a></li>
-          <li><a href="%SITE_URL%/browser-support">Browser &amp; device support</a></li>
-          <li><a href="%SITE_URL%/privacy">Privacy</a></li>
-          <li><a href="%SITE_URL%/faq">FAQ</a></li>
-          <li><a href="%SITE_URL%/how-it-works">How it works</a></li>
-          <li><a href="%SITE_URL%/open-source">Open source</a></li>
-          <li><a href="%SITE_URL%/contribute">Contribute</a></li>
-          <li><a href="%SITE_URL%/roadmap">Roadmap</a></li>
-        </ul>
-        <p>
-          <a href="%SITE_URL%/llms.txt">LLM brief</a> ·
-          <a href="%SITE_URL%/sitemap.xml">Sitemap</a> ·
-          <a href="%SITE_URL%/robots.txt">Robots</a>
-        </p>
-      </main>
+      <p style="max-width: 42rem; margin: 1rem auto; padding: 0 1rem; font-family: system-ui, sans-serif">
+        The interactive workspace needs JavaScript. Enable JavaScript to merge, split, compress or convert files locally.
+      </p>
     </noscript>
-
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

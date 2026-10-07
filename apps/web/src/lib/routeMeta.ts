@@ -9,7 +9,12 @@ import {
   type LocaleCode,
   type TranslateFn,
 } from '../i18n';
+import { COMPARE_PAGES, GUIDE_PAGES } from './contentPages';
+import type { PublicPageId } from './publicPages';
 import { absoluteUrl, SITE_PATHS } from './siteConfig';
+
+/** Drives JSON-LD, breadcrumbs, OG image and prerendered layout. */
+export type PageKind = 'home' | 'tool' | 'info' | 'faq' | 'hub' | 'guide' | 'compare';
 
 export interface RouteMeta {
   path: string;
@@ -17,7 +22,14 @@ export interface RouteMeta {
   description: string;
   /** Page H1 for public/info pages (homepage uses brand + tagline). */
   h1?: string;
+  kind: PageKind;
+  pageId?: PublicPageId;
   ogType?: 'website' | 'article';
+  /** Site-relative OG image path (PNG, 1200×630). */
+  ogImage: string;
+  /** ISO date the page content was last meaningfully updated. */
+  updated: string;
+  noindex?: boolean;
   /** Include FAQPage JSON-LD when FAQ content is the primary subject. */
   faqJsonLd?: boolean;
   /** Include SoftwareApplication JSON-LD only when the page describes the product. */
@@ -28,132 +40,123 @@ export interface RouteMeta {
   priority?: string;
 }
 
+interface RouteDef {
+  seoKey: string;
+  kind: PageKind;
+  pageId?: PublicPageId;
+  faqJsonLd?: boolean;
+  softwareJsonLd?: boolean;
+  changefreq?: 'weekly' | 'monthly';
+  priority?: string;
+  updated?: string;
+}
+
+/** Bump when site-wide copy changes; per-route `updated` overrides. */
+export const SITE_CONTENT_UPDATED = '2026-10-07';
+
+export const DEFAULT_OG_IMAGE = '/og/default.png';
+
+function tool(seoKey: string, pageId: PublicPageId, priority: string): RouteDef {
+  return { seoKey, kind: 'tool', pageId, changefreq: 'monthly', priority };
+}
+
+function info(seoKey: string, pageId: PublicPageId, priority: string): RouteDef {
+  return { seoKey, kind: 'info', pageId, changefreq: 'monthly', priority };
+}
+
 /** Structural flags + SEO key mapping (strings live in seo.* catalogs). */
-const ROUTE_DEFS: Record<
-  string,
-  {
-    seoKey: string;
-    faqJsonLd?: boolean;
-    softwareJsonLd?: boolean;
-    breadcrumb?: boolean;
-    changefreq?: 'weekly' | 'monthly';
-    priority?: string;
-  }
-> = {
+const ROUTE_DEFS: Record<string, RouteDef> = {
   [SITE_PATHS.home]: {
     seoKey: 'home',
+    kind: 'home',
     softwareJsonLd: true,
     faqJsonLd: true,
     changefreq: 'weekly',
     priority: '1.0',
   },
-  [SITE_PATHS.mergePdf]: {
-    seoKey: 'mergePdf',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.9',
-  },
-  [SITE_PATHS.mergeDocx]: {
-    seoKey: 'mergeDocx',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.85',
-  },
-  [SITE_PATHS.compressPdf]: {
-    seoKey: 'compressPdf',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.9',
-  },
-  [SITE_PATHS.pdfTools]: {
-    seoKey: 'pdfTools',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.9',
-  },
-  [SITE_PATHS.docxToPdf]: {
-    seoKey: 'docxToPdf',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.85',
-  },
-  [SITE_PATHS.offline]: {
-    seoKey: 'offline',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.8',
-  },
-  [SITE_PATHS.privacy]: {
-    seoKey: 'privacy',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.9',
-  },
-  [SITE_PATHS.howItWorks]: {
-    seoKey: 'howItWorks',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.85',
-  },
-  [SITE_PATHS.browserSupport]: {
-    seoKey: 'browserSupport',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.85',
-  },
-  [SITE_PATHS.openSource]: {
-    seoKey: 'openSource',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.8',
-  },
-  [SITE_PATHS.contribute]: {
-    seoKey: 'contribute',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.8',
-  },
-  [SITE_PATHS.roadmap]: {
-    seoKey: 'roadmap',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.8',
-  },
-  [SITE_PATHS.desktop]: {
-    seoKey: 'desktop',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.7',
-  },
-  [SITE_PATHS.localAi]: {
-    seoKey: 'localAi',
-    breadcrumb: true,
-    changefreq: 'monthly',
-    priority: '0.7',
-  },
+  [SITE_PATHS.mergePdf]: tool('mergePdf', 'merge-pdf', '0.9'),
+  [SITE_PATHS.compressPdf]: tool('compressPdf', 'compress-pdf', '0.9'),
+  [SITE_PATHS.splitPdf]: tool('splitPdf', 'split-pdf', '0.9'),
+  [SITE_PATHS.docxToPdf]: tool('docxToPdf', 'docx-to-pdf', '0.85'),
+  [SITE_PATHS.mergeDocx]: tool('mergeDocx', 'merge-docx', '0.85'),
+  [SITE_PATHS.extractPages]: tool('extractPages', 'extract-pages', '0.85'),
+  [SITE_PATHS.deletePages]: tool('deletePages', 'delete-pages', '0.85'),
+  [SITE_PATHS.rotatePdf]: tool('rotatePdf', 'rotate-pdf', '0.85'),
+  [SITE_PATHS.reorderPages]: tool('reorderPages', 'reorder-pages', '0.85'),
+  [SITE_PATHS.pdfTools]: tool('pdfTools', 'pdf-tools', '0.9'),
+  [SITE_PATHS.privacy]: info('privacy', 'privacy', '0.9'),
+  [SITE_PATHS.howItWorks]: info('howItWorks', 'how-it-works', '0.85'),
+  [SITE_PATHS.browserSupport]: info('browserSupport', 'browser-support', '0.85'),
+  [SITE_PATHS.offline]: info('offline', 'offline', '0.8'),
+  [SITE_PATHS.openSource]: info('openSource', 'open-source', '0.8'),
+  [SITE_PATHS.contribute]: info('contribute', 'contribute', '0.7'),
+  [SITE_PATHS.roadmap]: info('roadmap', 'roadmap', '0.7'),
+  [SITE_PATHS.desktop]: info('desktop', 'desktop', '0.6'),
+  [SITE_PATHS.localAi]: info('localAi', 'local-ai', '0.6'),
   [SITE_PATHS.faq]: {
     seoKey: 'faq',
+    kind: 'faq',
+    pageId: 'faq',
     faqJsonLd: true,
-    breadcrumb: true,
     changefreq: 'monthly',
     priority: '0.9',
   },
+  [SITE_PATHS.guides]: {
+    seoKey: 'guides',
+    kind: 'hub',
+    pageId: 'guides',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  ...Object.fromEntries(
+    GUIDE_PAGES.map((p) => [
+      p.path,
+      { seoKey: p.seoKey, kind: 'guide', pageId: p.id, changefreq: 'monthly', priority: '0.8' },
+    ]),
+  ),
+  ...Object.fromEntries(
+    COMPARE_PAGES.map((p) => [
+      p.path,
+      { seoKey: p.seoKey, kind: 'compare', pageId: p.id, changefreq: 'monthly', priority: '0.85' },
+    ]),
+  ),
 };
 
-function buildMeta(path: string, def: (typeof ROUTE_DEFS)[string], t: TranslateFn): RouteMeta {
+/** Every prerenderable public path (English, unprefixed). */
+export const ROUTE_PATHS = Object.keys(ROUTE_DEFS);
+
+function ogImageFor(path: string, kind: PageKind): string {
+  if (kind === 'tool' || kind === 'guide' || kind === 'compare' || kind === 'hub') {
+    return `/og/${path.replace(/^\//, '').replace(/\//g, '-')}.png`;
+  }
+  return DEFAULT_OG_IMAGE;
+}
+
+function buildMeta(path: string, def: RouteDef, t: TranslateFn): RouteMeta {
   const base = `seo.${def.seoKey}`;
   const h1 = t(`${base}.h1`);
   const breadcrumb = t(`${base}.breadcrumb`);
+  const crumb = { name: breadcrumb !== `${base}.breadcrumb` ? breadcrumb : t(`${base}.title`), path };
+  const isArticle = def.kind === 'guide' || def.kind === 'compare';
+  const breadcrumbs =
+    def.kind === 'home'
+      ? undefined
+      : isArticle
+        ? [{ name: t('seo.guides.breadcrumb'), path: SITE_PATHS.guides }, crumb]
+        : [crumb];
   return {
     path,
     title: t(`${base}.title`),
     description: t(`${base}.description`),
     ...(h1 !== `${base}.h1` ? { h1 } : {}),
+    kind: def.kind,
+    pageId: def.pageId,
+    ogType: isArticle ? 'article' : 'website',
+    ogImage: ogImageFor(path, def.kind),
+    updated: def.updated ?? SITE_CONTENT_UPDATED,
     faqJsonLd: def.faqJsonLd,
     softwareJsonLd: def.softwareJsonLd,
-    breadcrumbs: def.breadcrumb
-      ? [{ name: breadcrumb !== `${base}.breadcrumb` ? breadcrumb : t(`${base}.title`), path }]
-      : undefined,
+    breadcrumbs,
     changefreq: def.changefreq,
     priority: def.priority,
   };
@@ -184,6 +187,10 @@ export function getNotFoundMeta(t: TranslateFn = getT()): RouteMeta {
     title: t('seo.notFound.title'),
     description: t('seo.notFound.description'),
     h1: t('seo.notFound.h1'),
+    kind: 'info',
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: SITE_CONTENT_UPDATED,
+    noindex: true,
   };
 }
 
@@ -253,14 +260,22 @@ export function applyDocumentMeta(meta: RouteMeta, locale: LocaleCode = DEFAULT_
   document.documentElement.lang = info.bcp47;
   document.documentElement.dir = info.isRtl ? 'rtl' : 'ltr';
 
+  const ogImage = absoluteUrl(meta.ogImage);
   setMeta('meta[name="description"]', 'content', meta.description);
   setMeta('link[rel="canonical"]', 'href', canonical);
+  setMeta(
+    'meta[name="robots"]',
+    'content',
+    meta.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  );
   setMeta('meta[property="og:url"]', 'content', canonical);
   setMeta('meta[property="og:title"]', 'content', meta.title);
   setMeta('meta[property="og:description"]', 'content', meta.description);
   setMeta('meta[property="og:type"]', 'content', meta.ogType ?? 'website');
+  setMeta('meta[property="og:image"]', 'content', ogImage);
   setMeta('meta[name="twitter:title"]', 'content', meta.title);
   setMeta('meta[name="twitter:description"]', 'content', meta.description);
+  setMeta('meta[name="twitter:image"]', 'content', ogImage);
   setOrCreateMetaProperty('og:locale', info.ogLocale);
 
   // Remove previous alternate og:locale tags we may have added
@@ -280,15 +295,39 @@ export function applyDocumentMeta(meta: RouteMeta, locale: LocaleCode = DEFAULT_
   setOrCreateLinkAlternate('x-default', absoluteUrl(barePath === '/' ? '/' : barePath));
 }
 
-export function sitemapEntries(): { loc: string; priority: string; changefreq: string }[] {
-  const entries: { loc: string; priority: string; changefreq: string }[] = [];
+export interface SitemapEntry {
+  loc: string;
+  lastmod: string;
+  priority: string;
+  changefreq: string;
+  /** hreflang → absolute URL, including x-default. */
+  alternates: { hreflang: string; href: string }[];
+}
+
+export function hreflangAlternates(
+  barePath: string,
+  toAbsolute: (path: string) => string = absoluteUrl,
+): { hreflang: string; href: string }[] {
+  return [
+    ...LOCALE_CODES.map((code) => ({
+      hreflang: LOCALES[code].bcp47,
+      href: toAbsolute(withLocale(barePath, code)),
+    })),
+    { hreflang: 'x-default', href: toAbsolute(barePath) },
+  ];
+}
+
+export function sitemapEntries(toAbsolute: (path: string) => string = absoluteUrl): SitemapEntry[] {
+  const entries: SitemapEntry[] = [];
   for (const m of Object.values(ROUTE_META)) {
+    const alternates = hreflangAlternates(m.path, toAbsolute);
     for (const code of LOCALE_CODES) {
-      const path = withLocale(m.path, code);
       entries.push({
-        loc: absoluteUrl(path),
+        loc: toAbsolute(withLocale(m.path, code)),
+        lastmod: m.updated,
         priority: m.priority ?? '0.7',
         changefreq: m.changefreq ?? 'monthly',
+        alternates,
       });
     }
   }

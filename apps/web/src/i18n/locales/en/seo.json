@@ -1,37 +1,67 @@
 {
   "home": {
-    "title": "LocalDocu — Local-First Document Automation",
-    "description": "Tell it what to do. Your files stay on your device. Merge, split, compress, and convert PDF and Word files locally in your browser."
+    "title": "Free PDF Tools That Never Upload Your Files | LocalDocu",
+    "description": "Merge, split, compress, rotate and convert PDF and Word files free in your browser. No upload, no sign-up, no watermark — works offline. Open source."
   },
   "mergePdf": {
-    "title": "Merge PDF Files Locally & Privately | LocalDocu",
-    "description": "Merge PDF files without uploading them. Select, reorder, and combine PDFs locally in your browser with LocalDocu.",
+    "title": "Merge PDF Free — No Upload, Works Offline | LocalDocu",
+    "description": "Combine PDF files into one in your browser. Files never leave your device — free, no sign-up, no watermark, no file-count limit. Works on phone and desktop.",
     "h1": "Merge PDF files without uploading them",
     "breadcrumb": "Merge PDF"
   },
   "mergeDocx": {
-    "title": "Merge Word Documents Locally | LocalDocu",
-    "description": "Merge DOCX Word documents locally on your device. Practical merge with clear limits — no document upload to LocalDocu.",
+    "title": "Merge Word Documents Free — No Upload | LocalDocu",
+    "description": "Combine DOCX files into one Word document in your browser — no Microsoft Word needed, nothing uploaded. Free, with clear limits on complex layouts.",
     "h1": "Merge Word documents locally",
     "breadcrumb": "Merge DOCX"
   },
   "compressPdf": {
-    "title": "Compress PDF Locally & Privately | LocalDocu",
-    "description": "Compress PDF files without uploading them. Reduce size with balanced or maximum modes — processing stays on your device.",
+    "title": "Compress PDF Free — Reduce Size Without Uploading | LocalDocu",
+    "description": "Shrink PDF file size in your browser for email or forms. Balanced keeps text selectable; Maximum makes the smallest file. No upload, free, works offline.",
     "h1": "Compress PDF files without uploading them",
     "breadcrumb": "Compress PDF"
   },
   "pdfTools": {
-    "title": "Local PDF Tools — Merge, Split, Extract & More | LocalDocu",
-    "description": "Local PDF tools for merge, split, extract, delete, rotate, reorder, and compress — without unnecessary uploads.",
+    "title": "All PDF Tools in One Page — Free, No Upload | LocalDocu",
+    "description": "Merge, split, extract, delete, rotate, reorder and compress PDFs in one place. Everything runs in your browser — free, private, no account, works offline.",
     "h1": "Local PDF tools without unnecessary uploads",
     "breadcrumb": "PDF tools"
   },
   "docxToPdf": {
-    "title": "Convert DOCX to PDF Locally | LocalDocu",
-    "description": "Convert DOC and DOCX to a readable PDF on your device. Complex Word layouts may not be preserved exactly.",
+    "title": "Word to PDF Converter — Free, No Upload | LocalDocu",
+    "description": "Convert DOC and DOCX to PDF in your browser without uploading the file. Free and private; text-oriented output — complex Word layouts may differ.",
     "h1": "Convert Word documents to PDF locally",
     "breadcrumb": "DOCX to PDF"
+  },
+  "splitPdf": {
+    "title": "Split PDF Free — Separate Pages Without Uploading | LocalDocu",
+    "description": "Split a PDF into one file per page in your browser. Nothing is uploaded — free, no sign-up, no watermark. Need a page range? Use Extract pages.",
+    "h1": "Split PDF files without uploading them",
+    "breadcrumb": "Split PDF"
+  },
+  "extractPages": {
+    "title": "Extract Pages From PDF — Free, No Upload | LocalDocu",
+    "description": "Save selected pages (like 1-3,5) from a PDF as a new file, right in your browser. Free, private and offline-capable — the PDF never leaves your device.",
+    "h1": "Extract pages from a PDF locally",
+    "breadcrumb": "Extract pages"
+  },
+  "deletePages": {
+    "title": "Delete Pages From PDF — Free, No Upload | LocalDocu",
+    "description": "Remove blank, duplicate or unwanted pages from a PDF in your browser. No upload, no account, no watermark — the edited copy is saved on your device.",
+    "h1": "Delete pages from a PDF locally",
+    "breadcrumb": "Delete pages"
+  },
+  "rotatePdf": {
+    "title": "Rotate PDF Free — Fix Sideways Pages, No Upload | LocalDocu",
+    "description": "Rotate all or selected PDF pages by 90°, 180° or 270° and save permanently. Runs in your browser — free, private, works on iPhone and Android.",
+    "h1": "Rotate PDF pages without uploading them",
+    "breadcrumb": "Rotate PDF"
+  },
+  "reorderPages": {
+    "title": "Reorder PDF Pages — Rearrange Free, No Upload | LocalDocu",
+    "description": "Rearrange or reverse PDF pages in any order, right in your browser. Free, no sign-up, and your document never leaves your device.",
+    "h1": "Reorder PDF pages locally",
+    "breadcrumb": "Reorder pages"
   },
   "offline": {
     "title": "Offline Document Processing | LocalDocu",
@@ -77,13 +107,13 @@
   },
   "desktop": {
     "title": "LocalDocu Desktop | Advanced Local Document Automation",
-    "description": "We are building a desktop app for heavier local workloads and LocalDocu AI. Work in progress — we aim to release soon with the open community. The web workspace remains the product today.",
+    "description": "A LocalDocu desktop app for heavier local workloads and LocalDocu AI is in progress. Until it ships, the free web workspace is the product.",
     "h1": "Desktop: stronger local capacity ahead",
     "breadcrumb": "Desktop"
   },
   "localAi": {
     "title": "LocalDocu AI | Intent-Driven Local Document Automation",
-    "description": "LocalDocu AI runs in the desktop app: an open-weight, on-device model that reads document metadata and user intent, then drives LocalDocu document management — without sending document contents to the cloud. Work in progress; not active in the current web release. Community contributions welcome.",
+    "description": "LocalDocu AI (in progress) is an open-weight, on-device model for the desktop app that plans document tasks from your intent and metadata — no cloud upload.",
     "h1": "LocalDocu AI: in progress for the desktop app",
     "breadcrumb": "LocalDocu AI"
   },
@@ -92,6 +122,54 @@
     "description": "Common questions about LocalDocu, privacy, supported files, offline use, open source, and contributions.",
     "h1": "Frequently asked questions",
     "breadcrumb": "FAQ"
+  },
+  "guides": {
+    "title": "PDF Privacy Guides & Tool Comparisons | LocalDocu",
+    "description": "Practical guides to merging, compressing and editing PDFs without uploading them, plus factual comparisons with iLovePDF, Smallpdf and Adobe Acrobat.",
+    "h1": "Guides and comparisons",
+    "breadcrumb": "Guides"
+  },
+  "guideMergePdfWithoutUploading": {
+    "title": "How to Merge PDFs Without Uploading Them (2026) | LocalDocu",
+    "description": "Three ways to combine PDF files without sending them to a server — in the browser, on Mac and on Windows — and how to verify nothing is uploaded.",
+    "h1": "How to merge PDF files without uploading them",
+    "breadcrumb": "Merge PDFs without uploading"
+  },
+  "guideCompressPdfOffline": {
+    "title": "How to Compress a PDF Offline — Free Methods (2026) | LocalDocu",
+    "description": "Reduce PDF size without internet or uploads: browser-based compression, macOS Preview and Ghostscript compared, with tips for scanned files and email limits.",
+    "h1": "How to compress a PDF offline",
+    "breadcrumb": "Compress PDF offline"
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "title": "Is It Safe to Upload PDFs to Online Tools? | LocalDocu",
+    "description": "What actually happens when you upload a PDF to an online converter, which documents should never leave your device, and how to check a tool before you trust it.",
+    "h1": "Is it safe to upload PDFs to online tools?",
+    "breadcrumb": "Is uploading PDFs safe?"
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "title": "Edit PDFs on iPhone or Android Without an App | LocalDocu",
+    "description": "Merge, split, rotate and compress PDFs on your phone in the browser — no app install, no upload. Step-by-step for iPhone Safari and Android Chrome.",
+    "h1": "How to edit PDFs on your phone without installing an app",
+    "breadcrumb": "PDFs on your phone"
+  },
+  "ilovepdfAlternative": {
+    "title": "iLovePDF Alternative That Doesn’t Upload Files | LocalDocu",
+    "description": "A factual LocalDocu vs iLovePDF comparison: where your files go, limits, offline use and features — and when iLovePDF is still the better choice.",
+    "h1": "A private iLovePDF alternative: LocalDocu vs iLovePDF",
+    "breadcrumb": "iLovePDF alternative"
+  },
+  "smallpdfAlternative": {
+    "title": "Smallpdf Alternative — Free, No Upload, No Limits | LocalDocu",
+    "description": "LocalDocu vs Smallpdf compared on privacy, free-tier limits, offline use and features, based on Smallpdf’s own published policies.",
+    "h1": "A free, private Smallpdf alternative: LocalDocu vs Smallpdf",
+    "breadcrumb": "Smallpdf alternative"
+  },
+  "adobeAcrobatAlternative": {
+    "title": "Free Adobe Acrobat Alternative for Basic PDF Tasks | LocalDocu",
+    "description": "LocalDocu vs Adobe Acrobat online: which PDF jobs you can do free without uploading, and which still need Acrobat. An honest, dated comparison.",
+    "h1": "A free Adobe Acrobat alternative for everyday PDF tasks",
+    "breadcrumb": "Adobe Acrobat alternative"
   },
   "notFound": {
     "title": "Page not found | LocalDocu",

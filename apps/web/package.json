@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "assets": "tsx scripts/generate-assets.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run --passWithNoTests",
     "lint": "echo \"lint: deferred\""
@@ -25,11 +26,13 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.0.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "tailwindcss": "^4.0.14",
+    "tsx": "^4.23.15",
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
     "vite-plugin-pwa": "^1.3.0",

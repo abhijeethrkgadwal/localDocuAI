@@ -7,6 +7,8 @@
     "shortDescription": "Privacy-first local PDF and Word automation. Files stay on your device."
   },
   "loading": "Loading…",
+  "skipToContent": "Skip to main content",
+  "noscript": "The interactive workspace needs JavaScript. Everything on this page is readable without it; enable JavaScript to merge, split, compress or convert files locally.",
   "nav": {
     "ariaPrimary": "Primary",
     "faq": "FAQ",
@@ -46,12 +48,24 @@
     "pdfTools": "PDF tools",
     "mergePdf": "Merge PDF",
     "compressPdf": "Compress PDF",
+    "splitPdf": "Split PDF",
+    "rotatePdf": "Rotate PDF",
     "mergeDocx": "Merge DOCX",
     "docxToPdf": "DOCX to PDF",
     "howItWorks": "How it works",
     "browserSupport": "Browser support",
     "privacy": "Privacy",
     "faq": "FAQ",
+    "resources": "Resources",
+    "ariaResources": "Guides and comparisons",
+    "guides": "Guides",
+    "uploadSafety": "Is uploading PDFs safe?",
+    "ilovepdfAlternative": "iLovePDF alternative",
+    "smallpdfAlternative": "Smallpdf alternative",
+    "acrobatAlternative": "Adobe Acrobat alternative",
+    "languages": "Languages",
+    "ariaLanguages": "Choose a language",
+    "allPages": "All pages",
     "openSource": "Open source",
     "ariaOpenSource": "Open source",
     "github": "GitHub",
@@ -125,5 +139,71 @@
   "language": {
     "aria": "Language",
     "label": "Language"
+  },
+  "tasks": {
+    "heading": "Every tool you need, running on your device",
+    "subheading": "Pick a task to get started. Files are processed locally and never uploaded.",
+    "filterAria": "Filter tools by category",
+    "comingSoon": "Coming soon",
+    "learnMore": "Learn more",
+    "workspaceLink": "Prefer one place for everything? Use the full workspace below.",
+    "allPdfToolsLink": "All PDF tools in one page",
+    "categories": {
+      "all": "All",
+      "organize": "Organize",
+      "optimize": "Optimize",
+      "convert": "Convert",
+      "ai": "AI"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "Merge PDF",
+        "desc": "Combine multiple PDFs into one file in the order you choose."
+      },
+      "splitPdf": {
+        "title": "Split PDF",
+        "desc": "Separate every page of a PDF into its own file."
+      },
+      "compressPdf": {
+        "title": "Compress PDF",
+        "desc": "Shrink PDF file size while keeping the quality you need."
+      },
+      "docxToPdf": {
+        "title": "Word to PDF",
+        "desc": "Convert DOC and DOCX documents into readable PDFs."
+      },
+      "extractPages": {
+        "title": "Extract pages",
+        "desc": "Pull selected pages out of a PDF into a new document."
+      },
+      "deletePages": {
+        "title": "Delete pages",
+        "desc": "Remove unwanted pages from a PDF in a few clicks."
+      },
+      "rotatePdf": {
+        "title": "Rotate PDF",
+        "desc": "Turn pages to the right orientation and save the result."
+      },
+      "reorderPages": {
+        "title": "Reorder pages",
+        "desc": "Rearrange PDF pages into exactly the order you want."
+      },
+      "mergeDocx": {
+        "title": "Merge Word",
+        "desc": "Join several Word documents into a single DOCX file."
+      },
+      "chatPdf": {
+        "title": "Chat with PDF",
+        "desc": "Ask questions about your documents with on-device AI."
+      },
+      "summarize": {
+        "title": "Summarize",
+        "desc": "Get short summaries of long documents, processed locally."
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "Turn scanned pages into searchable, selectable text."
+      }
+    }
   }
 }

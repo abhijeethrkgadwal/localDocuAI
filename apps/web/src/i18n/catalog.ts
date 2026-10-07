@@ -48,6 +48,11 @@ export function getEnglishCatalog(): Catalog {
   return enCatalog;
 }
 
+/** Synchronously available catalog (English, or a locale preloaded before first render). */
+export function getCachedCatalog(locale: LocaleCode): Catalog | undefined {
+  return cache.get(locale);
+}
+
 export async function loadCatalog(locale: LocaleCode): Promise<Catalog> {
   const hit = cache.get(locale);
   if (hit) return hit;

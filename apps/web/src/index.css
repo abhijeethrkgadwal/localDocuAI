@@ -31,6 +31,12 @@
   --status-offline: #a16207;
   --status-online: var(--success);
 
+  /* Task tile category tints */
+  --tile-organize: var(--accent);
+  --tile-optimize: #b45309;
+  --tile-convert: #1d5fa8;
+  --tile-ai: #6d4fc2;
+
   /* Spacing scale */
   --space-1: 4px;
   --space-2: 8px;
@@ -108,6 +114,10 @@ html.dark {
   --status-offline: #fbbf24;
   --status-online: var(--success);
   --shadow-sm: 0 1px 2px color-mix(in srgb, #000 35%, transparent);
+  --tile-organize: var(--accent);
+  --tile-optimize: #f0a54a;
+  --tile-convert: #6aa8ec;
+  --tile-ai: #a993ef;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -482,6 +492,161 @@ body {
   margin-bottom: var(--space-2);
 }
 
+/* Home task tiles */
+.task-chip {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: var(--control-height-sm);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  padding: 0.3rem 0.85rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 520;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.task-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.task-chip[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.task-tile {
+  --tile-color: var(--accent);
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.task-tile > .task-tile-icon + span {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-tile[data-coming-soon='true'] > .task-tile-icon + span {
+  padding-right: 5.5rem;
+}
+
+.task-tile[data-coming-soon='true'] > a {
+  flex-basis: 100%;
+  padding-left: calc(2.75rem + var(--space-4));
+}
+
+@media (min-width: 420px) {
+  .task-tile {
+    flex-flow: column nowrap;
+    gap: var(--space-3);
+    min-height: 9.5rem;
+  }
+
+  .task-tile > .task-tile-icon + span {
+    flex: none;
+  }
+
+  .task-tile[data-coming-soon='true'] > .task-tile-icon + span {
+    padding-right: 0;
+  }
+
+  .task-tile[data-coming-soon='true'] > a {
+    flex-basis: auto;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .task-tile {
+    padding: var(--space-5);
+  }
+}
+
+a.task-tile:hover,
+a.task-tile:focus-visible {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--tile-color) 55%, var(--border));
+  box-shadow:
+    0 6px 18px -8px color-mix(in srgb, var(--tile-color) 45%, transparent),
+    var(--shadow-sm);
+}
+
+a.task-tile:active {
+  transform: translateY(0);
+}
+
+.task-tile-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-surface);
+  background: color-mix(in srgb, var(--tile-color) 14%, var(--surface));
+  color: var(--tile-color);
+}
+
+html.dark .task-tile-icon {
+  background: color-mix(in srgb, var(--tile-color) 18%, var(--surface));
+}
+
+.task-tile[data-coming-soon='true'] {
+  background: var(--surface-subtle);
+  box-shadow: none;
+}
+
+.task-tile[data-coming-soon='true'] .task-tile-icon,
+.task-tile[data-coming-soon='true'] .task-tile-icon + span {
+  opacity: 0.7;
+}
+
+.task-tile-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--tile-color) 35%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tile-color) 10%, var(--surface));
+  padding: 0.125rem 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--tile-color);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.task-tile:hover,
+  a.task-tile:focus-visible {
+    transform: none;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -532,6 +697,8 @@ body {
 
   .btn,
   .status-pill,
+  .task-chip,
+  .task-tile,
   .panel,
   .dropzone,
   .control,

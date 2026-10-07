@@ -7,12 +7,18 @@
     "shortDescription": "Automatización local de PDF y Word con prioridad en la privacidad. Tus archivos permanecen en tu dispositivo."
   },
   "loading": "Cargando…",
+  "skipToContent": "Saltar al contenido principal",
+  "noscript": "El espacio de trabajo interactivo necesita JavaScript. Todo el contenido de esta página se puede leer sin él; activa JavaScript para combinar, dividir, comprimir o convertir archivos localmente.",
   "nav": {
     "ariaPrimary": "Principal",
     "faq": "FAQ",
     "privacy": "Privacidad",
     "github": "GitHub",
-    "opensInNewTab": " (se abre en una pestaña nueva)"
+    "opensInNewTab": " (se abre en una pestaña nueva)",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "menuHeading": "Menú",
+    "appearance": "Apariencia"
   },
   "theme": {
     "ariaColorTheme": "Tema de color",
@@ -42,12 +48,24 @@
     "pdfTools": "Herramientas PDF",
     "mergePdf": "Combinar PDF",
     "compressPdf": "Comprimir PDF",
+    "splitPdf": "Dividir PDF",
+    "rotatePdf": "Girar PDF",
     "mergeDocx": "Combinar DOCX",
     "docxToPdf": "DOCX a PDF",
     "howItWorks": "Cómo funciona",
     "browserSupport": "Compatibilidad de navegadores",
     "privacy": "Privacidad",
     "faq": "FAQ",
+    "resources": "Recursos",
+    "ariaResources": "Guías y comparativas",
+    "guides": "Guías",
+    "uploadSafety": "¿Es seguro subir PDF?",
+    "ilovepdfAlternative": "Alternativa a iLovePDF",
+    "smallpdfAlternative": "Alternativa a Smallpdf",
+    "acrobatAlternative": "Alternativa a Adobe Acrobat",
+    "languages": "Idiomas",
+    "ariaLanguages": "Elige un idioma",
+    "allPages": "Todas las páginas",
     "openSource": "Código abierto",
     "ariaOpenSource": "Código abierto",
     "github": "GitHub",
@@ -57,7 +75,7 @@
     "future": "Futuro",
     "ariaFuture": "Futuro",
     "desktop": "Escritorio",
-    "localAi": "IA local",
+    "localAi": "LocalDocu AI",
     "support": "Apoyo",
     "ariaSupport": "Apoyo",
     "supportTheProject": "Apoyar el proyecto",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "Idioma",
     "label": "Idioma"
+  },
+  "tasks": {
+    "heading": "Todas las herramientas que necesitas, en tu dispositivo",
+    "subheading": "Elige una tarea para empezar. Los archivos se procesan localmente y nunca se suben.",
+    "filterAria": "Filtrar herramientas por categoría",
+    "comingSoon": "Próximamente",
+    "learnMore": "Más información",
+    "workspaceLink": "¿Prefieres tenerlo todo en un solo lugar? Usa el espacio de trabajo completo de abajo.",
+    "allPdfToolsLink": "Todas las herramientas PDF en una página",
+    "categories": {
+      "all": "Todas",
+      "organize": "Organizar",
+      "optimize": "Optimizar",
+      "convert": "Convertir",
+      "ai": "IA"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "Unir PDF",
+        "desc": "Combina varios PDF en un solo archivo en el orden que elijas."
+      },
+      "splitPdf": {
+        "title": "Dividir PDF",
+        "desc": "Separa cada página de un PDF en su propio archivo."
+      },
+      "compressPdf": {
+        "title": "Comprimir PDF",
+        "desc": "Reduce el tamaño de un PDF manteniendo la calidad que necesitas."
+      },
+      "docxToPdf": {
+        "title": "Word a PDF",
+        "desc": "Convierte documentos DOC y DOCX en PDF legibles."
+      },
+      "extractPages": {
+        "title": "Extraer páginas",
+        "desc": "Saca las páginas que elijas de un PDF a un documento nuevo."
+      },
+      "deletePages": {
+        "title": "Eliminar páginas",
+        "desc": "Quita las páginas que sobran de un PDF en pocos clics."
+      },
+      "rotatePdf": {
+        "title": "Rotar PDF",
+        "desc": "Gira las páginas a la orientación correcta y guarda el resultado."
+      },
+      "reorderPages": {
+        "title": "Reordenar páginas",
+        "desc": "Coloca las páginas del PDF exactamente en el orden que quieras."
+      },
+      "mergeDocx": {
+        "title": "Unir Word",
+        "desc": "Junta varios documentos de Word en un solo archivo DOCX."
+      },
+      "chatPdf": {
+        "title": "Chatear con un PDF",
+        "desc": "Haz preguntas sobre tus documentos con IA en el dispositivo."
+      },
+      "summarize": {
+        "title": "Resumir",
+        "desc": "Obtén resúmenes breves de documentos largos, procesados localmente."
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "Convierte páginas escaneadas en texto que se puede buscar y seleccionar."
+      }
+    }
   }
 }

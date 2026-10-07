@@ -96,7 +96,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-[var(--border)] pt-8 pb-4 text-sm text-[var(--text-tertiary)]">
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
         <div className="space-y-2 sm:col-span-2 lg:col-span-1">
           <p className="text-sm font-semibold tracking-tight text-[var(--text-primary)]">
             <BrandMark />
@@ -133,6 +133,12 @@ export function SiteFooter() {
               <FootLink to={SITE_PATHS.compressPdf}>{t('common.footer.compressPdf')}</FootLink>
             </li>
             <li>
+              <FootLink to={SITE_PATHS.splitPdf}>{t('common.footer.splitPdf')}</FootLink>
+            </li>
+            <li>
+              <FootLink to={SITE_PATHS.rotatePdf}>{t('common.footer.rotatePdf')}</FootLink>
+            </li>
+            <li>
               <FootLink to={SITE_PATHS.mergeDocx}>{t('common.footer.mergeDocx')}</FootLink>
             </li>
             <li>
@@ -149,6 +155,35 @@ export function SiteFooter() {
             </li>
             <li>
               <FootLink to={SITE_PATHS.faq}>{t('common.footer.faq')}</FootLink>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label={t('common.footer.ariaResources')} className="space-y-2">
+          <p className="text-xs font-semibold tracking-[0.12em] text-[var(--text-secondary)] uppercase">
+            {t('common.footer.resources')}
+          </p>
+          <ul className="space-y-1.5">
+            <li>
+              <FootLink to={SITE_PATHS.guides}>{t('common.footer.guides')}</FootLink>
+            </li>
+            <li>
+              <FootLink to={SITE_PATHS.guideUploadSafety}>{t('common.footer.uploadSafety')}</FootLink>
+            </li>
+            <li>
+              <FootLink to={SITE_PATHS.ilovepdfAlternative}>
+                {t('common.footer.ilovepdfAlternative')}
+              </FootLink>
+            </li>
+            <li>
+              <FootLink to={SITE_PATHS.smallpdfAlternative}>
+                {t('common.footer.smallpdfAlternative')}
+              </FootLink>
+            </li>
+            <li>
+              <FootLink to={SITE_PATHS.acrobatAlternative}>
+                {t('common.footer.acrobatAlternative')}
+              </FootLink>
             </li>
           </ul>
         </nav>

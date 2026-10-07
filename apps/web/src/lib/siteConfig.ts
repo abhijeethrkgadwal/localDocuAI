@@ -69,6 +69,11 @@ export const SITE_PATHS = {
   compressPdf: '/compress-pdf',
   pdfTools: '/pdf-tools',
   docxToPdf: '/docx-to-pdf',
+  splitPdf: '/split-pdf',
+  extractPages: '/extract-pages',
+  deletePages: '/delete-pages',
+  rotatePdf: '/rotate-pdf',
+  reorderPages: '/reorder-pages',
   offline: '/offline',
   privacy: '/privacy',
   howItWorks: '/how-it-works',
@@ -79,6 +84,14 @@ export const SITE_PATHS = {
   desktop: '/desktop',
   localAi: '/local-ai',
   faq: '/faq',
+  guides: '/guides',
+  guideMergeWithoutUploading: '/guides/merge-pdf-without-uploading',
+  guideCompressOffline: '/guides/compress-pdf-offline',
+  guideUploadSafety: '/guides/is-it-safe-to-upload-pdfs-online',
+  guidePdfOnPhone: '/guides/edit-pdf-on-phone-without-app',
+  ilovepdfAlternative: '/ilovepdf-alternative',
+  smallpdfAlternative: '/smallpdf-alternative',
+  acrobatAlternative: '/adobe-acrobat-alternative',
 } as const;
 
 export type SitePathKey = keyof typeof SITE_PATHS;

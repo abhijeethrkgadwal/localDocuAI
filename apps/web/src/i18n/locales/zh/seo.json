@@ -1,101 +1,179 @@
 {
   "home": {
-    "title": "LocalDocu — 本地优先的文档自动化",
-    "description": "告诉它要做什么，文件始终留在你的设备上。使用 LocalDocu 在浏览器中本地合并、拆分、压缩和转换 PDF 与 Word 文件，文档内容无需上传即可完成处理。"
+    "title": "免费在线PDF工具，文件无需上传 | LocalDocu",
+    "description": "在浏览器中免费合并、拆分、压缩、旋转PDF，以及Word转PDF。无需上传、无需注册、无水印，可离线使用，开源免费。"
   },
   "mergePdf": {
-    "title": "在本地私密合并 PDF 文件 | LocalDocu",
-    "description": "无需上传即可合并 PDF 文件。使用 LocalDocu 在浏览器中本地选择、排序并合并多个 PDF，整个过程都在你的设备上完成，合并结果由你自己保存。",
+    "title": "PDF合并免费工具，无需上传可离线 | LocalDocu",
+    "description": "在浏览器中把多个PDF合并成一个文件，文件不离开你的设备。免费、无需注册、无水印、不限文件数量，手机和电脑均可使用。",
     "h1": "无需上传即可合并 PDF 文件",
     "breadcrumb": "合并 PDF"
   },
   "mergeDocx": {
-    "title": "在本地合并 Word 文档 | LocalDocu",
-    "description": "在你的设备上本地合并 DOCX Word 文档。这是有明确限制的实用型合并，处理全程在浏览器中进行，不会向 LocalDocu 上传任何文档。",
+    "title": "Word文档合并免费工具，无需上传 | LocalDocu",
+    "description": "在浏览器中将多个DOCX合并为一个Word文档，无需安装Microsoft Word，也不上传任何内容。免费使用，复杂排版的限制会清楚说明。",
     "h1": "在本地合并 Word 文档",
     "breadcrumb": "合并 DOCX"
   },
   "compressPdf": {
-    "title": "在本地私密压缩 PDF | LocalDocu",
-    "description": "无需上传即可压缩 PDF 文件。使用均衡或最大模式减小文件体积，处理始终留在你的设备上，文档内容不会离开你的浏览器。",
+    "title": "PDF压缩免费工具，无需上传减小体积 | LocalDocu",
+    "description": "在浏览器中压缩PDF大小，方便发邮件或提交表单。均衡模式保留可选文字，最大模式文件最小。无需上传、免费、可离线。",
     "h1": "无需上传即可压缩 PDF 文件",
     "breadcrumb": "压缩 PDF"
   },
   "pdfTools": {
-    "title": "本地 PDF 工具 — 合并、拆分、提取等 | LocalDocu",
-    "description": "本地 PDF 工具，支持合并、拆分、提取、删除、旋转、重排和压缩，无需不必要的上传，所有操作都在你的浏览器中本地完成。",
+    "title": "PDF工具大全一站式，免费无需上传 | LocalDocu",
+    "description": "一站式合并、拆分、提取、删除、旋转、排序和压缩PDF。全部在浏览器中运行，免费、私密、无需账号，可离线使用。",
     "h1": "无需不必要上传的本地 PDF 工具",
     "breadcrumb": "PDF 工具"
   },
   "docxToPdf": {
-    "title": "在本地将 DOCX 转换为 PDF | LocalDocu",
-    "description": "在你的设备上把 DOC 和 DOCX 转换为可读的 PDF。转换以文字内容为主，复杂的 Word 排版可能无法完全保留，文件无需上传。",
+    "title": "Word转PDF免费在线转换，无需上传 | LocalDocu",
+    "description": "在浏览器中将DOC和DOCX转换为PDF，文件无需上传。免费且私密；输出以文字内容为主，复杂的Word排版可能会有差异。",
     "h1": "在本地将 Word 文档转换为 PDF",
     "breadcrumb": "DOCX 转 PDF"
   },
+  "splitPdf": {
+    "title": "PDF拆分免费工具，无需上传按页拆分 | LocalDocu",
+    "description": "在浏览器中把PDF按每页拆分为单独文件。不上传任何内容，免费、无需注册、无水印。需要指定页码范围？请使用提取页面。",
+    "h1": "无需上传即可拆分 PDF 文件",
+    "breadcrumb": "拆分 PDF"
+  },
+  "extractPages": {
+    "title": "PDF提取页面免费工具，无需上传 | LocalDocu",
+    "description": "直接在浏览器中把PDF的选定页面（如1-3,5）另存为新文件。免费、私密、支持离线，PDF始终不离开你的设备。",
+    "h1": "在本地从 PDF 中提取页面",
+    "breadcrumb": "提取页面"
+  },
+  "deletePages": {
+    "title": "PDF删除页面免费工具，无需上传 | LocalDocu",
+    "description": "在浏览器中删除PDF里的空白页、重复页或多余页面。无需上传、无需账号、无水印，编辑后的副本保存在你的设备上。",
+    "h1": "在本地删除 PDF 页面",
+    "breadcrumb": "删除页面"
+  },
+  "rotatePdf": {
+    "title": "PDF旋转免费工具，修正横向页面 | LocalDocu",
+    "description": "将PDF的全部或选定页面旋转90°、180°或270°并永久保存。在浏览器中运行，免费、私密，iPhone和Android均可使用。",
+    "h1": "无需上传即可旋转 PDF 页面",
+    "breadcrumb": "旋转 PDF"
+  },
+  "reorderPages": {
+    "title": "PDF页面排序免费调整，无需上传 | LocalDocu",
+    "description": "直接在浏览器中按任意顺序重新排列或倒序PDF页面。免费、无需注册，你的文档始终不离开你的设备。",
+    "h1": "在本地调整 PDF 页面顺序",
+    "breadcrumb": "重排页面"
+  },
   "offline": {
-    "title": "离线文档处理 | LocalDocu",
-    "description": "在 LocalDocu 的应用外壳被浏览器缓存之后，你可以离线处理文档。对于受支持的流程，本地处理并不需要网络连接。",
+    "title": "离线处理PDF和Word文档 | LocalDocu",
+    "description": "LocalDocu的应用外壳缓存后，即可离线处理文档。受支持的流程在本地处理，无需网络连接。",
     "h1": "离线处理文档",
     "breadcrumb": "离线"
   },
   "privacy": {
-    "title": "LocalDocu 隐私 — 本地优先的文档处理",
-    "description": "隐私源于设计：文档内容在你的设备上处理。当前版本没有文档上传后端，也不要求注册账号，云端处理与 LocalDocu AI 均为关闭状态。",
+    "title": "隐私说明：本地优先的文档处理 | LocalDocu",
+    "description": "隐私源于设计：文档内容在你的设备上处理。当前版本没有文档上传后端，也无需注册账号。",
     "h1": "隐私源于设计",
     "breadcrumb": "隐私"
   },
   "howItWorks": {
-    "title": "LocalDocu 的工作原理 | 本地优先的文档自动化",
-    "description": "选择文件、选择操作，然后在本地运行。了解 LocalDocu 如何把文档处理保留在你的设备上，以及不同浏览器的能力差异。",
+    "title": "工作原理：本地优先的文档自动化 | LocalDocu",
+    "description": "选择文件、选择操作，然后在本地运行。了解LocalDocu如何把文档处理保留在你的设备上。",
     "h1": "LocalDocu 的工作原理",
     "breadcrumb": "工作原理"
   },
   "browserSupport": {
-    "title": "浏览器与设备支持 | LocalDocu",
-    "description": "了解 LocalDocu 在 Android Chrome、iOS Safari 和桌面浏览器上的支持情况—文件选取、文件夹、另存为、下载以及 PWA 的各项限制。",
+    "title": "浏览器与设备支持情况 | LocalDocu",
+    "description": "LocalDocu在Android Chrome、iOS Safari和桌面浏览器上的支持情况：文件选取、文件夹、另存为、下载及PWA限制。",
     "h1": "浏览器与设备支持",
     "breadcrumb": "浏览器支持"
   },
   "openSource": {
-    "title": "LocalDocu 开源 | 以开放方式构建",
-    "description": "LocalDocu 基于 Apache-2.0 许可开源。查看源代码、路线图，以及本项目如何以开放的方式开发并接受社区贡献。",
+    "title": "开源项目：以开放方式构建 | LocalDocu",
+    "description": "LocalDocu基于Apache-2.0许可开源。查看源代码、路线图，了解项目如何以开放方式开发。",
     "h1": "开源源于设计",
     "breadcrumb": "开源"
   },
   "contribute": {
-    "title": "参与贡献 LocalDocu | 开源文档自动化",
-    "description": "通过代码、测试、文档、无障碍和设计一起构建 LocalDocu。从开放的问题和贡献者指南开始，参与这个开源项目。",
+    "title": "参与贡献：开源文档自动化项目 | LocalDocu",
+    "description": "通过代码、测试、文档、无障碍和设计帮助构建LocalDocu。从issue和贡献者指南开始参与。",
     "h1": "一起构建 LocalDocu",
     "breadcrumb": "参与贡献"
   },
   "roadmap": {
-    "title": "LocalDocu 路线图 | 网页版、桌面版与 LocalDocu AI",
-    "description": "了解 LocalDocu 今天已经发布的功能和后续的规划：更强的桌面端容量，以及用于意图驱动本地文档流程的 LocalDocu AI。",
+    "title": "路线图：网页版、桌面版与LocalDocu AI | LocalDocu",
+    "description": "了解LocalDocu目前已发布的功能和后续规划：更强的桌面端处理能力，以及意图驱动本地文档流程的LocalDocu AI。",
     "h1": "路线图",
     "breadcrumb": "路线图"
   },
   "desktop": {
-    "title": "LocalDocu 桌面版 | 高级本地文档自动化",
-    "description": "我们正在构建面向更繁重本地工作负载和 LocalDocu AI 的桌面应用。工作正在进行中—希望与开放社区一起尽快发布。网页工作区仍然是今天的产品。",
-    "h1": "桌面版：更强的本地容量即将到来",
+    "title": "桌面版：高级本地文档自动化 | LocalDocu",
+    "description": "面向更繁重本地任务和LocalDocu AI的桌面应用正在开发中。在其发布之前，免费的网页工作区就是我们的产品。",
+    "h1": "桌面版：更强的本地处理能力即将到来",
     "breadcrumb": "桌面版"
   },
   "localAi": {
-    "title": "LocalDocu AI | 意图驱动的本地文档自动化",
-    "description": "LocalDocu AI 在桌面应用中运行：一个开放权重、设备端模型，读取文档元数据与用户意图，然后驱动 LocalDocu 文档管理—不会把文档内容发送到云端。工作正在进行中；当前网页版尚未启用。欢迎社区贡献。",
+    "title": "LocalDocu AI：意图驱动的本地文档自动化 | LocalDocu",
+    "description": "LocalDocu AI（开发中）是桌面应用中的开放权重设备端模型，根据你的意图和元数据规划文档任务，无需上传到云端。",
     "h1": "LocalDocu AI：桌面应用开发进行中",
     "breadcrumb": "LocalDocu AI"
   },
   "faq": {
-    "title": "LocalDocu FAQ — 隐私、离线与格式",
-    "description": "关于 LocalDocu、隐私、支持的文件、离线使用、开源以及参与贡献的常见问题，帮助你快速了解本地优先的文档处理方式。",
+    "title": "常见问题：隐私、离线与文件格式 | LocalDocu",
+    "description": "关于LocalDocu、隐私、支持的文件、离线使用、开源和参与贡献的常见问题解答。",
     "h1": "常见问题",
     "breadcrumb": "FAQ"
   },
+  "guides": {
+    "title": "PDF隐私指南与工具对比评测 | LocalDocu",
+    "description": "无需上传即可合并、压缩和编辑PDF的实用指南，以及与iLovePDF、Smallpdf和Adobe Acrobat的客观对比。",
+    "h1": "指南与对比",
+    "breadcrumb": "指南"
+  },
+  "guideMergePdfWithoutUploading": {
+    "title": "如何不上传合并PDF（2026教程） | LocalDocu",
+    "description": "三种不把文件发送到服务器就能合并PDF的方法：浏览器、Mac和Windows，以及如何验证文件确实没有被上传。",
+    "h1": "如何在不上传的情况下合并 PDF 文件",
+    "breadcrumb": "不上传合并 PDF"
+  },
+  "guideCompressPdfOffline": {
+    "title": "如何离线压缩PDF：免费方法（2026） | LocalDocu",
+    "description": "无需联网或上传即可减小PDF体积：对比浏览器压缩、macOS预览和Ghostscript，并附扫描件与邮件附件大小限制的技巧。",
+    "h1": "如何离线压缩 PDF",
+    "breadcrumb": "离线压缩 PDF"
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "title": "把PDF上传到在线工具安全吗？ | LocalDocu",
+    "description": "PDF上传到在线转换器后实际会发生什么，哪些文档绝不应离开你的设备，以及在信任一款工具前如何检查它。",
+    "h1": "把 PDF 上传到在线工具安全吗？",
+    "breadcrumb": "上传 PDF 安全吗？"
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "title": "无需App在iPhone或Android上编辑PDF | LocalDocu",
+    "description": "在手机浏览器中合并、拆分、旋转和压缩PDF，无需安装App、无需上传。附iPhone Safari和Android Chrome分步教程。",
+    "h1": "如何在不安装 App 的情况下用手机编辑 PDF",
+    "breadcrumb": "在手机上处理 PDF"
+  },
+  "ilovepdfAlternative": {
+    "title": "不上传文件的iLovePDF替代工具 | LocalDocu",
+    "description": "LocalDocu与iLovePDF客观对比：文件去向、使用限制、离线使用和功能，以及哪些情况下iLovePDF仍是更好的选择。",
+    "h1": "私密的 iLovePDF 替代方案：LocalDocu 与 iLovePDF 对比",
+    "breadcrumb": "iLovePDF 替代方案"
+  },
+  "smallpdfAlternative": {
+    "title": "Smallpdf替代工具：免费、无需上传、无限制 | LocalDocu",
+    "description": "依据Smallpdf自己公布的政策，从隐私、免费版限制、离线使用和功能等方面对比LocalDocu与Smallpdf。",
+    "h1": "免费、私密的 Smallpdf 替代方案：LocalDocu 与 Smallpdf 对比",
+    "breadcrumb": "Smallpdf 替代方案"
+  },
+  "adobeAcrobatAlternative": {
+    "title": "免费Adobe Acrobat替代工具，处理基础PDF | LocalDocu",
+    "description": "LocalDocu与Adobe Acrobat在线版对比：哪些PDF任务可以免费且无需上传完成，哪些仍需要Acrobat。客观且注明日期的对比。",
+    "h1": "免费的 Adobe Acrobat 替代方案，搞定日常 PDF 任务",
+    "breadcrumb": "Adobe Acrobat 替代方案"
+  },
   "notFound": {
     "title": "页面未找到 | LocalDocu",
-    "description": "此页面不存在。请返回 LocalDocu 工作区，继续在本地处理你的 PDF 与 Word 文档。",
+    "description": "此页面不存在。请返回LocalDocu工作区。",
     "h1": "页面未找到"
   }
 }

@@ -27,6 +27,31 @@
       "workspaceHeading": "作業する PDF を選択してください",
       "opsTitle": "PDF ツール",
       "opsDesc": "結合、圧縮、分割、抽出、削除、回転、並べ替え — すべてこのデバイス上で実行します。"
+    },
+    "splitPdf": {
+      "workspaceHeading": "分割する PDF を選択してください",
+      "opsTitle": "PDF を分割",
+      "opsDesc": "PDF を選択し、1 ページずつ個別のファイルに分割してください。結果はこのデバイスに保存されます。"
+    },
+    "extractPages": {
+      "workspaceHeading": "ページを抽出する PDF を選択してください",
+      "opsTitle": "ページを抽出",
+      "opsDesc": "PDF を選択し、残したいページを入力して、新しい PDF として保存してください。"
+    },
+    "deletePages": {
+      "workspaceHeading": "ページを削除する PDF を選択してください",
+      "opsTitle": "ページを削除",
+      "opsDesc": "PDF を選択し、削除するページを入力して、結果をこのデバイスに保存してください。"
+    },
+    "rotatePdf": {
+      "workspaceHeading": "回転する PDF を選択してください",
+      "opsTitle": "PDF を回転",
+      "opsDesc": "PDF を選択し、ページと角度を選んで、回転したファイルを保存してください。"
+    },
+    "reorderPages": {
+      "workspaceHeading": "ページを並べ替える PDF を選択してください",
+      "opsTitle": "ページを並べ替え",
+      "opsDesc": "PDF を選択し、新しいページ順を指定して、結果をこのデバイスに保存してください。"
     }
   },
   "formats": {

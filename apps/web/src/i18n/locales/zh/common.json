@@ -7,12 +7,18 @@
     "shortDescription": "隐私优先的本地 PDF 与 Word 自动化。文件始终留在你的设备上。"
   },
   "loading": "加载中…",
+  "skipToContent": "跳到主要内容",
+  "noscript": "交互式工作区需要 JavaScript。本页所有内容无需 JavaScript 也可阅读；启用 JavaScript 后即可在本地合并、拆分、压缩或转换文件。",
   "nav": {
     "ariaPrimary": "主导航",
     "faq": "FAQ",
     "privacy": "隐私",
     "github": "GitHub",
-    "opensInNewTab": " （在新标签页中打开）"
+    "opensInNewTab": " （在新标签页中打开）",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "menuHeading": "菜单",
+    "appearance": "外观"
   },
   "theme": {
     "ariaColorTheme": "配色主题",
@@ -42,12 +48,24 @@
     "pdfTools": "PDF 工具",
     "mergePdf": "合并 PDF",
     "compressPdf": "压缩 PDF",
+    "splitPdf": "拆分 PDF",
+    "rotatePdf": "旋转 PDF",
     "mergeDocx": "合并 DOCX",
     "docxToPdf": "DOCX 转 PDF",
     "howItWorks": "工作原理",
     "browserSupport": "浏览器支持",
     "privacy": "隐私",
     "faq": "FAQ",
+    "resources": "资源",
+    "ariaResources": "指南与对比",
+    "guides": "指南",
+    "uploadSafety": "上传 PDF 安全吗？",
+    "ilovepdfAlternative": "iLovePDF 替代方案",
+    "smallpdfAlternative": "Smallpdf 替代方案",
+    "acrobatAlternative": "Adobe Acrobat 替代方案",
+    "languages": "语言",
+    "ariaLanguages": "选择语言",
+    "allPages": "所有页面",
     "openSource": "开源",
     "ariaOpenSource": "开源",
     "github": "GitHub",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "语言",
     "label": "语言"
+  },
+  "tasks": {
+    "heading": "你需要的所有工具，都在你的设备上运行",
+    "subheading": "选择一项任务即可开始。文件在本地处理，绝不上传。",
+    "filterAria": "按类别筛选工具",
+    "comingSoon": "即将推出",
+    "learnMore": "了解更多",
+    "workspaceLink": "想在一个地方完成所有操作？请使用下方的完整工作区。",
+    "allPdfToolsLink": "所有 PDF 工具一页汇总",
+    "categories": {
+      "all": "全部",
+      "organize": "整理",
+      "optimize": "优化",
+      "convert": "转换",
+      "ai": "AI"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "合并 PDF",
+        "desc": "按你选择的顺序，将多个 PDF 合并为一个文件。"
+      },
+      "splitPdf": {
+        "title": "拆分 PDF",
+        "desc": "将 PDF 的每一页拆分为单独的文件。"
+      },
+      "compressPdf": {
+        "title": "压缩 PDF",
+        "desc": "减小 PDF 文件大小，同时保留你需要的画质。"
+      },
+      "docxToPdf": {
+        "title": "Word 转 PDF",
+        "desc": "将 DOC 和 DOCX 文档转换为易于阅读的 PDF。"
+      },
+      "extractPages": {
+        "title": "提取页面",
+        "desc": "将 PDF 中选定的页面提取为新文档。"
+      },
+      "deletePages": {
+        "title": "删除页面",
+        "desc": "只需几次点击，即可删除 PDF 中不需要的页面。"
+      },
+      "rotatePdf": {
+        "title": "旋转 PDF",
+        "desc": "将页面旋转到正确方向并保存结果。"
+      },
+      "reorderPages": {
+        "title": "重排页面",
+        "desc": "将 PDF 页面精确排列成你想要的顺序。"
+      },
+      "mergeDocx": {
+        "title": "合并 Word",
+        "desc": "将多个 Word 文档合并为一个 DOCX 文件。"
+      },
+      "chatPdf": {
+        "title": "与 PDF 对话",
+        "desc": "借助设备端 AI，就你的文档提问。"
+      },
+      "summarize": {
+        "title": "生成摘要",
+        "desc": "为长文档生成简短摘要，全程本地处理。"
+      },
+      "ocr": {
+        "title": "OCR 文字识别",
+        "desc": "将扫描页面转换为可搜索、可选择的文本。"
+      }
+    }
   }
 }

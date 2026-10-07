@@ -7,12 +7,18 @@
     "shortDescription": "プライバシーファーストなローカルの PDF・Word 自動化。ファイルはお使いのデバイスに残ります。"
   },
   "loading": "読み込み中…",
+  "skipToContent": "メインコンテンツへスキップ",
+  "noscript": "インタラクティブなワークスペースには JavaScript が必要です。このページの内容は JavaScript なしでも読めますが、ファイルをローカルで結合・分割・圧縮・変換するには JavaScript を有効にしてください。",
   "nav": {
     "ariaPrimary": "メインナビゲーション",
     "faq": "FAQ",
     "privacy": "プライバシー",
     "github": "GitHub",
-    "opensInNewTab": " （新しいタブで開きます）"
+    "opensInNewTab": " （新しいタブで開きます）",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "menuHeading": "メニュー",
+    "appearance": "表示"
   },
   "theme": {
     "ariaColorTheme": "配色テーマ",
@@ -42,12 +48,24 @@
     "pdfTools": "PDF ツール",
     "mergePdf": "PDF を結合",
     "compressPdf": "PDF を圧縮",
+    "splitPdf": "PDF を分割",
+    "rotatePdf": "PDF を回転",
     "mergeDocx": "DOCX を結合",
     "docxToPdf": "DOCX を PDF に変換",
     "howItWorks": "仕組み",
     "browserSupport": "ブラウザー対応",
     "privacy": "プライバシー",
     "faq": "FAQ",
+    "resources": "リソース",
+    "ariaResources": "ガイドと比較",
+    "guides": "ガイド",
+    "uploadSafety": "PDF のアップロードは安全？",
+    "ilovepdfAlternative": "iLovePDF の代替",
+    "smallpdfAlternative": "Smallpdf の代替",
+    "acrobatAlternative": "Adobe Acrobat の代替",
+    "languages": "言語",
+    "ariaLanguages": "言語を選択",
+    "allPages": "すべてのページ",
     "openSource": "オープンソース",
     "ariaOpenSource": "オープンソース",
     "github": "GitHub",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "言語",
     "label": "言語"
+  },
+  "tasks": {
+    "heading": "必要なツールがすべて、お使いのデバイス上で動作",
+    "subheading": "作業を選んで始めましょう。ファイルはローカルで処理され、アップロードされることはありません。",
+    "filterAria": "カテゴリでツールを絞り込む",
+    "comingSoon": "近日公開",
+    "learnMore": "詳しく見る",
+    "workspaceLink": "すべてを 1 か所で行いたい場合は、下のワークスペースをご利用ください。",
+    "allPdfToolsLink": "すべての PDF ツールを 1 ページで",
+    "categories": {
+      "all": "すべて",
+      "organize": "整理",
+      "optimize": "最適化",
+      "convert": "変換",
+      "ai": "AI"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "PDF 結合",
+        "desc": "複数の PDF を、選んだ順番で 1 つのファイルにまとめます。"
+      },
+      "splitPdf": {
+        "title": "PDF 分割",
+        "desc": "PDF の各ページを個別のファイルに分けます。"
+      },
+      "compressPdf": {
+        "title": "PDF 圧縮",
+        "desc": "必要な画質を保ちながら PDF のファイルサイズを小さくします。"
+      },
+      "docxToPdf": {
+        "title": "Word を PDF に変換",
+        "desc": "DOC・DOCX 文書を読みやすい PDF に変換します。"
+      },
+      "extractPages": {
+        "title": "ページ抽出",
+        "desc": "PDF から選んだページを取り出して新しい文書にします。"
+      },
+      "deletePages": {
+        "title": "ページ削除",
+        "desc": "数回のクリックで PDF から不要なページを削除します。"
+      },
+      "rotatePdf": {
+        "title": "PDF 回転",
+        "desc": "ページを正しい向きに回転して保存します。"
+      },
+      "reorderPages": {
+        "title": "ページ並べ替え",
+        "desc": "PDF のページを思いどおりの順番に並べ替えます。"
+      },
+      "mergeDocx": {
+        "title": "Word 結合",
+        "desc": "複数の Word 文書を 1 つの DOCX ファイルにまとめます。"
+      },
+      "chatPdf": {
+        "title": "PDF とチャット",
+        "desc": "デバイス上の AI で、文書について質問できます。"
+      },
+      "summarize": {
+        "title": "要約",
+        "desc": "長い文書の短い要約を、ローカルで生成します。"
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "スキャンしたページを、検索・選択できるテキストに変換します。"
+      }
+    }
   }
 }

@@ -97,6 +97,29 @@
   },
   "mergePdf": {
     "intro": "Usa LocalDocu para combinar varios archivos PDF en tu dispositivo. Selecciona los archivos arriba, reordénalos en la lista y luego combina y guarda el resultado localmente.",
+    "faqHeading": "Preguntas sobre unir PDF",
+    "faq": [
+      {
+        "question": "¿Puedo unir archivos PDF sin subirlos?",
+        "answer": "Sí. LocalDocu une los PDF dentro de tu navegador con JavaScript y WebAssembly. Los archivos se leen desde tu dispositivo, se combinan en memoria y se guardan de nuevo en tu dispositivo: nunca se envían a un servidor de LocalDocu."
+      },
+      {
+        "question": "¿Hay un límite de PDF que pueda unir?",
+        "answer": "No hay un límite fijo de archivos ni una cuota diaria. El techo práctico es la memoria de tu dispositivo: un portátil maneja cientos de páginas sin problema, mientras que los lotes muy grandes en un teléfono pueden quedarse sin memoria."
+      },
+      {
+        "question": "¿Cómo cambio el orden de las páginas unidas?",
+        "answer": "Los archivos se unen en el orden de la lista. Reordena la lista antes de elegir Combinar. Para reorganizar páginas sueltas después, abre el archivo unido en Reordenar páginas."
+      },
+      {
+        "question": "¿Puedo unir PDF protegidos con contraseña?",
+        "answer": "Todavía no. Los PDF cifrados se rechazan para que nada se dañe sin avisar. Quita primero la contraseña con una herramienta de confianza y luego únelos."
+      },
+      {
+        "question": "¿El PDF unido lleva marca de agua?",
+        "answer": "No. LocalDocu es gratuito y de código abierto, y nunca añade marcas de agua, registros obligatorios ni límites diarios."
+      }
+    ],
     "howToHeading": "Cómo combinar PDF",
     "howTo": [
       "Selecciona o suelta dos o más archivos PDF en esta página.",
@@ -120,6 +143,31 @@
   },
   "mergeDocx": {
     "intro": "LocalDocu admite una combinación práctica de DOCX para documentos de Word adecuados. Selecciona arriba archivos de Word del mismo tipo, define el orden y combínalos localmente.",
+    "howToHeading": "Cómo unir documentos de Word",
+    "howTo": [
+      "Selecciona o suelta dos o más archivos DOCX en esta página.",
+      "Colócalos en el orden en que deben aparecer.",
+      "Elige Combinar y guarda el DOCX resultante en tu dispositivo."
+    ],
+    "faqHeading": "Preguntas sobre unir Word",
+    "faq": [
+      {
+        "question": "¿Puedo unir documentos de Word sin Microsoft Word?",
+        "answer": "Sí. LocalDocu une archivos DOCX en tu navegador, así que no necesitas tener Word instalado y no se sube nada."
+      },
+      {
+        "question": "¿Se conserva el formato al unir archivos DOCX?",
+        "answer": "El texto, los títulos y el formato habitual suelen mantenerse. Los diseños complejos —encabezados por sección, estilos poco comunes, objetos incrustados— pueden no conservarse con exactitud, así que revisa el resultado antes de compartirlo."
+      },
+      {
+        "question": "¿Puedo unir archivos DOCX y PDF a la vez?",
+        "answer": "No en un solo paso. La combinación espera archivos del mismo tipo. Convierte primero los archivos de Word a PDF y luego usa Unir PDF."
+      },
+      {
+        "question": "¿Se pueden unir archivos de Word en el móvil?",
+        "answer": "Sí, con documentos normales en Chrome o Safari para móvil. Los archivos muy grandes pueden alcanzar los límites de memoria del teléfono."
+      }
+    ],
     "behaviorHeading": "Comportamiento actual",
     "behavior": [
       "Los archivos DOCX se pueden combinar de forma práctica y orientada al contenido.",
@@ -140,6 +188,35 @@
   },
   "compressPdf": {
     "intro": "Reduce el tamaño de los archivos PDF en tu dispositivo. Selecciona un PDF arriba, elige Equilibrado (mantener el texto seleccionable) o Máximo (reducción más fuerte), elige una calidad objetivo y luego comprime y guarda localmente.",
+    "howToHeading": "Cómo comprimir un PDF",
+    "howTo": [
+      "Selecciona o suelta un PDF en esta página.",
+      "Elige Equilibrado para mantener el texto seleccionable, o Máximo para obtener el archivo más pequeño.",
+      "Elige una calidad objetivo, ejecuta Comprimir y guarda el PDF más ligero en tu dispositivo."
+    ],
+    "faqHeading": "Preguntas sobre comprimir PDF",
+    "faq": [
+      {
+        "question": "¿Cómo comprimo un PDF sin subirlo?",
+        "answer": "Abre Comprimir PDF en LocalDocu, selecciona el archivo y ejecuta Comprimir. La compresión ocurre dentro de tu navegador, así que el documento nunca sale de tu dispositivo: ideal para contratos, nóminas, documentos médicos o de identidad."
+      },
+      {
+        "question": "¿Qué diferencia hay entre Equilibrado y Máximo?",
+        "answer": "Equilibrado optimiza las imágenes y la estructura manteniendo el texto seleccionable y con búsqueda. Máximo vuelve a generar las páginas como imágenes para conseguir un archivo mucho más pequeño, pero el texto deja de ser seleccionable."
+      },
+      {
+        "question": "¿Cuánto se reducirá mi PDF?",
+        "answer": "Depende del contenido. Los PDF escaneados o con muchas imágenes son los que más se reducen; los PDF solo de texto suelen ser ya pequeños. LocalDocu muestra el tamaño antes y después para que puedas probar otra calidad objetivo."
+      },
+      {
+        "question": "¿Hay un límite de tamaño de archivo?",
+        "answer": "En el navegador, la compresión está limitada a PDF de hasta 40 MB por archivo para no superar la memoria del dispositivo. En los teléfonos pueden hacer falta archivos más pequeños; el modo Equilibrado usa menos memoria que el Máximo."
+      },
+      {
+        "question": "¿Puedo comprimir un PDF para enviarlo por correo electrónico?",
+        "answer": "Sí. La mayoría de los servicios de correo limitan los adjuntos a unos 20–25 MB. Empieza con Equilibrado; si el archivo sigue siendo demasiado grande, usa Máximo con una calidad objetivo más baja."
+      }
+    ],
     "modesHeading": "Modos",
     "modes": [
       "Equilibrado — mantiene el texto seleccionable siempre que es posible mientras reduce el tamaño.",
@@ -161,6 +238,25 @@
   },
   "pdfTools": {
     "intro": "Esta página incluye las operaciones de PDF de LocalDocu. Cada una se ejecuta localmente en tu navegador para las cargas de trabajo adecuadas — usa los paneles de arriba para seleccionar archivos y ejecutar una operación.",
+    "faqHeading": "Preguntas sobre las herramientas PDF",
+    "faq": [
+      {
+        "question": "¿De verdad son gratis estas herramientas PDF?",
+        "answer": "Sí. LocalDocu es de código abierto bajo Apache-2.0. No hay cuenta, ni muro de pago, ni marca de agua, ni límite diario de tareas, porque el procesamiento se ejecuta en tu propio dispositivo y no en servidores de pago."
+      },
+      {
+        "question": "¿Las herramientas PDF funcionan sin conexión?",
+        "answer": "Sí. Tras tu primera visita, el navegador guarda la aplicación en caché, y unir, dividir, extraer, eliminar, rotar, reordenar y comprimir siguen funcionando sin conexión a internet."
+      },
+      {
+        "question": "¿Qué funciones PDF todavía no están disponibles?",
+        "answer": "LocalDocu todavía no ofrece OCR, firma electrónica, edición de texto en PDF, conversión de PDF a Word ni eliminación de contraseñas. Están en la hoja de ruta; las herramientas actuales se centran en organizar, comprimir y convertir."
+      },
+      {
+        "question": "¿Qué navegadores son compatibles?",
+        "answer": "Las versiones actuales de Chrome, Edge, Firefox y Safari en escritorio, Android e iOS. Chrome y Edge de escritorio añaden acceso a carpetas y la función nativa Guardar como; consulta Compatibilidad de navegadores y dispositivos para más detalles."
+      }
+    ],
     "opsHeading": "Operaciones de PDF compatibles",
     "ops": [
       "Combinar — une varios PDF en el orden de la lista",
@@ -182,6 +278,31 @@
   },
   "docxToPdf": {
     "intro": "Convierte archivos DOC o DOCX en un PDF legible generado en tu dispositivo. Selecciona arriba un archivo de Word, conviértelo y guárdalo localmente.",
+    "howToHeading": "Cómo convertir Word a PDF",
+    "howTo": [
+      "Selecciona o suelta un archivo DOC o DOCX en esta página.",
+      "Elige Convertir a PDF.",
+      "Revisa el PDF y guárdalo en tu dispositivo."
+    ],
+    "faqHeading": "Preguntas sobre Word a PDF",
+    "faq": [
+      {
+        "question": "¿Puedo convertir Word a PDF sin subir el archivo?",
+        "answer": "Sí. LocalDocu lee el archivo DOC o DOCX en tu navegador y genera el PDF en tu dispositivo. El documento no se sube a ningún sitio."
+      },
+      {
+        "question": "¿El PDF quedará exactamente igual que mi documento de Word?",
+        "answer": "No siempre. La conversión en el navegador está orientada al texto: el texto, los títulos y los párrafos se mantienen, pero los diseños complejos, las columnas, los cuadros de texto y algunas imágenes pueden no coincidir exactamente con Word. Para un resultado idéntico al píxel, exporta a PDF desde el propio Word."
+      },
+      {
+        "question": "¿Admite los antiguos archivos .doc?",
+        "answer": "Sí, se aceptan tanto DOC como DOCX. Los archivos .doc antiguos con formato poco habitual tienen más probabilidades de perder detalles del diseño."
+      },
+      {
+        "question": "¿Por qué se bloquea la conversión de mi archivo?",
+        "answer": "La conversión está limitada por capacidad para que el navegador no se quede sin memoria. Los teléfonos tienen límites más estrictos que los ordenadores; prueba con un archivo más pequeño o con un navegador de escritorio."
+      }
+    ],
     "limitsHeading": "Límites honestos",
     "limits": [
       "La conversión está orientada al texto y limitada por capacidad para las cargas de trabajo del navegador.",
@@ -194,6 +315,172 @@
       "browserSupport": "Compatibilidad de navegadores y dispositivos",
       "mergeDocx": "Combinar documentos de Word",
       "desktop": "Hoja de ruta de escritorio"
+    }
+  },
+  "splitPdf": {
+    "intro": "Divide un PDF en archivos separados, uno por página, directamente en tu navegador. No se sube nada a LocalDocu.",
+    "faqHeading": "Preguntas sobre dividir PDF",
+    "faq": [
+      {
+        "question": "¿Cómo divido un PDF en páginas separadas gratis?",
+        "answer": "Abre Dividir PDF, selecciona el archivo y elige Dividir. LocalDocu crea un PDF por página en tu dispositivo: gratis, sin cuenta y sin subir nada."
+      },
+      {
+        "question": "¿Puedo dividir un PDF por rango de páginas en lugar de página a página?",
+        "answer": "Para eso usa Extraer páginas: indica un rango como 1-3,7 para guardar solo esas páginas como un PDF nuevo. Ejecútalo una vez por cada rango que necesites."
+      },
+      {
+        "question": "¿Es seguro dividir un PDF en el navegador si es confidencial?",
+        "answer": "Sí. El archivo se procesa en la memoria de tu navegador y los resultados se guardan en tu dispositivo. No se envía ni se almacena ninguna copia en un servidor."
+      },
+      {
+        "question": "¿Dividir un PDF reduce la calidad?",
+        "answer": "No. Las páginas se copian tal cual: el texto, las imágenes y los gráficos vectoriales no se vuelven a comprimir."
+      }
+    ],
+    "howToHeading": "Cómo dividir un PDF",
+    "howTo": [
+      "Selecciona o suelta un PDF en esta página.",
+      "Elige Dividir para crear un PDF por cada página.",
+      "Guarda o descarga los archivos resultantes en tu dispositivo."
+    ],
+    "links": {
+      "extractPages": "Extraer páginas",
+      "mergePdfs": "Unir PDF",
+      "pdfTools": "Todas las herramientas PDF"
+    }
+  },
+  "extractPages": {
+    "intro": "Quédate solo con las páginas que necesitas. Extrae páginas de un PDF a un archivo nuevo, procesado localmente en tu dispositivo.",
+    "faqHeading": "Preguntas sobre extraer páginas",
+    "faq": [
+      {
+        "question": "¿Cómo escribo la selección de páginas?",
+        "answer": "Usa números de página y rangos separados por comas, por ejemplo 1-3,5,8-10. Las páginas se cuentan desde 1."
+      },
+      {
+        "question": "¿Extraer páginas modifica el PDF original?",
+        "answer": "No. LocalDocu crea un PDF nuevo con las páginas seleccionadas; el archivo original de tu dispositivo no se toca."
+      },
+      {
+        "question": "¿Qué diferencia hay entre Extraer y Dividir?",
+        "answer": "Extraer guarda las páginas que elijas en un único PDF nuevo. Dividir guarda cada página como un PDF independiente."
+      },
+      {
+        "question": "¿Puedo extraer páginas desde el móvil?",
+        "answer": "Sí. Extraer funciona en Chrome y Safari para móvil; el archivo nuevo se descarga en tu dispositivo."
+      }
+    ],
+    "howToHeading": "Cómo extraer páginas",
+    "howTo": [
+      "Selecciona o suelta un PDF en esta página.",
+      "Indica los números o rangos de páginas que quieres conservar.",
+      "Ejecuta Extraer y guarda el PDF nuevo localmente."
+    ],
+    "links": {
+      "deletePages": "Eliminar páginas",
+      "splitPdf": "Dividir PDF",
+      "pdfTools": "Todas las herramientas PDF"
+    }
+  },
+  "deletePages": {
+    "intro": "Quita páginas en blanco, duplicadas o innecesarias de un PDF sin subirlo a ningún sitio.",
+    "faqHeading": "Preguntas sobre eliminar páginas",
+    "faq": [
+      {
+        "question": "¿Cómo elimino páginas de un PDF sin Acrobat?",
+        "answer": "Abre Eliminar páginas en LocalDocu, selecciona el PDF, indica las páginas que quieres quitar (por ejemplo 2,4-6) y ejecútalo. Es gratis y funciona en tu navegador."
+      },
+      {
+        "question": "¿Puedo deshacer la eliminación de páginas?",
+        "answer": "Tu archivo original nunca se modifica: LocalDocu guarda la copia editada como un archivo nuevo. Conserva el original por si vuelves a necesitar esas páginas."
+      },
+      {
+        "question": "¿Puedo eliminar páginas de un PDF escaneado?",
+        "answer": "Sí. Eliminar páginas funciona igual en PDF escaneados y digitales, porque se quitan páginas completas, no texto."
+      },
+      {
+        "question": "¿Hay un límite de páginas?",
+        "answer": "No hay un límite fijo. Los documentos muy grandes dependen de la memoria de tu dispositivo, sobre todo en los teléfonos."
+      }
+    ],
+    "howToHeading": "Cómo eliminar páginas",
+    "howTo": [
+      "Selecciona o suelta un PDF en esta página.",
+      "Indica los números o rangos de páginas que quieres quitar.",
+      "Ejecuta Eliminar páginas y guarda el PDF editado localmente."
+    ],
+    "links": {
+      "extractPages": "Extraer páginas",
+      "reorderPages": "Reordenar páginas",
+      "pdfTools": "Todas las herramientas PDF"
+    }
+  },
+  "rotatePdf": {
+    "intro": "Endereza páginas de lado o del revés. Rota algunas o todas las páginas de un PDF 90°, 180° o 270° en tu dispositivo.",
+    "faqHeading": "Preguntas sobre rotar PDF",
+    "faq": [
+      {
+        "question": "¿Puedo rotar solo algunas páginas de un PDF?",
+        "answer": "Sí. Indica las páginas que quieres rotar, por ejemplo 1,3-4. Deja el campo vacío para rotar todas las páginas."
+      },
+      {
+        "question": "¿La rotación se guarda de forma permanente?",
+        "answer": "Sí. LocalDocu guarda un PDF nuevo con la rotación aplicada, así que se abre correctamente en cualquier visor de PDF."
+      },
+      {
+        "question": "¿Rotar un PDF reduce la calidad?",
+        "answer": "No. La rotación solo cambia la orientación de la página; el texto y las imágenes no se vuelven a comprimir."
+      },
+      {
+        "question": "¿Puedo rotar un PDF en iPhone o Android?",
+        "answer": "Sí. Rotar funciona en Safari y Chrome para móvil sin instalar ninguna app, y el archivo rotado se descarga en tu dispositivo."
+      }
+    ],
+    "howToHeading": "Cómo rotar un PDF",
+    "howTo": [
+      "Selecciona o suelta un PDF en esta página.",
+      "Elige las páginas y el ángulo de rotación.",
+      "Ejecuta Girar y guarda el PDF rotado localmente."
+    ],
+    "links": {
+      "reorderPages": "Reordenar páginas",
+      "compressPdf": "Comprimir PDF",
+      "pdfTools": "Todas las herramientas PDF"
+    }
+  },
+  "reorderPages": {
+    "intro": "Coloca las páginas de un PDF exactamente en el orden que quieras, con todo el procesamiento en tu navegador.",
+    "faqHeading": "Preguntas sobre reordenar páginas",
+    "faq": [
+      {
+        "question": "¿Cómo indico el nuevo orden de las páginas?",
+        "answer": "Escribe cada número de página una sola vez, separados por comas, en el orden que quieras. En un archivo de 4 páginas, 4,1,2,3 pasa la última página al principio."
+      },
+      {
+        "question": "¿Puedo invertir el orden de las páginas de un PDF?",
+        "answer": "Sí. Indica las páginas de la última a la primera, por ejemplo 5,4,3,2,1."
+      },
+      {
+        "question": "¿Puedo reordenar y eliminar páginas a la vez?",
+        "answer": "Ejecuta primero Eliminar páginas y después Reordenar sobre el resultado. Cada paso guarda un archivo nuevo en tu dispositivo."
+      },
+      {
+        "question": "¿Se suben mis archivos para reordenarlos?",
+        "answer": "No. El reordenamiento ocurre en tu navegador; el PDF nunca sale de tu dispositivo."
+      }
+    ],
+    "howToHeading": "Cómo reordenar páginas",
+    "howTo": [
+      "Selecciona o suelta un PDF en esta página.",
+      "Indica el nuevo orden completo de las páginas, por ejemplo 3,1,2.",
+      "Ejecuta Reordenar y guarda el resultado localmente."
+    ],
+    "note": "Escribe cada número de página exactamente una vez, separados por comas.",
+    "links": {
+      "rotatePdf": "Rotar PDF",
+      "deletePages": "Eliminar páginas",
+      "pdfTools": "Todas las herramientas PDF"
     }
   },
   "offline": {
@@ -483,6 +770,567 @@
       "browserSupport": "Compatibilidad de navegadores y dispositivos",
       "privacy": "Detalles de privacidad",
       "contribute": "Contribuir"
+    }
+  },
+  "article": {
+    "byline": "Por {author}",
+    "updated": "Actualizado el {date}"
+  },
+  "guides": {
+    "intro": "Guías breves y prácticas para trabajar con PDF sin entregarlos a un servidor, y comparativas honestas con las herramientas PDF online más populares, para que elijas lo que mejor se adapta a tus documentos.",
+    "guidesHeading": "Guías prácticas",
+    "comparisonsHeading": "Comparativas",
+    "links": {
+      "pdfTools": "Todas las herramientas PDF",
+      "privacy": "Cómo gestiona LocalDocu la privacidad",
+      "faq": "FAQ"
+    }
+  },
+  "guideMergePdfWithoutUploading": {
+    "intro": "La mayoría de las webs para «unir PDF» suben tus archivos a sus servidores, los combinan allí y te devuelven el resultado. Para una receta de cocina no pasa nada, pero sí para un contrato firmado, un extracto bancario o un informe médico. Aquí tienes tres formas de unir PDF sin que los archivos salgan nunca de tu dispositivo.",
+    "sections": [
+      {
+        "heading": "Respuesta rápida",
+        "paragraphs": [
+          "Abre la página Unir PDF de LocalDocu, selecciona tus PDF, ordénalos y elige Combinar. La unión se hace dentro de tu navegador, así que no se sube nada, y funciona en Windows, Mac, Linux, Android e iPhone sin instalar nada."
+        ]
+      },
+      {
+        "heading": "Método 1: en el navegador con LocalDocu (cualquier dispositivo)",
+        "paragraphs": [
+          "LocalDocu es gratuito, no tiene límite de archivos ni marca de agua, y sigue funcionando sin conexión después de tu primera visita. Para unir:"
+        ],
+        "steps": [
+          "Ve a localdocu.org/merge-pdf.",
+          "Selecciona o arrastra dos o más archivos PDF.",
+          "Arrastra la lista hasta dejarla en el orden en que quieres que aparezcan las páginas.",
+          "Elige Combinar y luego guarda o descarga el PDF unido."
+        ]
+      },
+      {
+        "heading": "Método 2: Preview (Vista Previa) en un Mac",
+        "steps": [
+          "Abre el primer PDF en Preview.",
+          "Elige Visualización → Miniaturas para mostrar la barra lateral.",
+          "Arrastra los demás PDF a la barra lateral, en la posición que quieras.",
+          "Elige Archivo → Exportar como PDF para guardar el archivo unido."
+        ]
+      },
+      {
+        "heading": "Método 3: una aplicación de escritorio en Windows",
+        "paragraphs": [
+          "Windows no incluye una función integrada para unir PDF. Las aplicaciones de escritorio sin conexión, como PDFsam Basic (de código abierto) o Adobe Acrobat (de pago), pueden unir en local, pero hay que instalarlas. Una herramienta local en el navegador evita por completo la instalación."
+        ]
+      },
+      {
+        "heading": "Cómo comprobar que una web realmente no sube tus archivos",
+        "list": [
+          "Carga la página y después activa el modo avión o desconecta el wifi. Si la unión sigue funcionando, el procesamiento se hace en tu dispositivo.",
+          "Abre las herramientas para desarrolladores del navegador (F12) → pestaña Red mientras unes los archivos. Una herramienta local no muestra ninguna petición de subida grande.",
+          "Lee la política de privacidad: frases como «los archivos se eliminan a las 2 horas» significan que los archivos se subieron y se almacenaron durante un tiempo."
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre unir PDF de forma privada",
+    "faq": [
+      {
+        "question": "¿Es seguro unir PDF online?",
+        "answer": "Depende de dónde se haga la unión. Las webs basadas en servidor reciben una copia de tus archivos y la conservan durante el periodo que fije su política. Las herramientas en el navegador como LocalDocu unen en tu dispositivo, así que no queda ninguna copia en el servidor de nadie."
+      },
+      {
+        "question": "¿Puedo unir PDF sin internet?",
+        "answer": "Sí. Usa Preview en un Mac, una aplicación de escritorio instalada o LocalDocu después de una visita con conexión: el navegador guarda la aplicación en caché y une sin conexión."
+      },
+      {
+        "question": "¿Unir PDF cambia su calidad?",
+        "answer": "No. Al unir, las páginas se copian tal cual; el texto sigue siendo seleccionable y las imágenes no se vuelven a comprimir."
+      }
+    ],
+    "links": {
+      "mergePdfs": "Unir PDF ahora",
+      "guideUploadSafety": "¿Es seguro subir PDF a internet?",
+      "reorderPages": "Reordenar páginas",
+      "guides": "Todas las guías"
+    }
+  },
+  "guideCompressPdfOffline": {
+    "intro": "Necesitas que un PDF quepa en el límite de un correo o de un formulario, pero el documento es confidencial, o vas en un tren sin cobertura. Estos métodos reducen el tamaño de los PDF sin conexión a internet y sin enviar el archivo a ningún sitio.",
+    "sections": [
+      {
+        "heading": "Respuesta rápida",
+        "paragraphs": [
+          "Abre una vez la página Comprimir PDF de LocalDocu con conexión. A partir de ahí funciona sin conexión: selecciona el PDF, elige Equilibrado (mantiene el texto seleccionable) o Máximo (el archivo más pequeño) y guarda. El archivo nunca sale de tu dispositivo."
+        ]
+      },
+      {
+        "heading": "Método 1: LocalDocu en el navegador (Windows, Mac, Linux, Android, iPhone)",
+        "steps": [
+          "Visita localdocu.org/compress-pdf una vez con conexión para que la aplicación quede en caché.",
+          "Selecciona o suelta tu PDF (hasta 40 MB por archivo en el navegador).",
+          "Elige primero Equilibrado; cambia a Máximo con una calidad objetivo más baja si necesitas que ocupe menos.",
+          "Compara el tamaño antes y después, y guarda el resultado."
+        ]
+      },
+      {
+        "heading": "Método 2: Preview (Vista Previa) en un Mac",
+        "paragraphs": [
+          "Abre el PDF en Preview, elige Archivo → Exportar y, en Filtro Quartz, selecciona «Reducir tamaño de archivo». Es rápido, pero suele ser agresivo: las imágenes pueden quedar muy borrosas, así que revisa el resultado."
+        ]
+      },
+      {
+        "heading": "Método 3: Ghostscript (línea de comandos, todas las plataformas)",
+        "paragraphs": [
+          "Si te manejas con la terminal, la herramienta gratuita Ghostscript comprime sin conexión con ajustes predefinidos como /screen (lo más pequeño), /ebook (equilibrado) y /printer (mayor calidad):",
+          "gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -sOutputFile=smaller.pdf input.pdf"
+        ]
+      },
+      {
+        "heading": "¿Qué PDF se comprimen mejor?",
+        "list": [
+          "Los documentos escaneados y los PDF con muchas fotos suelen ser los que más se reducen.",
+          "Los PDF solo de texto suelen ser ya pequeños; el ahorro será modesto.",
+          "Si necesitas que el texto siga siendo buscable, evita los modos que convierten las páginas en imágenes (el modo Máximo de LocalDocu, o /screen de Ghostscript en algunos archivos)."
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre comprimir PDF sin conexión",
+    "faq": [
+      {
+        "question": "¿Puedo comprimir un PDF sin subirlo?",
+        "answer": "Sí. LocalDocu, Preview en Mac y Ghostscript comprimen en tu propio dispositivo. La mayoría de las webs de compresión suben antes el archivo a sus servidores."
+      },
+      {
+        "question": "¿Cómo consigo que un PDF pese menos de 1 MB?",
+        "answer": "Prueba el modo Máximo de LocalDocu con una calidad objetivo más baja. Los documentos de varias páginas con mucho texto pueden no llegar a 1 MB sin volverse difíciles de leer; dividir el documento es una alternativa."
+      },
+      {
+        "question": "¿Por qué mi PDF no se ha hecho más pequeño?",
+        "answer": "Puede que ya esté optimizado o que esté formado sobre todo por texto y fuentes. La compresión reduce principalmente las imágenes."
+      }
+    ],
+    "links": {
+      "compressPdf": "Comprimir un PDF ahora",
+      "offline": "Cómo funciona el modo sin conexión",
+      "splitPdf": "Dividir PDF",
+      "guides": "Todas las guías"
+    }
+  },
+  "guideIsItSafeToUploadPdfsOnline": {
+    "intro": "Las herramientas PDF online son cómodas, y las grandes usan conexiones cifradas y eliminan los archivos automáticamente. Pero «subido y eliminado después» no es lo mismo que «nunca subido». Esto es lo que ocurre realmente con un PDF subido, qué documentos merecen un cuidado especial y cómo evaluar cualquier herramienta en menos de un minuto.",
+    "sections": [
+      {
+        "heading": "Respuesta corta",
+        "paragraphs": [
+          "Para archivos cotidianos y no sensibles, las herramientas PDF online de confianza suelen estar bien. Para documentos de identidad, financieros, médicos, legales o de clientes, es preferible una herramienta que procese el PDF en tu propio dispositivo, de modo que nunca exista una copia en el servidor de un tercero."
+        ]
+      },
+      {
+        "heading": "Qué ocurre cuando subes un PDF",
+        "steps": [
+          "Tu archivo se envía por una conexión cifrada (HTTPS) a los servidores del proveedor.",
+          "Se almacena allí mientras se procesa, y normalmente durante un periodo de retención posterior, que en los servicios populares suele ser de entre una y unas pocas horas, o más si lo guardas en una cuenta.",
+          "El proveedor, su empresa de alojamiento y sus posibles subcontratistas operan según sus propias prácticas de seguridad y las leyes de los países donde están los servidores.",
+          "El resultado se te devuelve para que lo descargues."
+        ],
+        "note": "Los proveedores de confianza protegen bien este proceso. El riesgo que queda es que exista una copia fuera de tu control durante un tiempo, expuesta a brechas de seguridad, errores de configuración, requerimientos legales o cambios de política."
+      },
+      {
+        "heading": "Documentos que deberías pensarte dos veces antes de subir",
+        "list": [
+          "Pasaportes, documentos de identidad y permisos de conducir",
+          "Extractos bancarios, declaraciones de la renta y nóminas",
+          "Historiales médicos y partes de seguros",
+          "Contratos, acuerdos de confidencialidad (NDA) y todo lo sujeto a una obligación de confidencialidad",
+          "Datos de clientes o pacientes protegidos por el RGPD, la HIPAA o normas similares"
+        ]
+      },
+      {
+        "heading": "Lista de comprobación de un minuto para cualquier herramienta PDF",
+        "list": [
+          "¿Funciona sin conexión? Cárgala, desconéctate de internet y prueba una tarea. Si funciona, tu archivo se procesa en local.",
+          "¿Qué dice la política de privacidad sobre la retención? «Se elimina a las X horas» significa que el archivo se almacenó.",
+          "¿Dónde están los servidores y quiénes son los subencargados del tratamiento?",
+          "¿Hace falta una cuenta y se guardan en ella los archivos por defecto?",
+          "¿El código es abierto, de modo que se puedan verificar sus afirmaciones?"
+        ]
+      },
+      {
+        "heading": "La alternativa local",
+        "paragraphs": [
+          "Las herramientas locales en el navegador, como LocalDocu, ejecutan el motor PDF dentro de tu navegador mediante WebAssembly. Unir, dividir, comprimir y rotar ocurre en tu dispositivo, el código es abierto y la aplicación funciona con la red desactivada; así que no hay nada que eliminar después, porque no se subió nada."
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre subir PDF",
+    "faq": [
+      {
+        "question": "¿Los conversores de PDF online guardan mis archivos?",
+        "answer": "La mayoría de los servicios de confianza eliminan automáticamente los archivos subidos tras un periodo de retención indicado en su política de privacidad —a menudo de una a dos horas—, salvo que los guardes en una cuenta. Las herramientas locales ni siquiera reciben el archivo."
+      },
+      {
+        "question": "¿Basta con HTTPS para mantener mi PDF privado?",
+        "answer": "HTTPS protege el archivo durante la transmisión. No cambia el hecho de que el proveedor recibe y almacena una copia mientras lo procesa."
+      },
+      {
+        "question": "¿Cómo sé si una herramienta PDF procesa los archivos en local?",
+        "answer": "Desactiva tu conexión a internet cuando la página haya cargado y ejecuta una tarea. Si sigue funcionando, el procesamiento se hace en tu navegador."
+      }
+    ],
+    "links": {
+      "privacy": "Cómo gestiona LocalDocu la privacidad",
+      "howItWorks": "Cómo funciona LocalDocu",
+      "ilovepdfAlternative": "LocalDocu vs iLovePDF",
+      "guides": "Todas las guías"
+    }
+  },
+  "guideEditPdfOnPhoneWithoutApp": {
+    "intro": "No necesitas instalar una app —ni subir tus archivos— para unir, dividir, rotar o comprimir un PDF en el móvil. Un navegador móvil moderno puede hacerlo en el propio dispositivo.",
+    "sections": [
+      {
+        "heading": "Respuesta rápida",
+        "paragraphs": [
+          "Abre localdocu.org en Safari (iPhone/iPad) o Chrome (Android), toca la herramienta que necesitas, selecciona tus PDF desde Archivos o Descargas, ejecútala y el resultado se descargará en tu teléfono. No se sube nada."
+        ]
+      },
+      {
+        "heading": "En iPhone o iPad (Safari)",
+        "steps": [
+          "Abre localdocu.org y toca una herramienta, por ejemplo Unir PDF.",
+          "Toca Seleccionar archivos y elige los PDF en la app Archivos (iCloud Drive, En mi iPhone o Descargas).",
+          "Ejecuta la tarea y toca la descarga para guardarla en Archivos.",
+          "Opcional: Compartir → Añadir a pantalla de inicio para usarla como una app, también sin conexión."
+        ],
+        "note": "Si la vista previa del PDF en la página se ve en blanco en iOS, ábrela en una pestaña nueva: el archivo en sí está bien."
+      },
+      {
+        "heading": "En Android (Chrome)",
+        "steps": [
+          "Abre localdocu.org y elige una herramienta.",
+          "Toca Seleccionar archivos y elige los PDF en Descargas, Drive u otra carpeta.",
+          "Ejecuta la tarea; el resultado se guarda en Descargas.",
+          "Opcional: menú → Instalar aplicación (o Añadir a pantalla de inicio) para usarla sin conexión."
+        ]
+      },
+      {
+        "heading": "Qué puedes hacer en un teléfono",
+        "list": [
+          "Unir PDF y documentos de Word",
+          "Dividir un PDF, extraer o eliminar páginas",
+          "Rotar y reordenar páginas",
+          "Comprimir PDF (el modo Equilibrado usa menos memoria en los teléfonos)",
+          "Convertir documentos de Word a PDF (funciona mejor con archivos pequeños)"
+        ]
+      },
+      {
+        "heading": "Alternativas integradas",
+        "paragraphs": [
+          "En iPhone, la app Archivos puede combinar archivos: selecciona varios PDF y toca Más (…) → Crear PDF. Con Marcación puedes rotar páginas. Android no incluye una función integrada para unir PDF, y ahí es donde más ayuda una herramienta en el navegador."
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre PDF en el móvil",
+    "faq": [
+      {
+        "question": "¿Puedo unir PDF en el iPhone gratis?",
+        "answer": "Sí, con LocalDocu en Safari o con la acción Crear PDF de la app Archivos. Ninguna de las dos opciones requiere subir los archivos."
+      },
+      {
+        "question": "¿Por qué ha fallado un PDF grande en mi teléfono?",
+        "answer": "Los teléfonos ofrecen al navegador menos memoria que los portátiles. Prueba con menos archivos o más pequeños, usa la compresión Equilibrada o pasa a un navegador de escritorio para trabajos muy grandes."
+      },
+      {
+        "question": "¿Funciona sin datos móviles?",
+        "answer": "Sí, después de la primera visita. Añade LocalDocu a tu pantalla de inicio y se abrirá y procesará archivos sin conexión."
+      }
+    ],
+    "links": {
+      "browserSupport": "Compatibilidad de navegadores y dispositivos",
+      "mergePdfs": "Unir PDF",
+      "compressPdf": "Comprimir PDF",
+      "guides": "Todas las guías"
+    }
+  },
+  "ilovepdfAlternative": {
+    "intro": "iLovePDF es una de las webs de PDF más populares, con una enorme variedad de herramientas. Funciona subiendo tus archivos a sus servidores. LocalDocu sigue el enfoque contrario: el motor PDF se ejecuta en tu navegador, así que los archivos nunca salen de tu dispositivo. Esta página compara ambos de forma objetiva para que elijas la herramienta adecuada para cada documento.",
+    "sections": [
+      {
+        "heading": "LocalDocu vs iLovePDF de un vistazo",
+        "table": {
+          "caption": "Comparativa de LocalDocu con iLovePDF",
+          "headers": [
+            "",
+            "LocalDocu",
+            "iLovePDF"
+          ],
+          "rows": [
+            [
+              "Dónde se procesan los archivos",
+              "En tu navegador, en tu dispositivo",
+              "En los servidores de iLovePDF (los archivos se suben)"
+            ],
+            [
+              "Copias guardadas en un servidor",
+              "Ninguna: los archivos nunca se suben",
+              "Se eliminan automáticamente en un plazo de 2 horas, según su política de privacidad"
+            ],
+            [
+              "Funciona sin conexión",
+              "Sí, después de la primera visita",
+              "Las herramientas web necesitan conexión; hay una app de escritorio aparte"
+            ],
+            [
+              "Cuenta obligatoria",
+              "No",
+              "No para las herramientas básicas; necesaria para Premium y algunas funciones"
+            ],
+            [
+              "Precio",
+              "Gratis, sin límite de tareas",
+              "Plan gratuito con límites; planes Premium de pago"
+            ],
+            [
+              "Código fuente",
+              "Código abierto (Apache-2.0)",
+              "Propietario"
+            ],
+            [
+              "Variedad de herramientas",
+              "Unir, dividir, extraer, eliminar, rotar, reordenar, comprimir, Word→PDF, unir Word",
+              "Mucho más amplia: también OCR, edición, firma electrónica, PDF↔Office, marca de agua, desbloqueo y más"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Cuándo encaja mejor LocalDocu",
+        "list": [
+          "Documentos confidenciales —contratos, documentos de identidad, archivos financieros, médicos o de clientes— que no deberían subirse a ningún sitio",
+          "Trabajo que debe hacerse sin conexión o en redes restringidas",
+          "Organizaciones cuyas políticas prohíben enviar documentos a encargados del tratamiento externos",
+          "Tareas cotidianas de unir, dividir, rotar y comprimir sin límites diarios ni avisos para registrarse"
+        ]
+      },
+      {
+        "heading": "Cuándo encaja mejor iLovePDF",
+        "list": [
+          "Necesitas OCR, edición de PDF, firma electrónica o conversión de PDF a Word: LocalDocu todavía no ofrece estas funciones",
+          "Necesitas conversiones de Office de alta fidelidad; los motores en servidor manejan mejor los diseños complejos",
+          "Los documentos no son sensibles y quieres el mayor conjunto de herramientas en un solo lugar"
+        ]
+      },
+      {
+        "heading": "Cambiar de iLovePDF: herramienta por herramienta",
+        "list": [
+          "Unir PDF → Unir PDF de LocalDocu",
+          "Dividir PDF → Dividir PDF de LocalDocu (un archivo por página) o Extraer páginas (rangos personalizados)",
+          "Eliminar páginas → Eliminar páginas de LocalDocu",
+          "Organizar PDF → Reordenar páginas y Rotar PDF de LocalDocu",
+          "Comprimir PDF → Comprimir PDF de LocalDocu",
+          "Word a PDF → DOCX a PDF de LocalDocu (orientado al texto)"
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre LocalDocu vs iLovePDF",
+    "faq": [
+      {
+        "question": "¿Hay alguna alternativa a iLovePDF que no suba los archivos?",
+        "answer": "Sí. LocalDocu une, divide, extrae, elimina, rota, reordena y comprime por completo en tu navegador, así que los archivos nunca se suben. Es gratuito y de código abierto."
+      },
+      {
+        "question": "¿iLovePDF guarda mis archivos?",
+        "answer": "Según la política de privacidad de iLovePDF, los archivos subidos se procesan en sus servidores y se eliminan automáticamente en un plazo de dos horas. Los documentos usados con su servicio de firma electrónica siguen una política de retención distinta y más larga."
+      },
+      {
+        "question": "¿LocalDocu es tan potente como iLovePDF?",
+        "answer": "No: iLovePDF tiene muchas más herramientas. LocalDocu se centra en las tareas de organización y compresión más comunes y las hace sin subir archivos. Mucha gente usa LocalDocu para los archivos sensibles y una herramienta basada en servidor para tareas como el OCR."
+      }
+    ],
+    "disclaimer": "Los datos sobre la competencia se basan en el sitio web y la política de privacidad públicos de iLovePDF a fecha de octubre de 2026 y pueden cambiar. iLovePDF es una marca comercial de su propietario; LocalDocu no está afiliado a iLovePDF ni cuenta con su respaldo.",
+    "links": {
+      "smallpdfAlternative": "LocalDocu vs Smallpdf",
+      "acrobatAlternative": "LocalDocu vs Adobe Acrobat",
+      "pdfTools": "Prueba las herramientas PDF",
+      "guideUploadSafety": "¿Es seguro subir PDF?"
+    }
+  },
+  "smallpdfAlternative": {
+    "intro": "Smallpdf es una plataforma PDF cuidada y popular. Como la mayoría de los servicios PDF online, procesa los archivos en sus servidores, y su plan gratuito tiene límites de uso. LocalDocu es una alternativa gratuita y de código abierto que procesa los PDF en tu navegador, así que no se sube nada. Aquí tienes una comparativa objetiva.",
+    "sections": [
+      {
+        "heading": "LocalDocu vs Smallpdf de un vistazo",
+        "table": {
+          "caption": "Comparativa de LocalDocu con Smallpdf",
+          "headers": [
+            "",
+            "LocalDocu",
+            "Smallpdf"
+          ],
+          "rows": [
+            [
+              "Dónde se procesan los archivos",
+              "En tu navegador, en tu dispositivo",
+              "En los servidores de Smallpdf en la UE (los archivos se suben)"
+            ],
+            [
+              "Copias guardadas en un servidor",
+              "Ninguna: los archivos nunca se suben",
+              "La mayoría de las herramientas: se eliminan al cabo de 1 hora; los archivos guardados en una cuenta se conservan hasta que los elimines, según su aviso de privacidad"
+            ],
+            [
+              "Funciona sin conexión",
+              "Sí, después de la primera visita",
+              "Las herramientas web necesitan conexión"
+            ],
+            [
+              "Uso gratuito",
+              "Ilimitado, sin cuenta",
+              "Uso gratuito limitado; acceso completo con un plan Pro de pago"
+            ],
+            [
+              "Código fuente",
+              "Código abierto (Apache-2.0)",
+              "Propietario"
+            ],
+            [
+              "Variedad de herramientas",
+              "Unir, dividir, extraer, eliminar, rotar, reordenar, comprimir, Word→PDF, unir Word",
+              "Mucho más amplia: también OCR, firma electrónica, edición, PDF↔Office y más"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Cuándo encaja mejor LocalDocu",
+        "list": [
+          "Has alcanzado el límite del plan gratuito y solo necesitas tareas comunes como unir, dividir o comprimir",
+          "Los documentos son sensibles y no deberían subirse, ni siquiera temporalmente",
+          "Necesitas trabajar sin conexión o en una red restringida",
+          "Quieres un software cuyas afirmaciones sobre privacidad se puedan comprobar en el código fuente"
+        ]
+      },
+      {
+        "heading": "Cuándo encaja mejor Smallpdf",
+        "list": [
+          "Necesitas firma electrónica, OCR, edición de PDF o conversión de PDF a Word",
+          "Quieres almacenamiento en la nube y flujos de trabajo en equipo integrados en la herramienta PDF",
+          "Necesitas la máxima fidelidad de diseño al pasar de Office a PDF"
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre LocalDocu vs Smallpdf",
+    "faq": [
+      {
+        "question": "¿Hay alguna alternativa gratuita a Smallpdf sin límites?",
+        "answer": "LocalDocu es gratuito, sin límite de tareas ni registro, porque el procesamiento se ejecuta en tu dispositivo y no en servidores de pago. Permite unir, dividir, editar páginas, comprimir y convertir de Word a PDF."
+      },
+      {
+        "question": "¿Smallpdf sube mis archivos?",
+        "answer": "Sí. Smallpdf procesa los archivos en sus servidores. Su aviso de privacidad indica que los archivos procesados con la mayoría de las herramientas se eliminan al cabo de una hora, mientras que los archivos que guardas en una cuenta se conservan hasta que los eliminas."
+      },
+      {
+        "question": "¿Puede LocalDocu sustituir por completo a Smallpdf?",
+        "answer": "Para organizar y comprimir PDF, a menudo sí. Para firmar electrónicamente, hacer OCR o editar texto en un PDF, seguirás necesitando una herramienta como Smallpdf o Acrobat."
+      }
+    ],
+    "disclaimer": "Los datos sobre la competencia se basan en el sitio web y el aviso de privacidad públicos de Smallpdf a fecha de octubre de 2026 y pueden cambiar. Smallpdf es una marca comercial de su propietario; LocalDocu no está afiliado a Smallpdf ni cuenta con su respaldo.",
+    "links": {
+      "ilovepdfAlternative": "LocalDocu vs iLovePDF",
+      "acrobatAlternative": "LocalDocu vs Adobe Acrobat",
+      "compressPdf": "Comprimir PDF",
+      "guideCompressOffline": "Comprimir un PDF sin conexión"
+    }
+  },
+  "adobeAcrobatAlternative": {
+    "intro": "Adobe Acrobat es el estándar del sector para los PDF, y Acrobat Pro completo es una suscripción de pago. Las herramientas online gratuitas de Acrobat procesan los archivos en los servidores de Adobe. Si sobre todo necesitas unir, dividir, rotar o comprimir, LocalDocu hace esas tareas gratis en tu navegador sin subir nada.",
+    "sections": [
+      {
+        "heading": "LocalDocu vs Adobe Acrobat de un vistazo",
+        "table": {
+          "caption": "Comparativa de LocalDocu con Adobe Acrobat",
+          "headers": [
+            "",
+            "LocalDocu",
+            "Adobe Acrobat (online y Pro)"
+          ],
+          "rows": [
+            [
+              "Dónde se procesan los archivos",
+              "En tu navegador, en tu dispositivo",
+              "Herramientas online: en los servidores de Adobe. Acrobat de escritorio: en tu ordenador"
+            ],
+            [
+              "Copias guardadas en un servidor",
+              "Ninguna: los archivos nunca se suben",
+              "Herramientas online: se eliminan salvo que inicies sesión y los guardes, según Adobe; los archivos con sesión iniciada pueden guardarse en el almacenamiento en la nube de Adobe"
+            ],
+            [
+              "Precio",
+              "Gratis, sin cuenta",
+              "Herramientas online gratuitas limitadas; Acrobat Standard/Pro son suscripciones de pago"
+            ],
+            [
+              "Requiere instalación",
+              "No: cualquier navegador moderno",
+              "Online: no. Todas las funciones: app de escritorio"
+            ],
+            [
+              "Funciona sin conexión",
+              "Sí, después de la primera visita",
+              "App de escritorio: sí. Herramientas online: no"
+            ],
+            [
+              "Código fuente",
+              "Código abierto (Apache-2.0)",
+              "Propietario"
+            ],
+            [
+              "Funciones avanzadas",
+              "No disponibles",
+              "Herramientas líderes del sector para edición, OCR, firma electrónica, censura de contenido, formularios y accesibilidad"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Cuándo te basta con LocalDocu",
+        "list": [
+          "Unir, dividir o reordenar páginas para una solicitud, una factura o un informe",
+          "Rotar páginas escaneadas o eliminar las que están en blanco",
+          "Reducir un PDF para cumplir el límite de tamaño de un correo o de un portal",
+          "Hacer todo lo anterior en un ordenador del trabajo o compartido donde no puedes instalar software ni iniciar sesión"
+        ]
+      },
+      {
+        "heading": "Cuándo sigues necesitando Acrobat",
+        "list": [
+          "Editar texto e imágenes dentro de un PDF",
+          "OCR para que los escaneos se puedan buscar, o censurar contenido sensible",
+          "Firmas electrónicas con validez legal y flujos de formularios",
+          "Preflight, PDF/A, corrección de accesibilidad y producción para imprenta"
+        ]
+      }
+    ],
+    "faqHeading": "Preguntas sobre LocalDocu vs Adobe Acrobat",
+    "faq": [
+      {
+        "question": "¿Cuál es una alternativa gratuita a Adobe Acrobat para unir PDF?",
+        "answer": "LocalDocu une PDF gratis en tu navegador, sin registro, sin marca de agua y sin subir archivos. Quienes usan Mac también pueden usar Preview."
+      },
+      {
+        "question": "¿Adobe Acrobat online sube mis archivos?",
+        "answer": "Sí. Adobe indica que los archivos usados con sus herramientas online se gestionan en sus servidores y se eliminan salvo que inicies sesión y los guardes. La app de escritorio Acrobat procesa los archivos en tu ordenador."
+      },
+      {
+        "question": "¿LocalDocu puede editar texto en un PDF como Acrobat?",
+        "answer": "No. LocalDocu trabaja con páginas y archivos completos: unir, dividir, rotar, reordenar, comprimir y convertir. La edición de texto, el OCR y la firma electrónica no están disponibles."
+      }
+    ],
+    "disclaimer": "Los datos sobre la competencia se basan en las páginas de producto y las políticas públicas de Adobe a fecha de octubre de 2026 y pueden cambiar. Adobe y Acrobat son marcas comerciales de Adobe; LocalDocu no está afiliado a Adobe ni cuenta con su respaldo.",
+    "links": {
+      "ilovepdfAlternative": "LocalDocu vs iLovePDF",
+      "smallpdfAlternative": "LocalDocu vs Smallpdf",
+      "mergePdfs": "Unir PDF gratis",
+      "guideMergeWithoutUploading": "Unir PDF sin subirlos"
     }
   }
 }

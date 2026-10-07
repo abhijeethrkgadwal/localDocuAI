@@ -7,12 +7,18 @@
     "shortDescription": "Automatisation locale PDF et Word respectueuse de la vie privée. Vos fichiers restent sur votre appareil."
   },
   "loading": "Chargement…",
+  "skipToContent": "Aller au contenu principal",
+  "noscript": "L’espace de travail interactif nécessite JavaScript. Tout le contenu de cette page reste lisible sans lui ; activez JavaScript pour fusionner, diviser, compresser ou convertir vos fichiers en local.",
   "nav": {
     "ariaPrimary": "Principale",
     "faq": "FAQ",
     "privacy": "Confidentialité",
     "github": "GitHub",
-    "opensInNewTab": " (s’ouvre dans un nouvel onglet)"
+    "opensInNewTab": " (s’ouvre dans un nouvel onglet)",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "menuHeading": "Menu",
+    "appearance": "Apparence"
   },
   "theme": {
     "ariaColorTheme": "Thème de couleur",
@@ -42,12 +48,24 @@
     "pdfTools": "Outils PDF",
     "mergePdf": "Fusionner des PDF",
     "compressPdf": "Compresser un PDF",
+    "splitPdf": "Diviser un PDF",
+    "rotatePdf": "Pivoter un PDF",
     "mergeDocx": "Fusionner des DOCX",
     "docxToPdf": "DOCX vers PDF",
     "howItWorks": "Comment ça marche",
     "browserSupport": "Compatibilité des navigateurs",
     "privacy": "Confidentialité",
     "faq": "FAQ",
+    "resources": "Ressources",
+    "ariaResources": "Guides et comparatifs",
+    "guides": "Guides",
+    "uploadSafety": "Téléverser ses PDF est-il sûr ?",
+    "ilovepdfAlternative": "Alternative à iLovePDF",
+    "smallpdfAlternative": "Alternative à Smallpdf",
+    "acrobatAlternative": "Alternative à Adobe Acrobat",
+    "languages": "Langues",
+    "ariaLanguages": "Choisir une langue",
+    "allPages": "Toutes les pages",
     "openSource": "Open source",
     "ariaOpenSource": "Open source",
     "github": "GitHub",
@@ -121,5 +139,71 @@
   "language": {
     "aria": "Langue",
     "label": "Langue"
+  },
+  "tasks": {
+    "heading": "Tous les outils dont vous avez besoin, directement sur votre appareil",
+    "subheading": "Choisissez une tâche pour commencer. Les fichiers sont traités en local et ne sont jamais téléversés.",
+    "filterAria": "Filtrer les outils par catégorie",
+    "comingSoon": "Bientôt disponible",
+    "learnMore": "En savoir plus",
+    "workspaceLink": "Vous préférez tout faire au même endroit ? Utilisez l’espace de travail complet ci-dessous.",
+    "allPdfToolsLink": "Tous les outils PDF sur une seule page",
+    "categories": {
+      "all": "Tous",
+      "organize": "Organiser",
+      "optimize": "Optimiser",
+      "convert": "Convertir",
+      "ai": "IA"
+    },
+    "items": {
+      "mergePdf": {
+        "title": "Fusionner PDF",
+        "desc": "Combinez plusieurs PDF en un seul fichier, dans l’ordre de votre choix."
+      },
+      "splitPdf": {
+        "title": "Diviser PDF",
+        "desc": "Séparez chaque page d’un PDF dans son propre fichier."
+      },
+      "compressPdf": {
+        "title": "Compresser PDF",
+        "desc": "Réduisez la taille d’un PDF tout en gardant la qualité nécessaire."
+      },
+      "docxToPdf": {
+        "title": "Word en PDF",
+        "desc": "Convertissez vos documents DOC et DOCX en PDF lisibles."
+      },
+      "extractPages": {
+        "title": "Extraire des pages",
+        "desc": "Extrayez les pages sélectionnées d’un PDF dans un nouveau document."
+      },
+      "deletePages": {
+        "title": "Supprimer des pages",
+        "desc": "Supprimez les pages indésirables d’un PDF en quelques clics."
+      },
+      "rotatePdf": {
+        "title": "Pivoter PDF",
+        "desc": "Remettez les pages dans le bon sens et enregistrez le résultat."
+      },
+      "reorderPages": {
+        "title": "Réorganiser les pages",
+        "desc": "Classez les pages d’un PDF exactement dans l’ordre voulu."
+      },
+      "mergeDocx": {
+        "title": "Fusionner Word",
+        "desc": "Réunissez plusieurs documents Word en un seul fichier DOCX."
+      },
+      "chatPdf": {
+        "title": "Discuter avec un PDF",
+        "desc": "Posez des questions sur vos documents grâce à une IA sur l’appareil."
+      },
+      "summarize": {
+        "title": "Résumer",
+        "desc": "Obtenez des résumés courts de longs documents, traités en local."
+      },
+      "ocr": {
+        "title": "OCR",
+        "desc": "Transformez des pages numérisées en texte sélectionnable et consultable."
+      }
+    }
   }
 }

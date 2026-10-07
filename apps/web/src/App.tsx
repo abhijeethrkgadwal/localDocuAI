@@ -9,7 +9,10 @@ import {
 } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 import { WorkspacePage } from './WorkspacePage';
+import { COMPARE_PAGES, GUIDE_PAGES } from './lib/contentPages';
 import { SITE_PATHS } from './lib/siteConfig';
+
+const CONTENT_PAGES = [...GUIDE_PAGES, ...COMPARE_PAGES];
 import type { PublicPageId } from './lib/publicPages';
 import type { ToolPageId } from './lib/toolPageConfig';
 import {
@@ -103,6 +106,11 @@ const toolAndInfoRoutes = (
     <Route path="compress-pdf" element={<ToolRoute pageId="compress-pdf" />} />
     <Route path="pdf-tools" element={<ToolRoute pageId="pdf-tools" />} />
     <Route path="docx-to-pdf" element={<ToolRoute pageId="docx-to-pdf" />} />
+    <Route path="split-pdf" element={<ToolRoute pageId="split-pdf" />} />
+    <Route path="extract-pages" element={<ToolRoute pageId="extract-pages" />} />
+    <Route path="delete-pages" element={<ToolRoute pageId="delete-pages" />} />
+    <Route path="rotate-pdf" element={<ToolRoute pageId="rotate-pdf" />} />
+    <Route path="reorder-pages" element={<ToolRoute pageId="reorder-pages" />} />
     <Route path="offline" element={<InfoRoute pageId="offline" />} />
     <Route path="privacy" element={<InfoRoute pageId="privacy" />} />
     <Route path="how-it-works" element={<InfoRoute pageId="how-it-works" />} />
@@ -113,6 +121,10 @@ const toolAndInfoRoutes = (
     <Route path="desktop" element={<InfoRoute pageId="desktop" />} />
     <Route path="local-ai" element={<InfoRoute pageId="local-ai" />} />
     <Route path="faq" element={<InfoRoute pageId="faq" />} />
+    <Route path="guides" element={<InfoRoute pageId="guides" />} />
+    {CONTENT_PAGES.map((p) => (
+      <Route key={p.id} path={p.path.slice(1)} element={<InfoRoute pageId={p.id} />} />
+    ))}
   </>
 );
 
@@ -129,6 +141,11 @@ export function App() {
           <Route path={SITE_PATHS.compressPdf} element={<ToolRoute pageId="compress-pdf" />} />
           <Route path={SITE_PATHS.pdfTools} element={<ToolRoute pageId="pdf-tools" />} />
           <Route path={SITE_PATHS.docxToPdf} element={<ToolRoute pageId="docx-to-pdf" />} />
+          <Route path={SITE_PATHS.splitPdf} element={<ToolRoute pageId="split-pdf" />} />
+          <Route path={SITE_PATHS.extractPages} element={<ToolRoute pageId="extract-pages" />} />
+          <Route path={SITE_PATHS.deletePages} element={<ToolRoute pageId="delete-pages" />} />
+          <Route path={SITE_PATHS.rotatePdf} element={<ToolRoute pageId="rotate-pdf" />} />
+          <Route path={SITE_PATHS.reorderPages} element={<ToolRoute pageId="reorder-pages" />} />
           <Route path={SITE_PATHS.offline} element={<InfoRoute pageId="offline" />} />
           <Route path={SITE_PATHS.privacy} element={<InfoRoute pageId="privacy" />} />
           <Route path={SITE_PATHS.howItWorks} element={<InfoRoute pageId="how-it-works" />} />
@@ -139,6 +156,10 @@ export function App() {
           <Route path={SITE_PATHS.desktop} element={<InfoRoute pageId="desktop" />} />
           <Route path={SITE_PATHS.localAi} element={<InfoRoute pageId="local-ai" />} />
           <Route path={SITE_PATHS.faq} element={<InfoRoute pageId="faq" />} />
+          <Route path={SITE_PATHS.guides} element={<InfoRoute pageId="guides" />} />
+          {CONTENT_PAGES.map((p) => (
+            <Route key={p.id} path={p.path} element={<InfoRoute pageId={p.id} />} />
+          ))}
           <Route path="/index.html" element={<Navigate to={SITE_PATHS.home} replace />} />
           <Route path="/en" element={<Navigate to="/" replace />} />
           <Route path="/en/*" element={<EnRedirect />} />

@@ -27,6 +27,31 @@
       "workspaceHeading": "选择要处理的 PDF",
       "opsTitle": "PDF 工具",
       "opsDesc": "合并、压缩、拆分、提取、删除、旋转或重排—全部在本设备上完成。"
+    },
+    "splitPdf": {
+      "workspaceHeading": "选择要拆分的 PDF",
+      "opsTitle": "拆分 PDF",
+      "opsDesc": "选择一个 PDF，然后将其按每页拆分为单独的文件，保存在本设备上。"
+    },
+    "extractPages": {
+      "workspaceHeading": "选择要提取页面的 PDF",
+      "opsTitle": "提取页面",
+      "opsDesc": "选择一个 PDF，输入要保留的页码，然后将其另存为新的 PDF。"
+    },
+    "deletePages": {
+      "workspaceHeading": "选择要删除页面的 PDF",
+      "opsTitle": "删除页面",
+      "opsDesc": "选择一个 PDF，输入要删除的页码，然后在本设备上保存结果。"
+    },
+    "rotatePdf": {
+      "workspaceHeading": "选择要旋转的 PDF",
+      "opsTitle": "旋转 PDF",
+      "opsDesc": "选择一个 PDF，挑选页面和旋转角度，然后保存旋转后的文件。"
+    },
+    "reorderPages": {
+      "workspaceHeading": "选择要调整页面顺序的 PDF",
+      "opsTitle": "重排页面",
+      "opsDesc": "选择一个 PDF，设置新的页面顺序，然后在本设备上保存结果。"
     }
   },
   "formats": {
