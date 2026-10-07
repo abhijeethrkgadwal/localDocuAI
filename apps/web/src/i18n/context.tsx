@@ -15,7 +15,6 @@ import {
   type Catalog,
 } from './catalog';
 import { DEFAULT_LOCALE, LOCALES, type LocaleCode } from './locales';
-import { writeStoredLocale } from './storage';
 import { translate, type TranslateFn, type TranslateVars } from './translate';
 
 interface LocaleContextValue {
@@ -67,7 +66,6 @@ export function LocaleProvider({
     if (cached) setCatalog(cached);
     setReady(locale === DEFAULT_LOCALE || cached != null);
     applyDocumentLang(locale);
-    writeStoredLocale(locale);
 
     void loadCatalog(locale).then((loaded) => {
       if (cancelled) return;

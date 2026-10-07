@@ -89,19 +89,25 @@ export function SiteHeader({ preference, onThemeChange, workspace = false }: Sit
   }, [menuOpen]);
 
   const brand = workspace ? (
-    <a href="#main-content" className="brand-mark" translate="no">
-      <BrandMark />
+    <a href="#main-content" className="brand-mark" translate="no" aria-label="LocalDocu">
+      <BrandMark priority />
     </a>
   ) : (
-    <LocalizedLink to={SITE_PATHS.home} className="brand-mark" translate="no" onClick={closeMenu}>
-      <BrandMark />
+    <LocalizedLink
+      to={SITE_PATHS.home}
+      className="brand-mark"
+      translate="no"
+      aria-label="LocalDocu"
+      onClick={closeMenu}
+    >
+      <BrandMark priority />
     </LocalizedLink>
   );
 
   return (
     <div ref={rootRef} className="site-header relative">
       <div className="site-header-bar relative z-30 flex min-h-14 items-center justify-between gap-3 md:min-h-0 md:flex-wrap md:items-start">
-        <p className="m-0 text-sm font-semibold tracking-tight text-[var(--text-primary)]">{brand}</p>
+        <div className="flex min-h-8 shrink-0 items-center">{brand}</div>
 
         <nav
           className="hidden flex-wrap items-center gap-3 md:flex"

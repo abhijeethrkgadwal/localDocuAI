@@ -15,7 +15,19 @@ export default defineConfig({
     seoDiscoverabilityPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'pwa-192.svg', 'apple-touch-icon.png'],
+      includeAssets: [
+        'favicon.ico',
+        'favicon-32.png',
+        'favicon-32-light.png',
+        'favicon-32-dark.png',
+        'pwa-192.png',
+        'pwa-512.png',
+        'apple-touch-icon.png',
+        'brand/logo-on-light.png',
+        'brand/logo-on-dark.png',
+        'brand/logo-tagline-on-light.png',
+        'brand/logo-tagline-on-dark.png',
+      ],
       manifest: {
         name: 'LocalDocu',
         short_name: 'LocalDocu',
@@ -30,19 +42,13 @@ export default defineConfig({
         categories: ['productivity', 'utilities', 'business'],
         icons: [
           {
-            src: 'pwa-192.svg',
-            sizes: '192x192',
-            type: 'image/svg+xml',
-            purpose: 'any',
-          },
-          {
-            src: 'icon-192.png',
+            src: 'pwa-192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: 'icon-512.png',
+            src: 'pwa-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any',

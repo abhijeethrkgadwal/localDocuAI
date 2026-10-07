@@ -12,7 +12,6 @@ import { DEFAULT_OG_IMAGE, ROUTE_META, type RouteMeta } from '../src/lib/routeMe
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 
-const BRAND = '#0f6b5c';
 const PAPER = '#fffdf8';
 const FONT = "'Segoe UI', 'Helvetica Neue', Arial, sans-serif";
 
@@ -35,15 +34,14 @@ function wrap(text: string, maxChars: number): string[] {
   return lines;
 }
 
+const BRAND_ICON_WHITE = `data:image/png;base64,${fs
+  .readFileSync(path.join(publicDir, 'brand', 'icon-white.png'))
+  .toString('base64')}`;
+
 function logoMark(x: number, y: number, size: number): string {
-  const s = size / 512;
-  return `<g transform="translate(${x} ${y}) scale(${s})">
-    <rect width="512" height="512" rx="96" fill="${PAPER}" fill-opacity="0.14"/>
-    <rect x="128" y="96" width="256" height="320" rx="28" fill="${PAPER}"/>
-    <rect x="168" y="160" width="176" height="24" rx="8" fill="${BRAND}" opacity="0.85"/>
-    <rect x="168" y="216" width="176" height="24" rx="8" fill="${BRAND}" opacity="0.55"/>
-    <rect x="168" y="272" width="120" height="24" rx="8" fill="${BRAND}" opacity="0.35"/>
-  </g>`;
+  const pad = Math.round(size * 0.18);
+  return `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="${Math.round(size * 0.19)}" fill="${PAPER}" fill-opacity="0.14"/>
+  <image href="${BRAND_ICON_WHITE}" x="${x + pad}" y="${y + pad}" width="${size - pad * 2}" height="${size - pad * 2}"/>`;
 }
 
 const EYEBROW: Record<RouteMeta['kind'], string> = {
@@ -118,19 +116,15 @@ function write(rel: string, data: Buffer): void {
   console.log(`  ${rel} (${Math.round(data.length / 1024)} KB)`);
 }
 
-const ICON_SVG = fs.readFileSync(path.join(publicDir, 'pwa-512.svg'), 'utf8');
+const ICON_BG = '#0F766E';
 
-/** Full-bleed square (iOS / maskable crop it themselves); document scaled into the safe zone. */
-function squareIconSvg(docScale: number): string {
-  const offset = (512 - 512 * docScale) / 2;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="${BRAND}"/>
-  <g transform="translate(${offset} ${offset}) scale(${docScale})">
-    <rect x="128" y="96" width="256" height="320" rx="28" fill="${PAPER}"/>
-    <rect x="168" y="160" width="176" height="24" rx="8" fill="${BRAND}" opacity="0.85"/>
-    <rect x="168" y="216" width="176" height="24" rx="8" fill="${BRAND}" opacity="0.55"/>
-    <rect x="168" y="272" width="120" height="24" rx="8" fill="${BRAND}" opacity="0.35"/>
-  </g>
+/** Official white glyph on the brand teal; `glyphScale` keeps it inside maskable/iOS safe zones. */
+function squareIconSvg(glyphScale: number, radius = 0): string {
+  const size = Math.round(512 * glyphScale);
+  const offset = (512 - size) / 2;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="${radius}" fill="${ICON_BG}"/>
+  <image href="${BRAND_ICON_WHITE}" x="${offset}" y="${offset}" width="${size}" height="${size}"/>
 </svg>`;
 }
 
@@ -162,12 +156,10 @@ for (const meta of Object.values(ROUTE_META)) {
   write(meta.ogImage.slice(1), renderPng(ogSvg(meta.h1 ?? meta.title, EYEBROW[meta.kind])));
 }
 
+// pwa-192/512.png, favicon-32*.png and apple-touch-icon.png are official brand exports — not generated.
 console.log('Icons');
-write('icon-192.png', renderPng(ICON_SVG, 192));
-write('icon-512.png', renderPng(ICON_SVG, 512));
-write('icon-maskable-512.png', renderPng(squareIconSvg(0.8), 512));
-write('apple-touch-icon.png', renderPng(squareIconSvg(0.86), 180));
+write('icon-maskable-512.png', renderPng(squareIconSvg(0.5), 512));
 write(
   'favicon.ico',
-  ico([16, 32, 48].map((size) => ({ size, png: renderPng(ICON_SVG, size) }))),
+  ico([16, 32, 48].map((size) => ({ size, png: renderPng(squareIconSvg(0.72, 96), size) }))),
 );

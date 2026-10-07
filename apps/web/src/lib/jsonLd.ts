@@ -4,7 +4,7 @@ import { getHubSections } from './contentPages';
 import { getPageFaqItems, getPageHowTo } from './publicPages';
 import type { RouteMeta } from './routeMeta';
 import { getFaqItems, getHowItWorksSteps, type FaqItem } from './seoContent';
-import { LINKEDIN_URL, PORTFOLIO_URL, SITE, absoluteUrl } from './siteConfig';
+import { BRAND_ASSETS, LINKEDIN_URL, PORTFOLIO_URL, SITE, absoluteUrl } from './siteConfig';
 import { TASK_TILES } from './taskTiles';
 
 export interface JsonLdInput {
@@ -15,7 +15,7 @@ export interface JsonLdInput {
   toAbsolute?: (path: string) => string;
 }
 
-export const LOGO_PATH = '/icon-512.png';
+export const LOGO_PATH = BRAND_ASSETS.logoOnLight;
 
 function faqPage(id: string, items: FaqItem[]) {
   return {
@@ -58,7 +58,7 @@ export function buildJsonLd({
       '@id': orgId,
       name: SITE.name,
       url: root,
-      logo: { '@type': 'ImageObject', url: toAbsolute(LOGO_PATH), width: 512, height: 512 },
+      logo: { '@type': 'ImageObject', url: toAbsolute(LOGO_PATH), width: 530, height: 101 },
       description: SITE.description,
       founder: { '@id': personId },
       ...(SITE.sameAs.length ? { sameAs: [...SITE.sameAs] } : {}),

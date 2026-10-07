@@ -118,7 +118,8 @@ Build emits crawl assets at the site root:
 | `/sitemap.xml` | Home + public routes **× all UI locales** |
 | `/llms.txt` | Short LLM/answer-engine brief (English) |
 | `/llms-full.txt` | Full FAQ + citation guidance (English) |
-| `/og-image.svg` | Open Graph / social share image |
+| `/og-image.png` | Open Graph / social share image (official lockup) |
+| `/og-image.svg` | Fallback share image for older crawler URLs |
 
 The HTML shell includes canonical/Open Graph/Twitter meta. Client routes update title/description/canonical, `html lang`, `hreflang` alternates, and `og:locale`. JSON-LD is route-appropriate (`WebSite` / `SoftwareApplication` on home, `FAQPage` where FAQ is primary, `BreadcrumbList` on public pages).
 
