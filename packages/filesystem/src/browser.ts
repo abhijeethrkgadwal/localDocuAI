@@ -420,7 +420,8 @@ export function createBrowserFilesystemAdapter(
             return err(cancelledError('Save was cancelled.'));
           }
           savePickerFailed = true;
-        } finally {          if (writable) {
+        } finally {
+          if (writable) {
             try {
               await writable.abort();
             } catch {
@@ -442,12 +443,18 @@ export function createBrowserFilesystemAdapter(
       const abortedBeforeDownload = checkAborted(writeOptions?.signal);
       if (!abortedBeforeDownload.ok) return abortedBeforeDownload;
 
-      const blob = new Blob([payload], { type: mime });      const url = URL.createObjectURL(blob);
+      const blob = new Blob([payload], { type: mime });
+      const url = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
       anchor.href = url;
       anchor.download = suggestedName;
+      anchor.rel = 'noopener';
+      anchor.style.display = 'none';
+      document.body.appendChild(anchor);
       anchor.click();
-      URL.revokeObjectURL(url);
+      anchor.remove();
+      // Firefox/Safari read the blob after click() returns; revoking synchronously can abort the download.
+      setTimeout(() => URL.revokeObjectURL(url), 30_000);
       return ok({
         uri: suggestedName,
         method: 'download',

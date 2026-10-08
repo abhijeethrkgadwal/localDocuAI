@@ -190,6 +190,8 @@ body {
 .brand-mark {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
+  min-width: 0;
   color: inherit;
   text-decoration: none;
 }
@@ -197,6 +199,8 @@ body {
 .brand-logo {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
+  min-width: 0;
   line-height: 0;
   transition: opacity var(--duration-fast) var(--ease-standard);
 }
@@ -205,16 +209,27 @@ body {
   opacity: 0.86;
 }
 
+/*
+ * Width-driven sizing: the lockup scales down with its container while
+ * height follows the intrinsic aspect ratio (from the width/height attrs),
+ * so it can never squash or spill into neighbouring columns.
+ */
 .brand-logo-img {
   display: block;
-  width: auto;
-  height: 2rem;
-  max-width: min(11.75rem, 58vw);
+  width: 10.5rem;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .brand-logo-mark .brand-logo-img {
+    width: 11.75rem;
+  }
 }
 
 .brand-logo-tagline .brand-logo-img {
-  height: 3.35rem;
-  max-width: min(17rem, 86vw);
+  width: 14rem;
 }
 
 .brand-logo-on-dark {

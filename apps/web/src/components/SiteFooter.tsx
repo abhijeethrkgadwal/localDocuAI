@@ -96,8 +96,8 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-[var(--border)] pt-8 pb-4 text-sm text-[var(--text-tertiary)]">
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-        <div className="space-y-2 sm:col-span-2 lg:col-span-1">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.35fr)_repeat(4,minmax(0,1fr))]">
+        <div className="min-w-0 space-y-2 sm:col-span-2 lg:col-span-1">
           <LocalizedLink
             to={SITE_PATHS.home}
             className="brand-mark"

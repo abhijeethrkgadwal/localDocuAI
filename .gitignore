@@ -12,6 +12,7 @@ coverage
 .vite
 playwright-report
 test-results
+apps/web/e2e/.fixtures
 .idea
 .vscode/*
 !.vscode/extensions.json

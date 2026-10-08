@@ -49,7 +49,7 @@ export function ToolPage({ pageId }: { pageId: ToolPageId }) {
       <PublicJsonLd meta={meta} locale={locale} />
 
       <header className="space-y-4">
-        <SiteHeader preference={preference} onThemeChange={setPreference} workspace />
+        <SiteHeader preference={preference} onThemeChange={setPreference} />
         {meta.breadcrumbs ? <Breadcrumbs items={meta.breadcrumbs} /> : null}
         <div className="max-w-3xl space-y-3">
           {meta.h1 ? (

@@ -107,7 +107,7 @@ export function SiteHeader({ preference, onThemeChange, workspace = false }: Sit
   return (
     <div ref={rootRef} className="site-header relative">
       <div className="site-header-bar relative z-30 flex min-h-14 items-center justify-between gap-3 md:min-h-0 md:flex-wrap md:items-start">
-        <div className="flex min-h-8 shrink-0 items-center">{brand}</div>
+        <div className="flex min-h-8 min-w-0 items-center">{brand}</div>
 
         <nav
           className="hidden flex-wrap items-center gap-3 md:flex"
